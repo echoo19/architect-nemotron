@@ -642,7 +642,10 @@ def test_a_spec_without_checks_emits_the_same_bytes_as_on_2026_10_05(tmp_path: P
     spec = _oct(OCT5)
     assert spec.spec_hash == OCT5_HASH
     get_preset("extractor").emit(tmp_path, spec, PLAIN, ("extraction",))
-    code = (tmp_path / "harness.py").read_bytes()
+    # emit writes harness.py with the platform's newlines, and that build ran on Windows.
+    harness = tmp_path / "harness.py"
+    code = harness.read_bytes().replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+    harness.write_bytes(code)
     assert hashlib.sha256(code).hexdigest() == (
         "098b37e5778a6905c2cb929c4e5795a7965f946c510c8b1569c94292a05a7b1e")
     outcome = json.loads((OCT5 / "outcome.json").read_text(encoding="utf-8"))

@@ -7,18 +7,18 @@ against this page.
 
 | | |
 |---|---|
-| Commits | 599 (58 merges) |
+| Commits | 600 (58 merges) |
 | First commit | 2026-09-24, `f4de300` |
-| Last commit in this snapshot | 2026-10-14, `5344a3a` |
-| Line changes across all commits | 3,471 file changes: +354,036 / -29,171 lines; 162 binary file changes |
-| Tree at the last commit | 1,041 files, 324,775 lines, 41 of the files binary |
-| sha256 of the full log | `ac3aa9f524679e18a39828870067d537ceda1eb710e9a5d5c4f2cbca9a64a9e6` |
+| Last commit in this snapshot | 2026-10-14, `2cf108a` |
+| Line changes across all commits | 3,475 file changes: +354,052 / -29,178 lines; 162 binary file changes |
+| Tree at the last commit | 1,041 files, 324,784 lines, 41 of the files binary |
+| sha256 of the full log | `dbe99bf33d52e8fbed08e9ce711f18529e93ca44b3ff194ff174d1acbab4ff50` |
 
 The hash is of the exact output of this command, run in a clone of the private
 repository:
 
 ```sh
-git -c core.quotepath=true -c log.showRoot=true -c i18n.logOutputEncoding=UTF-8 log --no-color --no-decorate --no-show-signature --no-mailmap --no-renames --date=iso-strict --format=fuller --numstat 5344a3acd8b0fba59c15dfc7a7a18d743fda0f01 | sha256sum
+git -c core.quotepath=true -c log.showRoot=true -c i18n.logOutputEncoding=UTF-8 log --no-color --no-decorate --no-show-signature --no-mailmap --no-renames --date=iso-strict --format=fuller --numstat 2cf108a423eaebec6a160bd326acc81de4445dd3 | sha256sum
 ```
 
 ## Authors
@@ -27,7 +27,7 @@ No names or addresses are given here. Commits by identity:
 
 | Identity | Commits | Dates (UTC) |
 |---|---|---|
-| a local development-agent identity | 577 | 2026-09-24 to 2026-10-14 |
+| a local development-agent identity | 578 | 2026-09-24 to 2026-10-14 |
 | the owner's personal identity | 22 | 2026-09-25 |
 
 ## Phases
@@ -47,7 +47,7 @@ No names or addresses are given here. Commits by identity:
 | 11 | 2026-09-29 to 2026-09-30 | 8 | `1de7b1a` | Resilience: resumable tests and bench runs, live-model protocol fixes |
 | 12 | 2026-09-30 | 13 | `c1096c4` | The agent CLI: conductor loop, coder subagent and build mode |
 | 13 | 2026-10-01 | 12 | `baee7c6` | The complete CLI: providers, MCP, Forge modes and parity |
-| 14 | 2026-10-02 to 2026-10-14 | 491 | `e3a3985` | The desktop app (Electron and React) |
+| 14 | 2026-10-02 to 2026-10-14 | 492 | `e3a3985` | The desktop app (Electron and React) |
 
 ## Commits per day
 
@@ -71,7 +71,7 @@ No names or addresses are given here. Commits by identity:
 | 2026-10-09 | 3 |
 | 2026-10-12 | 18 |
 | 2026-10-13 | 27 |
-| 2026-10-14 | 1 |
+| 2026-10-14 | 2 |
 
 ## Every commit
 
@@ -678,3 +678,4 @@ Subjects as written, with anything personal replaced by [removed].
 | 2026-10-13 | `1b971ee` | Plan logs the 2026-10-12 private experiment that used the exam; published copy re-signed |
 | 2026-10-13 | `f997e6a` | Site data: the video's YouTube id and length |
 | 2026-10-14 | `5344a3a` | Bench smoke baseline recorded by the public repo's CI on Linux |
+| 2026-10-14 | `2cf108a` | Tests hold on Linux too; Windows CI gets 150 minutes |

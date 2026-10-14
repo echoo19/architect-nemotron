@@ -135,7 +135,10 @@ def test_emitted_harness_artifact_digest_and_v1_digest_are_unchanged(tmp_path: P
     directory = tmp_path / "a"
     directory.mkdir()
     get_preset("extractor").emit(directory, spec)
-    assert _sha((directory / "harness.py").read_bytes()) == (
+    # emit writes harness.py with the platform's newlines; these digests were taken on Windows.
+    harness = directory / "harness.py"
+    harness.write_bytes(harness.read_bytes().replace(b"\r\n", b"\n").replace(b"\n", b"\r\n"))
+    assert _sha(harness.read_bytes()) == (
         "59501961cbe9dc3f57ad5ce065b49eea300970d8cc25108deadc8cd2cea6b221"
     )
     artifact = HarnessArtifact(

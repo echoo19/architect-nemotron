@@ -873,13 +873,15 @@ def _short_name(path: Path) -> str | None:
 
 
 def _spellings(repo: Path, relative: str) -> list[str]:
-    """Other names for ``repo/relative``: separators, dots and the absolute path; on
-    Windows (case-insensitive) also case, trailing dots and spaces, streams, 8.3 aliases."""
+    """Other names for ``repo/relative``: dots and the absolute path; on Windows also
+    backslashes, case, trailing dots and spaces, streams, 8.3 aliases. Elsewhere a
+    backslash is part of a file name, so it names a different file."""
     path = repo / relative
     parent = path.parent.relative_to(repo).as_posix()
-    names = [relative.replace("/", "\\"), f"./{relative}", f"{parent}/../{relative}", str(path)]
+    names = [f"./{relative}", f"{parent}/../{relative}", str(path)]
     if WINDOWS:
-        names += [relative.upper(), str(path).upper(), relative + ".", relative + " ",
+        names += [relative.replace("/", "\\"), relative.upper(), str(path).upper(),
+                  relative + ".", relative + " ",
                   relative + "::$DATA", relative + ":x"]
         alias = _short_name(path)
         if alias is not None:
