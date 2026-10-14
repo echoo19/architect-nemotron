@@ -10,6 +10,7 @@ from __future__ import annotations
 import asyncio
 import io
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -216,6 +217,9 @@ def test_checkpoint_store_records_restores_and_diffs(tmp_path: Path) -> None:
     (work / "gone.txt").write_text("keep me\n", encoding="utf-8")
     snapshot = capture(work)
     (work / "a.txt").write_text("new\n", encoding="utf-8")
+    # Same size edit: on a coarse-clock filesystem it can land in the same mtime tick
+    stamp = (work / "a.txt").stat().st_mtime_ns + 2_000_000_000
+    os.utime(work / "a.txt", ns=(stamp, stamp))
     (work / "b.txt").write_text("created\n", encoding="utf-8")
     (work / "gone.txt").unlink()
     changed = changed_since(snapshot)
