@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Architect</title>
+<meta name="description" content="Architect is an agent factory: type a job in one sentence and it builds an AI agent on NVIDIA Nemotron. The agent only runs if it passed its exam, so change it and it stops until it passes again.">
+<meta property="og:title" content="Architect">
+<meta property="og:description" content="Architect is an agent factory: type a job in one sentence and it builds an AI agent on NVIDIA Nemotron. The agent only runs if it passed its exam, so change it and it stops until it passes again.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<script>
+  /* Before paint: the theme (light unless this visitor chose dark, or ?theme=dark) and the
+     visitor's system, which picks the download link to fill (?os= overrides it). */
+  (function () {
+    var root = document.documentElement;
+    var t = null;
+    try { t = localStorage.getItem('architect-site-theme'); } catch (e) { /* storage blocked */ }
+    var q = /[?&]theme=(dark|light)\b/.exec(location.search);
+    if (q) t = q[1];
+    if (t === 'dark') root.setAttribute('data-theme', 'dark');
+    var p = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || navigator.userAgent || '';
+    var os = /^win/i.test(p) || /windows/i.test(p) ? 'windows' : /mac|iphone|ipad/i.test(p) ? 'mac-arm64' : '';
+    var o = /[?&]os=(windows|mac-arm64|mac-x64|none)\b/.exec(location.search);
+    if (o) os = o[1] === 'none' ? '' : o[1];
+    if (os) root.setAttribute('data-os', os);
+  })();
+</script>
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/fonts.css">
+<link rel="stylesheet" href="styles/motion.css">
+<link rel="stylesheet" href="styles/viz.css">
+<link rel="stylesheet" href="styles/site.css">
+<script defer src="js/viz.js"></script>
+<script defer src="js/site.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#main" aria-label="Architect, top of the page">{{mark}}<span>Architect</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#exam">The exam</a><a href="#trial">Trial</a><a href="#watch">Watch</a><a href="#try">Try it</a>
+    </nav>
+    <div class="top-actions">
+      <a class="icon-btn" href="{{repo}}" aria-label="Source on GitHub" data-tip="Source on GitHub">{{icon_github}}</a>
+      <button type="button" class="icon-btn" id="theme" aria-label="Dark theme" data-tip="Dark theme">{{icon_moon}}</button>
+    </div>
+  </div>
+</header>
+{{notice}}
+
+<main id="main" tabindex="-1">
+  <section class="hero">
+    <div class="wrap">
+      <h1>Architect is an agent factory. Type a job in one sentence and it builds an AI agent on NVIDIA Nemotron.</h1>
+      <p class="lead">The agent only runs if it passed its exam. Change it, by hand or with a coding agent, and it stops with <span class="num">0</span> model calls until it passes again or you undo.</p>
+      <p class="lead lead-more">Architect runs on Nebius Token Factory, as a desktop app and in the terminal. The main drawback is that the stop is a tripwire, not a lock. <a href="#watch">Watch the video</a> or <a href="#try">try it</a>.</p>
+    </div>
+  </section>
+
+  <section class="stops" id="stops" aria-labelledby="h-stops">
+    <div class="wrap">
+      <h2 class="sr-only" id="h-stops">Change it, and it stops</h2>
+      <ol class="steps">
+        <li class="step">
+          <span class="step-n num" aria-hidden="true">1</span>
+          <p class="step-state is-passed">{{icon_passed}}<span>Passed. It is your agent.</span></p>
+          <p class="step-fact"><span class="num">59</span> of <span class="num">100</span> receipts read correctly. Pass mark: <span class="num">40</span> of <span class="num">100</span>.</p>
+          <p class="step-note">A receipt counts as right only when its total, subtotal, tax and item count are all right.</p>
+        </li>
+        <li class="step">
+          <span class="step-n num" aria-hidden="true">2</span>
+          <p class="step-state is-stopped">{{icon_stopped}}<span>Stopped: changed after its exam. <span class="num">0</span> model calls.</span></p>
+          <p class="step-fact">Changed: <code>artifact/config.json</code> (model: Nemotron 3 Super to Nemotron 3.5 Lightning).</p>
+          <p class="step-note">Your app's calls to this agent are refused before any model is called. Stopped means not examined yet. It does not mean worse.</p>
+        </li>
+        <li class="step">
+          <span class="step-n num" aria-hidden="true">3</span>
+          <p class="step-state">Retake its exam, or undo the change.</p>
+          <p class="step-fact"><strong>Retake exam.</strong> The changed agent takes the exam again and runs only if it reaches the pass mark. This one read "<span class="num">29</span> of <span class="num">100</span>. Pass mark <span class="num">40</span>. Did not pass." and stayed stopped.</p>
+          <p class="step-fact"><strong>Undo.</strong> Puts back the version that passed, exactly as it was. Your app works again at once.</p>
+        </li>
+      </ol>
+      <p class="steps-note">These are the sentences the app shows, with the numbers from my run of the demo agent in the example app, a receipt reader on Nemotron 3 Super whose model I changed by hand to the cheaper Lightning. Its exam uses development receipts, so these scores are not the published results further down.</p>
+    </div>
+  </section>
+
+  <section class="section" id="exam" aria-labelledby="h-exam">
+    <div class="wrap">
+      <h2 id="h-exam">How an agent gets its exam</h2>
+      <p class="section-lead">Describe a job in plain words, like reading the totals off a receipt. Architect tries Nemotron models from the cheapest up. Each one practices on one set of cases, then takes an exam on cases it has never seen. The cheapest model that reaches the pass mark becomes your agent, and a model that does not pass is never installed.</p>
+      <h3 class="sub" id="results">The published results</h3>
+      <p class="section-lead results-lead">{{results_paragraph}}</p>
+      <div class="results-frame">{{results}}</div>
+      {{checks}}
+      <div class="results-notes">{{results_notes}}</div>
+    </div>
+  </section>
+
+  <section class="section" id="trial" aria-labelledby="h-trial">
+    <div class="wrap">
+      <h2 id="h-trial">Ten change requests, one run each</h2>
+      <p class="section-lead">I wrote down ten ordinary change requests before any model call, such as "Make it faster." Each went once to Architect's own coder on Nemotron 3 Super, against the demo agent shown at the top of the page (Super, <span class="num">59</span> of <span class="num">100</span>, pass mark <span class="num">40</span>).</p>
+      <ul class="counts">
+        <li><span class="count num">8</span><p>changed the agent. All <span class="num">8</span> stopped, and the app's next call made <span class="num">0</span> model calls.</p></li>
+        <li><span class="count num">3</span><p>of those were retaken and passed, with <span class="num">48</span>, <span class="num">46</span> and <span class="num">48</span> of <span class="num">100</span>.</p></li>
+        <li><span class="count num">5</span><p>could not be examined: a model the settings do not have together with a changed budget, settings out of range, JSON that no longer parses, and an edit to generated code. They stayed stopped until Undo.</p></li>
+        <li><span class="count num">2</span><p>changed nothing, though the coder reported the work as done.</p></li>
+        <li><span class="count num">0</span><p>took a retake and missed the pass mark.</p></li>
+      </ul>
+      <p class="results-note trial-note">So the trial does not show the exam catching a change that made the agent worse, and it does not show any change improving it. I didn't measure whether the five edits that couldn't be examined would have broken the app.</p>
+      <p class="results-note trial-note trial-more">By hand, outside the ten, I switched Super to the cheaper Lightning. It scored <span class="num">29</span> of <span class="num">100</span> on its retake, did not pass, and stayed stopped until Undo. This is one build, one agent and one coder model, on a demo exam of development receipts. The <a href="{{repo}}/blob/main/docs/bench/retake-trial.md">trial's table</a> has every row.</p>
+    </div>
+  </section>
+
+  <section class="section" id="limits" aria-labelledby="h-limits">
+    <div class="wrap">
+      <h2 id="h-limits">What it does not do</h2>
+      <p class="section-lead limits">The rule is a tripwire for a change nobody reviewed, not a lock. It stops calls made through the agent's own folder, so a coding agent can still edit the code that calls it, and someone who controls the computer and the signing key can get past it. Stopped means not examined, and passed does not mean better. A retake can examine a change to the task and rules text, the checks, the model and the settings. A change to anything else, such as the pass mark, the budget or the generated code, can only be undone. Architect won't retake an exam on a published set of cases, so the published receipt reader can only be undone. There's no plugin for Claude Code or Codex. The stop is file-based, and I've only recorded it with Claude Code and by hand.</p>
+    </div>
+  </section>
+
+  <section class="section" id="watch" aria-labelledby="h-watch">
+    <div class="wrap">
+      <h2 id="h-watch">Watch</h2>
+      <p class="section-lead">The video is a reconstruction from recorded runs, not a screen recording. The app's own interface code is fed the numbers and lines those runs recorded, and the pointer presses are re-enacted. The film typesets a few cards itself (the terminal, the two job cards), and the Undo press stands for the undo command I ran. The narration is an AI voice (Bella, ElevenLabs), and the music is "Closer" by Andrew Ev, from Mixkit.</p>
+      {{video}}
+    </div>
+  </section>
+
+  <section class="section" id="try" aria-labelledby="h-try">
+    <div class="wrap">
+      <div class="try">
+        <div class="try-app">
+          <h2 id="h-try">Try it</h2>
+          <p class="section-lead">Install the app, connect Nebius Token Factory with an API key, and describe the agent you want. The app needs nothing else installed and sets up Python the first time it opens.</p>
+          {{downloads}}
+        </div>
+        <div class="try-cli">
+          <p class="section-lead">Or run the terminal agent from a checkout, with git, uv and Node 20.6 or later. On the first run, choose Nebius Token Factory and paste the key.</p>
+          {{commands}}
+        </div>
+      </div>
+      <ul class="more" aria-label="Documents">
+        <li><a href="{{repo}}/blob/main/docs/judges.md">Walk-through for judges</a><span>Build the demo agent, change it and watch it stop.</span></li>
+        <li><a href="{{repo}}/blob/main/docs/bench/retake-trial.md">The retake trial</a><span>The ten requests, row by row, and what the trial does not show.</span></li>
+        <li><a href="{{repo}}/blob/main/docs/bench/results-receipts.md">The published results</a><span>The receipt reader's evaluation and its plan.</span></li>
+        <li><a href="{{repo}}/blob/main/docs/limitations.md">Limitations</a><span>What the checks on your computer can and cannot show.</span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span class="foot-brand">{{mark}}<span>Architect</span><span class="foot-sep" aria-hidden="true">&middot;</span><span>MIT</span></span>
+    <span class="foot-links">
+      <a href="{{repo}}">Source</a>
+      <a href="https://huggingface.co/datasets/naver-clova-ix/cord-v2">CORD v2 receipts, CC BY 4.0</a>
+      <a href="NOTICES.txt">Notices</a>
+    </span>
+  </div>
+</footer>
+</body>
+</html>

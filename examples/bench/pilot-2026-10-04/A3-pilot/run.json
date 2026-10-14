@@ -1,0 +1,45 @@
+{
+  "config": {
+    "arc_actions": 24,
+    "arc_cache": null,
+    "arc_games": 5,
+    "audit": null,
+    "delivery_n": "all",
+    "delivery_split": "pilot",
+    "floor_split": "rehearsal",
+    "forge": null,
+    "label": "A3-pilot",
+    "max_candidates": 2,
+    "max_usd": 0.17,
+    "models": [
+      "lightning"
+    ],
+    "plain": true,
+    "presets": [],
+    "profile": "C:\\t\\pilot\\profile.json",
+    "provider": "profile",
+    "repeats": 1,
+    "reply_json": null,
+    "rounds": 1,
+    "route": {},
+    "seed": 7,
+    "size": null,
+    "suite": "v2",
+    "tasks": [
+      "receipts"
+    ],
+    "tier": "public",
+    "timeout_s": 3600.0,
+    "tuning_replay": true,
+    "variants": [
+      "default"
+    ]
+  },
+  "models": [
+    "lightning"
+  ],
+  "preset_fingerprint": "508c8b873623f3a4aafad3928b80def3691bdba3c5579de61b0d9da9c7f8c75d",
+  "profile_sha256": "0a396a722c2615a71923d84c0f6bcb31f962e027cf6ec1b11eecb1968482d00a",
+  "suite_digest": "8a01acbd031c5f6f3e5918979c1bbdb89018cd948671a57d9cee23288c5e1497",
+  "version": 1
+}

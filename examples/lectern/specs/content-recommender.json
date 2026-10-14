@@ -1,0 +1,81 @@
+{
+  "task": "Recommend synthetic fraction practice content from candidates and preferences; require human review.",
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "synthetic",
+      "query",
+      "candidates",
+      "preferences"
+    ],
+    "properties": {
+      "synthetic": {
+        "const": true
+      },
+      "query": {
+        "type": "string"
+      },
+      "candidates": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "topic"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "topic": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "preferences": {
+        "type": "object",
+        "required": [
+          "format"
+        ],
+        "properties": {
+          "format": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "additionalProperties": false
+  },
+  "output_schema": {
+    "type": "object",
+    "required": [
+      "content_id",
+      "review_required"
+    ],
+    "properties": {
+      "content_id": {
+        "type": "string"
+      },
+      "review_required": {
+        "const": true
+      }
+    },
+    "additionalProperties": false
+  },
+  "floor": {
+    "kind": "held_out_tasks",
+    "limit": 1,
+    "dataset": "synthetic-content-acceptance",
+    "minimum_samples": 30
+  },
+  "budget": {
+    "cost_usd": 0.1,
+    "compute_s": 5
+  },
+  "model_target": "fake",
+  "lifecycle": "install",
+  "domain": "recommender"
+}

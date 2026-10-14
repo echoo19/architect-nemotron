@@ -1,0 +1,219 @@
+name: verify
+# A run by hand (workflow_dispatch) runs only bench-baseline.
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    if: github.event_name != 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Python dependencies
+        run: uv sync --frozen
+      - name: Pinned upstream Pi 0.73.1
+        run: npm ci --prefix architect/backends/pi-node
+      - name: TypeScript dependencies
+        run: npm ci --prefix client-ts
+      - name: Lint
+        run: uv run ruff check .
+      - name: Strict types
+        run: uv run mypy --strict architect
+      - name: Python tests and coverage
+        run: uv run pytest --cov=architect --cov-report=term-missing --cov-report=json
+      - name: TypeScript build
+        run: npm run build --prefix client-ts
+      - name: TypeScript tests
+        run: npm test --prefix client-ts
+      - name: Live local-server TypeScript e2e (synthetic fixture)
+        run: uv run python scripts/ts_e2e.py
+  test-windows:
+    # Windows path, process and junction behaviour; Linux keeps the coverage gate.
+    if: github.event_name != 'workflow_dispatch'
+    runs-on: windows-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Python dependencies
+        run: uv sync --frozen
+      - name: Pinned upstream Pi 0.73.1
+        run: npm ci --prefix architect/backends/pi-node
+      - name: TypeScript dependencies
+        run: npm ci --prefix client-ts
+      - name: Strict types
+        run: uv run mypy --strict architect
+      - name: Python tests
+        # Stock Windows (no long-path policy) refuses registry roots above 123
+        # characters; the runner's default pytest temp root is already ~100.
+        run: uv run pytest -q -p no:cacheprovider --basetemp C:\t
+      - name: Bench smoke on the fake provider (Section 13 assertions)
+        # The clean renderer is byte-deterministic and the oracle is in-process, so the
+        # Windows run must pass the same assertions as Linux; no baseline compare here.
+        # The bench extra (Pillow) renders the scan/dense pages; pytest above ran without it.
+        run: |
+          uv sync --frozen --extra bench
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          uv run --extra bench architect bench run --provider fake --tier smoke --seed 7 --variant default --variant noisy --out .architect/bench --yes --json > smoke.json
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          $id = (Get-Content smoke.json -Raw | ConvertFrom-Json).bench_id
+          uv run --extra bench python -m architect.bench.ci_assert ".architect/bench/$id/rows.jsonl"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: TypeScript tests
+        run: npm test --prefix client-ts
+      - name: Live local-server TypeScript e2e (synthetic fixture)
+        run: uv run python scripts/ts_e2e.py
+  bench-smoke:
+    # The whole smoke tier through the real compiler on the fake provider with
+    # deterministic oracles: $0, no network, no live provider.
+    if: github.event_name != 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Python dependencies with the bench extra (Pillow)
+        run: uv sync --frozen --extra bench
+      - name: Pinned upstream Pi 0.73.1 (the forge arm drives the real Pi SDK loop)
+        run: npm ci --prefix architect/backends/pi-node
+      - name: Smoke tier, default, noisy, template, forge and routed
+        # Phase 9 Stage A at $0: the template and forge arms replay committed ForgeScript
+        # tool calls (examples/forge/scripts) on the fake provider. A forge row that did
+        # not measure, or a template row that did not submit, is forge_did_not_run and
+        # fails this step (non-zero exit). Phase 10: the routed arm routes three probes
+        # per task through the real router at $0; a routed row with no decision is
+        # route_did_not_run and fails this step too.
+        run: >-
+          uv run --extra bench architect bench run --provider fake --tier smoke --seed 7
+          --variant default --variant noisy --variant template --variant forge
+          --variant routed --out .architect/bench --yes --json > smoke.json
+      - name: The identical run again (Phase 10 pass criterion 4, decision determinism)
+        # Identical flags: a routed cell's Phase A installs every selected arm, so a
+        # run with other variants is not the same measurement.
+        run: >-
+          uv run --extra bench architect bench run --provider fake --tier smoke --seed 7
+          --variant default --variant noisy --variant template --variant forge
+          --variant routed --out .architect/bench-repeat --yes --json > repeat.json
+      - name: Section 13 and Phase 10 Section 14.1 assertions
+        # Routed and simulated rows are synthetic_fake: plumbing and decision
+        # determinism, not routing quality. --simulate runs 2000 seeded trials per
+        # scenario through the real route() and RoleRouter at $0, with no I/O.
+        run: |
+          id=$(uv run python -c "import json; print(json.load(open('smoke.json'))['bench_id'])")
+          again=$(uv run python -c "import json; print(json.load(open('repeat.json'))['bench_id'])")
+          uv run --extra bench python -m architect.bench.ci_assert ".architect/bench/$id/rows.jsonl" \
+            --repeat ".architect/bench-repeat/$again/rows.jsonl" --simulate
+      - name: Keep the smoke rows (the first green Linux run becomes the baseline)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bench-smoke-rows
+          path: .architect/bench/
+          if-no-files-found: warn
+      - name: Scores identical to the committed baseline
+        id: baseline
+        # Unconditional: a missing, renamed or deleted baseline fails this gate
+        # (bench_rows_unreadable); it is never skipped. Page manifests record the
+        # platform, so the baseline must come from this Linux job's uploaded rows.
+        # Phase 9: the baseline must hold the template and forge rows too (every cell
+        # must pair); regenerate it from this job's uploaded rows after the variants land.
+        # Phase 10: the same holds for the routed rows (one per probe and round).
+        run: |
+          id=$(uv run python -c "import json; print(json.load(open('smoke.json'))['bench_id'])")
+          uv run --extra bench architect bench compare examples/bench/suite-v1/smoke-baseline.jsonl \
+            ".architect/bench/$id/rows.jsonl" --expect identical-scores
+      - name: How to refresh the baseline (only when the compare above failed)
+        if: failure() && steps.baseline.outcome == 'failure'
+        run: |
+          echo "::error title=Smoke baseline::The smoke rows do not match examples/bench/suite-v1/smoke-baseline.jsonl. This step's log says how to refresh the baseline."
+          echo "bench_compare_fingerprint: the preset code changed, so every row's preset fingerprint differs."
+          echo "If that change was meant, refresh the baseline from this Linux runner:"
+          echo "  1. Actions, verify, Run workflow, on this branch. Only the bench-baseline job runs."
+          echo "  2. Download its smoke-baseline artifact, which holds rows.jsonl."
+          echo "  3. Check that only the fingerprints changed:"
+          echo "     uv run architect bench compare examples/bench/suite-v1/smoke-baseline.jsonl rows.jsonl --expect identical-scores --allow-fingerprint-mismatch"
+          echo "  4. Copy rows.jsonl over examples/bench/suite-v1/smoke-baseline.jsonl and commit it."
+          echo "bench_expectation_failed: a score, a tuning result or a license changed. Find the cause before you refresh the baseline."
+  arc-extra:
+    # Optional Python extra, tested against scripted transport/local fixtures.
+    # No official game files, credentials, benchmark or compliance claim.
+    if: github.event_name != 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - name: Pinned optional ARC SDK 0.9.9 and engine 0.9.3
+        run: uv sync --frozen --extra arc
+      - name: ARC adapter and local factory tests
+        # The build-mode ARC test skips in the jobs without the extra; it runs here.
+        run: >-
+          uv run --extra arc pytest
+          tests/test_game_actions.py tests/test_game_local.py
+          tests/test_game_official.py tests/test_game_factory.py
+          tests/test_game_execution.py tests/test_competition.py
+          tests/adversarial/test_phase6_games.py
+          tests/test_agent_build.py::test_forge_arc_runs_the_preview_manufacture_only_when_allowed
+          -q
+      - name: Manufacture a fresh ARC-AGI-3 harness on public games
+        # Fresh workspace, key and random public-game draw every run; fixture
+        # agent, so this checks manufacturing and official scoring, not quality.
+        run: uv run --extra arc python scripts/arc_harness.py --games 5
+  bench-baseline:
+    # Run by hand only (Actions, verify, Run workflow): bench-smoke's smoke run on the
+    # same Linux runner, kept as the artifact smoke-baseline. Its rows.jsonl becomes
+    # examples/bench/suite-v1/smoke-baseline.jsonl once for a new repository, and after
+    # any change to architect/presets/, which changes every row's preset fingerprint.
+    # Page manifests record the platform, so the baseline has to come from Linux.
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Python dependencies with the bench extra (Pillow)
+        run: uv sync --frozen --extra bench
+      - name: Pinned upstream Pi 0.73.1 (the forge arm drives the real Pi SDK loop)
+        run: npm ci --prefix architect/backends/pi-node
+      - name: Smoke tier, default, noisy, template, forge and routed
+        # The same command as bench-smoke's (tests/test_bench_run.py keeps them equal).
+        run: >-
+          uv run --extra bench architect bench run --provider fake --tier smoke --seed 7
+          --variant default --variant noisy --variant template --variant forge
+          --variant routed --out .architect/bench --yes --json > smoke.json
+      - name: Section 13 assertions, so a failing run never becomes the baseline
+        run: |
+          id=$(uv run python -c "import json; print(json.load(open('smoke.json'))['bench_id'])")
+          uv run --extra bench python -m architect.bench.ci_assert ".architect/bench/$id/rows.jsonl"
+          mkdir -p baseline
+          cp ".architect/bench/$id/rows.jsonl" baseline/rows.jsonl
+      - name: Keep rows.jsonl, the new baseline
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-baseline
+          path: baseline/rows.jsonl
+          if-no-files-found: error

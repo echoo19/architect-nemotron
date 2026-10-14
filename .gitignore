@@ -1,0 +1,29 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+coverage.json
+artifacts/
+.architect/
+# W7: an Ed25519 private key is never committed, wherever an operator keeps it.
+ed25519.key
+# Environment files can hold keys (a local relay run reads NEBIUS_API_KEY, for example).
+.env
+.env.*
+!.env.example
+node_modules/
+client-ts/dist/
+*.egg-info/
+build/
+dist/
+
+# Desktop app build output
+desktop/dist-electron/
+desktop/release/
+# Fetched or staged for packaging (uv, Pi's node_modules); binaries are never committed
+desktop/vendor/
+!desktop/build/

@@ -1,0 +1,121 @@
+/* ── The guided build (clarity spec §2.1) ───────────────────────────────
+   TopBar 64 (the window's drag region), then the step: a 960 column centred on the
+   ground with its status line, heading, one sentence and cards, and under it the 72
+   action bar as wide as the column. The conversation rail sits beside the step. */
+
+.forge { flex-direction: column; background: hsl(var(--bg-subtle)); }
+.forge-body { flex: 1; min-height: 0; display: flex; }
+.forge-main { flex: 1; min-width: 0; min-height: 0; display: flex; flex-direction: column; }
+.forge-stopped { flex: none; padding: 12px 24px 0; }
+.forge-stopped .stopped { max-width: 960px; margin: 0 auto; }
+
+/* ── Top bar ─────────────────────────────────────────────────────────── */
+.wizard-top {
+  flex: none; height: 64px; display: grid; grid-template-columns: minmax(0, auto) minmax(0, 1fr) auto; align-items: center; gap: 24px;
+  container: wizard-top / inline-size;
+  padding: 0 calc(16px + var(--controls-w)) 0 20px; background: hsl(var(--bg)); border-bottom: 1px solid hsl(var(--divider));
+}
+.forge-row.has-dock .wizard-top { padding-right: 16px; }
+.wizard-top-start { display: flex; align-items: center; gap: 12px; min-width: 0; max-width: 420px; }
+.wizard-top-centre { display: flex; justify-content: center; min-width: 0; }
+.wizard-top-end { display: flex; align-items: center; justify-content: flex-end; gap: 4px; min-width: 0; }
+.wizard-top-end .ui-button { gap: 8px; }
+/* macOS: the traffic lights sit in the top-left while the sidebar is away; full screen hides them. */
+html.is-electron.is-mac .main.no-sidebar .wizard-top { padding-left: 84px; }
+html.is-electron.is-mac.is-fullscreen .main.no-sidebar .wizard-top { padding-left: 20px; }
+
+.wizard-brand { display: inline-flex; align-items: center; gap: 8px; flex: none; font-size: var(--fs-title); font-weight: 600; color: hsl(var(--ink)); }
+.wizard-brand-mark { width: 20px; height: 20px; color: hsl(var(--accent-700)); }
+.wizard-top-divider { flex: none; width: 1px; height: 20px; background: hsl(var(--divider)); }
+.wizard-crumb { display: inline-flex; align-items: center; gap: 6px; min-width: 0; font-size: var(--fs-small); color: hsl(var(--text-mute)); white-space: nowrap; }
+.wizard-crumb-icon { flex: none; color: hsl(var(--text-faint)); }
+.wizard-crumb-project { overflow: hidden; text-overflow: ellipsis; }
+.wizard-crumb-slash { color: hsl(var(--text-ghost)); }
+.wizard-crumb-agent { overflow: hidden; text-overflow: ellipsis; font-weight: 500; color: hsl(var(--ink)); }
+
+/* ── Stepper ─────────────────────────────────────────────────────────── */
+.wizard-steps ol { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; }
+.wizard-step { display: flex; align-items: center; font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-faint)); white-space: nowrap; }
+.wizard-step-link { flex: none; width: 24px; height: 1px; margin: 0 10px; background: hsl(var(--border)); }
+.wizard-step-link.is-done { background: hsl(var(--accent-700)); }
+.wizard-step-body, .wizard-step-button { display: inline-flex; align-items: center; gap: 8px; }
+.wizard-step-button {
+  height: 32px; margin: 0 -6px; padding: 0 6px; border: 0; border-radius: var(--r-md); background: none;
+  font: inherit; color: inherit; cursor: pointer; transition: background 150ms var(--ease);
+}
+.wizard-step-button:hover { background: hsl(var(--bg-muted)); }
+.wizard-step-button:focus-visible { outline: 2px solid hsl(var(--accent-700)); outline-offset: 0; }
+.wizard-step-dot {
+  flex: none; width: 22px; height: 22px; display: grid; place-items: center; border-radius: 50%;
+  border: 1px solid hsl(var(--border)); background: hsl(var(--bg)); font-size: var(--fs-micro); font-weight: 500;
+  font-variant-numeric: tabular-nums; color: hsl(var(--text-faint));
+}
+.wizard-step.is-done { color: hsl(var(--text)); }
+.wizard-step.is-done .wizard-step-dot { background: hsl(var(--accent-700)); border-color: hsl(var(--accent-700)); color: hsl(var(--on-accent)); }
+html[data-theme="dark"] .wizard-step.is-done .wizard-step-dot { background: hsl(var(--accent-800)); border-color: hsl(var(--accent-800)); color: hsl(var(--ink)); }
+.wizard-step.is-current { color: hsl(var(--ink)); font-weight: 600; }
+.wizard-step.is-current .wizard-step-dot { border: 1.5px solid hsl(var(--accent-700)); color: hsl(var(--accent-700)); font-weight: 600; box-shadow: 0 0 0 3px hsl(var(--accent-100)); }
+.wizard-step.is-failed .wizard-step-dot { border-color: hsl(var(--err)); background: hsl(var(--err-bg)); color: hsl(var(--err)); box-shadow: none; }
+.wizard-step.is-locked { color: hsl(var(--text-ghost)); }
+.wizard-step.is-locked .wizard-step-dot { color: hsl(var(--text-ghost)); border-color: hsl(var(--divider)); }
+
+/* A narrow bar (a small window, the dock or the conversation beside it) gives way in
+   steps: shorter links and Your agents as its glyph, then the brand word, then the labels
+   of the steps not on screen, then the project name. The current step keeps its label. */
+@container wizard-top (max-width: 1300px) {
+  .wizard-step-link { width: 16px; margin: 0 8px; }
+  .wizard-agents-label { display: none; }
+  .wizard-top-end .wizard-agents { width: 32px; padding: 0; justify-content: center; }
+}
+@container wizard-top (max-width: 1180px) {
+  .wizard-brand-word { display: none; }
+}
+@container wizard-top (max-width: 1060px) {
+  .wizard-step:not(.is-current) .wizard-step-label { display: none; }
+  .wizard-step-link { width: 12px; margin: 0 6px; }
+}
+@container wizard-top (max-width: 820px) {
+  .wizard-crumb-project, .wizard-crumb-slash, .wizard-top-divider { display: none; }
+}
+
+/* ── The step page ───────────────────────────────────────────────────── */
+.wizard-page { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.wizard-lock { display: contents; border: 0; margin: 0; padding: 0; min-width: 0; }
+.wizard-scroll { flex: 1; min-height: 0; overflow-y: auto; }
+.wizard-column { width: 100%; max-width: calc(960px + 48px); margin: 0 auto; padding: 32px 24px 32px; display: flex; flex-direction: column; }
+.wizard-head { display: flex; flex-direction: column; }
+.wizard-status {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px;
+  font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-mute)); font-variant-numeric: tabular-nums;
+}
+.wizard-title { margin: 0; font-size: 30px; line-height: 36px; font-weight: 600; letter-spacing: -0.015em; color: hsl(var(--ink)); overflow-wrap: anywhere; }
+.wizard-sub { margin: 6px 0 0; max-width: 720px; font-size: 15px; line-height: 24px; color: hsl(var(--text-mute)); }
+.wizard-sub b, .wizard-sub strong { font-weight: 600; color: hsl(var(--ink)); }
+.wizard-notice { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 8px 0 0; max-width: 720px; font-size: var(--fs-small); line-height: var(--lh-small); }
+.wizard-notice.is-err { color: hsl(var(--err)); }
+.wizard-notice.is-warn { color: hsl(var(--warn)); }
+.wizard-body { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+.wizard-body:empty { display: none; }
+/* An error on the step: the first card takes the attention edge. */
+.wizard-page[data-attention] .wizard-body > .card-cell:first-child > .ui-card,
+.wizard-page[data-attention] .wizard-body > .ui-card:first-child { border-color: hsl(var(--err)); }
+
+/* ── The action bar ──────────────────────────────────────────────────── */
+.wizard-bar { flex: none; min-height: 72px; display: flex; background: hsl(var(--bg)); border-top: 1px solid hsl(var(--divider)); }
+.wizard-bar-in {
+  flex: 1; width: 100%; max-width: calc(960px + 48px); margin: 0 auto; padding: 12px 24px;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 0;
+}
+.wizard-bar-start, .wizard-bar-end { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.wizard-bar-end { justify-content: flex-end; margin-left: auto; }
+.wizard-bar-secondary { display: inline-flex; flex: none; }
+.wizard-bar-primary { display: inline-flex; align-items: center; gap: 12px; flex: none; }
+.wizard-bar-note { font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-mute)); text-align: right; max-width: 320px; }
+.wizard-bar .ui-button { gap: 8px; }
+.wizard-bar .ui-button-md { height: 40px; padding-inline: 16px; }
+
+/* ── The conversation rail ───────────────────────────────────────────── */
+.forge.has-transcript .wizard-bar-note { max-width: 220px; }
+@media (max-width: 1100px) {
+  .forge.has-transcript .wizard-bar-note { display: none; }
+}

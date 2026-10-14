@@ -1,0 +1,31 @@
+{
+  "name": "architect-spend-relay",
+  "version": "0.1.0",
+  "private": true,
+  "description": "OpenAI-compatible relay in front of Nebius Token Factory with hard spend caps, for Architect's Nemotron runs and judge codes.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20.18.1 <25"
+  },
+  "scripts": {
+    "compile": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.test.json",
+    "start": "npm run compile && node local.mjs",
+    "admin": "node admin.mjs",
+    "test": "npm run compile && tsc -p tsconfig.test.json && vitest run"
+  },
+  "dependencies": {
+    "@upstash/redis": "1.39.0",
+    "@vercel/functions": "3.9.11",
+    "undici": "7.30.0"
+  },
+  "devDependencies": {
+    "@types/ioredis-mock": "8.2.8",
+    "@types/node": "20.19.43",
+    "ioredis": "5.11.1",
+    "ioredis-mock": "8.13.1",
+    "typescript": "5.9.3",
+    "vitest": "3.2.7"
+  }
+}

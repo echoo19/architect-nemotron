@@ -1,0 +1,15 @@
+{
+  "settings_version": 1,
+  "task_id": "receipts",
+  "source": "examples/receipts",
+  "floor_limit": 0.4,
+  "run_budget": {
+    "cost_usd": 0.02,
+    "compute_s": 60.0
+  },
+  "invalid_policy": "count_as_miss",
+  "max_invalid_fraction": 0.02,
+  "input_limit_chars": 8192,
+  "reply_json": "first",
+  "frozen": true
+}

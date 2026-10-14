@@ -1,0 +1,1048 @@
+{
+  "manifest_version": 1,
+  "dataset": "naver-clova-ix/cord-v2",
+  "dataset_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+  "dataset_revision": "7f0115a4b758a71d6473b8d085751692da2fef98",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "rule_version": "receipts-v2",
+  "rules_sha256": "b552ab6033626d0e5f1792a560932b764b749a7dc17f7f2cbe928653a8f52480",
+  "split": "rehearsal",
+  "count": 100,
+  "sources": {
+    "train": 100,
+    "validation": 0,
+    "test": 0
+  },
+  "files": {
+    "cases/rehearsal.jsonl": {
+      "sha256": "59caad182037ab72737e783e048db241f0c32b498f0efed29cb854450c133c0b",
+      "cases_tag": "cases:59caad182037ab72"
+    },
+    "floors/rehearsal.json": {
+      "sha256": "dea2f92164c41ca6273c483a99c4a1a3bcc72bfa90194083dd1989a40642f8ff"
+    }
+  },
+  "cases_sha256": "7c3eff3f9fa44aa042003b0e8fb20eed03a898e202a508ee13a403080224bea8",
+  "partition": {
+    "rule": "sorted case_id; even positions tune, odd positions are held out",
+    "tuning": 50,
+    "held_out": 50
+  },
+  "cases": [
+    {
+      "case_id": "cord-train-0013",
+      "source": "train/13",
+      "ground_truth_sha256": "e317c17e4cff740fe8af046e9810b52f683269eac2f564c535b7db680b0f01a1",
+      "text_sha256": "5c50b94796a02a305aeb37f8093877161d68ec519ac3d1f3d59ccffc3f0e0667",
+      "case_sha256": "bbe95b9fb80399d1a2752806ed99e048e80f9295e95f920535ee9bdbcacdf569",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0018",
+      "source": "train/18",
+      "ground_truth_sha256": "29082ae36309e8e9655639e7847638024a841a87a98c3ca027340b4391f12e97",
+      "text_sha256": "569fc457c256fac35cc99ce951d14782442d683efa5a2435614041728e615627",
+      "case_sha256": "d3978b9325074a390023451a3113b67f861f95a5e519473db82d342e6ae58a58",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0024",
+      "source": "train/24",
+      "ground_truth_sha256": "86cbff4238d96737ea41ecc557386f9ae5b9279188f42948cd89b98e391468d9",
+      "text_sha256": "59493bf0e0c707ec2a609b4250198cd7a496b6064067b0f833adc8faef70085b",
+      "case_sha256": "67b5111e3dcccd654b22d4b519918c50669c7e3da283da3d52b4a86840e3c257",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0037",
+      "source": "train/37",
+      "ground_truth_sha256": "cd47584f5d1e7435f845347db8ac3c23ab8217f930745cbd79e466783e8bd8aa",
+      "text_sha256": "51ebae69153bec9b788233c36a111bc3754cf53c953fb5e6c9f33662c54ed497",
+      "case_sha256": "a54ea06f8c7589afd00cc4285f6613f79619fe826895cd35af8b25942a6f91ee",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0046",
+      "source": "train/46",
+      "ground_truth_sha256": "bc6e97566fecc0ba34b84acadbad92fe803d1eb2942630c10da6a2f0e382c370",
+      "text_sha256": "4479b20b3a501e8ddf6d422a77b36546cf5503f863cb57e6f214762f61abc396",
+      "case_sha256": "d0a6bbf819b8ab7d218defaa634be8288a236d1d66a8c159276bbd7491468b43",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0057",
+      "source": "train/57",
+      "ground_truth_sha256": "76983eaf1779a4fe2d0854d5ccdcdfc349289a09678b3bf38628d906ee6364dd",
+      "text_sha256": "544011096e4a09e4055f7369693ca9afd16d5e52ff2229b3a991fdb3a94a8104",
+      "case_sha256": "871d79800fefb0835b5db445d60a01eb42157d3ba7ac06d4bada219e9507a9b5",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0058",
+      "source": "train/58",
+      "ground_truth_sha256": "4b998f3a940f26aa0f003ae082d0dff9d03f296108995a44e0e322c8dc713ad2",
+      "text_sha256": "588bb5a202350fcd463287daab11d288448a2941c7401c204321659b9d178803",
+      "case_sha256": "720b3d5f2b6999818523ea5ffa28f7c18db701e0f68c4f60c97bd0d5685dbb8f",
+      "partition": "tuning",
+      "flags": [
+        "decimal:total"
+      ]
+    },
+    {
+      "case_id": "cord-train-0059",
+      "source": "train/59",
+      "ground_truth_sha256": "965145b29e6ddfd86f38378e2a4d81fb65a2f95599d618a628d5cd19be00a1d1",
+      "text_sha256": "48e195d58cdcf3a78a76ec6535f1da6ae8586ad32f8e56455f12c41defa3448d",
+      "case_sha256": "6f6b3b2e6810e494e88743f6666455d9843e999091ae53935b37f652cdbc44f7",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0065",
+      "source": "train/65",
+      "ground_truth_sha256": "7b973430338c4a42e1c59c24f62601d5f96d3b6801a96f871b92c279cf3ee678",
+      "text_sha256": "50cd77e7c640c9deea93e980b31afb5fbb9b094e627769279c2b9a5349863fc0",
+      "case_sha256": "c7d55bb39f7548450a78ef4701f2163aa1c7e05744fce471d4bf71496b9ad833",
+      "partition": "tuning",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0066",
+      "source": "train/66",
+      "ground_truth_sha256": "35073e5ce2bdf1259fa13245f325688d06e5a61e5712f7e85aafcb16b1dcbe45",
+      "text_sha256": "4e2e910ee91215ed135b357d5adc3f2585df0de3c8db680fce94d25e994c423a",
+      "case_sha256": "f530cd8b59d266d2e08dd3fea7397ec30355fba75743887897affeb45dfe2e71",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0074",
+      "source": "train/74",
+      "ground_truth_sha256": "1d56bf88896f5e11ea7a3e2891c9394d3123d4fd91ae43b40984a3fd48abaea5",
+      "text_sha256": "4a943701bc100af43766f6a4215cbde085159d6bd6c4385ca5acfbad6b779d6b",
+      "case_sha256": "07d92f93597d87cbb6deb9d2f26ad043450b1b3464c951433d1d6ddd53ece6ec",
+      "partition": "tuning",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0093",
+      "source": "train/93",
+      "ground_truth_sha256": "b90c95ac1626a1fcb3fc6b465265a8089d556dae732976e4cfe68f3b2a3ea70e",
+      "text_sha256": "4841cffb5b732d40233b2df48f8170386629161dfdc023739f296f72726f9f1b",
+      "case_sha256": "7e33ec5cb0756bc7bff49deb2063d180b2c8cf965430d03dc977a5f6809049e1",
+      "partition": "held_out",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0094",
+      "source": "train/94",
+      "ground_truth_sha256": "e6249cb50ee1d55b9b2ca03fd63e755710cf2c0aff672f9d55e16158bab04f4c",
+      "text_sha256": "5d86677839cbf1bf12ddcc51096e78caef46c9c563c42c1951182c71157278a9",
+      "case_sha256": "580f3d1cdf49ad60494ba5e20f9451ac89e6b076f13fae0f5b02a39d62982820",
+      "partition": "tuning",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0106",
+      "source": "train/106",
+      "ground_truth_sha256": "6005030eb74febd6a19c554ff49930a453d79b9fda8db0b78b6c2feb6b310e68",
+      "text_sha256": "43135a48c56eea6141247f233db05c5ae3a3987550750e99afc5b762c489eb74",
+      "case_sha256": "70b33322a81e0647412e3b752b7a3a45dc6b65b4f1804541df0dfc0c1302a544",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0114",
+      "source": "train/114",
+      "ground_truth_sha256": "4e3f236f149ec8abe966494b158b3b73d146a724ab4a12f98ae8cb521cac30fe",
+      "text_sha256": "4dc12448028d33cbe7433f75938ab860a27b2a3d9bafa161f52cd13b90e81b68",
+      "case_sha256": "0483118a86b08a235a50e80e619a31dfd35fa5966f3f35a0a50e9835714788ef",
+      "partition": "tuning",
+      "flags": [
+        "sub_items"
+      ]
+    },
+    {
+      "case_id": "cord-train-0117",
+      "source": "train/117",
+      "ground_truth_sha256": "6e939d80c061db6459a9a1c3f49906a46dd1d3cb2a70c76061c38a415e292f9f",
+      "text_sha256": "5db091ff16aa371b9a3b0491651778a2e327a91d0e3460253235fdeae7c87fcf",
+      "case_sha256": "012b8cebb40c15cffc4a4016b08411c6d44433b16c55e98cc267920ef481c84b",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0120",
+      "source": "train/120",
+      "ground_truth_sha256": "3865965e0bec0668a4b252a38c0487ead80fec676f81989128ab25536fbd188b",
+      "text_sha256": "490c464d4874a4c357ef695ae609afd4d173ccc756f566b21867d911d3427484",
+      "case_sha256": "d576abf15ab5452c8e1dc5b568d82f6a2dbcd4e12562e9752087f870e265a0d5",
+      "partition": "tuning",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0121",
+      "source": "train/121",
+      "ground_truth_sha256": "f4db8f6a25713228e0068ec57893aec7aa903919f1177adf337b0240ac24f164",
+      "text_sha256": "635087c7a391d35e4130f49c52d644e2ff5563ba74620cf8f5c91fd974ef3339",
+      "case_sha256": "f37e245d3a8873ad7de37750e949babafc34ef2cb2968b4b536d754a4e315dc0",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0122",
+      "source": "train/122",
+      "ground_truth_sha256": "eedf1af9cc17e6f7403c1d7198bcf78dfa452380ebda97699a58f6590e9dddce",
+      "text_sha256": "3f399967507c658e2801ac68fe11f533e8852b2b8dc8d2bab4406118d09df089",
+      "case_sha256": "15bc7f2c482aed8edd5f9ea3cff6f07a4ddaa807cdf94c6318b25ca3cc09f7d5",
+      "partition": "tuning",
+      "flags": [
+        "total_missing"
+      ]
+    },
+    {
+      "case_id": "cord-train-0126",
+      "source": "train/126",
+      "ground_truth_sha256": "00c2ab66484c9bcc05475e659acf87691c77bfe7fc9c6bbcfc345a97f0a523e8",
+      "text_sha256": "47336811fc3c04daed3bd2d1bfa21c5c12f40d7e3368a76c604940af32b153a4",
+      "case_sha256": "915f6155822c5e654b3bc38a2c655a46bc1a782f812722c083e0d695741e48aa",
+      "partition": "held_out",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0130",
+      "source": "train/130",
+      "ground_truth_sha256": "1efef3ce06a523a645c7a4693e0c5ca23e562505b909fd772575b759901d9684",
+      "text_sha256": "6066f185b6969e9b29419f5211a0f67f0d75871128d9bcc9b0cf947e48778946",
+      "case_sha256": "f9da9545e0198c8a93d5bf8175a28cea84c34016df3fcde2e74e62a394cad28e",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0132",
+      "source": "train/132",
+      "ground_truth_sha256": "93713c05acbd5c7e7740f5f27d8798a208af2bd11e805e0a45dd7c3688112cc5",
+      "text_sha256": "5c2678c1ba583adcb93ba6ce357fc2bc95861985a173968db9adbbb9ce32e118",
+      "case_sha256": "6bc39bbf587289e4bc29abc8f827c9409260765af200d08dc2e5530b938549ae",
+      "partition": "held_out",
+      "flags": [
+        "decimal:total",
+        "decimal:subtotal",
+        "decimal:tax"
+      ]
+    },
+    {
+      "case_id": "cord-train-0135",
+      "source": "train/135",
+      "ground_truth_sha256": "398cca11837ca74bd0b792f4757d7ac317cdf567090b03507958054d983f52db",
+      "text_sha256": "5a98ec7f8f425ad3f7b5f48a71bf54b58527e3f559b0cf6ebe1656e63f29f765",
+      "case_sha256": "5c6f47991a46c8d61309de39b10171e0107024d730a7a2ff4a36ec3eec7f8c5f",
+      "partition": "tuning",
+      "flags": [
+        "multi_value_disagree:total"
+      ]
+    },
+    {
+      "case_id": "cord-train-0149",
+      "source": "train/149",
+      "ground_truth_sha256": "0b451761034b884fe21043c916e5817f8af05da27aa604cd04c1e741e8889320",
+      "text_sha256": "5448bde51025ee8a5e4c29b4c057e392b190e30d78bfd2d44ce79731f2e3585d",
+      "case_sha256": "a2cdacf7dc69b7079c867bb71abfbb8a68bef581ccadd1fc6529e9d7acbb4f94",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0150",
+      "source": "train/150",
+      "ground_truth_sha256": "0a1786815798ff130f20cee341803fb3a12db831f7fb99ea1ed1ec2a6efd60a1",
+      "text_sha256": "503712cb26ca2b65c3bd3e388b0b3b78fd4d0fc8a7b674f8067fb14bd1f3b656",
+      "case_sha256": "448a3db13019e8c39080b4e146509b93ec00b069b431664a063582dc6a91a061",
+      "partition": "tuning",
+      "flags": [
+        "multi_value:subtotal"
+      ]
+    },
+    {
+      "case_id": "cord-train-0158",
+      "source": "train/158",
+      "ground_truth_sha256": "7a72521baa738778abef6385a520b6a1048a72a2b0251e5d19544310297979c2",
+      "text_sha256": "50449756ea4142cd57f3be6c6a0eaf993f105f9865c18a33a7ef6cbb7360ccf1",
+      "case_sha256": "8ea004874677c1072682513560e4c8ccae147482a835018b0093e769b409ac28",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0160",
+      "source": "train/160",
+      "ground_truth_sha256": "b04bbc297a743b7240e24317f6c227908a3d1d3d5d29c869987eb2f899b9c978",
+      "text_sha256": "3fd687ce29fe6c792d02dfd1a2ba9caca1f3247a7509136b857bb8d064db7370",
+      "case_sha256": "e4863bd0f3ef2f8786240c7691e3758bb8ea32c8956a6f63b2862fbd2bf87df7",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0161",
+      "source": "train/161",
+      "ground_truth_sha256": "e17a524f1bb777eee5a28773e7e76eadb6f73357983550bd4e05e01d510510e5",
+      "text_sha256": "4eb7b0d90b98577bb33e9030ab74a49ad378630ee02401dbd77369fca713e10d",
+      "case_sha256": "a0db61e806fe2a5ea918000de78642f6905793db3bda4326211d2c1492a4bc51",
+      "partition": "held_out",
+      "flags": [
+        "sub_items"
+      ]
+    },
+    {
+      "case_id": "cord-train-0175",
+      "source": "train/175",
+      "ground_truth_sha256": "5b57d432d45933db16e0182d53afee4736b9ef29480bb9b335c0acdefd8722c0",
+      "text_sha256": "581933797c1d54a9df4545dff0a26edc58d62bcbf18adf7c1edd4726a96cabdb",
+      "case_sha256": "2664d86e4e1e7e09c392bdac8a67f6dde1785efa1eac2ba2192e5ea7a85d30f9",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0177",
+      "source": "train/177",
+      "ground_truth_sha256": "85549d342320da281a133f952ccf7b9fa48ce9d951417f632baf6bdd7a25513f",
+      "text_sha256": "484cecbb86f7889055bc93e332c62842b135f47028c7ed706d2f5edb585b3c74",
+      "case_sha256": "e42c2b4320d46945657b29cc41d05615a3b49a4e4ad8c08129afbeb174622d3c",
+      "partition": "held_out",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0181",
+      "source": "train/181",
+      "ground_truth_sha256": "6c6efe8e69138906e2916dcf3277579e3ff59d2b8fafad0be0a5396bf719cddd",
+      "text_sha256": "559fe76b90a591e93b9dc6ffc8107298728b42b6e471bf9293ac8bfcc697e43b",
+      "case_sha256": "82fb39b77f1daecca72564800b81befa8c90cdf16f4a727d8a4b259ef2f27098",
+      "partition": "tuning",
+      "flags": [
+        "sub_items"
+      ]
+    },
+    {
+      "case_id": "cord-train-0187",
+      "source": "train/187",
+      "ground_truth_sha256": "2992302d7e876375e08c2ba541db9e2d21160c501f57cd783fa80b8183d1d64f",
+      "text_sha256": "3e7aa792f28916f2a142177052a40e1251565d930a42290e6710bff5a0418a1e",
+      "case_sha256": "5caa3ab8c204819da35a481a94429b2a4126523184036bd28d99da7066c41b20",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0192",
+      "source": "train/192",
+      "ground_truth_sha256": "6c4c89dfbf083dd25dc89fa10479f5cdfb432ca632bff7ec6bd8e58a1854c871",
+      "text_sha256": "461c065d382f5cbb8c19663debd7a781b765d9b4bb4d491b9d370d945027f0e1",
+      "case_sha256": "ef6c7c36623d0adc42da5c2a089554e4a80c7c9903f1c1a28647a0d672a68050",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0206",
+      "source": "train/206",
+      "ground_truth_sha256": "f6993414a17003aacb2a5e005ea96c35f6c62891edd19756c83d95326aac447b",
+      "text_sha256": "54561dd084d20deb3897f18d3f08775fb3cfcfc49056f518c59982ef6c69b523",
+      "case_sha256": "37ca30a975f399a90ae3233e1ddb9c0da184cec39d9cd55381b1be580344d6c6",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0209",
+      "source": "train/209",
+      "ground_truth_sha256": "18ccdc646def85666726c21376dc39f3d2a6fd38d83face607af012e698b3941",
+      "text_sha256": "49311a610d17007c2e0771bddf030032ae168907a511cb646cff2c0c5a4a0384",
+      "case_sha256": "dd44c5b2fec015100f9ed0a11f9a526e865f33207ffdcf25dc1372eec08593a7",
+      "partition": "tuning",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0214",
+      "source": "train/214",
+      "ground_truth_sha256": "f27625e5d86a85f539065bdcbb69fbd2a4103a187686dbd4e1a9b6a5a3e22c3d",
+      "text_sha256": "5ec89a503af31074fb13ba33d3c6595751c1397b1fa4488b12534e505e34c4f9",
+      "case_sha256": "4e36e00d098e229e2bdc585c21e458d5e33917b05506f53dee1dad5e4f8defd7",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0220",
+      "source": "train/220",
+      "ground_truth_sha256": "ba7e7d2684788169ea14fe11adea62727a18a41dbc51fe507b74b1c08d1af8fa",
+      "text_sha256": "64589f7ab38dc852fafa63a47c968ed899148510aa97e2a04436115d7c57aba0",
+      "case_sha256": "e4410f9088f4106a5f2fcfe29bad061cb9e2a47cb72dc0c598acb807b3913d12",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0222",
+      "source": "train/222",
+      "ground_truth_sha256": "26bc9a264df701be0d7ace8c67ba4dedb1e4d62eb5bad4e5934bbdbe6caf4d3d",
+      "text_sha256": "629b0c1aa83b71b174b5d9ad0a42208e860c4d3d714de787b9d3c1de533cb71b",
+      "case_sha256": "8a2c30678e54df2adb98fc79dbdd5a3b54fa7cab20df34d88c5ee5c60ce81bd0",
+      "partition": "held_out",
+      "flags": [
+        "sub_items"
+      ]
+    },
+    {
+      "case_id": "cord-train-0228",
+      "source": "train/228",
+      "ground_truth_sha256": "75bd4df1334ac5cac52ea17f66b854dfffab0ad8e3f50ce6aba16b181a2d374c",
+      "text_sha256": "3de31ecbb6fdb1a4d8ce02747c19ff3a8da016b82246887678ef2607efca4ead",
+      "case_sha256": "b8d69d928fb8ab8cbdd994c07da119459080f6adce60e7aaea9b2de806c3eb9b",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0230",
+      "source": "train/230",
+      "ground_truth_sha256": "8e72f496abdc8f6268b2e82178cf2f030f107a5c00b1039be9f80eeee7010558",
+      "text_sha256": "56ba98b248e247824dade681ce9b292069a7d85f39482b647341ab1b6e730d2d",
+      "case_sha256": "4c7a20cabb135d655c86c56ae2b8686478da66bbe2886a59d3af7905d5c15a33",
+      "partition": "held_out",
+      "flags": [
+        "sub_items"
+      ]
+    },
+    {
+      "case_id": "cord-train-0231",
+      "source": "train/231",
+      "ground_truth_sha256": "64bfd96115aff25558db522c3eb40c03cd5bbe21712b1d76c7f01cbbc19e2b37",
+      "text_sha256": "61f83f52f5ee8e587e5d68dbd9baf78357c86b71107ca3f6129909f442af7b29",
+      "case_sha256": "ce8358ca237ef6aff39bd4be455d797fb86c5bfc0951e24d114262ec854f8b0c",
+      "partition": "tuning",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0232",
+      "source": "train/232",
+      "ground_truth_sha256": "327757957a6efe5e07c77708f8314a6360504efa25d64cc30be1609716a6b026",
+      "text_sha256": "48677b3b4677dbdf0d132b123966980ccc2b3616ae0e6d03c62f44ca74486bcf",
+      "case_sha256": "5e11ba3a01f77c38d7ed7c1a702a4f842904108eb89601d8a89b4953f5365bd6",
+      "partition": "held_out",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0249",
+      "source": "train/249",
+      "ground_truth_sha256": "378110b4fc6389c0b6d19c7508ce013402923d39d4b74ca49a559c3b0a307a00",
+      "text_sha256": "3e34ea2bd5f9e12b375ef360f74c4eff9daa3d8418c645f1a0cbabeba42368e9",
+      "case_sha256": "bb78b4d4695e8403954e62bd82f2d8463c9c86d0de23baa933f420c3b2f12896",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0260",
+      "source": "train/260",
+      "ground_truth_sha256": "8f70aa082738b44e2fbfa629068f32c6f84ee72b22526f57d7f236340c909fcf",
+      "text_sha256": "4e442057bc0b8ef19d73d9599b9061e1ed2e7c74fe55cb70b36f6b3f9b529c43",
+      "case_sha256": "45610fc50dc037b6510b48f1b9ba2e8b86f1ef409483eb8386bb70ea36c0f00e",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0270",
+      "source": "train/270",
+      "ground_truth_sha256": "6786fae157cbd2fc85fc900be63952cd426e44eb1318a0ef68655bb9e67bcd5b",
+      "text_sha256": "5bf3dbba4fcbbdf893138041cfddb550dcc2f698e618f3242aa5cc3ef9eac1bb",
+      "case_sha256": "6278e913f65c3701caf71d7a2210321041d2e1b7684c4dd88cf44c719655daf7",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0272",
+      "source": "train/272",
+      "ground_truth_sha256": "1c825659fab8209c8856500026d810b46c27664de0667cfbdeb79395c6a549cb",
+      "text_sha256": "56a075526a80102e214a75e3283f8fbf0e279f6044727ec831b341513c2d066d",
+      "case_sha256": "7fb55a36f5fb2ad5b06a1d5911c710a3e39c3495ecfb8619a36202e1d09045dd",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0281",
+      "source": "train/281",
+      "ground_truth_sha256": "d5978c9fd25cb7b7439ff09166385fb2fa856c434f483c0795e4ee8217983b73",
+      "text_sha256": "6062e2a8e8fbe4e3c746be1c0f6b123ae405a5eea582fd0e6f4fed27f8effbf8",
+      "case_sha256": "06f21cf6475b0d3489556246425e64f9192c385879db0db0cd408b8e48def7e9",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0289",
+      "source": "train/289",
+      "ground_truth_sha256": "3f9ce70ee4430a5818f57d47927237ddb808ed961dcd0fbe954236e308b0d6c8",
+      "text_sha256": "516736e95bf3953c3228b5cf483d49c6025e794a170b07e1561fac5b3ead4f38",
+      "case_sha256": "9ab7e7f012e38b1b4550c8fe25ece25ccfdfacaef9b2d0a86a92acc2807e9a94",
+      "partition": "held_out",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0298",
+      "source": "train/298",
+      "ground_truth_sha256": "033c5a0e9dc4930de74c1e239e1176ab43c89ea126a823b8930e567336fe6d3c",
+      "text_sha256": "649886d5c7bb1303099e781ebe6df329c926ae12024113da4a9bea1e1801ee4a",
+      "case_sha256": "8c0c3ba678bd2f71a3e4f36f546f83e4683f006d5fe3fd286f8ac8faed487ff0",
+      "partition": "tuning",
+      "flags": [
+        "sub_items"
+      ]
+    },
+    {
+      "case_id": "cord-train-0304",
+      "source": "train/304",
+      "ground_truth_sha256": "af079528a7e856ad6c90bda2dc6494fccd8155ff99f09ad1b6ef73e85509766c",
+      "text_sha256": "5ce77332f7eff2996d654fcba80f2d91d99601bd3514c9a21aa9ed0feafc9eaa",
+      "case_sha256": "ec359a6436502be558d3909435736dc278ec68c8240f749fd5dc5cfbd8769e88",
+      "partition": "held_out",
+      "flags": [
+        "sub_items"
+      ]
+    },
+    {
+      "case_id": "cord-train-0305",
+      "source": "train/305",
+      "ground_truth_sha256": "55d93622eb3aa7c873bc4996fe045a1497ad5dc78eb5a5d2e3ce3f1a6e154b79",
+      "text_sha256": "4b524375d7ac3f92a2fc074dd2c2260ffbd62c81b82abb85e9e6e096a4c0f9c1",
+      "case_sha256": "f329e126684165d6c160faa06711cc7cc78ed786183cb83f75f9b9ea82707d7b",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0310",
+      "source": "train/310",
+      "ground_truth_sha256": "a92987063930c2da22486e1272ebaf15915fb15723013a3e9f2fc5219452b263",
+      "text_sha256": "650f2f55df25d49b55d51d7bb0e45b58247ccaf8062b7c156609fd01aa4036cd",
+      "case_sha256": "f499598b863b8324423fd6585b47b1e09eb45f4fee6502528936295e24cae62c",
+      "partition": "held_out",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0324",
+      "source": "train/324",
+      "ground_truth_sha256": "1ee8ad52b66e8ec78db22f281fe637106adb978b269bc9f6ae189269464edb6b",
+      "text_sha256": "64c6a20eeb8f316a71d6852ffbbe37bf7340a675852533922f826513cec3d8f6",
+      "case_sha256": "78877c8c665b1810a2f431ce64e0e9af109e0ee8aff5ccfb39931852f5b09608",
+      "partition": "tuning",
+      "flags": [
+        "decimal:total",
+        "decimal:subtotal",
+        "decimal:tax"
+      ]
+    },
+    {
+      "case_id": "cord-train-0326",
+      "source": "train/326",
+      "ground_truth_sha256": "76d23939b93e9a90905991137e157b4e3cfe4412f64298fa574aa59fb5f926c0",
+      "text_sha256": "4be61933bfc0320408c9c465b099efa99e76e787fee6da867533432b6eeac695",
+      "case_sha256": "75afb723c5b86b0d5e0b0dce1e0c2f5e4e4ea38af458210c65b1110ba2170767",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0339",
+      "source": "train/339",
+      "ground_truth_sha256": "4f7a2d3577ac6b89db771533c98692a260a3c6f8cfcb1b2f29c6e32453feb009",
+      "text_sha256": "3f738c4ed955379de7b68849c8fa0a172484fab18bbf436036f01bb65b5219c9",
+      "case_sha256": "53d627f5ec331b4a46171196b449d128e3456126dea453d3132712e48e1c0655",
+      "partition": "tuning",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0355",
+      "source": "train/355",
+      "ground_truth_sha256": "e5ff7bdda98fb2851fe543a68c461a50cdadeccb7e206e62ed5989f257d04f21",
+      "text_sha256": "442afa9fdafa27ab63a3e4aabd7470a4bdc19a7c2b193a2cae7caf77de122876",
+      "case_sha256": "4e6a96f7d107703f94b28638176aa571e5a2ad6bf0a7b45db9a838e2d1db926b",
+      "partition": "held_out",
+      "flags": [
+        "sub_items"
+      ]
+    },
+    {
+      "case_id": "cord-train-0356",
+      "source": "train/356",
+      "ground_truth_sha256": "1d3a862e3a5de945f03dae90ea7e9d7f10a2d094cbc0b790f17accbc817860a4",
+      "text_sha256": "544b4474fad3bf74e9accd7082b0d87f2db11137833ba5b322b659a8e945167b",
+      "case_sha256": "cc9c1dd135c0a586746a36e957449732c8b259859862c71391a7d8f1c600f4ca",
+      "partition": "tuning",
+      "flags": [
+        "sub_items"
+      ]
+    },
+    {
+      "case_id": "cord-train-0358",
+      "source": "train/358",
+      "ground_truth_sha256": "2092c7dc4a4f443d06a02c1172d033d07ca3a7da22e334fe472ab0eb9fdc0aa5",
+      "text_sha256": "47cbf5a6858ffe13521e1c8bac384f26e60cf4abfcf26806d1113bd601bf9912",
+      "case_sha256": "c5023d86511a508e3e6f5639402cefb79a9618e7e96452da69655b3dcaa0ce92",
+      "partition": "held_out",
+      "flags": [
+        "sub_items"
+      ]
+    },
+    {
+      "case_id": "cord-train-0364",
+      "source": "train/364",
+      "ground_truth_sha256": "f27223cce4cc31e533d5380dba1e9bb2f51441e6f1a82a17a818d19e7e7fa0e2",
+      "text_sha256": "4db0c0b65bba23b846c22bf37eabaaa15095752bae5241784435d6c05490a862",
+      "case_sha256": "e34086c5d8a266a0b644352258d7f0bc2e494cc61a3a0087afc2e525b875a29c",
+      "partition": "tuning",
+      "flags": [
+        "sub_items"
+      ]
+    },
+    {
+      "case_id": "cord-train-0375",
+      "source": "train/375",
+      "ground_truth_sha256": "5cfab82679c5a701c542e32b484017084f31add4a0c40bc513ca84f6da802c82",
+      "text_sha256": "5d04c993257aacf0ccbb0b795e10607c812b8968360a1d6f64817c9666761a79",
+      "case_sha256": "0dec501ca6c93f077fb3d0defb07f403b672fecdef317128153b18e3f0f95a11",
+      "partition": "held_out",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0376",
+      "source": "train/376",
+      "ground_truth_sha256": "b118470f5f466d6adeb642b6819fce0728b3d8a7658452a5b72775de107176d3",
+      "text_sha256": "5c81c905344791fce7afd5ca30bbf6b9c986b6b1d835a6deca1e1927fe1c5375",
+      "case_sha256": "2cd655537db7e60c0eecadb9bc546996cd29fbd80200a48b87c595a5564fcb0a",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0378",
+      "source": "train/378",
+      "ground_truth_sha256": "476060b1198f28e4d20e83d69bdf72f55b4e5bf0cadfb148fc198aeb7bcb35ff",
+      "text_sha256": "49bbff8b35e224b970ee186f500ff15ab732672712d4720a48cb18db7b7ae558",
+      "case_sha256": "e208e4704d88c726c47039d198473f40221244e7114e12216aab8e1bc47cfb40",
+      "partition": "held_out",
+      "flags": [
+        "sub_items"
+      ]
+    },
+    {
+      "case_id": "cord-train-0388",
+      "source": "train/388",
+      "ground_truth_sha256": "9080ad057fc8c2cd5c390d31bbfe9bc3ccb138e7c99ea8058726b9fa8b315be7",
+      "text_sha256": "5994f5f1826bae58ac783031319c654f8891e8021091922db36aaf1ab9a2aa8c",
+      "case_sha256": "a6470016f696cbea8c269e7f730b44a9c1593d8d3e2e808d1b61ff3d81be8249",
+      "partition": "tuning",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0402",
+      "source": "train/402",
+      "ground_truth_sha256": "c8a09f001f015b1f1f3b00bbffc6b605ee2067a836c81556d1e456947cc8048c",
+      "text_sha256": "4332306ee300120b25e42ad3bd22d2d986db5cba637dc57bae8247d9be1fd190",
+      "case_sha256": "52e0e650c2c3906349f671cb9ede8e1e341a4fec740dee9a69488ff8cf125fd9",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0406",
+      "source": "train/406",
+      "ground_truth_sha256": "08fbf2d08871246193e6ace5d659c8eac74cd51e65e167013234baf49c48abf0",
+      "text_sha256": "56dd9aa6e6181b9870ff20f64998cf5e0e75c59f8a0ff861517e3bc30ab2d4ea",
+      "case_sha256": "ee22ce819711f53d1b80e70fc9a35114a6ff2c1518d102ba987d5bbe86b4c31f",
+      "partition": "tuning",
+      "flags": [
+        "no_digit:tax"
+      ]
+    },
+    {
+      "case_id": "cord-train-0413",
+      "source": "train/413",
+      "ground_truth_sha256": "06d6d34c08411a4f2b488b0ba0d80e30f97c566e31bd4854aac26ec5ba47008a",
+      "text_sha256": "65974f37a7e9e83658c96f52df1b43291c80a831f80e4ba6acfc2610deb611ec",
+      "case_sha256": "e5471c950f8bd8a8cad9e64d7f736f07030db4d570eb0073be0a98d1dc4355c9",
+      "partition": "held_out",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0414",
+      "source": "train/414",
+      "ground_truth_sha256": "afa2f083f9e28f94d96882effae7d91e0abee0319acf3f31fda5addb5bbfc424",
+      "text_sha256": "51bd7fc955cc76ee2675846107c43a360a6728ef03f2529fd192192ea1bdbe46",
+      "case_sha256": "651023e1f1fb717fdf6fd1292f084bfa9dddf29699d8b2f740db673f30d6c733",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0418",
+      "source": "train/418",
+      "ground_truth_sha256": "2640d49862baa097da6e9f9c2e2c94843c916b8d6026b8adf93e5376a69d00a1",
+      "text_sha256": "5d618876b02e242c81b8579d70e97595e8816e67c8d73b72c268611e67700bbc",
+      "case_sha256": "9ef10077f6b35a6db3709744bf7f0c9e0fd5020a6bc96769b37ee59e4de4e305",
+      "partition": "held_out",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0431",
+      "source": "train/431",
+      "ground_truth_sha256": "38c0f847b007b5e50b68184548726c1ad28dbf09ee7d0d542184a73e5bfca9b3",
+      "text_sha256": "43af42758b3408839d0fe9c9098f51280be7b812b90ec81d77b783f38c802100",
+      "case_sha256": "2bffc97848eca36ea7140b2c6254251e32185243181857ff8cf73b7e0427dd44",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0432",
+      "source": "train/432",
+      "ground_truth_sha256": "55dd4d35bda463a8ece1383e2279bd53f112831a7172387436565bcc8b08aadb",
+      "text_sha256": "519cc891e0c51201f3795669a4437f87b85b090a6142fabee20229e14f917a96",
+      "case_sha256": "c27ad5dbc8eebf0531c0ce99a2bc374fe2ba08f9ff11ccc6828d5237d0481dae",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0437",
+      "source": "train/437",
+      "ground_truth_sha256": "a87d50cc6df52753eec71b2c452782aa2c54aeeea5ff6c1b7a6d297ca2c0aaed",
+      "text_sha256": "41ceb791e848821ffb1ec514ef3bbd3dd9cb8dc843974c8aece3d5e75d680a7c",
+      "case_sha256": "8b6d7c5ebb6bc52577a01f94f67d1bc6b3904240d06cf779faee219276c72b1e",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0442",
+      "source": "train/442",
+      "ground_truth_sha256": "489365df586ecaa76ba5fcc4e136e0df2dc5486d31217a9633a78c30c4c9a7bd",
+      "text_sha256": "4d75c5a1ddd552d0e104de911f5a42e04ae9bcfbcbc99486d9c7926acfab4f95",
+      "case_sha256": "eebfe975af3bd4ccc70789e219685db2dd60b917808168a471e975e4fc8bff6e",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0447",
+      "source": "train/447",
+      "ground_truth_sha256": "b9344504e08efa769e0fc2c12cd3077ad822e101da09127a8a34b6cd9c35902d",
+      "text_sha256": "442ba679e0555fcd6017b0ddd600f0745b3e08b047b42c8b102c21a3bccec3e7",
+      "case_sha256": "09ab56e996268fbe17dfa35d356f2c01bebe34f5af1336c26644628a16cf1099",
+      "partition": "tuning",
+      "flags": [
+        "decimal:total",
+        "decimal:subtotal"
+      ]
+    },
+    {
+      "case_id": "cord-train-0455",
+      "source": "train/455",
+      "ground_truth_sha256": "fc0cfbb5ff58b588ae66a6bae40e09e9b8ae581c1ff0b405385c94b136db3ae0",
+      "text_sha256": "5fb903aac7d6dc253ea9f148e03c3df768d251478ebacc00995a7ae59f819562",
+      "case_sha256": "e746af0df8aa71728eff458c763ac1b4a9f822e304cc98020911faaf5a3a5d92",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0458",
+      "source": "train/458",
+      "ground_truth_sha256": "42c20e7afaf2069e4f41e52a22a4924cead86b3b5c0f0ab19d9975a85ef7a9c5",
+      "text_sha256": "4c019b868cae64d4313ef564e5a92f9495b74f648764c11b0dacec433ed52efe",
+      "case_sha256": "f6271c515aa0434c927222188f563f2aeaefce48d02ee025fba4e3c48456ba08",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0461",
+      "source": "train/461",
+      "ground_truth_sha256": "1329ee86f14d5bc7193ca15156bcf0307707ec7f0ec14900478a28154fc92040",
+      "text_sha256": "4e9b70640a2a670c1dc8065554dd9d5611e9c5c293f8c584ced9ec9e989630c4",
+      "case_sha256": "d1572fad2e8aaaff980934c2574d4de87ea9921b1ff172e1e8c8dac19c240be6",
+      "partition": "held_out",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0477",
+      "source": "train/477",
+      "ground_truth_sha256": "64a2b2b93753c52d90f4b9f6f7935f065cbb80bb8d423ccff48b0fdb2e6b9f55",
+      "text_sha256": "65236f14d282a93a9a71dbdf18a2c7bf4ee75172e8a736e806ca7d3dd1fb48d4",
+      "case_sha256": "5e63fdc9f216927e88494f511613f203023732933dbb741f92860a1315fbf839",
+      "partition": "tuning",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0479",
+      "source": "train/479",
+      "ground_truth_sha256": "2e7d87a132c62458c5ca9be961edb2e5e5fe92a792bd49d04e5a0354371d0ee4",
+      "text_sha256": "49874cd6684326ab78ca44349eb2943d4c08f01f0650b8115526051b37d83eab",
+      "case_sha256": "93fa6197c6c4d532067407e91cdcdbf12897c4ed3791c6f76a223b5a5cfeb9fe",
+      "partition": "held_out",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0496",
+      "source": "train/496",
+      "ground_truth_sha256": "e0508ca99e04cfef25dea897bde12cd65e02a24e2fa58f791bd7fe547d6ab73f",
+      "text_sha256": "4a4ee90e5a3ab2224cac945a6dfee99648ea7c2b564109a35f7aa4266e38afe5",
+      "case_sha256": "4bc2b32b9023da8699b5a08075091770a1d86d61649ab831897efadf76d11536",
+      "partition": "tuning",
+      "flags": [
+        "sub_items"
+      ]
+    },
+    {
+      "case_id": "cord-train-0508",
+      "source": "train/508",
+      "ground_truth_sha256": "5749adaf7163da00256361a6ae149f75812dd8d8b92d99afa41d5467da189146",
+      "text_sha256": "50e78ea2db7e61438bcd8b919e2907d5a6c8bd317ef6b3a861063e2eb0ec091c",
+      "case_sha256": "e0557b5c6ef929082b70d8e25839d19dce3ae63258e0e7341eebc5199ab5e80b",
+      "partition": "held_out",
+      "flags": [
+        "decimal:total"
+      ]
+    },
+    {
+      "case_id": "cord-train-0514",
+      "source": "train/514",
+      "ground_truth_sha256": "7482191e67f9c98e3d1601475f5b55055b2335b1c71ee373b8f88eab00890caf",
+      "text_sha256": "4d512425459a12201163e0b8193b70923621efafc2138878c0c207e0f7ca2983",
+      "case_sha256": "0b9f2b4d04751773588f614e3b4af347f9596e3adcda16434e0ea53b83f40300",
+      "partition": "tuning",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0519",
+      "source": "train/519",
+      "ground_truth_sha256": "36601113ddebf2ce243947239ba37ec6e1a7fe5a9b0e026cc62eabbbafc0e0d2",
+      "text_sha256": "43e1cda3d6753b613719b9876ff671c356bbf4eae074c33890d7bad36d9fe623",
+      "case_sha256": "3f1f8a195572c7f77acfda4813a24bf1dc9c7931b7736b82c1d908ba4f243302",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0537",
+      "source": "train/537",
+      "ground_truth_sha256": "00c57f73ec0d2324a82c83b7623145d20ec413c658c3c66e6cc966b6749521d3",
+      "text_sha256": "451409ce45dada806e77757e8343e645a8926a4f17a0d743627ec37bbd351f41",
+      "case_sha256": "c9d2916e97a2b67619e9bf9f301db1e9c56df3d28d6259b50fb5833689c5e1c6",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0538",
+      "source": "train/538",
+      "ground_truth_sha256": "368cb1a14f1905f20e0b40c1dd3de9cebce4299a5293fa8f83e2603dc44e36b0",
+      "text_sha256": "4afaff5adb8b7d18dded03350650c88d043e22100061d5392daae092b3300234",
+      "case_sha256": "16f7f72298025ec5222a86f03aafe384c010c2b6804dcc899cbb2f5618c2e512",
+      "partition": "held_out",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0547",
+      "source": "train/547",
+      "ground_truth_sha256": "84ef7e4cd6e97c7f1510128c1ae630d8e0bfcffe72e6ae21d85e2d653a7daa84",
+      "text_sha256": "52a8bd596cc420da2fd6503df87f7c584ac65372f62cf615d0e7cddf7813f404",
+      "case_sha256": "5d8f78de10dc7d7632572034daa2b8a7f7c586d584345cec3f5c30bd086b1eb5",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0603",
+      "source": "train/603",
+      "ground_truth_sha256": "5468354bf12985299bc3cb3eda590165324fb00bbd329fd96b44d43b8ea97196",
+      "text_sha256": "4cc83f6cf8d691a4a9cc5876543a829fa40e2585fee52c53607da939b0fe2dff",
+      "case_sha256": "b3dce27b919b1998badae853b3a9fa7c24cd7ca233fb604db4588ae87159bea9",
+      "partition": "held_out",
+      "flags": [
+        "multi_value_disagree:subtotal"
+      ]
+    },
+    {
+      "case_id": "cord-train-0604",
+      "source": "train/604",
+      "ground_truth_sha256": "4a40474a8eab6e946cc322a4b2c27aaf840f640e4e135103381317197c28fe57",
+      "text_sha256": "62b2b95daadefd14eae1abdba866cbb4d7809159f80252f45bb60d3cb7507de6",
+      "case_sha256": "e28919e77e132c9808bd6fe1313f8deaf3f504d1889343b09cfc301bf938488d",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0605",
+      "source": "train/605",
+      "ground_truth_sha256": "93ef0d186d8ab1a0a26868ba3f16a1123c350236e33d662063c5bdfc01a94849",
+      "text_sha256": "652f92fd0815ceef04452a6e5c93d986abd22f13911e357fd004213b453af3f0",
+      "case_sha256": "e805974282e36d2979eeaed0db2b355536308a4d61080533faed62cd94c10a0a",
+      "partition": "held_out",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0613",
+      "source": "train/613",
+      "ground_truth_sha256": "24866354c7c277cc37ab53a36426c2ad822781e9d7f6dc0164b602c3e571a898",
+      "text_sha256": "3df6957c994f7d2902e308aff2365fd51fa00e0d253502402114c2dff4b61552",
+      "case_sha256": "bb54e1fb5c59d07126a9821481e60d076de4687b405c13278ea9607c017a4c50",
+      "partition": "tuning",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0614",
+      "source": "train/614",
+      "ground_truth_sha256": "4c59e5896d428dbcb395ec8389a1c8ed15788413f1e6c0ed2e839af62f3e4c82",
+      "text_sha256": "5cc40934cd0644a45ac4ebdf8e556689491c5fa0b0af55830cc8c9eee8635859",
+      "case_sha256": "fc0e61cd537658ce493b475172b786b13bd211718df8a59b9cb4d22fad60c837",
+      "partition": "held_out",
+      "flags": [
+        "row_split"
+      ]
+    },
+    {
+      "case_id": "cord-train-0630",
+      "source": "train/630",
+      "ground_truth_sha256": "8d6d5886248d6fe75384f4ce1d8df839af5a41471c838aeccd68237b1cecb5f2",
+      "text_sha256": "442fd9cf246a7555ccf2ce5167334e0b3a924ef85432250cef442410a3f58c2f",
+      "case_sha256": "17ac39b936de14fdc02758ffa3231ed3ee99d34d36e98d16ac0ebee0d08dbcf5",
+      "partition": "tuning",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0635",
+      "source": "train/635",
+      "ground_truth_sha256": "adb6b46d5ca52c687491c3fcd62d8ab9b32ce4c688b8e0f1619add17b086a12e",
+      "text_sha256": "50b545c7fa5c90094542ebd1648b5d0c2e64fd2d985d99d5337ceff68fef8179",
+      "case_sha256": "8a485f5d6488b77cce9fff68ed62633ee412caee304bb1237a5bcd47b384a1ee",
+      "partition": "held_out",
+      "flags": [
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0667",
+      "source": "train/667",
+      "ground_truth_sha256": "288fcd4288df1c1f54c762d8d891c18139aabec009fc1a1aec39c8ae558fee0e",
+      "text_sha256": "64dc18541bea6532651444a00e59f25249a2bbc70aa2f790282140509f143921",
+      "case_sha256": "b8e6b2a4b0ca21a92693c40623753f4097df85fae2b6420ff05412912a44a385",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0681",
+      "source": "train/681",
+      "ground_truth_sha256": "f40cc3df12044868fdf06d4d80c001bede6d5ac227d52c20871ee851a7f2f678",
+      "text_sha256": "44b8ca23419e92831c14f782b2c66a4a0d2aa199faffe38686a6b358e64c9534",
+      "case_sha256": "e210cb43301a1d213f02a0ac1502b166c78507384f99cbfead1f0b239959b2f8",
+      "partition": "held_out",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0697",
+      "source": "train/697",
+      "ground_truth_sha256": "580218da7dd36654b8a63e9410fd0bccccbbe1306889aee7ec08c85cde576180",
+      "text_sha256": "446961344ab29801c8662f11ea79f63433a8f41911c822a4b02eb8cb76a3fbc2",
+      "case_sha256": "4f7839e9c466f66f5e3800a0209e46ae9adf30c47aa81fca69ea8cd88e481bbf",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0707",
+      "source": "train/707",
+      "ground_truth_sha256": "b824c048fada126adfae3ed99f5d3ead0b59e5fd635e012187d58bd4cb58eeeb",
+      "text_sha256": "451ca7cccdb1e4a450a8e8dc1e91424ca26e0a7bafad454002d57d075bcdd626",
+      "case_sha256": "01e402131c7fa3ea59d9cb5187c2bab7d4b14cf91486774d4d7bbcee99425fe0",
+      "partition": "held_out",
+      "flags": [
+        "sub_items"
+      ]
+    },
+    {
+      "case_id": "cord-train-0714",
+      "source": "train/714",
+      "ground_truth_sha256": "48b19f4f3bb41c2478009b02745433634233f814874fa9494163936ba3987d4e",
+      "text_sha256": "3f27df0911b9ceb46c92f59b1df75f9ae054e274ab3872ba053d61b5d3e8999b",
+      "case_sha256": "e598ecf88927ae1a82184a4829448719f7277c6a5cb6fa55208147b58abdb474",
+      "partition": "tuning",
+      "flags": [
+        "menu_entry_without_name"
+      ]
+    },
+    {
+      "case_id": "cord-train-0727",
+      "source": "train/727",
+      "ground_truth_sha256": "ebe1650cff2e7a80d464adde12b33bd47b55d080103be01921568f86e99aa2b2",
+      "text_sha256": "51e8dd26c8253aa18a6ddb57f574c31ea2e752cd81e1a4fc38c70eb0defe2a56",
+      "case_sha256": "6819ca4b9f12d0ce38dfe74c2c69eeaaad5a741049c7512395d02054866682c6",
+      "partition": "held_out",
+      "flags": [
+        "sub_items",
+        "quantity_over_1"
+      ]
+    },
+    {
+      "case_id": "cord-train-0787",
+      "source": "train/787",
+      "ground_truth_sha256": "e4f140dbeb93abf5cebf23348dac47e8d61b0469542960ef799dfa410af3d5c5",
+      "text_sha256": "509d70177bc069cd6f5691c016939f19b71831410fc23adc8056250bfa090314",
+      "case_sha256": "df5c58aa00cadc3fa276e5e703f8f197047c9694dc04b833bae848f8f5b2112f",
+      "partition": "tuning",
+      "flags": []
+    },
+    {
+      "case_id": "cord-train-0794",
+      "source": "train/794",
+      "ground_truth_sha256": "6de4ec09274c0aa7dd83639448bc08090ee7d1716abe4cbfe0bfcfc4a4663d2e",
+      "text_sha256": "4aa2b2ad9c40f9fa0780aeae436cf48c2400056e876a65be9e60a62fbf3a3b7b",
+      "case_sha256": "5f3ebe89dd7e6704cf792a8e489b2e042c37a53831d2e940d81a961e0f6a0c6b",
+      "partition": "held_out",
+      "flags": [
+        "quantity_over_1"
+      ]
+    }
+  ]
+}

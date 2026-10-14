@@ -1,0 +1,10 @@
+{
+  "fixture_only": true,
+  "accepted": true,
+  "output_verified": true,
+  "lifecycle": "install",
+  "tokens_in": 80,
+  "tokens_out": 40,
+  "status_checked": true,
+  "tied_recompile_rejected": true
+}

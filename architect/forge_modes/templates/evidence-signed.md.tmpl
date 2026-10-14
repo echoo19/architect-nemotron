@@ -1,0 +1,6 @@
+1. Stage 4 signed `artifact/report.json` with the exporting host's local key and
+   with an Ed25519 key, fingerprint
+   `@@KEY@@`.
+   No private key and no HMAC key is shipped. Any host that trusts that public key
+   can check the license and every file of this package with
+   `architect verify <path to this folder>`.

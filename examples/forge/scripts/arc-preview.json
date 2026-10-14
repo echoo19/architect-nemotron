@@ -1,0 +1,45 @@
+[
+  {
+    "tool_calls": [
+      {
+        "id": "call-1",
+        "name": "write",
+        "arguments": {
+          "path": "harness.py",
+          "content_from": "arc_explorer.py"
+        }
+      }
+    ]
+  },
+  {
+    "tool_calls": [
+      {
+        "id": "call-2",
+        "name": "forge_check",
+        "arguments": {}
+      }
+    ]
+  },
+  {
+    "tool_calls": [
+      {
+        "id": "call-3",
+        "name": "forge_measure",
+        "arguments": {
+          "trace": true
+        }
+      }
+    ]
+  },
+  {
+    "tool_calls": [
+      {
+        "id": "call-4",
+        "name": "forge_submit",
+        "arguments": {
+          "note": "committed ARC explorer reference"
+        }
+      }
+    ]
+  }
+]

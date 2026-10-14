@@ -1,0 +1,104 @@
+{
+  "evidence": "synthetic-offline-only",
+  "variant": "passing",
+  "elapsed_s": 5.325953199993819,
+  "production_approved": false,
+  "examples": [
+    {
+      "name": "report-cards",
+      "synthetic": true,
+      "approval_required": true,
+      "proposal_stages": [],
+      "licensed": true,
+      "inference_adapter": "explicit-spec",
+      "production_feature_enabled": false,
+      "human_review_required": true,
+      "real_monthly_cost_baseline": null,
+      "fixture_approval": true,
+      "stages": [
+        1,
+        2,
+        4
+      ],
+      "failures": [],
+      "model_calls": {
+        "fake": 401
+      },
+      "tuning_count": 100,
+      "registry_revision": 1,
+      "run_id": "14f7754e-97b1-41f7-bb5e-d1bc9d1ad62e",
+      "delivery_model_calls": {
+        "fake": 1
+      },
+      "delivery_tokens": 120,
+      "delivery_cost_usd": 0.00012,
+      "application_gate_refusals": 2
+    },
+    {
+      "name": "test-digitizer",
+      "synthetic": true,
+      "approval_required": true,
+      "proposal_stages": [
+        0
+      ],
+      "licensed": true,
+      "inference_adapter": "scripted-synthetic-not-llm-quality",
+      "production_feature_enabled": false,
+      "human_review_required": true,
+      "real_monthly_cost_baseline": null,
+      "fixture_approval": true,
+      "stages": [
+        1,
+        2,
+        4
+      ],
+      "failures": [],
+      "model_calls": {
+        "gpt-4o-mini": 19,
+        "llama3.2": 19,
+        "claude-sonnet-4-20250514": 19
+      },
+      "tuning_count": 6,
+      "registry_revision": 1,
+      "run_id": "f31ba710-a2a3-4857-8f71-d5cb41182f9c",
+      "delivery_model_calls": {
+        "gpt-4o-mini": 1,
+        "llama3.2": 1,
+        "claude-sonnet-4-20250514": 1
+      },
+      "delivery_tokens": 360,
+      "delivery_cost_usd": 0.00036,
+      "application_gate_refusals": 2
+    },
+    {
+      "name": "content-recommender",
+      "synthetic": true,
+      "approval_required": true,
+      "proposal_stages": [],
+      "licensed": true,
+      "inference_adapter": "explicit-spec",
+      "production_feature_enabled": false,
+      "human_review_required": true,
+      "real_monthly_cost_baseline": null,
+      "fixture_approval": true,
+      "stages": [
+        1,
+        2,
+        4
+      ],
+      "failures": [],
+      "model_calls": {
+        "fake": 25
+      },
+      "tuning_count": 6,
+      "registry_revision": 1,
+      "run_id": "1e977f09-7b87-4e0a-a581-b8a91c1a3df0",
+      "delivery_model_calls": {
+        "fake": 1
+      },
+      "delivery_tokens": 120,
+      "delivery_cost_usd": 0.00012,
+      "application_gate_refusals": 2
+    }
+  ]
+}

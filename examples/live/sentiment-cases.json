@@ -1,0 +1,218 @@
+[
+  {
+    "case_id": "sentiment-000",
+    "task": {
+      "review": "The battery lasts two full days and charging is quick."
+    },
+    "expected": {
+      "label": "positive"
+    }
+  },
+  {
+    "case_id": "sentiment-001",
+    "task": {
+      "review": "Stopped working after a week and support never replied."
+    },
+    "expected": {
+      "label": "negative"
+    }
+  },
+  {
+    "case_id": "sentiment-002",
+    "task": {
+      "review": "It arrived on Tuesday in a brown box."
+    },
+    "expected": {
+      "label": "neutral"
+    }
+  },
+  {
+    "case_id": "sentiment-003",
+    "task": {
+      "review": "Honestly the best headphones I have owned."
+    },
+    "expected": {
+      "label": "positive"
+    }
+  },
+  {
+    "case_id": "sentiment-004",
+    "task": {
+      "review": "The zipper broke the first time I used it."
+    },
+    "expected": {
+      "label": "negative"
+    }
+  },
+  {
+    "case_id": "sentiment-005",
+    "task": {
+      "review": "The manual is twelve pages long."
+    },
+    "expected": {
+      "label": "neutral"
+    }
+  },
+  {
+    "case_id": "sentiment-006",
+    "task": {
+      "review": "Setup took two minutes and it just works."
+    },
+    "expected": {
+      "label": "positive"
+    }
+  },
+  {
+    "case_id": "sentiment-007",
+    "task": {
+      "review": "Way too loud and the fan rattles constantly."
+    },
+    "expected": {
+      "label": "negative"
+    }
+  },
+  {
+    "case_id": "sentiment-008",
+    "task": {
+      "review": "It comes in black, white and grey."
+    },
+    "expected": {
+      "label": "neutral"
+    }
+  },
+  {
+    "case_id": "sentiment-009",
+    "task": {
+      "review": "My kids love it and it survived being dropped."
+    },
+    "expected": {
+      "label": "positive"
+    }
+  },
+  {
+    "case_id": "sentiment-010",
+    "task": {
+      "review": "Refund took a month and the item was used when it arrived."
+    },
+    "expected": {
+      "label": "negative"
+    }
+  },
+  {
+    "case_id": "sentiment-011",
+    "task": {
+      "review": "The package weighs about three kilograms."
+    },
+    "expected": {
+      "label": "neutral"
+    }
+  },
+  {
+    "case_id": "sentiment-012",
+    "task": {
+      "review": "Great value for the price, would buy again."
+    },
+    "expected": {
+      "label": "positive"
+    }
+  },
+  {
+    "case_id": "sentiment-013",
+    "task": {
+      "review": "The screen cracked on its own overnight."
+    },
+    "expected": {
+      "label": "negative"
+    }
+  },
+  {
+    "case_id": "sentiment-014",
+    "task": {
+      "review": "It uses a standard USB-C cable."
+    },
+    "expected": {
+      "label": "neutral"
+    }
+  },
+  {
+    "case_id": "sentiment-015",
+    "task": {
+      "review": "Comfortable enough to wear all day."
+    },
+    "expected": {
+      "label": "positive"
+    }
+  },
+  {
+    "case_id": "sentiment-016",
+    "task": {
+      "review": "Smells like burning plastic whenever it runs."
+    },
+    "expected": {
+      "label": "negative"
+    }
+  },
+  {
+    "case_id": "sentiment-017",
+    "task": {
+      "review": "The lid is held on by four screws."
+    },
+    "expected": {
+      "label": "neutral"
+    }
+  },
+  {
+    "case_id": "sentiment-018",
+    "task": {
+      "review": "Customer service replaced it the same day, fantastic."
+    },
+    "expected": {
+      "label": "positive"
+    }
+  },
+  {
+    "case_id": "sentiment-019",
+    "task": {
+      "review": "Colors faded after the first wash."
+    },
+    "expected": {
+      "label": "negative"
+    }
+  },
+  {
+    "case_id": "sentiment-020",
+    "task": {
+      "review": "Delivery was scheduled for the morning slot."
+    },
+    "expected": {
+      "label": "neutral"
+    }
+  },
+  {
+    "case_id": "sentiment-021",
+    "task": {
+      "review": "Sharp picture and the remote is easy to use."
+    },
+    "expected": {
+      "label": "positive"
+    }
+  },
+  {
+    "case_id": "sentiment-022",
+    "task": {
+      "review": "It keeps disconnecting from wifi every hour."
+    },
+    "expected": {
+      "label": "negative"
+    }
+  },
+  {
+    "case_id": "sentiment-023",
+    "task": {
+      "review": "The box lists the model number on the side."
+    },
+    "expected": {
+      "label": "neutral"
+    }
+  }
+]

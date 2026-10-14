@@ -1,0 +1,2402 @@
+[
+  {
+    "case_id": "cord-train-0001",
+    "task": {
+      "receipt": "1 SPGTHY BOLOGNASE 58,000\n1 PEPPER AUS 165,000\nWELL DONE\n1 WAGYU RIBEYE 195,000\nMEDIUM WELL\n1 ICED LEMON TEA 22,000\n1 FUSION TEA LYCHE 28,000\n1 NUTTELA BROWNIES 35,000\nSUBTOTAL 503,000\n52,815\nPB1\nSVC CHRG 25,150\nDUE 580,965"
+    },
+    "expected": {
+      "total": 580965,
+      "subtotal": 503000,
+      "tax": 52815,
+      "item_count": 6
+    }
+  },
+  {
+    "case_id": "cord-train-0005",
+    "task": {
+      "receipt": "1 Lasagna 45,000\n1 Spaghetti ChickPesto 55,000\n1 BangBang Chick Wings 49,000\n1 Iced Cappuccino 33,000\n1 Gypsy Gelato Ice Tea 39,000\nSUBTOTAL 221,000\nService 16,575\nPB1 23,758\nTOTAL 261,333\nCoupon 100,000\nBCA Card 161,333"
+    },
+    "expected": {
+      "total": 261333,
+      "subtotal": 221000,
+      "tax": 23758,
+      "item_count": 5
+    }
+  },
+  {
+    "case_id": "cord-train-0011",
+    "task": {
+      "receipt": "2 Ayam Bakar 55.000\n2 Nasi Putih 20.000\n1 Nila Bakar/Goreng 27,500\n1 Sop Gurame 87.000\n1 Teh Poci 25.000\nSUBTOTAL 214.500\nService 12.870\nPajak Restoran 22.737\nTOTAL 250,107"
+    },
+    "expected": {
+      "total": 250107,
+      "subtotal": 214500,
+      "tax": 22737,
+      "item_count": 5
+    }
+  },
+  {
+    "case_id": "cord-train-0013",
+    "task": {
+      "receipt": "1 BLACK PEPPER MEATBALL 76,500\n1 GREEN TEA WITH CRUMBLE 56,000\n1 EARL GREY MILK TEA 57,000\n1 ORIGINAL BREWED TEA 23,000\nSUBTTL 212,500\nSVC CHG 6% 12,750\nPB1 10% 22,525\nTOTAL 247,775"
+    },
+    "expected": {
+      "total": 247775,
+      "subtotal": 212500,
+      "tax": 22525,
+      "item_count": 4
+    }
+  },
+  {
+    "case_id": "cord-train-0018",
+    "task": {
+      "receipt": "1 KING DEAL FISH 25000\nNET SALES 25000\nTAX 2500\nAMOUNT DUE 27500\nTENDERED 100000\nCHANGE 72500"
+    },
+    "expected": {
+      "total": 27500,
+      "subtotal": 25000,
+      "tax": 2500,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0020",
+    "task": {
+      "receipt": "BUBUR UNGU 26,000\nDISC ITEM -30.000%\nAMOUNT -7,800\nSENDOK BEBEK 0\nWAJIK 7,000\nDISC ITEM -30.000%\nAMOUNT -2,100\nCENTIK MANIS 5,500\nDISC ITEM -30.000%\nAMOUNT -1,650\nPLASTIK SEDANG 0\nSUBTOTAL 26,950\nTOTAL 26,950\nCASH 26,950"
+    },
+    "expected": {
+      "total": 26950,
+      "subtotal": 26950,
+      "tax": null,
+      "item_count": 5
+    }
+  },
+  {
+    "case_id": "cord-train-0024",
+    "task": {
+      "receipt": "1001-Choco Bun\n22.000 x1 22.000\n1032-Double Cheddar\n26.000 x1 26.000\n6002-Plastic Bag Medium\n0 x1 0\nTotal Item:\n3\nTotal.\n48.000\nDebet Card\n48.000"
+    },
+    "expected": {
+      "total": 48000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0034",
+    "task": {
+      "receipt": "OMA NASI KUNING CAKALANG MANI\n1 30.000 30.000\nTotal Belanja 30.000\nTunai 100.000\nKembali 70.000"
+    },
+    "expected": {
+      "total": 30000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0037",
+    "task": {
+      "receipt": "MINI CHOCO 13,500\nSUBTOTAL 12,273\nTAX 10% 1,227\nTL 13,500\nCASH 14,000\nCG 500"
+    },
+    "expected": {
+      "total": 13500,
+      "subtotal": 12273,
+      "tax": 1227,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0046",
+    "task": {
+      "receipt": "BASO TAHU BIHUN 1 43.636 43.636\nTOTAL 43.636\nTAX 10.00 % 4.364\nGRAND TOTAL 48.000\nTUNAI 100.000\nKEMBALI 52.000"
+    },
+    "expected": {
+      "total": 48000,
+      "subtotal": 43636,
+      "tax": 4364,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0050",
+    "task": {
+      "receipt": "CHO MOUSSE 20,000\nGRAPE JELLY 13,000\nSUBTOTAL 30,000\nTAX 10% 3,000\nTL 33,000\nCASH 50,000\nCG 17,000"
+    },
+    "expected": {
+      "total": 33000,
+      "subtotal": 30000,
+      "tax": 3000,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0057",
+    "task": {
+      "receipt": "1 PL. MUFFIN BLUEBERRY 14,000\n1 RB. ABON AYAM 9,000\n1 RB. COKLAT COFFEE 8,000\n1 RB. RED BEAN 8,000\nITEM: 4 SUBTOTAL 39,000\nPCS 4 DUE 39,000\nCASH 39,000"
+    },
+    "expected": {
+      "total": 39000,
+      "subtotal": 39000,
+      "tax": null,
+      "item_count": 4
+    }
+  },
+  {
+    "case_id": "cord-train-0058",
+    "task": {
+      "receipt": "1069- ROTI KEJU COKLAT\n8.500,00 x1 8.500,00\n1037- ROTI MAHKOTA/RING\n10.500,00 x1 10.500,00\n1022- ROTI KACANG MERAH\n8.000,00 x1 8.000,00\n1001- ROTI COKLAT\n8.000,00 x1 8.000,00\nTotal Item: 4\nTotal. 35.000,00\nCash\nTendered: 50.000,00\nChange: 15.000,00"
+    },
+    "expected": {
+      "total": 3500000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 4
+    }
+  },
+  {
+    "case_id": "cord-train-0059",
+    "task": {
+      "receipt": "CHICKEN KATSU 1 12,727\nTORI NASU HASAMI AGE 1 10,000\nSUB. TOTAL 22,727\nRESTAURANT TAX 2,273\nGRAND TOTAL\n~ CASH [25,000] 25,000"
+    },
+    "expected": {
+      "total": 25000,
+      "subtotal": 22727,
+      "tax": 2273,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0061",
+    "task": {
+      "receipt": "TRIPPLE CHEESE\n1 17,000 17,000\nSUB TOTAL 17,000\nGRAND TOTAL 17,000\nCASHIDR 50,000\nCHANGE DUE 33,000"
+    },
+    "expected": {
+      "total": 17000,
+      "subtotal": 17000,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0063",
+    "task": {
+      "receipt": "PIS COK KEJU 11,500\nDISC ITEM -20.000%\nAMOUNT -2,300\nCOKLAT KEJU 11,000\nDISC ITEM -20.000%\nAMOUNT -2,200\nBANANA KISMIS 8,000\nDISC ITEM -30.000%\nAMOUNT -2,400\nSUBTOTAL 23,600\nTOTAL 23,600\nCASH 50,000\nCHANGE 26,400"
+    },
+    "expected": {
+      "total": 23600,
+      "subtotal": 23600,
+      "tax": null,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0065",
+    "task": {
+      "receipt": "6 NASI PUTIH 54,000\n1 SATE PADANG 35,000\n1 GULAI CUMI 25,000\n4 DENDENG BALADO 80,000\n3 KERUPUK KULIT 18,000\n1 RENDANG DAGING 20,000\n1 GULAI HATI 20,000\n1 MUJAIR BAKAR 23,000\n1 GULAI OTAK 20,000\n1 AYAM BAKAR 20,000\n1 SAMBAL TRI BELAH 18,000\n3 LALAP SEGAR 24,000\n1 AYAM PENYET 21,000\n2 AYAM GORENG 40,000\n2 AYAM POP 42,000\n2 GULAI TUNJANG 40,000\n6 TEH 30,000\n1 TERONG BELANDA 20,000\n1 TEH TELUR 25,000\n2 PUDING 16,000\nSubtotal 591,000\nP.Resto 10% 59,100\n41 Total 650,100\nCASH 650,100"
+    },
+    "expected": {
+      "total": 650100,
+      "subtotal": 591000,
+      "tax": 59100,
+      "item_count": 20
+    }
+  },
+  {
+    "case_id": "cord-train-0066",
+    "task": {
+      "receipt": "ISI CAMPUR 1 43.636 43.636\nAQUA BOTOL 1 9.000 9.000\nTOTAL 52.636\nTAX 10.00 % 5.264\nGRAND TOTAL 57.900\nTUNAI 60.000\nKEMBALI 2.100"
+    },
+    "expected": {
+      "total": 57900,
+      "subtotal": 52636,
+      "tax": 5264,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0068",
+    "task": {
+      "receipt": "1 Berry Many-Low (P)\n37,500.00\n1 500 days of summer\n(P)\n37,500.00\n1 sun kissed (P)\n37,500.00\n1 PLASTIC BAG\n500.00\nSubTotal 113,000.00\nDiscount 0.00\nTotal 113,000.00\nPayment 113,000.00\nChange 0.00\n4 item(s) closed"
+    },
+    "expected": {
+      "total": 11300000,
+      "subtotal": 11300000,
+      "tax": null,
+      "item_count": 4
+    }
+  },
+  {
+    "case_id": "cord-train-0072",
+    "task": {
+      "receipt": "2011-Whole wheat Katamari\n28.000 x1 28.000\n6001-Plastic Bag Small\n0 x1 0\nTotal Item: 2\nTotal. 28.000\nCash\nTendered: 50.000\nChange: 22.000"
+    },
+    "expected": {
+      "total": 28000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0074",
+    "task": {
+      "receipt": "2 APPLE CREAMCHEESE PASTRY 26,000\nTOTAL 26,000\nCASH 100,000\nCHANGE 74,000"
+    },
+    "expected": {
+      "total": 26000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0078",
+    "task": {
+      "receipt": "ALMOND CREAM CHEESE\n2 x 28,000 56,000\nSUB TOTAL 56,000\nGRAND TOTAL 56,000\nCASH IDR 100,000\nCHANGE DUE 44,000"
+    },
+    "expected": {
+      "total": 56000,
+      "subtotal": 56000,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0082",
+    "task": {
+      "receipt": "1 YOGURT STRAWBERRY 20.909\n20.909\nSubtotal 2,091\nPAIRK 10%\n23.000\n1 Total\nTHUBUCHER 23.000"
+    },
+    "expected": {
+      "total": 23000,
+      "subtotal": 20909,
+      "tax": 2091,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0088",
+    "task": {
+      "receipt": "KUE PILUS ASIN\n210.00 x 80 16,800\nKACANG MEDAN\n302.00 x 95 28,690\nTOTAL : 45,490\nDisk.Member: 0\nDiskon: 0\nPPN: 4,549\nNetto : 50,039\nDEBIT BCA: 50,039\nKEMBALIAN : 0"
+    },
+    "expected": {
+      "total": 50039,
+      "subtotal": 45490,
+      "tax": 4549,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0093",
+    "task": {
+      "receipt": "1 NUMER CANDLE NO.1 10,000\n1 NUMER CANDLE NO.2 10,000\n2 GANACHE MOUSSE PIECE 65,000\nTOTAL 85,000\nCASH 100,000\nCHANGE 15,000"
+    },
+    "expected": {
+      "total": 85000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0094",
+    "task": {
+      "receipt": "4002-Chocolate Orange Peel\n19.000 x2 38.000\n6001-Plastic Bag Small\n0 x1 0\nTotal Item: 3\nTotal. 38.000\nCash\nTendered: 50.000\nChange: 12.000"
+    },
+    "expected": {
+      "total": 38000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0098",
+    "task": {
+      "receipt": "WALL'S FEAST CKLT.65 1 5400 5,400\nCMPN TROPICANA.CHO75 1 5500 5,500\nMAGNUM WHT ALMND 80 1 15000 15,000\nHARGA JUAL 25,900\nTOTAL 25,900\nTUNAI 25,900\nPPN= 2,355"
+    },
+    "expected": {
+      "total": 25900,
+      "subtotal": 25900,
+      "tax": 2355,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0103",
+    "task": {
+      "receipt": "1 IKAN GURAME MED 158,000\nSOP IKAN\n1 CUMI GR JUNJAN 129,000\n=*MEDIUM*=\n1 CUMI GR TEPUNG 129,000\n=*MEDIUM*=\n1 AGSIO TH PC JMR 147,000\n=*MEDIUM*=\n1 POCAI BWG PUTIH 90,000\n=*MEDIUM*=\n1 LUMPIA UDG PREM 144,000\n=*MEDIUM*=\n6 NASI PUTIH 10,000 60,000\n3 HOT TEA 12,000 36,000\n1 AQUA 11,000\n2 ICED TEA 12,000 24,000\n1 ICED TEA 12,000\nFOOD 797,000\nBEVERAGES 83,000\nOTHERS 60,000\nSUBTOTAL 940,000\nSERVICE CHARGE 56,400\nTax 10% 99,640\nDU 1,096,040"
+    },
+    "expected": {
+      "total": 1096040,
+      "subtotal": 940000,
+      "tax": 99640,
+      "item_count": 11
+    }
+  },
+  {
+    "case_id": "cord-train-0106",
+    "task": {
+      "receipt": "1 Toblerone BanCheese 28,182\n1 Roast Beef Crepes 15,455\nSubTotal: 43,637\nPB1: 4,364\nTotal: 48,001\ncash: 100,000\nChange: 51,999"
+    },
+    "expected": {
+      "total": 48001,
+      "subtotal": 43637,
+      "tax": 4364,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0111",
+    "task": {
+      "receipt": "1 OCHA 8,000\n1 CHIC NAMBAN BENTO 58,000\nSUBTTL 66,000\nPb1 10% 6,600\nTOTAL 72,600\nBCA DEBIT 72,600"
+    },
+    "expected": {
+      "total": 72600,
+      "subtotal": 66000,
+      "tax": 6600,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0114",
+    "task": {
+      "receipt": "Puyo 6 (Package) 1x 70,000 70,000\nSi1ky Lychee 2x\nSi1ky Mango 1x\nSi1ky Cotton Candy 1x\nSi1ky Green Tea 1x\nSi1ky Chocolate 1x\nSub Total 70,000\nGRAND TOTAL 70,000\n[D] DEBIT EDC BCA 70,000\n0\nCHANGE"
+    },
+    "expected": {
+      "total": 70000,
+      "subtotal": 70000,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0117",
+    "task": {
+      "receipt": "RTD Relaxing Drink 1\n15000 15000\nRTD Rosella Aloevera\n1 15000 15000\nRTD Madu Aloevera 1\n15000 15000\nRTD Lemongrass\nAloe 1 15000 15000\nSub Total\n60000\nDiscount (0%)\nTunai\n60000\nKembalian 0"
+    },
+    "expected": {
+      "total": 60000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 4
+    }
+  },
+  {
+    "case_id": "cord-train-0120",
+    "task": {
+      "receipt": "1 SAM DA S00 MINERAL WATER 16,000\n2 TWIST DONUT 18,000\nTOTAL 34,000\nCASH 50,000\nCHANGE 16,000"
+    },
+    "expected": {
+      "total": 34000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0121",
+    "task": {
+      "receipt": "1001-Choco Bun\n22.000 x1 22,000\n6001-Plastic Bag Small\n0 x1 0\nTotal Item: 2\nTotal. 22,000\nCash\nTendered:\nChange: 100,000\n78.000"
+    },
+    "expected": {
+      "total": 22000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0122",
+    "task": {
+      "receipt": "1 Common Law 9,900\n1 Tigger Roll 14,900\nSUBTOTAL 24,800\nSPECIAL DISC -300\nCASH 100,000\nCHANGE 75,500\nTOTAL QTY 2 ITEM"
+    },
+    "expected": {
+      "total": null,
+      "subtotal": 24800,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0123",
+    "task": {
+      "receipt": "1 Ketoprak SPC 29,090\nSUBTOTAL 29,090\nPB1 10% 2,909\nTOTAL 32,000\nCASH 50,000\nChange 18,000"
+    },
+    "expected": {
+      "total": 32000,
+      "subtotal": 29090,
+      "tax": 2909,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0126",
+    "task": {
+      "receipt": "133 Round Wagyu ( 1gr ) 53.200\nSubtotal 53.200\nTOTAL 53.200\nGo-Pay static QR 53.200"
+    },
+    "expected": {
+      "total": 53200,
+      "subtotal": 53200,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0128",
+    "task": {
+      "receipt": "CHEEZY DOG BITES\n1 33,000 33,000\nSUB TOTAL 33,000\nGRAND TOTAL\n33,000\nCASH IDR\n100,000\nCHANGE DUE\n67,000"
+    },
+    "expected": {
+      "total": 33000,
+      "subtotal": 33000,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0130",
+    "task": {
+      "receipt": "1 EGG TART 13,000\nTOTAL 13,000\nCASH 13,000\nCHANGE 0"
+    },
+    "expected": {
+      "total": 13000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0132",
+    "task": {
+      "receipt": "ZAI.Milk Choco Egg Avenger60gr\n1 53,636.00 53,636.00\nZAI.Milk Choco Egg Frozen 60gr\n1 53,636.00 53,636.00\nTOTAL 107,272.00\nDISCOUNT 0.00\nTAX 10,727.00\nGRAND TOTAL 117,999.00\nTOTAL BAYAR 117,999.00\nCHANGE 0.00"
+    },
+    "expected": {
+      "total": 11799900,
+      "subtotal": 10727200,
+      "tax": 1072700,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0135",
+    "task": {
+      "receipt": "0.264X 98,500\nIKAN GABUS FRESH 26,004\n0.308X 72,500\nIKAN BUMBU KUNING 22,330\n1X 7,500\nOCTOPUS SATAY 7,500\nSUBTOTAL: 55,834\nTOTAL: 55,834\nSimple Rounding 34 -\nBALANCE DUE: 55,800\nTunai: 60,000\nUang Kembali: 4,200\nQUANTITY PURCHASED: 1.572"
+    },
+    "expected": {
+      "total": 55834,
+      "subtotal": 55834,
+      "tax": null,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0139",
+    "task": {
+      "receipt": "Sesame Toast 1 22,500 22,500\nSub Total 22,500\nGRAND TOTAL 22,500\nCASH 50,000\nCHANGE 27,500"
+    },
+    "expected": {
+      "total": 22500,
+      "subtotal": 22500,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0149",
+    "task": {
+      "receipt": "1X 8,000\n#PKTPOLSBTSPON2S 8,000\nMEGA Discount 800-\n1X 14,000\nBENECOL LYCHEE 2S 14,000\nDiscount 1,400 -\nMEGA Discount 1,260-\n1X 12,200\nREGAL MARIE 125 GR 12,200\nMEGA Discount 1,220-\n1X 6,000\n7 UP CAN 330 ML 6,000\nMEGA Discount 600-\n1X 6,400\nSAKATONIK LVR 10S 6,400\nMEGA Discount 640-\n1X 9,300\nDUA BELIBIS SBL135 9,300\nDiscount 1,400 -\nMEGA Discount 790-\n0,292X 19,900\nDAUN SEREH 5,811\nMEGA Discount 581-\nSUBTOTAL: 53,020\nTOTAL: 53,020\nMEGA OFFLINE EFT: 53,020"
+    },
+    "expected": {
+      "total": 53020,
+      "subtotal": 53020,
+      "tax": null,
+      "item_count": 7
+    }
+  },
+  {
+    "case_id": "cord-train-0150",
+    "task": {
+      "receipt": "1 KFC Winger HC 20,000\nSub Total 20,000\nDasar Pengenaan Pajak 20,000\nP.Rest 10 % 2,000\nTotal 22,000\nCash 22,000\n1 Items,"
+    },
+    "expected": {
+      "total": 22000,
+      "subtotal": 20000,
+      "tax": 2000,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0151",
+    "task": {
+      "receipt": "1x 22.000 Rp. 22.000\nIce t grentea\nITEMS 1Q\n***TOTAL 22.000\nCASH Rp. 52.000\nCHANGE 30.000"
+    },
+    "expected": {
+      "total": 22000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0153",
+    "task": {
+      "receipt": "GIGA Rp 57,000\nCUP GIGA\nCHEESE\nS. CREAM\nTL Rp 57,0000\nCASH Rp 57,000"
+    },
+    "expected": {
+      "total": 570000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0157",
+    "task": {
+      "receipt": "2X S-Matcha Macchiato @25,000 50,000\n100%, Less Ice\n2X S-Ovaltine Macchiat @22,000 44,000\nLess Ice\n100%\nTotal: 94,000\nCash: 100,000\nCHANGE: 6,000"
+    },
+    "expected": {
+      "total": 94000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0158",
+    "task": {
+      "receipt": "1 KFC DAY 34,545\n1 CHARGE TA 909\nSub Total 35,454\nP.Rest 10 % 3,546\nTotal 39,000\nCash 100,000\nkembali 61,000\n2 Items,"
+    },
+    "expected": {
+      "total": 39000,
+      "subtotal": 35454,
+      "tax": 3546,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0160",
+    "task": {
+      "receipt": "PAKET CHICKEN 4 1 29,000 29,000\nKOREAN COLD TEA 1 9,000 9,000\nSubtotal 38,000\nServices 1,900\nTax 3,990\nTotal 43,890\nTunai 50,000\nKembali 6,110"
+    },
+    "expected": {
+      "total": 43890,
+      "subtotal": 38000,
+      "tax": 3990,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0161",
+    "task": {
+      "receipt": "1 PR ORIGINAL 150gr 75,000\n1 F.FRIES (M) 0\n1 ES TEH MANIS 10,000\n1 MUSHROOM SAUCE 0\nSubtotal 85,000\nServ.Charge: 4,250\nPB1 10.00 % 8,925\n98,175\nTotal"
+    },
+    "expected": {
+      "total": 98175,
+      "subtotal": 85000,
+      "tax": 8925,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0175",
+    "task": {
+      "receipt": "HAZELNUT ALM 15,000\nCAPPUCINO CI 14,000\nTIRAMISU CIN 14,000\nSODEXO -25,000\nTL 18,000\nCASH 50,000\nCG 32,000"
+    },
+    "expected": {
+      "total": 18000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0177",
+    "task": {
+      "receipt": "KUPAT TAHU\n0512100 2 19,000 38,000\nMIE KOCOK\n0515103 3 29,000 87,000\nSub Total 125,000\nPB1 12,500\nNetto 137,500\nCash 150,000\nChange 12,500"
+    },
+    "expected": {
+      "total": 137500,
+      "subtotal": 125000,
+      "tax": 12500,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0181",
+    "task": {
+      "receipt": "1 SAUSAGE AND SALAMI 62,000\n1 GREEN MONSIEUR 57,000\n1 ADD 1 W. ORIGINAL 12,000\nSUBTTL 131,000\nSVC CHG 6% 7,860\nPB1 10% 13,886\nTOTAL 152,746"
+    },
+    "expected": {
+      "total": 152746,
+      "subtotal": 131000,
+      "tax": 13886,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0187",
+    "task": {
+      "receipt": "1 Double Choco Crispy 14,091\nSubTotal: 14,091\nPB1: 1,409\nTotal: 15,500\nFlash BCA: 15,500"
+    },
+    "expected": {
+      "total": 15500,
+      "subtotal": 14091,
+      "tax": 1409,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0192",
+    "task": {
+      "receipt": "Kupon 7 42,727\nMINERAL WATER 8,182\nSubtotal 50,909\nPB1 (10%) 5,091\nDine In Total 56,000\nCash 56,000"
+    },
+    "expected": {
+      "total": 56000,
+      "subtotal": 50909,
+      "tax": 5091,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0193",
+    "task": {
+      "receipt": "BAK MANDI (BAK MANDI TAIWAN BESAR)\n500900014\n125,000\nTATAKAN MANDI (JARING MANDI JALA) -\n502100007\n50,000\nBAJU ATASAN(PETITE MIMI ROMPER 3D\nFOREST / RM0003) 1000600098\n53,000\nACCESORIES(SUN BABES PENUTUP MATA)\n804100017\n27,500\nKAPAS (KAPAS MEDISOFT COTTON BALL\n120) 8991038772194\n3 7,000 21,000\nJOIE KUBBIE(BABY BOX) 901800109\n1,100,000\nQty: 8 Amount: 1,376,500"
+    },
+    "expected": {
+      "total": 1376500,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 6
+    }
+  },
+  {
+    "case_id": "cord-train-0195",
+    "task": {
+      "receipt": "1 CRISPY APPLE RAISIN PASTR 11,500\n1 PAIN AU CHOCOLATE 11,000\n1 REDBEAN BREAD 9,000\nTOTAL 31,500\nCASH 52,000\nCHANGE 20,500"
+    },
+    "expected": {
+      "total": 31500,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0202",
+    "task": {
+      "receipt": "CHICKEN KATSU CURRY UDON 1 46,364\nSUB. TOTAL 46,364\nRESTAURANT TAX 4,636\nGRAND TOTAL\n~ BCA DEBI.. [51,000] 51,000\nChange: 0"
+    },
+    "expected": {
+      "total": 51000,
+      "subtotal": 46364,
+      "tax": 4636,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0206",
+    "task": {
+      "receipt": "BASO KUAH 1 43,636 43,636\nNASI PUTIH 1 6.000 6.000\nA.MINERAL BOTOL 1 8,000 8,000\nTOTAL 57,636\nTAX 10.00 % 5,764\nGRAND TOTAL 63,400\nTUNAI 70.000\nKEMBALI 6.600"
+    },
+    "expected": {
+      "total": 63400,
+      "subtotal": 57636,
+      "tax": 5764,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0209",
+    "task": {
+      "receipt": "2 TWIST ORANGE CHOCO DONUT 20,000\n2 CHOCOLATE TWIST 32,000\n1 REAL CHOCOLATE ROLL 16,000\n2 CHOCOLATE SOBORO 28,000\nTOTAL 96,000\nCASH 100,000\nCHANGE 4,000"
+    },
+    "expected": {
+      "total": 96000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 4
+    }
+  },
+  {
+    "case_id": "cord-train-0214",
+    "task": {
+      "receipt": "RAMES AYAM 26,000\nDendeng PDS 27,000\nTAX 10%\n5,300\nDISC -300\n2.00 ITEMS\nTOTAL 58,000\nCASH 100,000\nCHANGE 42,000"
+    },
+    "expected": {
+      "total": 58000,
+      "subtotal": null,
+      "tax": 5300,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0220",
+    "task": {
+      "receipt": "KING DEAL CHEESE BURGER R 25,000\n1 PC BIC 15,909\nSubtotal 40.909\nPB1 (10%) 4,091\nDine In Total 45,000\nCash Rp. 50,000\nChange Rp.5,000"
+    },
+    "expected": {
+      "total": 45000,
+      "subtotal": 40909,
+      "tax": 4091,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0222",
+    "task": {
+      "receipt": "APUCINO MEDIUM 18,182\nGula Murni 100%\nSubtotal 18.182\nPAJAK 10% 1,818\nTotal 20.000\nCASH 20.000"
+    },
+    "expected": {
+      "total": 20000,
+      "subtotal": 18182,
+      "tax": 1818,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0224",
+    "task": {
+      "receipt": "BASO TAHU KWETIAU 1 43,181 43,181\nTOTAL 43,181\nTAX 10.00 % 4,318\nGRAND TOTAL 47,499\nTUNAI 48.000\nKEMBALI 501"
+    },
+    "expected": {
+      "total": 47499,
+      "subtotal": 43181,
+      "tax": 4318,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0226",
+    "task": {
+      "receipt": "PKT TELOR/PERKEDEL 26,000\nDENDENG 23,000\nSBL GR TERI 17,000\n2X 8,000\nNESTLE 330 ML 16,000\n5.00 ITEMS\nSUBTOTAL 82,000\nTAX 10% 8,200\nTOTAL 90,200\nCASH 100,000\nCHANGE 9,800"
+    },
+    "expected": {
+      "total": 90200,
+      "subtotal": 82000,
+      "tax": 8200,
+      "item_count": 4
+    }
+  },
+  {
+    "case_id": "cord-train-0228",
+    "task": {
+      "receipt": "TRIPPLE CHEESE\n1 17,000 17,000\nSUB TOTAL 17,000\nGRAND TOTAL 17,000\nCASH IDR 100,000\nCHANGE DUE 83,000"
+    },
+    "expected": {
+      "total": 17000,
+      "subtotal": 17000,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0230",
+    "task": {
+      "receipt": "SAMGYOPSAL 1 97,000\nOGYOPSAL 1 97,000\nYUKHWE 1 150,000\nRICE 1 15,000\nJABCHAE BEEF 1 95,000\nOCHA DINGIN 1 15,000\n(REFILL)\nSUNDUBU 1 0\nCHIGE s\nSub Total 469,000\nService 23,450\nVAT 49,170\nDiscount 0\nTOTAL 541,620"
+    },
+    "expected": {
+      "total": 541620,
+      "subtotal": 469000,
+      "tax": 49170,
+      "item_count": 7
+    }
+  },
+  {
+    "case_id": "cord-train-0231",
+    "task": {
+      "receipt": "2X @36500\nNASI KUNING 73,000\nDISC ITEM -40.000%\nAMOUNT -29,200\n3X @6500\nCENTIKPLANCI 19,500\nDISC ITEM -40.000%\nAMOUNT -7,800\n1X @0\nMIKA KECIL 0\n1X @0\nPLASTIK SEDANG 0\n1X @ 0\nSENDOK MAKAN 0\n1X @0\nSENDOK MAKAN 0\n1X @ 0\nGARPU 0\n1X @0\nGARPU 0\n11.00xITEMs\nSUBTOTAL 55,500\nTOTAL 55,500\nCASH 100,000\nCHANGE 44,500"
+    },
+    "expected": {
+      "total": 55500,
+      "subtotal": 55500,
+      "tax": null,
+      "item_count": 8
+    }
+  },
+  {
+    "case_id": "cord-train-0232",
+    "task": {
+      "receipt": "1 HOT OCHA 10,000\n3 OCHA 30,000\nBEVERAGE 40,000\n1 JYO HARAMI 30% 99,000\n1 WAKI SALAD 45,000\n2 MARBLED SIRLOIN STEAK 200gr 378,000\nFOOD 522,000\nSUBTTL 562,000\nService Charge 33,720\nPB1 59,572\nTOTAL 655,292"
+    },
+    "expected": {
+      "total": 655292,
+      "subtotal": 562000,
+      "tax": 59572,
+      "item_count": 5
+    }
+  },
+  {
+    "case_id": "cord-train-0236",
+    "task": {
+      "receipt": "2 YELLOW 20,000\n2 QT\nSubtotal 20,000\nTax 2,000\nTOTAL 22,000\nCASH 102,000\nChange 80,000"
+    },
+    "expected": {
+      "total": 22000,
+      "subtotal": 20000,
+      "tax": 2000,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0240",
+    "task": {
+      "receipt": "RB0006 RB, Abon Sam\n1 9,000 9,000\nQty 1 Total 9,000"
+    },
+    "expected": {
+      "total": 9000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0243",
+    "task": {
+      "receipt": "BULGOGI 1 150,000\nJEONGSIK\nEL KEUN 1 130,000\nHWANGTAE\nSUNDUBU(TUKBEGI)\nGYERAN CIM 1 45,000\nSub Total 325,000\nService 22,750\nTax 34,600\nDiscount 0\nTOTAL 382,350\nCard 382,350\nCHANGE 0"
+    },
+    "expected": {
+      "total": 382350,
+      "subtotal": 325000,
+      "tax": 34600,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0248",
+    "task": {
+      "receipt": "THAI GREEN TEA ICE 1 24.000\nTotal 24.000\nTunai 54.000\nKembali 30.000"
+    },
+    "expected": {
+      "total": 24000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0249",
+    "task": {
+      "receipt": "PKT AYAM 33,000\n1.00xITEMS\nSUBTOTAL 33,000\nTAX 10% 3,300\nTOTAL 36,300\nCASH 37,000\nCHANGE 700"
+    },
+    "expected": {
+      "total": 36300,
+      "subtotal": 33000,
+      "tax": 3300,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0260",
+    "task": {
+      "receipt": "1.0 BITTERBALLEN 33,000\n1.0 MOZZARELA STICK 55,000\n1.0 NOUGAT ICE CREAM 20,000\n1.0 SAUCYS BROOD 19,000\n1.0 AMANDEL BROOD 18,000\n1.0 BOKKEPOOTJES 90,000\nSub Total 235,000\nTax 23,500\nTotal 258,500\nDEBIT CARD\n258,500\nMenu 6 Item(s)"
+    },
+    "expected": {
+      "total": 258500,
+      "subtotal": 235000,
+      "tax": 23500,
+      "item_count": 6
+    }
+  },
+  {
+    "case_id": "cord-train-0261",
+    "task": {
+      "receipt": "Mie Jumbo Pst/bakso\n2 34.000 68.000\nBakmie Pst/ Bakso\n1 26.000 26.000\nLiang Teh\n2 5.000 10.000\nEs /hagat Jeruk\n1 10.000 10.000\nKrupuk Babi Bungkus\n1 20.000 20.000\nSubtotal 134.000\nPajak -\nTotal 134.000\nTunai 150.000\nKembalian 16.000"
+    },
+    "expected": {
+      "total": 134000,
+      "subtotal": 134000,
+      "tax": null,
+      "item_count": 5
+    }
+  },
+  {
+    "case_id": "cord-train-0265",
+    "task": {
+      "receipt": "1 Popcorn Salt (M) 40.000\n1 Mineral Water (S) 10.000\n1 Fanta Stwbry (L) 25.000\nTOTAL 75.000\nCASH 100.000\nCHANGED 25.000"
+    },
+    "expected": {
+      "total": 75000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0270",
+    "task": {
+      "receipt": "DEPT01 22,000\nTOTAL 22,000\nCASH 100,000\nCHANGE 78,000"
+    },
+    "expected": {
+      "total": 22000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0272",
+    "task": {
+      "receipt": "Astor Stick Cokelat 40gr\n1 8,000 8,000\ngreen tea\n1 8,500 8,500\nTOTAL 16,500\nCASH 50,000\nCHANGE 33,500"
+    },
+    "expected": {
+      "total": 16500,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0278",
+    "task": {
+      "receipt": "1X S-Fresh Lemon Lime @14,000 14,000\n100%\n1X S-Fresh Lemon Lime @14,000 14,000\n0%\n1X S-Fresh Lemon Lime @14,000 17,000\nBubbles 3,000\n100%\nLess Ice\nPB1: 4,090\nSubtotal: 40,909\nTotal: 45,000\nCash: 45,000\nCHANGE: 0"
+    },
+    "expected": {
+      "total": 45000,
+      "subtotal": 40909,
+      "tax": 4090,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0280",
+    "task": {
+      "receipt": "1 RB. COKLAT BAR 8,000\n1 RB. COKLAT BUN 8,000\n1 RB. CREPES CHICKEN 9,000\nITEM: 3 SUBTOTAL 25,000\nPCS 3 DUE 25,000\nCASH 50,000\nCHANGE 25,000"
+    },
+    "expected": {
+      "total": 25000,
+      "subtotal": 25000,
+      "tax": null,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0281",
+    "task": {
+      "receipt": "NESTLE 600 M1 9,500\n1.00x\nSUBTOTAL 9,500\nTAX 10% 950\nTOTAL 10,450\nCASH 10,450"
+    },
+    "expected": {
+      "total": 10450,
+      "subtotal": 9500,
+      "tax": 950,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0286",
+    "task": {
+      "receipt": "1 Hokkaido 14,000\nSUBTOTAL 14.000\nDUE 14,000\nBCA: 14,000\nTOTAI QTY 1"
+    },
+    "expected": {
+      "total": 14000,
+      "subtotal": 14000,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0289",
+    "task": {
+      "receipt": "2 30.000\nNASI GORENG 60.000\nTEH BTL ES 5.000\nTEH TELOR 14.000\nSATE PADANG 30.000\n2 30.000\nNASI GORENG 60.000\nSUBTL 169.000\nTAX 10%\n16.900\nJUMLAH: 185.900\nDIBAYAR 200.000\nKEMBALI: 14.100\nITEM 7"
+    },
+    "expected": {
+      "total": 185900,
+      "subtotal": 169000,
+      "tax": 16900,
+      "item_count": 5
+    }
+  },
+  {
+    "case_id": "cord-train-0297",
+    "task": {
+      "receipt": "1 KUE CUBIT OVO/ 39,000\nSKIPPY\n2 ES BUAH 36,000\n1 DODOT KAKEK 28,000\n1 DODOT CUCU 28,000\nCOKLAT\n1 CHOCOLATE MILK 22,000\nSHAKE\n2 T. TARIK GREENTEA 40,000\nDINGIN\n1 CHOCOLATE MILK 22,000\nSHAKE\n1 ICED CAPPUCINO 24,000\nJELLY\n1 T. TARIK GREENTEA 20,000\nDINGIN\n1 TEH PAHIT PANAS 6,000\n1 MINERAL WATER 8,000\nTotal Menu 13\nSUBTOTAL 273,000\nDISKON 0\nBIAYA TAMBAHAN 27,300\nPAJAK PPN 10 % 0\nPAJAK PBM 25 % 0\nBIAYA CC 0\nPEMBULATAN 0\nTOTAL 300,300"
+    },
+    "expected": {
+      "total": 300300,
+      "subtotal": 273000,
+      "tax": 0,
+      "item_count": 11
+    }
+  },
+  {
+    "case_id": "cord-train-0298",
+    "task": {
+      "receipt": "1 [RICHE] BLACK SAKURA 57,273\n1 DRAGON FRUIT 0\n1 KIWI 0\n1 MANGGO 0\n1 ROASTED ALMOND 0\n1 YELLOW VELVET 0\n1 YELLOW VELVET 0\nSub Total 57,273\nPB1 (10%) 5,727\nRounding 0\nTotal 63,000"
+    },
+    "expected": {
+      "total": 63000,
+      "subtotal": 57273,
+      "tax": 5727,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0304",
+    "task": {
+      "receipt": "SPECIALTY COMBO\n1 x 25,000 25,000\n*SOURCREAMONION*\n1 x 0 0\n*LEMONADER*\n1 x 5,000 5,000\nBOTTLED WATER\n1 x 0 0\n*ADES300ML*\n1 x 5,000 5,000\nSUB TOTAL 35,000\nGRAND TOTAL 35,000\nCASHIDR 50,000\n15,000\nCHANGE DUE"
+    },
+    "expected": {
+      "total": 35000,
+      "subtotal": 35000,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0305",
+    "task": {
+      "receipt": "CARAMELALMOND\n1 23,000 23,000\nSTIX ECLAIRS\n1 19,000 19,000\nSUB TOTAL 42,000\nGRAND TOTAL 42,000\nCASH IDR 100,000\nCHANGE DUE 58,000"
+    },
+    "expected": {
+      "total": 42000,
+      "subtotal": 42000,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0306",
+    "task": {
+      "receipt": "PAKET DOSIRAK 1 1 25,975 25,975\nPAKET DOSIRAK 1\nICE SWEET JASMINE GREENTEA\nSubtotal 25,975\nServices 1,298\nTax 2,727\nTotal 30,000"
+    },
+    "expected": {
+      "total": 30000,
+      "subtotal": 25975,
+      "tax": 2727,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0310",
+    "task": {
+      "receipt": "2X 385,000\nMANUKA HONEY 770,000\nTL 770,000\nCASH 770,000"
+    },
+    "expected": {
+      "total": 770000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0314",
+    "task": {
+      "receipt": "2 Nutella Cheese 54,544\nSubTotal: 54,544\nPB1: 5,454\nTotal: 59,998\nDebit Card: 59,998"
+    },
+    "expected": {
+      "total": 59998,
+      "subtotal": 54544,
+      "tax": 5454,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0318",
+    "task": {
+      "receipt": "1 CHOCO TIME 50,000\nTOTAL 50,000\nCARD 50,000"
+    },
+    "expected": {
+      "total": 50000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0321",
+    "task": {
+      "receipt": "1 Angus Striploin 295,000\n1 Chicken Steak 140,000\n1 CK Redvelvet 65,000\n1 Creamed Spinach 40,000\n1 F Squeeze Orange 60,000\n1 House Blend 40,000\n1 Ice Tea Peach 45,000\n2 Ice Tea Rasp 90,000\n1 Jasmine Tea 40,000\n2 Roasted Chicken 300,000\n1 Salmon 170,000\n1 Salmon Seaweed Bowl 150,000\n1 Sorbet 55,000\nSUBTOTAL 1,490,000\nSERVICE 149,000\nTAX 163,900\nSubtotal BEV NON ALCOHOL 275,000\nSubtotal FOOD 1,095,000\nSubtotal MODIFIER 0\nSubtotal PASTRY 120,000\nTOTAL 1,802,900"
+    },
+    "expected": {
+      "total": 1802900,
+      "subtotal": 1490000,
+      "tax": 163900,
+      "item_count": 13
+    }
+  },
+  {
+    "case_id": "cord-train-0324",
+    "task": {
+      "receipt": "1 medium tub 39,200.0 39,200.0\nSubtotal: Rp 35,636.36\nTax 10.00%: Rp 3,563.64\nTOTAL: 39,200,00\nPaid: Rp 39,200.00"
+    },
+    "expected": {
+      "total": 3920000,
+      "subtotal": 3563636,
+      "tax": 356364,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0326",
+    "task": {
+      "receipt": "1 SPICY WOSAM R 33,636\nSubtotal 33,636\nTax 3,364\nTotal 37,000\nGOPAY 37,000"
+    },
+    "expected": {
+      "total": 37000,
+      "subtotal": 33636,
+      "tax": 3364,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0331",
+    "task": {
+      "receipt": "KWT GR MGMSP 43,182\nTEH HANGAT 5,909\n2 No\nSUB TOTAL 49,091\nPJR 4,909\nTOTAL 54,000\nCASH -54,000"
+    },
+    "expected": {
+      "total": 54000,
+      "subtotal": 49091,
+      "tax": 4909,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0337",
+    "task": {
+      "receipt": "1 Iced Sleepy Coffee 38.000\n1 Pisang Goreng 28.000\nSubtotal 66.000\nPajak 6.600\nTotal 72.600\nDEBIT Card 72.600\nKembalian 0"
+    },
+    "expected": {
+      "total": 72600,
+      "subtotal": 66000,
+      "tax": 6600,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0339",
+    "task": {
+      "receipt": "STIX ECLAIRS\n2 19,000 38,000\nSUB TOTAL 38,000\nGRAND TOTAL 38,000\nCASHIDR 50,000\nCHANGE DUE 12,000"
+    },
+    "expected": {
+      "total": 38000,
+      "subtotal": 38000,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0343",
+    "task": {
+      "receipt": "1 BANANA RHUM RAISIN 46,500\nW. CHARCOAL 9,000\n1 PRAWN & SPINACH PASTA 80,500\n1 ORIGINAL BREWED TEA 23,000\nSUBTTL 159,000\nSVC CHG 6% 9,540\nPB1 10% 16,854\nTOTAL 185,394"
+    },
+    "expected": {
+      "total": 185394,
+      "subtotal": 159000,
+      "tax": 16854,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0355",
+    "task": {
+      "receipt": "28,000\nAvocado with Rock Salt and Cocoa\nCream [R]\nBig Pearls 4,000\nAvocado with Rock Salt and Cocoa 28,000\nCream [R]\nRed Bean 4,000\nRock salt and Cheese [R]\nCoffee 28,000\nTotal 92,000\n92,000"
+    },
+    "expected": {
+      "total": 92000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0356",
+    "task": {
+      "receipt": "VALUE MEAL 2 1 33,636\nEGG RAMEN 1 0\nCOLD OCHA 1 0\nITEMS: 3 33,636\nPB1 10.00% 3,364\nTotal 37,000\nOVO 37,000"
+    },
+    "expected": {
+      "total": 37000,
+      "subtotal": 33636,
+      "tax": 3364,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0358",
+    "task": {
+      "receipt": "1 x GJ ROASTED MT ( R ) 25,000\nICE LESS 0\nSUGAR SLIGHT 0\nSUB TOTAL 25,000\nTOTAL SALES 25,000\nTOTAL ITEMS 1\nCASH 50,000\nCHANGE 25,000"
+    },
+    "expected": {
+      "total": 25000,
+      "subtotal": 25000,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0364",
+    "task": {
+      "receipt": "1 [RICHE] BLACK SAKURA 57,273\n1 KIWI 0\n1 STRAWBERRY 0\n1 ROASTED ALMOND 0\n1 YELLOW VELVET 0\n1 YELLOW VELVET 0\n1 NATA DE COCO 0\n1 [RICHE] BLACK SAKURA 57,273\n1 PEACH 0\n1 LONGAN 0\n1 LYCHEE 0\n1 MOCHI MIX 0\n1 GENMATCHA 0\n1 GENMATCHA 0\nSub Total 114,545\nPB1 (10%) 11,455\nRounding 0\nTotal 126,000\nBD8X9374\nBD9P1568\nVoucher Payment 100,000\nCash Payment 26,000"
+    },
+    "expected": {
+      "total": 126000,
+      "subtotal": 114545,
+      "tax": 11455,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0366",
+    "task": {
+      "receipt": "CHICKEN KATSU CURRY UDON 1 46,364\nKAKIAGE TEMPURA 1 10,000\nCOLD OCHA 1 10,909\nSUB. TOTAL 67,273\nRESTAURANT TAX 6,727\nGRAND TOTAL\n~ MANDIRI [74,000] 74,000\nChange: 0"
+    },
+    "expected": {
+      "total": 74000,
+      "subtotal": 67273,
+      "tax": 6727,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0368",
+    "task": {
+      "receipt": "Honey Mandarin 13,000\n1 No\nTOTAL 13,000\nCASH 100,000\nCHANGE 87,000"
+    },
+    "expected": {
+      "total": 13000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0372",
+    "task": {
+      "receipt": "Croisant Mini (NAM) 1x 18,000 18,000\nSub Total 18,000\nGRAND TOTAL 18,000\nCASH 100,000\nCHANGE 82,000"
+    },
+    "expected": {
+      "total": 18000,
+      "subtotal": 18000,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0375",
+    "task": {
+      "receipt": "Grande 3 180.000\nLemon grass tea (Dine in) 1 25.000\nCheese Tea Hokkaido Melon 3 72.000\nAir Mineral 2 10.000\nSubtotal 287.000\nPPN 10% (10%) 28.700\nTotal 315.700\nKartu 315.700\nKembali 0"
+    },
+    "expected": {
+      "total": 315700,
+      "subtotal": 287000,
+      "tax": 28700,
+      "item_count": 4
+    }
+  },
+  {
+    "case_id": "cord-train-0376",
+    "task": {
+      "receipt": "1 SWEEAT ICE TEA 16,800\n1 OREO MILK BLEND 28,800\n1 FRIED RC SFOOD 39,800\n1 SHISHA 47,000\n1 MASHED POTATO 23,800\nSUBTOTAL 156,200\nTAX 16,480\nS CHARGE 5.50% 8,591\nDUE 181,271"
+    },
+    "expected": {
+      "total": 181271,
+      "subtotal": 156200,
+      "tax": 16480,
+      "item_count": 5
+    }
+  },
+  {
+    "case_id": "cord-train-0378",
+    "task": {
+      "receipt": "Kopi Susu Sudirman\nHot\n1x 18.000 18.000\nSubtotal 18.000\nTax (10.0%) 1.800\nTotal 19.800\nCash 50.000\nChange 30.200"
+    },
+    "expected": {
+      "total": 19800,
+      "subtotal": 18000,
+      "tax": 1800,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0379",
+    "task": {
+      "receipt": "Original Hugarian Ku\n25001 1x 20,000 20,000\nOriginal Hugarian Ku\n25001 1x 20,000 20,000\nOriginal Hugarian Ku\n25001 1x 20,000 20,000\nOriginal Hugarian Ku\n25001 1x 20,000 20,000\nNo of Line(s): 4 Qty(s): 4\nTOTAL: 80,000\nE-Money 80,000"
+    },
+    "expected": {
+      "total": 80000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 4
+    }
+  },
+  {
+    "case_id": "cord-train-0381",
+    "task": {
+      "receipt": "1 RB. AI-AI CHOCO 8,000\n1 RB. COKLAT COFFEE 8,000\nITEM: 2 SUBTOTAL 16,000\nPCS 2 DUE 16,000\nCASH 16,000"
+    },
+    "expected": {
+      "total": 16000,
+      "subtotal": 16000,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0385",
+    "task": {
+      "receipt": "1.0 CHOCO CHIP 27,500\n2.0 NOUGAT ICE CREAM 48,000\n1.0 AMANDEL BROOD 20,000\n1.0 BOKKEPOOTJES 104,000\n2.0 CHOCOLATE ICE CREAM 30,000\n1.0 MOCCA ICE CREAM 15,000\nSub Total 244,500\nTax 24,450\nTotal 268,950\nMenu 6 Item(s)"
+    },
+    "expected": {
+      "total": 268950,
+      "subtotal": 244500,
+      "tax": 24450,
+      "item_count": 6
+    }
+  },
+  {
+    "case_id": "cord-train-0388",
+    "task": {
+      "receipt": "0001 escargot florentine\n1 32,000 32.000\n0045 Zurich Geschnitzel\n1 82,000 82.000\n0050 Valdostana\n3 59,000 177.000\n0056 Chicken Herb Crust\n1 52,000 52.000\n0079 Lasagna Di Carne\n1 54,000 54.000\n0134 Lemon Jc\n1 25,000 25.000\nApple Pie\n1 25,000 25.000\nhot tea\n1 12,000 12.000\nhot lemon tea\n1 22,000 22.000\nSub Total 481,000\nServices 24,050\nTax 48,100\n553,200"
+    },
+    "expected": {
+      "total": 553200,
+      "subtotal": 481000,
+      "tax": 48100,
+      "item_count": 9
+    }
+  },
+  {
+    "case_id": "cord-train-0395",
+    "task": {
+      "receipt": "3 Bakmi Ayam Spc Ng 73.635\n3 Box Bakmie (M) 0\n1 Bakmi Ultah 68.182\n1 Box Yi Fu Mie (L) 0\nSubtotal 141.817\nPB 1 14.182\n8 Total 155.999\nBayar 160.000\nKembali 4.001"
+    },
+    "expected": {
+      "total": 155999,
+      "subtotal": 141817,
+      "tax": 14182,
+      "item_count": 4
+    }
+  },
+  {
+    "case_id": "cord-train-0402",
+    "task": {
+      "receipt": "1.5 JAM 225,000\nST 225,000\n10%\nTAX 22,500\n1\nTOTAL\n247,500\nCASH 247,500"
+    },
+    "expected": {
+      "total": 247500,
+      "subtotal": 225000,
+      "tax": 22500,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0406",
+    "task": {
+      "receipt": "Nu Greentea 330\n1x 6.000 6.000\nSubtotal 6.000\nPajak -\nTotal 6.000\nTunai 6.000"
+    },
+    "expected": {
+      "total": 6000,
+      "subtotal": 6000,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0407",
+    "task": {
+      "receipt": "2X @ 15000\nLAPIS SINGAPUR 30,000\nDISC ITEM -30.000%\nAMOUNT -9,000\n2X @9000\nLEMPER 18,000\nDISC ITEM -30.000%\nAMOUNT -5,400\nAREM AREM 8,000\nDISC ITEM -30.000%\nAMOUNT -2,400\nMIKA BESAR 0\nPLASTIK SEDANG 0\nSUBTOTAL 39,200\nTOTAL 39,200\nCASH 100,000\nCHANGE 60,800"
+    },
+    "expected": {
+      "total": 39200,
+      "subtotal": 39200,
+      "tax": null,
+      "item_count": 5
+    }
+  },
+  {
+    "case_id": "cord-train-0413",
+    "task": {
+      "receipt": "10X 20,000\nCHIKATSU BEN 200,000\n10X 1,000\nBOX T. O 10,000\n10X 4,000\nOCHA 40,000\nTA1 250,000\nTX1 25,000\nTL 275,000\nCASH 300,000\nCG 25,000"
+    },
+    "expected": {
+      "total": 275000,
+      "subtotal": 250000,
+      "tax": 25000,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0414",
+    "task": {
+      "receipt": "bluberry pastry\n1 12,000 12,000\nTOTAL 12,000\nCASH 12,000\nCHANGE 0"
+    },
+    "expected": {
+      "total": 12000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0415",
+    "task": {
+      "receipt": "ALMOND CHOCO CREAM CHEESE\n1 28,000 28,000\n28,000\nSUB TOTAL\nGRAND TOTAL 28,000\nOTHER20710 28,000\nCHANGE DUE 0"
+    },
+    "expected": {
+      "total": 28000,
+      "subtotal": 28000,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0417",
+    "task": {
+      "receipt": "1 Blend GT (M) 60.000\n1 Es Kopi Susu Pandan 35.000\nSUB TOTAL 95.000\nService Charge 0\nPB1 0\nTOTAL 95.000"
+    },
+    "expected": {
+      "total": 95000,
+      "subtotal": 95000,
+      "tax": 0,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0418",
+    "task": {
+      "receipt": "1 SAUSAGE DONUT 13,000\n1 TLJ CROQUETTE 17,000\n2 CORONET 27,000\n2 SPOOKY SOBORO 24,000\n1 SCREAMING RED BEAN 13,000\n1 PIZZA TOAST 16,000\nTOTAL 110,000\nCASH 100,000\nCASH 100,000\nCHANGE 90,000"
+    },
+    "expected": {
+      "total": 110000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 6
+    }
+  },
+  {
+    "case_id": "cord-train-0429",
+    "task": {
+      "receipt": "1 BLACKCURRANT 32,000\nBEVERAGE 32,000\n1 FRIED CALAMARI 85,000\n1 SALTED EGG FISH & CHIPS 99,000\n1 DANISH FISH & CHIPS\nFOOD 184,000\nSUBTTL 216,000\nService Charge 17,280\nTAX\n23,328\nTOTAL\n256,608"
+    },
+    "expected": {
+      "total": 256608,
+      "subtotal": 216000,
+      "tax": 23328,
+      "item_count": 4
+    }
+  },
+  {
+    "case_id": "cord-train-0431",
+    "task": {
+      "receipt": "SATE T1 40,000\nSUBTOTAL 40,000\nPB 1 10% 4,000\nTOTAL 44,000\nCASH 50,000\nCHANGE 6,000"
+    },
+    "expected": {
+      "total": 44000,
+      "subtotal": 40000,
+      "tax": 4000,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0432",
+    "task": {
+      "receipt": "1 XXI Java Tea Spc 25.000\n1 Popcorn Sweet (S) 30.000\nTOTAL 55.000\nCASH 100.000\nCHANGED 45.000"
+    },
+    "expected": {
+      "total": 55000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0433",
+    "task": {
+      "receipt": "TORI BAITAN UDON 1 43,636\nBEEF CURRY RICE 1 49,091\nINARI 1 10,000\nCOLD OCHA 1 10,909\nSUB. TOTAL 113,636\nRESTAURANT TAX 11,364\nGRAND TOTAL\n~CASH 125,000 125,000\nChange: 5,000"
+    },
+    "expected": {
+      "total": 125000,
+      "subtotal": 113636,
+      "tax": 11364,
+      "item_count": 4
+    }
+  },
+  {
+    "case_id": "cord-train-0437",
+    "task": {
+      "receipt": "4808539 TALKING ACTIVITY BK\n1 254,500 254,500\n1500 KERTAS KADO 1500\n1 1,500 1,500\nItem 2 Qty 2\nSUBTOTAL 256,000\nTOTAL 256,000\nCASH 256,000\nKEMBALI 0"
+    },
+    "expected": {
+      "total": 256000,
+      "subtotal": 256000,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0442",
+    "task": {
+      "receipt": "1 SHISAMO MENTAIKO 33,000\n1 SALMON BACON 49,000\n1 DYNAMITE SCALLOP 55,000\n1 TOBIKO TOFU 29,000\nSUBTTL 166,000\nSVC 10,790\nPB1 17,679\nTOTAL 194,469"
+    },
+    "expected": {
+      "total": 194469,
+      "subtotal": 166000,
+      "tax": 17679,
+      "item_count": 4
+    }
+  },
+  {
+    "case_id": "cord-train-0447",
+    "task": {
+      "receipt": "*1 Pc Cheese Tart Rp 29000.00\nSubtotal: Rp 29000.00\nTotal: Rp 29000.00\nCustomer Paid Cash: Rp 50000.00\nCustomer Change: Rp 21000.00"
+    },
+    "expected": {
+      "total": 2900000,
+      "subtotal": 2900000,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0455",
+    "task": {
+      "receipt": "BASO TAHU 1 43.636 43.636\nNASI PUTIH 1 6.000 6,000\nTAHU SATUAN 1 14.545 14,545\nTOTIAL 64.181\nTAX 10.00 % 6,418\nGRAND TOTAL 70.599\nTUNAI 70.599\nKEMBALI 0"
+    },
+    "expected": {
+      "total": 70599,
+      "subtotal": 64181,
+      "tax": 6418,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0456",
+    "task": {
+      "receipt": "1 mush pasta 80,000\n1 chic ques 55,000\nITEMS : 2 135,000\nService charge 10,125\nPB1 14,513\nTotal. 159,638\nVISA BCA: 159,638"
+    },
+    "expected": {
+      "total": 159638,
+      "subtotal": 135000,
+      "tax": 14513,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0458",
+    "task": {
+      "receipt": "DumDum Thai Iced Tea x 1 22.000\nTotal 22.000\nTunai 25.000\nKembali 3.000"
+    },
+    "expected": {
+      "total": 22000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0461",
+    "task": {
+      "receipt": "2 KFC Winger HC 40,000\n1 Soaghetti Deluxe 8,182\nSub Total 48,182\nP.Rest 10 : 4,818\nTotal 53,000\nCash 60,000\nKembali 7,000\n3 Items,"
+    },
+    "expected": {
+      "total": 53000,
+      "subtotal": 48182,
+      "tax": 4818,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0464",
+    "task": {
+      "receipt": "NIKU UDON 1 49,091\nSUB. TOTAL 49,091\nRESTAURANT TAX 4,909\nGRAND TOTAL\n~ CASH [54,000] 54,000\nChange: 46,000"
+    },
+    "expected": {
+      "total": 54000,
+      "subtotal": 49091,
+      "tax": 4909,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0468",
+    "task": {
+      "receipt": "2 52.000 104.000\nNasi CampurBali\n1 32.000 32.000\nSambal Besar\n1 7.000 7.000\nSambal Kecil\n2 7.000 14.000\nEs Teh Manis\n1 10.000 10.000\nKrpBangka/Bawang\nCASH 167.000"
+    },
+    "expected": {
+      "total": null,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 5
+    }
+  },
+  {
+    "case_id": "cord-train-0472",
+    "task": {
+      "receipt": "LE MINERALE 600ML 1 3100 3,100\nPLASTIK SDG 1 1 1\nDISKON (1)\nHARGA JUAL 3,100\nTOTAL 3,100\nTUNAI 5,000\nKEMBALI 1,900\nPPN= 282"
+    },
+    "expected": {
+      "total": 3100,
+      "subtotal": 3100,
+      "tax": 282,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0477",
+    "task": {
+      "receipt": "CAPPUCCINO 28,000\n2X 24,000\nORANGE JUICE 48,000\nTL 76,000\nCASH 100,000\nCG 24,000"
+    },
+    "expected": {
+      "total": 76000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0478",
+    "task": {
+      "receipt": "10 12.727 Rp. 127.270\nPecel Pincuk\n5 3.182 Rp. 15.910\nTahu Bacem\n5 3.182 Rp. 15.910\nTempe Bacem\n2 12.727 Rp. 25.454\nEmpal\n1 25.455 Rp. 25.455\nPeyek Parcel\nSubTotal Rp. 209.999\nTotal Rp. 209.999\nPpd 10% Rp. 21.000\nTOTAL\nRp. 230.999\nCASH Rp. 250.000\nCHANGE Rp. 19.001"
+    },
+    "expected": {
+      "total": 230999,
+      "subtotal": 209999,
+      "tax": 21000,
+      "item_count": 5
+    }
+  },
+  {
+    "case_id": "cord-train-0479",
+    "task": {
+      "receipt": "94759141 VALINO DONNA 498,608\n2 349,900\ndisc toko 25%( 2) -174,950\ndisc mrcday 5%( 2) -26,242\n93025784 SB SIZE 45.5 0\n3 ITEMS TOTAL 498,608"
+    },
+    "expected": {
+      "total": 498608,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0484",
+    "task": {
+      "receipt": "2 Aqua MinWtr 330ml 11,818\nSubTotal: 11,818\nPB1: 1,182\nTotal: 13,000\ncash: 50,000\nChange: 37,000"
+    },
+    "expected": {
+      "total": 13000,
+      "subtotal": 11818,
+      "tax": 1182,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0488",
+    "task": {
+      "receipt": "T. CREAM M 21\n3 21,000 63,000\nJumlah 63,000\nBayar 100,000\nKembali 37,000"
+    },
+    "expected": {
+      "total": 63000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0494",
+    "task": {
+      "receipt": "Cha Keaw x1 25.000\nTotal 25.000\nCash 25.000\nChange 0"
+    },
+    "expected": {
+      "total": 25000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0496",
+    "task": {
+      "receipt": "1 BBQ Chicken 41,000\n1 - Pedas 0\n1 Mineral Water 600 ml 8,000\n1 Teh Pucuk 350 ml 7,000\nITEMS: 3 56,000\nTatal. 56,000\nPay Cash 60,000 Change : 4,000"
+    },
+    "expected": {
+      "total": 56000,
+      "subtotal": 56000,
+      "tax": null,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0508",
+    "task": {
+      "receipt": "1013-ROTI NANAS\n8.500,00 x1 8.500,00\n3025-BOLU GULUNG MOCCA PTG\n6.000.00 x1 6.000,00\n5014-LEMPER IKAN\n6.500,00 x1 6.500,00\n1245-PLASTIK TENTENGAN KECIL\n0,00 x1 0,00\nTotal Item: 4\nTotal. 21.000,00\nCash\nTendered: 50.000,00\nChange: 29.000,00"
+    },
+    "expected": {
+      "total": 2100000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 4
+    }
+  },
+  {
+    "case_id": "cord-train-0510",
+    "task": {
+      "receipt": "1026-Garlic Pesto\n22.000 x1 22.000\n1028-Dark Choco Creamcheese\n26.000 x1 26.000\n6001-Plastic Bag Small\n0 x1 0\nTotal Item: 3\nTotal. 48.000\nDebet Card 48.000"
+    },
+    "expected": {
+      "total": 48000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0512",
+    "task": {
+      "receipt": "1 Gado Gado 36,000\n1 Nasi Putih GG 7,000\nSUBTOTAL 43,000\nTOTAL 43,000\nCASH 43,000"
+    },
+    "expected": {
+      "total": 43000,
+      "subtotal": 43000,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0514",
+    "task": {
+      "receipt": "2 APPLE PIE 22,000\n1 13,000\nAPPLE CREAMCHEESE PASTRY\nTOTAL 35,000\nCASH 100,000\nCHANGE 65,000"
+    },
+    "expected": {
+      "total": 35000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0519",
+    "task": {
+      "receipt": "1 Kopi Susu R 19.000\nSubtotal 19.000\nTotal 19.000\nDEBIT 19.000\nChange 0"
+    },
+    "expected": {
+      "total": 19000,
+      "subtotal": 19000,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0520",
+    "task": {
+      "receipt": "1 Premier Mineral Water (L 8.000\nt1)\n1 Lychee Tea 15.000\nSubtotal 23.000\nTOTAL 23.000\nCash 32.000\nChange Due 9.000"
+    },
+    "expected": {
+      "total": 23000,
+      "subtotal": 23000,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0527",
+    "task": {
+      "receipt": "AYAM GR SALT&PAPER\n1 OPEN KITCHEN 102,000\nMEDIUM\n**PESAN**\nAYAMNYA DI FILLET\n**PESAN**\n1 TAHU LAMPION 165,000\n=*MEDIUM*=\nFREE BAKMI ULTAH\n1 OPEN KITCHEN 0\nMEDIUM\n**PESAN**\n1 SUP JGG KPT 132,000\n=*MEDIUM*=\n1 AYAM PANGGANG 168,000\n2 CHINESE TE @14,000 28,000\n2 KWAN'IM\n1 LUMPIA UDANG 71,000\n=*MEDIUM*=\nBUNCIS BWG PTH /M\n1 OPEN KITCHEN 78,000\n5 NASI PUTIH @10,000 50,000\n20%\nDISC ULTAH 143,200 -\nFOOD 716,000\nBEVERAGES 28,000\nOTHERS 50,000\nSUBTOTAL 650,800\n79,400\nTAX\nCHARGE 47,640\nSERVICE\nDUE 777,840"
+    },
+    "expected": {
+      "total": 777840,
+      "subtotal": 650800,
+      "tax": 79400,
+      "item_count": 9
+    }
+  },
+  {
+    "case_id": "cord-train-0537",
+    "task": {
+      "receipt": "1 KOPI CAM 20,000\nTOTAL 20,000\nCASH 20,000"
+    },
+    "expected": {
+      "total": 20000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0538",
+    "task": {
+      "receipt": "1 Mineral Water 9.000\n1 Nasi Goreng Buntut 69.500\n1 NASI LIWET 49.000\n1 Ayam Penyet Sambal Glede 44.000\n1 Mendoan 31.000\n2 Teh Tawar Panas 22.000\n1 Teh Tubruk Jahe 24.500\nSubtotal 249.000\nServi Charge 5% 12.450\nPajak Rest 10% 26.145\n8 Total 287.595"
+    },
+    "expected": {
+      "total": 287595,
+      "subtotal": 249000,
+      "tax": 26145,
+      "item_count": 7
+    }
+  },
+  {
+    "case_id": "cord-train-0544",
+    "task": {
+      "receipt": "SUSHI SALMON 1.00 65,000.00 65,000.00\nSALAD DRESSING 1.00 3,500.00 3,500.00\nTHOUSAND ISLAND\nLEMONADE 2.00 8,000.00 16,000.00\nSHRIMP SATSUMA 1.00 8,000.00 8,000.00\nSHITAKE 1.00 9,000.00 9,000.00\nSKEWER\nSPICY 1.00 9,000.00 9,000.00\nTEMPURA\nSAUCE SHOYU SUSHI 10.00 1,000.00 10,000.00\nYAMASA HALAL\nSUSHI SALMON 1.00 36,000.00 36,000.00\nFRESH PAKET\nSENDOK DAN GARPU 1.00 1,000.00 1,000.00\nPLASTIK\nTOBIKKO ORANGE 3.00 5,000.00 15,000.00\nTAMAGO 1.00 3,000.00 3,000.00\nSATSUMA AGE NIGIRI 1.00 3,000.00 3,000.00\nSubtotal 178,500.00\nTax 17,850.00\nTotal Amount 196,350.00\nPembulatan -350.00\nKARTU CREDIT 196,000.00\nKembalian 0.00"
+    },
+    "expected": {
+      "total": 19635000,
+      "subtotal": 17850000,
+      "tax": 1785000,
+      "item_count": 12
+    }
+  },
+  {
+    "case_id": "cord-train-0547",
+    "task": {
+      "receipt": "1 SAUSAGE DONUT 14,000\n1 PREMIUM TOAST PAN BREAD 25,000\nTOTAL 39,000\nGo-Pay Offline\n39,000"
+    },
+    "expected": {
+      "total": 39000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0548",
+    "task": {
+      "receipt": "1057-French Bread Puding\n20.000 x1 20.000\n1001-Choco Bun\n22.000 x3 66.000\n6002-Plastic Bag Medium\n0 x1 0\nTotal Item: 5\nTotal. 86.000\nCash\nTendered: 100.000\nChange: 14.000"
+    },
+    "expected": {
+      "total": 86000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0564",
+    "task": {
+      "receipt": "JPR SUS U 12,727\nL C MESES 20,000\nPLASTIK 33 0\nSUDTOTAL 32,727\nPB1 10% 10.000%\nAMOUNT 3,273\n3.00xITEMS\nTOTAL 36,000\nCASH 50,000\nCHANGE 14,000"
+    },
+    "expected": {
+      "total": 36000,
+      "subtotal": 32727,
+      "tax": 3273,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0569",
+    "task": {
+      "receipt": "A1. Sate Babi Manis 6.000\n2 3.000\nA2. Sate Babi Bumbu Bali 8.000\n2 4.000\nA2. Lapolong 4.000\n1 4.000\nA2. Sate Babi Cabe Ijo 4.000\n1 4.000\nA1. Paru Babi 3.000\n1 3.000\nA2. Ngohiong 4.000\n1 4.000\nA4. Es Teh Manis 5.000\n1 5.000\nTotal 34.000\nCash 34.000"
+    },
+    "expected": {
+      "total": 34000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 7
+    }
+  },
+  {
+    "case_id": "cord-train-0571",
+    "task": {
+      "receipt": "1 SMOKY PAN CLASSIC 59,000\n1 Chicken Popcorn 29,000\nSUBTOTAL 88,000\nSC 5% 4,400\nPB1 10% 9,240\nTOTAL 101,640\nTotal item : 2 Total Qty : 2"
+    },
+    "expected": {
+      "total": 101640,
+      "subtotal": 88000,
+      "tax": 9240,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0574",
+    "task": {
+      "receipt": "BASO TAHU 1 43.636 43.636\nNASI PUTIH 1 6.000 6,000\nA.MINERAL GELAS 1 3,000 3,000\nTOTAL 52.636\nTAX 10.00 % 5,264\nGRAND TOTAL 57,900\nTUNAI 60.000\nKEMBALI 2,100"
+    },
+    "expected": {
+      "total": 57900,
+      "subtotal": 52636,
+      "tax": 5264,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0580",
+    "task": {
+      "receipt": "1 Tebu Lemon 22.000\n1 Total 22.000\nCASH 22.000"
+    },
+    "expected": {
+      "total": 22000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0586",
+    "task": {
+      "receipt": "6 TWIST DONUT 54,000\n2 PIZZA TOAST 32,000\n1 CROQUE MONSIEUR 17,000\nTOTAL 103,000\nCASH 100,000\nCASH 100,000\nCHANGE 97,000"
+    },
+    "expected": {
+      "total": 103000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0602",
+    "task": {
+      "receipt": "1 GRAINS PAN BREAD 20,500\nTOTAL 20,500\nCASH 50,000\nCHANGE 29,500"
+    },
+    "expected": {
+      "total": 20500,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0603",
+    "task": {
+      "receipt": "1 TEH PANAS 5,455\n1 ES TEH TAWAR 6,364\n1 NASI CAH JAMUR 32,728\n1 BIHUN GORENG AYAM 29,091\nITEMS :4 73,638\nVAT 10% 7,364\nBefore Rounding 81,002\nRounding -2\nTotal. 81,000\nKREDIT BCA 81,000"
+    },
+    "expected": {
+      "total": 81000,
+      "subtotal": 73638,
+      "tax": 7364,
+      "item_count": 4
+    }
+  },
+  {
+    "case_id": "cord-train-0604",
+    "task": {
+      "receipt": "1 Bihun Ayam Jamur 25.909\n1 Es Teh 5.455\nSubtotal 31.364\nPB 1 3.136\n2 Total 34.500\nFLAZZ 34.500"
+    },
+    "expected": {
+      "total": 34500,
+      "subtotal": 31364,
+      "tax": 3136,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0605",
+    "task": {
+      "receipt": "ES KOPI SUSU 6 108.000\nES KOPI SOKLAT 1 20.000\nTotal 128.000\nGoPay 128.000\nKembali 0"
+    },
+    "expected": {
+      "total": 128000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0613",
+    "task": {
+      "receipt": "1 Crispy Egg Corn 42,000\n1 Mun Tofu 62,000\n1 Go Hiong 65,000\n3 12,000\nSteam Rice 36,000\n2 18,000\nIce Lemon Tea 36,000\nItem Total: 241,000\nService 7.5%: 18,075\nPHR 10%: 25,908\nTotal: 284,983\nDEBIT BCA 284,983\n0\nCHANGES"
+    },
+    "expected": {
+      "total": 284983,
+      "subtotal": 241000,
+      "tax": 25908,
+      "item_count": 5
+    }
+  },
+  {
+    "case_id": "cord-train-0614",
+    "task": {
+      "receipt": "1 Lemon iced tea 25.000\n1 Banana Milkshake 35.000\n1 Heavy alvin potato 49.000\nHubert chicken capers\n1 fettucine 65.000\nSub Total 174.000\nDiscount (0)\nService 9.570\nOthers 18.357\nRounding Off - 27\nTOTAL 201.900\nGRAND"
+    },
+    "expected": {
+      "total": 201900,
+      "subtotal": 174000,
+      "tax": null,
+      "item_count": 4
+    }
+  },
+  {
+    "case_id": "cord-train-0618",
+    "task": {
+      "receipt": "SUKIYAKI BEEF RICE DEALJAVA 1 41,728\nSUB. TOTAL 41,728\nRESTAURANT TAX 4,173\nGRAND TOTAL\n~P. LAIN [45,901] 45,901\nChange 0"
+    },
+    "expected": {
+      "total": 45901,
+      "subtotal": 41728,
+      "tax": 4173,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0621",
+    "task": {
+      "receipt": "2 TLJ SPANISH COFFEE 70,000\n1 CLASSIC CREAMCEESE CINNAM 10,000\nTOTAL 80,000\nCASH 100,000\nCHANGE 20,000"
+    },
+    "expected": {
+      "total": 80000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0623",
+    "task": {
+      "receipt": "1 IKAN GURAME REG 118,000\nTIM HONGKONG\nNO MICIN\n1 POCAI 3 TELUR 72,000\n1 UDG GR MAYONAISE 147,000\n=*MEDIUM*=\n1 TAHU JPG S TRM 78,000\n=*MEDIUM*=\n2 NASI PUTIH @10,000 20,000\n2 ES TEH TAW @12,000 24,000\nGUILINGGAO\n1 OPEN DESSERT 26,000\nMANDIRI DISC 25% 121,250 -\nFOOD 415,000\nBEVERAGES 50,000\nOTHERS 20,000\nSUBTOTAL 363,750\nTAX 48,500\nSERVICE CHARGE 29,100\nDUE 441,350"
+    },
+    "expected": {
+      "total": 441350,
+      "subtotal": 363750,
+      "tax": 48500,
+      "item_count": 7
+    }
+  },
+  {
+    "case_id": "cord-train-0628",
+    "task": {
+      "receipt": "1 CHEESE VOLCANO 23,000\nTOTAL 23,000\nCASH 23,000\nCHANGE 0"
+    },
+    "expected": {
+      "total": 23000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0630",
+    "task": {
+      "receipt": "1 Grilled Salmon Head 24,500\n1 Set Menu Family 318,000\n1 Tairyos Salmon Maki 46,000\n2 Tepanyaki Cawanmushi 44,000\n1 Teppan Seafood Fr Rc 36,000\n1 Tobiko Gunkan 24,000\nSUBTOTAL 492,500\nSC 6% 29,550\nPB1 10% 52,205\nTOTAL 574,255\n574,255\nMaster"
+    },
+    "expected": {
+      "total": 574255,
+      "subtotal": 492500,
+      "tax": 52205,
+      "item_count": 6
+    }
+  },
+  {
+    "case_id": "cord-train-0635",
+    "task": {
+      "receipt": "ORIGINAL 12,000\nTIRAMISU CIN 14,000\nMUF CHOC CHP 12,000\nCHO CAKE SMA 12,000\n2X 10,000\nRED VELVET 20,000\nHAZELNUT 15,000\nTIRAMISU CIN 14,000\nORIGINAL 12,000\nTOTAL\n111,000\nCREDIT 111,000"
+    },
+    "expected": {
+      "total": 111000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 8
+    }
+  },
+  {
+    "case_id": "cord-train-0640",
+    "task": {
+      "receipt": "1 medium tub 49,000.0 49,000.0\nSubtotal: 45,545.45\nTax 10.00%: 4,454.55\nTOTAL: 49,000.00\nPaid: 50,000.00\nChange: 1,000.00"
+    },
+    "expected": {
+      "total": 4900000,
+      "subtotal": 4554545,
+      "tax": 445455,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0652",
+    "task": {
+      "receipt": "WHDP JR 15K 15,000\nTakeQuay Charge 909\nSubtotal 15,909\nPB1 (10%) 1,591\nTake Awoy Total 17,500\nCash 20,000\nChange 2,500"
+    },
+    "expected": {
+      "total": 17500,
+      "subtotal": 15909,
+      "tax": 1591,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0656",
+    "task": {
+      "receipt": "RAKUNI KM KEJU PCS/PCS\n00627350101 1 Rp. 10,000\nTotal: 1 Rp. 10,000"
+    },
+    "expected": {
+      "total": 10000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0666",
+    "task": {
+      "receipt": "1 PHILLY CHEESESTEAK SL 35,455\n1 SAUSAGE PASTRY ROLL 29,091\n1 CREAMY BEEF CLS FTC 42,727\n1 AQUA BOTTLE 10,909\n2 LIPTON ICE TEA REGULA 32,728\n1 PAKET HAPPY HOUR 27,273\n1 GARLICHEESE BREAD\n1 COLD FRAPE\nSUBTOTAL 178,183\nTAX 17,818\nTOTAL 196,001"
+    },
+    "expected": {
+      "total": 196001,
+      "subtotal": 178183,
+      "tax": 17818,
+      "item_count": 6
+    }
+  },
+  {
+    "case_id": "cord-train-0667",
+    "task": {
+      "receipt": "KAKE UDON 1 30,909\nKITSUNE UDON (KIDS) 1 28,182\nCOLD OCHA 1 10,909\nSKEWERED TOFU ROLL 1 12,727\nEBI TEMPURA 1 13,636\nSUB. TOTAL 96,363\nRESTAURANT TAX 9,636\nGRAND TOTAL\n~ CASH [105,999] 105,999\nChange: 0"
+    },
+    "expected": {
+      "total": 105999,
+      "subtotal": 96363,
+      "tax": 9636,
+      "item_count": 5
+    }
+  },
+  {
+    "case_id": "cord-train-0680",
+    "task": {
+      "receipt": "1 Fruit Compliment\n1 Udang Mentega Sdg (M 162,000\n2 Chinese Tea-Jasmine 20,000\n5 Buruno Gr IN 230,000\n5 Nasi Putih 45,000\nITEMS TOTAL 457,000\nLUCKY BCA 20% 78,400)\nSUBTOTAL 378,600\nService 27,420\nTax 48,442\nSubtotal Beverage 20,000\nSubtotal Dessert 45,000\nSubtotal Food 313,600\n454,462\nTOTAL\nBCA CARD 454,462"
+    },
+    "expected": {
+      "total": 454462,
+      "subtotal": 457000,
+      "tax": 48442,
+      "item_count": 5
+    }
+  },
+  {
+    "case_id": "cord-train-0681",
+    "task": {
+      "receipt": "1 SALMON PESTO 85,500\n1 GRILLED SALMON TERIYAK 177,000\n1 MINERAL WATER 23,000\n1 FRESH FRUIT COCKTAIL 65,000\nSUBTTL 350,500\nSVC CHG 6% 21,030\nPB1 10% 37,153\nTOTAL 408,683"
+    },
+    "expected": {
+      "total": 408683,
+      "subtotal": 350500,
+      "tax": 37153,
+      "item_count": 4
+    }
+  },
+  {
+    "case_id": "cord-train-0685",
+    "task": {
+      "receipt": "1 SB 1 HC 27,727\n1 Cream Soup 8,182\nSub Total 35,909\nP.Rest 10 % 3,591\nTotal 39,500\nKupon 10,000\nT-CASH 29,500\n2 Items,"
+    },
+    "expected": {
+      "total": 39500,
+      "subtotal": 35909,
+      "tax": 3591,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0688",
+    "task": {
+      "receipt": "1 BUBBLE GUM 18,182\n1 CAPPUCINO BLEND 20.909\n1 STRAWBERRY 18,182\n1 COOKIES AND CREAM 20.909\n*4X Gula Murni 100%\n1 CHOCO ALMOND 18.182\n*Gula Murni 100%\n1 CAPPUCINO BLEND 20.909\n*Gula Murni 100%\nSubtotal 117.273\nPAJAK 10% 11,727\n6 Total 129,000\nTendered 150.000\nKembali 21.000"
+    },
+    "expected": {
+      "total": 129000,
+      "subtotal": 117273,
+      "tax": 11727,
+      "item_count": 6
+    }
+  },
+  {
+    "case_id": "cord-train-0693",
+    "task": {
+      "receipt": "Toripaitan shoyu telur IDR 71,500\nToripaitan Ekstrim telur IDR 79,200\nGreen Tea cold IDR 12,100\n(Goreng)Ayam Gyoza IDR 34,100\nMineral water(normal) IDR 8,800\nService Charge IDR 10,285\nTotal IDR 215,985\nTax IDR 19,635"
+    },
+    "expected": {
+      "total": 215985,
+      "subtotal": null,
+      "tax": 19635,
+      "item_count": 5
+    }
+  },
+  {
+    "case_id": "cord-train-0697",
+    "task": {
+      "receipt": "1 Hot Dog W Cheese 44.000\nTOTAL 44.000\nCASH 44.000\nCHANGED 0"
+    },
+    "expected": {
+      "total": 44000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0700",
+    "task": {
+      "receipt": "6 5.000\nROTI 30.000\n3 4.500\nROTI 13.500\n2 6.000\nROTI 12.000\nSUBTOTAL 55.500\nITEMS 11Q\nTOTAL\n55.500\nCASH 100.000\nCHANGE 44.500"
+    },
+    "expected": {
+      "total": 55500,
+      "subtotal": 55500,
+      "tax": null,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0702",
+    "task": {
+      "receipt": "BIHUN CAMPUR 1 43,181 43,181\nJERUK MURNI 1 20,000 20,000\nES NONA REGULAR 1 13,000 13,000\nTOTAL 76,181\nTAX 10.00 % 7,618\nGRAND TOTAL 83,799\nTUNAI 100,000\nKEMBALI 16,201"
+    },
+    "expected": {
+      "total": 83799,
+      "subtotal": 76181,
+      "tax": 7618,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0707",
+    "task": {
+      "receipt": "1 CHEESE ROLLS 6PCS 30,000\n1 PAKET BER2 UP1 74,545\n1 TUNA DEL\n1 MAC N CHEESE DEL\n1 LEMON TEA HANGAT DEL\n1 BLACKCURRANT DEL\n1 SC/P BEEF MAYO DEL\nSUBTOTAL 104,545\nTAX 10,455\nTOTAL 115,000"
+    },
+    "expected": {
+      "total": 115000,
+      "subtotal": 104545,
+      "tax": 10455,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0714",
+    "task": {
+      "receipt": "-YJP11037\n1 x 8000 8.000\nSubTotal 8,000\nTOTAL : 8.000\nTotal Item: 1\nBayar = 10.000 Kembali= 2.000"
+    },
+    "expected": {
+      "total": 8000,
+      "subtotal": 8000,
+      "tax": null,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0720",
+    "task": {
+      "receipt": "CARBONARA UDON 1 49,091\nON TAMA UDON (HOT) 1 37,273\nABURA UDON (ORIGINAL) 1 40,909\nGREEN BEAN KAKIAGE 1 10,000\nEGG TEMPURA 1 8,182\nHOT OCHA 1 10,909\nBEEF CURRY UDON 1 49,091\nBEEF CROQUETTE 1 12,727\nCOLD OCHA 2 21,818\nSUB. TOTAL 240,000\nRESTAURANT TAX 24,000\nGRAND TOTAL\n~ CASH [264,000] 264,000\nChange: 0"
+    },
+    "expected": {
+      "total": 264000,
+      "subtotal": 240000,
+      "tax": 24000,
+      "item_count": 9
+    }
+  },
+  {
+    "case_id": "cord-train-0727",
+    "task": {
+      "receipt": "Ayam Goreng Crispy Spicy\n1x 48,000 48,000\nCapcai Seafood 1x 49,000 49,000\nChinese Tea 1x 20,000 20,000\n* 3 Cup\nNasi Putih 3x 10,000 30,000\nSoup Baso Ikan 1x 35,000 35,000\nSub Total 182,000\nService 9,100\nTax 19,110\nRounding -10\nGRAND TOTAL 210,200"
+    },
+    "expected": {
+      "total": 210200,
+      "subtotal": 182000,
+      "tax": 19110,
+      "item_count": 5
+    }
+  },
+  {
+    "case_id": "cord-train-0729",
+    "task": {
+      "receipt": "1 Mineral Water 6,364\nSub Total 6,364\nP.Rest 10 : 636\nTotal 7,000\nCash 7,000\n1 Items,"
+    },
+    "expected": {
+      "total": 7000,
+      "subtotal": 6364,
+      "tax": 636,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0738",
+    "task": {
+      "receipt": "MEDIUM FRIES 14,545\nREGULAR COKE 7,273\nK11 CHOCO 1217 5,000\nSubtotal 26,818\nPB1 (10%) 2,682\nDine In Total 29,500\nCash Rp. 29,500"
+    },
+    "expected": {
+      "total": 29500,
+      "subtotal": 26818,
+      "tax": 2682,
+      "item_count": 3
+    }
+  },
+  {
+    "case_id": "cord-train-0743",
+    "task": {
+      "receipt": "1 Ayam Asam Manis M 94,000\n1 Ikan Gurame Tahu M 108,000\n1 Pocai 3 Telor M 112,000\n1 Sapo Tohu Sea M 112,000\n1 Udang Gandum L 212,000\nSUDTOTAL 638,000\nFAVE 600 ( 600,000)\nService 38,280\nTax 67,628\nTOTAL 143,908\nMASTER 143,908"
+    },
+    "expected": {
+      "total": 143908,
+      "subtotal": 638000,
+      "tax": 67628,
+      "item_count": 5
+    }
+  },
+  {
+    "case_id": "cord-train-0752",
+    "task": {
+      "receipt": "1 PECEL MADIUN 39.500\n1 AIR MINERAL 10.000\nSubtotal 49.500\nServi Charge 57 2.475\nPajak Rest 10% 5.198\n2 Total 57.173"
+    },
+    "expected": {
+      "total": 57173,
+      "subtotal": 49500,
+      "tax": 5198,
+      "item_count": 2
+    }
+  },
+  {
+    "case_id": "cord-train-0762",
+    "task": {
+      "receipt": "1 Spicy Tuna 16,363\nSubTotal: 16,363\nPB1: 1,636\nTotal: 17,999\ncash: 50,000\nChange: 32,001"
+    },
+    "expected": {
+      "total": 17999,
+      "subtotal": 16363,
+      "tax": 1636,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0768",
+    "task": {
+      "receipt": "1 TWIST DONUT 9,000\n4 PAIN AU CAFE MOCHA 46,000\n1 POTATO SAUSAGE BREAD 19,000\n1 ROYAL CHEESE TART 16,000\nTOTAL 90,000\nCASH 100,000\nCHANGE 10,000"
+    },
+    "expected": {
+      "total": 90000,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 4
+    }
+  },
+  {
+    "case_id": "cord-train-0775",
+    "task": {
+      "receipt": "1 20,909\nGREENTEA BLENDED CREAM\n*Gula Murni 100%\nSubtotal 20,909\nPAJAK 10% 2,091\n1 Total 23,000\nDB BCA 23,000"
+    },
+    "expected": {
+      "total": 23000,
+      "subtotal": 20909,
+      "tax": 2091,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0781",
+    "task": {
+      "receipt": "Paket KP1 1 45.455\nFree Tea Pucuk (0)\nSubtotal 45.455\nPB1 (10%) 4.546\nPembulatan (1)\nTotal 50.000\n100.000\nTunai\n50.000\nKembali"
+    },
+    "expected": {
+      "total": 50000,
+      "subtotal": 45455,
+      "tax": 4546,
+      "item_count": 1
+    }
+  },
+  {
+    "case_id": "cord-train-0787",
+    "task": {
+      "receipt": "1X 38,900\nLS TOILETBRUSH102 38,900\nMEGA Discount 3,890-\n1X 25,900\nTAMMIA 259 25,900\nMEGA Discount 2,590-\n1X 33,500\nWDH SUN GEL 40ML 33,500\nMEGA Discount 3,350-\n1X 21,900\nTAM 424 BUFFER 219 21,900\nMEGA Discount 2,190-\n1X 67,600\nSIKAT BOTOL/BSC 67,600\nMEGA Discount 6,760-\n1X 27,400\nGOCUJANG H.200G 27,400\nMEGA Discount 2,740 -\n0.064X 37,500\nPM CABE HIJAU CURA 2,400\nMEGA Discount 240-\n0.482X 30,900\nTIMUN JEPANG 14,894\nMEGA Discount 1,489-\n1X 7,420\n7,420\nKONGKEE TOFU JEPUN\nMEGA Discount 742-\n1X 33,500\n33,500\n+PALM SHW GEL 450\nMEGA Discount 3,350-\nSUBTOTAL: 246,073\nTOTAL: 246.073"
+    },
+    "expected": {
+      "total": 246073,
+      "subtotal": 246073,
+      "tax": null,
+      "item_count": 10
+    }
+  },
+  {
+    "case_id": "cord-train-0794",
+    "task": {
+      "receipt": "13 PAKET WEEKEND 1 55.000 715.000\n6 PAKET WEEKEND 2 80.000 480.000\n1 ES JERUK 13.000\n1 ES TEH TAWAR 3.000\n1 KOPI HITAM 8.500\n1 ES BATU 1.000\nItm: 6 Total 1.220.500\nQty: 23\nTunai 1.250.000\nKembali 29.500"
+    },
+    "expected": {
+      "total": 1220500,
+      "subtotal": null,
+      "tax": null,
+      "item_count": 6
+    }
+  }
+]

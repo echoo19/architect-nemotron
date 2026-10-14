@@ -1,0 +1,18 @@
+{
+  "entries": [
+    {
+      "cases_sha256": "031db1283a00bb2cffa62f0b772b26103d517e75e2bb43b03571e534a474e130",
+      "n": 24,
+      "seed": 7
+    },
+    {
+      "cases_sha256": "94987183d506656e6171e5bd409e211aa4bd61fa7d776a7d3b65913696f49aa2",
+      "n": 40,
+      "seed": 7
+    }
+  ],
+  "generator_version": "v1",
+  "note": "seed, n and sha256 of the canonical cases JSON only; regenerate with generate_tickets",
+  "suite_version": "v1",
+  "task_id": "tickets-40"
+}

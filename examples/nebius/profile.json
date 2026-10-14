@@ -1,0 +1,15 @@
+{
+  "workspace": "../../.architect/nebius",
+  "models": {
+    "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B": {"provider": "openai", "base_url": "https://api.tokenfactory.nebius.com/v1", "api_key_ref": "nebius"},
+    "nvidia/Nemotron-3_5-Lightning": {"provider": "openai", "base_url": "https://api.tokenfactory.nebius.com/v1", "api_key_ref": "nebius"},
+    "nvidia/nemotron-3-super-120b-a12b": {"provider": "openai", "base_url": "https://api.tokenfactory.nebius.com/v1", "api_key_ref": "nebius"},
+    "nvidia/Nemotron-3-Ultra-550b-a55b": {"provider": "openai", "base_url": "https://api.tokenfactory.nebius.com/v1", "api_key_ref": "nebius"}
+  },
+  "inference": {"provider": "openai", "base_url": "https://api.tokenfactory.nebius.com/v1", "api_key_ref": "nebius", "model": "nvidia/nemotron-3-super-120b-a12b"},
+  "forge_agent": {"provider": "openai", "base_url": "https://api.tokenfactory.nebius.com/v1", "api_key_ref": "nebius", "model": "nvidia/nemotron-3-super-120b-a12b", "think": false, "temperature": 0.0, "timeout_s": 300},
+  "compile": {"model_ladder": ["nvidia/Nemotron-3_5-Lightning", "nvidia/nemotron-3-super-120b-a12b"],
+              "max_candidates": 2, "enable_rewriting": false, "max_rewrites": 0, "compile_budget": {"cost_usd": 1.5, "compute_s": 1800},
+              "forge": {"max_usd": 1.2, "max_s": 2700}
+  }
+}

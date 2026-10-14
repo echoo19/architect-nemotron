@@ -1,0 +1,9 @@
+{
+  "sentiment-24": "Decide whether a brief product review reads as positive, negative or neutral.",
+  "tickets-40": "Sort one customer support ticket into billing, bug, feature or other; when a ticket raises two topics, use the label of the main request.",
+  "invoice-40": "From a plain-text invoice, pull out the vendor, the date in YYYY-MM-DD form, the printed total and each line item with its description, quantity and unit price. Leave any field that is not printed as null and never guess a value.",
+  "exam-clean-40": "Read the attached exam page and pull out each printed question: its number, stem, the four choices A-D and the printed answer key. A page listing only answers is an answer key page with no questions.",
+  "exam-scan-40": "From the attached scanned exam page, list every printed question with its number, stem, choices A-D and printed answer key. A page that only lists answers is an answer key page and has no questions.",
+  "digitizer-24": "Convert an uploaded test page into an answer key: pull out the printed questions and keys, work out each answer again from its question, and flag each mismatch for review.",
+  "digitizer-multipage-12": "Turn a multi-page uploaded quiz into an answer key: pull out the printed questions and keys, work out each answer again from its question, and flag each mismatch for review."
+}

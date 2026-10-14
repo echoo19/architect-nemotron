@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Architect visuals</title>
+<link rel="icon" href="data:,">
+<meta name="description" content="Prototype of Architect's bar view, exam chart, gate scatter, receipt card and hash line, drawn with placeholder data.">
+<!-- Lectern's tokens, fonts and motion, used verbatim from the desktop app. Serve the repository root over http to view this page (ES modules do not load from file://). -->
+<link rel="stylesheet" href="../../desktop/src/styles/tokens.css">
+<link rel="stylesheet" href="../../desktop/src/styles/fonts.css">
+<link rel="stylesheet" href="../../desktop/src/styles/motion.css">
+<link rel="stylesheet" href="viz.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { background: hsl(var(--bg)); }
+  body {
+    margin: 0; background: hsl(var(--bg)); color: hsl(var(--text));
+    font-family: var(--font-sans); font-size: 13px; line-height: 1.45;
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, p { margin: 0; }
+  ::selection { background: hsl(var(--accent-500) / 0.28); }
+  :focus-visible { outline: none; box-shadow: 0 0 0 2px hsl(var(--bg)), 0 0 0 4px hsl(var(--accent-500) / 0.55); border-radius: 6px; }
+
+  .top { display: flex; align-items: center; gap: 14px; height: 56px; padding: 0 32px; border-bottom: 1px solid hsl(var(--hairline)); }
+  .top-mark { width: 15px; height: 20px; color: hsl(var(--accent-700)); flex: none; }
+  html[data-theme="dark"] .top-mark { color: hsl(var(--accent-300)); }
+  .top-title { font-size: 15px; font-weight: 600; letter-spacing: -0.02em; color: hsl(var(--ink)); }
+  .top-note { margin-left: auto; font-family: var(--font-caption); font-size: 11px; font-weight: 500; letter-spacing: 0.01em; color: hsl(var(--text-faint)); }
+  .theme-button {
+    display: grid; place-items: center; width: 32px; height: 32px; border: 0; border-radius: 8px; padding: 0;
+    background: transparent; color: hsl(var(--text-mute)); cursor: pointer; transition: background 120ms, color 120ms;
+  }
+  .theme-button:hover { background: hsl(var(--bg-muted)); color: hsl(var(--text)); }
+
+  .board { min-height: 900px; padding: 44px 80px 56px; }
+  .board + .board { border-top: 1px solid hsl(var(--hairline)); }
+  .board.is-desktop { background: hsl(var(--bg-well)); }
+  .board-head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; max-width: 1280px; margin: 0 auto 28px; }
+  .board-head h2 { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; color: hsl(var(--ink)); }
+  .board-place { font-family: var(--font-caption); font-size: 11px; font-weight: 500; letter-spacing: 0.01em; color: hsl(var(--text-faint)); white-space: nowrap; }
+  .board-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 620px)); justify-content: center; gap: 24px 40px; max-width: 1280px; margin: 0 auto; }
+  .stack { display: flex; flex-direction: column; gap: 24px; min-width: 0; }
+
+  /* The desktop's agent card (desktop/src/styles/agentview.css and lectern.css): flat, hairline edge. */
+  .card { background: hsl(var(--card)); border: 1px solid hsl(var(--card-line)); border-radius: 16px; padding: 18px 20px 20px; min-width: 0; }
+  .card-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; min-height: 24px; }
+  .card-title { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; color: hsl(var(--ink)); }
+  .phase { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; font-family: var(--font-caption); font-size: 11px; font-weight: 500; letter-spacing: 0.01em; color: hsl(var(--text-faint)); }
+  .phase.is-ok { color: hsl(var(--ok)); }
+  .phase .lectern-working { width: 10px; height: 13px; color: hsl(var(--accent-500)); }
+  html[data-theme="dark"] .phase .lectern-working { color: hsl(var(--accent-300)); }
+  .replay {
+    display: grid; place-items: center; width: 24px; height: 24px; padding: 0; border: 0; border-radius: 6px;
+    background: transparent; color: hsl(var(--text-faint)); cursor: pointer;
+  }
+  .replay:hover { background: hsl(var(--bg-muted)); color: hsl(var(--text)); }
+  .head-end { display: inline-flex; align-items: center; gap: 10px; }
+
+  /* The plan card (desktop/src/styles/app.css .kv) */
+  .kv { margin: 0 0 14px; display: grid; }
+  .kv-row { display: grid; grid-template-columns: minmax(110px, 30%) 1fr; gap: 12px; padding: 5px 0; border-top: 1px solid hsl(var(--hairline)); }
+  .kv-row:first-child { border-top: 0; }
+  .kv dt { color: hsl(var(--text-mute)); }
+  .kv dd { margin: 0; color: hsl(var(--text)); }
+  .kv .num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+  .plan-hashes { padding-top: 12px; border-top: 1px solid hsl(var(--hairline)); }
+
+  .site-grid { display: grid; grid-template-columns: minmax(0, 640px) minmax(0, 480px); justify-content: space-between; gap: 32px 72px; max-width: 1280px; margin: 0 auto; align-items: start; }
+  .site-block { min-width: 0; }
+  .site-block-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; min-height: 24px; }
+  .site-block h3 { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; color: hsl(var(--ink)); }
+
+  @media (max-width: 1100px) {
+    .board { padding: 32px 16px 40px; min-height: 0; }
+    .board-grid, .site-grid { grid-template-columns: minmax(0, 1fr); }
+    .top { padding: 0 16px; }
+    .top-note { display: none; }
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <svg class="top-mark" viewBox="25 16 50 66" fill="currentColor" aria-hidden="true"><path d="M25 23 L57 16 L57 65.9375 L75 62 L75 75 L43 82 L43 32.0625 L25 36 Z"/></svg>
+  <h1 class="top-title">Architect visuals</h1>
+  <p class="top-note">Every number on this page is placeholder data</p>
+  <button type="button" class="theme-button" id="theme" aria-label="Dark theme" data-tip="Dark theme"></button>
+</header>
+
+<main>
+  <section class="board is-desktop" id="board-bar" aria-labelledby="h-bar">
+    <div class="board-head"><h2 id="h-bar">Bar view</h2><span class="board-place">Desktop agent card · placeholder data</span></div>
+    <div class="board-grid">
+      <article class="card">
+        <div class="card-head"><h3 class="card-title">Build 1, preset ladder</h3><span class="phase is-ok">Super ships</span></div>
+        <div data-bar="build1"></div>
+      </article>
+      <article class="card">
+        <div class="card-head"><h3 class="card-title">Build 2, Forge ladder</h3><span class="phase is-ok">Lightning ships</span></div>
+        <div data-bar="build2"></div>
+      </article>
+      <article class="card">
+        <div class="card-head"><h3 class="card-title">Build 2, Forge at work</h3><span class="head-end"><span class="phase" id="live-phase"></span><button type="button" class="replay" id="replay" aria-label="Replay the arrivals" data-tip="Replay the arrivals"></button></span></div>
+        <div data-bar="live" id="live"></div>
+      </article>
+      <article class="card">
+        <div class="card-head"><h3 class="card-title">Passed practice, refused on the exam</h3><span class="phase is-ok">Super ships</span></div>
+        <div data-bar="caught"></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="board is-desktop" id="board-exam" aria-labelledby="h-exam">
+    <div class="board-head"><h2 id="h-exam">Exam chart and hash line</h2><span class="board-place">Desktop · placeholder data</span></div>
+    <div class="board-grid">
+      <div class="stack">
+        <article class="card">
+          <div class="card-head"><h3 class="card-title">Build 2, Lightning</h3><span class="phase is-ok">Licensed</span></div>
+          <div data-exam="licensed"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><h3 class="card-title">Build 1, Lightning</h3><span class="phase">Refused</span></div>
+          <div data-exam="refused"></div>
+        </article>
+      </div>
+      <div class="stack">
+        <article class="card">
+          <div class="card-head"><h3 class="card-title">Plan: receipt-reader</h3></div>
+          <dl class="kv">
+            <div class="kv-row"><dt>Task</dt><dd>Turn receipt text into total, subtotal, tax and item count</dd></div>
+            <div class="kv-row"><dt>Practice and exam</dt><dd>CORD v2 · CC BY 4.0 · 200 receipts (<span class="num">100</span> practice / <span class="num">100</span> exam)</dd></div>
+            <div class="kv-row"><dt>Bar</dt><dd><span class="num">0.80</span></dd></div>
+            <div class="kv-row"><dt>Ladder</dt><dd>Lightning, then Super, then Ultra; the cheapest licensed one ships</dd></div>
+          </dl>
+          <div class="plan-hashes" id="plan-hashes"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><h3 class="card-title">Judge build, Lightning</h3><span class="phase is-ok">Licensed</span></div>
+          <div data-exam="judge"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="board" id="board-site" aria-labelledby="h-site">
+    <div class="board-head"><h2 id="h-site">Gate scatter and receipt</h2><span class="board-place">Evidence site · placeholder data</span></div>
+    <div class="site-grid">
+      <div class="site-block">
+        <div class="site-block-head"><h3>Harnesses built after pre-registration</h3><button type="button" class="replay" id="reveal" aria-label="Replay the reveal" data-tip="Replay the reveal"></button></div>
+        <div data-scatter="lit" id="gate"></div>
+      </div>
+      <div class="site-block">
+        <div class="site-block-head"><h3>Build 2, signed</h3></div>
+        <div id="receipt"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script type="module">
+  import * as V from './components.js';
+
+  // ---- placeholder data. Shaped like the plan's runs; none of it is a result. ----
+  const BAR = 0.80;
+  const DOMAIN = [0.5, 1];
+  const names = { Lightning: 'Nemotron 3.5 Lightning', Super: 'Nemotron 3 Super', Ultra: 'Nemotron 3 Ultra' };
+  const rung = (name, rest) => ({ name, model: names[name], ...rest });
+  const FORGE = [0.58, 0.63, 0.61, 0.69, 0.72, 0.71, 0.77, 0.80, 0.79, 0.84, 0.87, 0.88];
+
+  const BUILDS = {
+    build1: { bar: BAR, domain: DOMAIN, rungs: [
+      rung('Lightning', { state: 'done', preset: 0.74, exam: { correct: 71, cases: 100, invalid: 2 }, licensed: false }),
+      rung('Super', { state: 'done', exam: { correct: 84, cases: 100, invalid: 0 }, licensed: true, ships: true }),
+      rung('Ultra', { state: 'skipped' }),
+    ] },
+    build2: { bar: BAR, domain: DOMAIN, rungs: [
+      rung('Lightning', { state: 'done', preset: 0.74, practice: FORGE, exam: { correct: 86, cases: 100, invalid: 1 }, licensed: true, ships: true }),
+      rung('Super', { state: 'skipped' }),
+      rung('Ultra', { state: 'skipped' }),
+    ] },
+    live: { bar: BAR, domain: DOMAIN, rungs: [
+      rung('Lightning', { state: 'running', preset: 0.74, practice: FORGE.slice(0, 8) }),
+      rung('Super', { state: 'pending' }),
+      rung('Ultra', { state: 'pending' }),
+    ] },
+    caught: { bar: BAR, domain: DOMAIN, rungs: [
+      rung('Lightning', { state: 'done', preset: 0.74, practice: [0.61, 0.66, 0.70, 0.74, 0.78, 0.81, 0.83, 0.84], exam: { correct: 76, cases: 100, invalid: 1 }, licensed: false }),
+      rung('Super', { state: 'done', exam: { correct: 84, cases: 100, invalid: 0 }, licensed: true, ships: true }),
+      rung('Ultra', { state: 'skipped' }),
+    ] },
+  };
+
+  const EXAMS = {
+    licensed: { cases: 100, correct: 86, invalid: 1, bar: BAR, licensed: true },
+    refused: { cases: 100, correct: 71, invalid: 2, bar: BAR, licensed: false },
+    judge: { cases: 20, correct: 17, invalid: 0, bar: BAR, licensed: true },
+  };
+
+  // Deterministic stand-ins for hashes and harness scores.
+  function rng(seed) { let s = seed >>> 0; return () => ((s = (Math.imul(s, 1664525) + 1013904223) >>> 0) / 4294967296); }
+  const hex = (seed, n = 64) => { const r = rng(seed); let out = ''; while (out.length < n) out += Math.floor(r() * 16).toString(16); return out; };
+  const SPEC = hex(11);
+  const PACK = hex(29);
+
+  function harnesses() {
+    const r = rng(7);
+    const u = (a, b) => a + (b - a) * r();
+    const pts = [];
+    let id = 0;
+    const push = (practice, exam) => { id += 1; pts.push({ id, label: `Build ${Math.ceil(id / 3)}, submission ${((id - 1) % 3) + 1}`, practice: Math.round(practice * 100) / 100, exam: Math.round(exam * 100) / 100 }); };
+    for (let i = 0; i < 9; i += 1) push(u(0.80, 0.9), u(0.66, 0.79));          // passed practice, failed the exam
+    for (let i = 0; i < 22; i += 1) { const p = u(0.81, 0.95); push(p, Math.max(0.81 + u(0, 0.03), p - u(-0.01, 0.06))); }
+    for (let i = 0; i < 9; i += 1) { const p = u(0.6, 0.79); push(p, Math.min(0.83, p - u(-0.04, 0.08))); }
+    return pts;
+  }
+  const GATE = { bar: BAR, points: harnesses() };
+
+  const RECEIPT = {
+    name: 'receipt-reader', placeholder: true, date: '2026-10-18T15:42:07Z',
+    roles: [
+      { role: 'Build', model: 'Nemotron 3 Ultra', calls: 58, tokens: 1412880, cost: 1.372, seconds: 1104 },
+      { role: 'Run', model: 'Nemotron 3.5 Lightning', calls: 34, tokens: 23510, cost: 0.0021, seconds: 41 },
+      { role: 'Interview', model: 'Nemotron 3 Super', calls: 7, tokens: 18204, cost: 0.0094, seconds: 52 },
+    ],
+    exam: { cases: 100, correct: 86, invalid: 1, bar: BAR }, licensed: true,
+    pack: PACK, spec: SPEC, prereg: 'prereg-2026-10-11', specMatch: true, packMatch: true,
+    signature: { alg: 'Ed25519', key: hex(41, 16), verified: true },
+  };
+
+  // ---- render ----
+  // One key per screen: the first bar view carries the legend.
+  for (const el of document.querySelectorAll('[data-bar]')) V.mount(el, (w) => V.barView(BUILDS[el.dataset.bar], { width: w, legend: el.dataset.bar === 'build1' }));
+  for (const el of document.querySelectorAll('[data-exam]')) el.innerHTML = V.examChart(EXAMS[el.dataset.exam]);
+  for (const el of document.querySelectorAll('[data-scatter]')) V.mount(el, (w) => V.gateScatter(GATE, { width: w, lit: el.dataset.scatter === 'lit' }));
+  document.getElementById('receipt').innerHTML = V.receiptCard(RECEIPT);
+  document.getElementById('plan-hashes').innerHTML = V.hashLines([
+    { label: 'spec', hash: SPEC, match: true, matchName: 'prereg-2026-10-11', note: 'frozen, receipts-v1.json' },
+    { label: 'pack', hash: PACK, match: true, matchName: 'prereg-2026-10-11' },
+  ]);
+  V.attachTips(document);
+
+  // ---- the live card: replay the arrivals the way the desktop plays them ----
+  const live = document.getElementById('live');
+  const livePhase = document.getElementById('live-phase');
+  livePhase.textContent = 'Practice';
+  document.getElementById('replay').innerHTML = V.iconSvg('play', { size: 14, stroke: 2 });
+  let timer = null;
+  document.getElementById('replay').addEventListener('click', () => {
+    clearTimeout(timer);
+    const steps = [];
+    for (let i = 1; i <= FORGE.length; i += 1) steps.push({ phase: 'Practice', data: { practice: FORGE.slice(0, i), state: 'running' }, enter: [`Lightning:dot:${i - 1}`], wait: 320 });
+    steps.push({ phase: 'Exam', data: { practice: FORGE, state: 'running' }, enter: [], wait: 1400 });
+    steps.push({ phase: 'Licensed', data: { practice: FORGE, state: 'done', exam: { correct: 86, cases: 100, invalid: 1 }, licensed: true, ships: true }, enter: ['Lightning:ring'], wait: 0 });
+    const play = (k) => {
+      const s = steps[k];
+      const base = BUILDS.live;
+      const data = { ...base, rungs: [{ ...base.rungs[0], ...s.data }, { ...base.rungs[1], state: s.phase === 'Licensed' ? 'skipped' : 'pending' }, { ...base.rungs[2], state: s.phase === 'Licensed' ? 'skipped' : 'pending' }] };
+      live.innerHTML = V.barView(data, { width: Math.floor(live.clientWidth), enter: s.enter, legend: false });
+      livePhase.className = s.phase === 'Licensed' ? 'phase is-ok' : 'phase';
+      livePhase.textContent = s.phase === 'Licensed' ? 'Lightning ships' : s.phase;
+      if (k + 1 < steps.length) timer = setTimeout(() => play(k + 1), s.wait);
+    };
+    play(0);
+  });
+
+  // ---- the cold open: the caught quadrant lights, the rest of the field steps back ----
+  const reveal = document.getElementById('reveal');
+  reveal.innerHTML = V.iconSvg('play', { size: 14, stroke: 2 });
+  reveal.addEventListener('click', () => {
+    const fig = document.querySelector('#gate .viz-scatter');
+    if (!fig) return;
+    fig.classList.remove('is-lit');
+    setTimeout(() => fig.classList.add('is-lit'), 900);
+  });
+
+  // ---- theme: light first, dark on request ----
+  const themeButton = document.getElementById('theme');
+  const setTheme = (t) => {
+    document.documentElement.dataset.theme = t;
+    const dark = t === 'dark';
+    themeButton.innerHTML = V.iconSvg(dark ? 'sun' : 'moon', { size: 16, stroke: 2 });
+    themeButton.setAttribute('aria-label', dark ? 'Light theme' : 'Dark theme');
+    themeButton.setAttribute('data-tip', dark ? 'Light theme' : 'Dark theme');
+    try { localStorage.setItem('viz-theme', t); } catch { /* private window: the page still works */ }
+  };
+  let saved = null;
+  try { saved = localStorage.getItem('viz-theme'); } catch { /* ignore */ }
+  const forced = new URLSearchParams(location.search).get('theme');
+  setTheme(forced || saved || 'light');
+  themeButton.addEventListener('click', () => setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+  document.documentElement.classList.add('is-ready');
+</script>
+</body>
+</html>

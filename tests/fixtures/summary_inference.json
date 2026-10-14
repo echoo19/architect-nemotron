@@ -1,0 +1,9 @@
+[
+  {
+    "text": "{\"task\": \"summarize a table of numbers into two paragraphs for a parent\", \"input_schema\": {\"type\": \"object\"}, \"output_schema\": {\"type\": \"string\"}, \"floor\": {\"kind\": \"human_edit_rate\", \"limit\": 0.1, \"dataset\": \"summary_edits\", \"minimum_samples\": 30}, \"budget\": {\"tokens\": 100, \"cost_usd\": 0.01, \"compute_s\": 3}, \"model_target\": \"fake\", \"lifecycle\": \"expire\", \"domain\": \"synthesizer\"}",
+    "tokens_in": 30,
+    "tokens_out": 100,
+    "cost_usd": 0.00013,
+    "model": "fake"
+  }
+]

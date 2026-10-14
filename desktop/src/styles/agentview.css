@@ -1,0 +1,110 @@
+/* ── Forge: the agent card (components/forge/AgentView.tsx; redesign v2 §2.4) ──
+   The frame, header, footer, facts and rows are the ui primitives (ui.css); this file
+   places what lives inside the card's body. */
+
+/* The panel that holds the card until the forge page lands (slice 3 owns the page). */
+
+/* Header meta: data only, a middle dot between items. */
+.agent-meta { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 0; min-width: 0; }
+.agent-meta > * { display: inline-flex; align-items: center; gap: 6px; min-width: 0; }
+.agent-meta > * + *::before { content: "\00b7"; margin: 0 8px; color: hsl(var(--text-ghost)); }
+/* A status glyph with no word sits beside the name, not behind a dot. */
+.agent-meta > .ui-status:not(.has-label) { margin-right: 6px; }
+.agent-meta > .ui-status:not(.has-label) + *::before { content: none; }
+.agent-card-name { font-weight: 500; color: hsl(var(--text)); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.agent-meta-item { font-variant-numeric: tabular-nums; }
+.agent-meta .ui-status.has-label { color: hsl(var(--text)); }
+.agent-meta .ui-status.has-label.is-ok .ui-status-word { color: hsl(var(--ok)); }
+.agent-meta .ui-status.has-label.is-err .ui-status-word { color: hsl(var(--err)); }
+.agent-overflow { position: relative; display: inline-flex; }
+.agent-overflow .ui-icon-button { color: hsl(var(--text-faint)); }
+.agent-overflow .ui-icon-button:hover { color: hsl(var(--text)); }
+
+/* A state change: the body's content cross-fades; the header does not move. */
+.agent-step { display: flex; flex-direction: column; gap: 16px; min-width: 0; animation: card-body-in 150ms var(--ease) both; }
+
+/* Waiting on the plan: the working mark and one line, centred. */
+.agent-wait { min-height: 120px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.agent-status { margin: 0; font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-mute)); }
+.agent-line { margin: 0; font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-mute)); }
+.agent-line.is-err { color: hsl(var(--err)); }
+.agent-line.is-warn { color: hsl(var(--warn)); }
+.agent-problem { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 16px; }
+.agent-problem > span { flex: 1 1 200px; min-width: 0; }
+
+/* A question before the plan. */
+.agent-question { display: flex; flex-direction: column; gap: 12px; outline: none; }
+.agent-question-text { margin: 0; font-size: var(--fs-body); line-height: var(--lh-body); font-weight: 500; color: hsl(var(--text)); white-space: pre-line; }
+.agent-question .ui-seg { width: 100%; }
+.agent-question-actions { display: flex; justify-content: flex-end; align-items: center; gap: 8px; }
+.agent-question-cancel { margin-right: auto; color: hsl(var(--text-mute)); }
+.agent-choices { display: flex; flex-direction: column; border: 1px solid hsl(var(--divider)); border-radius: var(--r-md); }
+.agent-choice {
+  display: block; width: 100%; min-height: 40px; padding: 8px 12px; border: 0; background: none; text-align: left;
+  font-size: var(--fs-body); line-height: var(--lh-body); color: hsl(var(--text));
+  transition: background-color 150ms var(--ease);
+}
+.agent-choice + .agent-choice { border-top: 1px solid hsl(var(--hairline)); }
+.agent-choice:hover { background: hsl(var(--bg-muted)); }
+.agent-choice.is-on { font-weight: 500; background: hsl(var(--bg-muted)); }
+.agent-choice:focus-visible { outline: 2px solid hsl(var(--accent-700)); outline-offset: -2px; }
+
+/* The result: ladder, exam grid, Try it, a hairline between each. */
+.agent-result { display: flex; flex-direction: column; min-width: 0; }
+.agent-result-part + .agent-result-part { margin-top: 16px; padding-top: 16px; border-top: 1px solid hsl(var(--hairline)); }
+.agent-part-title { margin: 0 0 8px; font-size: var(--fs-small); line-height: var(--lh-small); font-weight: 500; color: hsl(var(--text-mute)); }
+
+/* What the export wrote: rows edge to edge, then the line that imports it. */
+.agent-body .agent-files { margin-inline: calc(-1 * var(--card-x)); }
+.agent-body .agent-files .row { min-height: 48px; }
+.agent-files .row-title { font-weight: 400; }
+.agent-run-line { width: 100%; cursor: text; text-overflow: ellipsis; }
+
+/* The footer's start, when it says why: one line, never wrapped under the button. */
+.agent-footer-why { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: hsl(var(--text-mute)); }
+.agent-footer-why.is-err { color: hsl(var(--err)); }
+.ui-card-footer-start:has(.agent-footer-why) { flex: 1 1 0; }
+
+/* Try it: fields with Run beside them, then the output. */
+.schema-form { display: flex; flex-direction: row; align-items: flex-start; gap: 12px; }
+.schema-fields { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+.schema-field { gap: 6px; }
+.schema-field .ui-label { font-size: var(--fs-small); line-height: var(--lh-small); font-weight: 400; color: hsl(var(--text-mute)); }
+.schema-form .ui-textarea.is-growing { min-height: 0; resize: none; }
+.schema-form .ui-textarea.mono { font-family: var(--font-mono); font-size: var(--fs-small); }
+.schema-check { width: 16px; height: 16px; accent-color: hsl(var(--accent-700)); }
+/* Run lines up with the field's top edge, under the label row. */
+.schema-submit { flex: none; margin-top: calc(var(--lh-small) + 6px); }
+.schema-error { margin: 0; font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--err)); }
+
+.try-output, .try-output.is-error { margin-top: 12px; border: 0; border-radius: 0; overflow: visible; }
+.try-json {
+  margin: 0; padding: 12px; max-height: 320px; overflow: auto; white-space: pre-wrap; word-break: break-word;
+  border-radius: var(--r-md); background: hsl(var(--bg-subtle));
+  font-family: var(--font-mono); font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text));
+}
+.try-stats {
+  display: flex; flex-wrap: wrap; align-items: baseline; margin: 8px 0 0;
+  font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-mute)); font-variant-numeric: tabular-nums;
+}
+.try-stats > * + *::before { content: ", "; }
+.try-completion { display: flex; align-items: center; gap: 8px; margin: 4px 0 0; }
+.try-completion-id {
+  flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-size: var(--fs-micro); line-height: var(--lh-micro); color: hsl(var(--text-faint));
+}
+.try-error { display: flex; align-items: center; gap: 12px; margin: 0; font-size: var(--fs-small); line-height: var(--lh-small); }
+.try-error-word { color: hsl(var(--err)); font-weight: 500; }
+.try-error-why { margin: 4px 0 0; font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-mute)); }
+
+/* ── The ladder and the exam grid in the card (styles/viz.css draws the marks) ── */
+.viz-barview, .viz-exam { position: relative; }
+/* A report that arrives while the card is open fades in as one piece (SPEC Motion 4). */
+.viz-arrive { animation: viz-fade 200ms var(--ease) both; }
+.viz-tip-local { white-space: nowrap; animation: viz-fade 120ms ease 120ms both; }
+@media (prefers-reduced-motion: reduce) {
+  .viz-arrive, .viz-tip-local, .agent-step { animation: none; }
+}
+
+/* A card that is only its header (adding, before a file is written) closes as evenly as it opens. */
+.agent-card .ui-card-header:last-child { padding-bottom: 20px; }

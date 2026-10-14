@@ -1,0 +1,22 @@
+{
+  "schema": "architect-site/2",
+  "placeholder": true,
+  "repo": "https://github.com/echoo19/architect-nemotron",
+  "video": {
+    "youtube_id": "KejCLxp8NTA",
+    "duration": "1:50"
+  },
+  "release": {
+    "tag": "v0.1.0",
+    "windows": "Architect-Setup-0.1.0.exe",
+    "mac_arm64": "Architect-0.1.0-arm64.dmg",
+    "mac_x64": "Architect-0.1.0-x64.dmg"
+  },
+  "commands": [
+    "git clone https://github.com/echoo19/architect-nemotron",
+    "cd architect-nemotron",
+    "uv sync --frozen --python 3.12",
+    "npm ci --no-audit --no-fund --prefix architect/backends/pi-node",
+    "uv run architect"
+  ]
+}

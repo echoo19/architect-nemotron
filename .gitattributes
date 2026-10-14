@@ -1,0 +1,8 @@
+# Byte-stable checkouts on every platform: fixtures are hashed and Pi/TS lockfiles are pinned.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.gif binary
+*.sqlite3 binary
+# W7: published report folders are checked byte for byte against SIGNED.json.
+architect/published/** -text

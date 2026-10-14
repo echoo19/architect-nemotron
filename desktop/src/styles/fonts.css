@@ -1,0 +1,12 @@
+/* Lectern's families, self-hosted: the app may run offline, so no web fonts. Inter
+   carries the whole interface (Lectern design language §2.1): the latin variable file
+   with its weight and optical-size axes, Inter 4.001. JetBrains Mono is for literal code only: diffs,
+   files, terminals, code blocks. The fonts are under the SIL Open Font License
+   1.1: see assets/fonts/OFL.txt. */
+@font-face { font-family: "Inter"; src: url(../assets/fonts/Inter-latin-var.woff2) format("woff2"); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url(../assets/fonts/JetBrainsMono-latin-var.woff2) format("woff2"); font-weight: 100 800; font-display: swap; }
+
+:root {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}

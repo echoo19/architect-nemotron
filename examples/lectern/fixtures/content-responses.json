@@ -1,0 +1,16 @@
+[
+  {
+    "text": "{\"content_id\": \"fractions-practice\", \"review_required\": true}",
+    "tokens_in": 80,
+    "tokens_out": 40,
+    "cost_usd": 0.00012,
+    "model": "fake"
+  },
+  {
+    "text": "{\"passed\": true, \"reason\": \"synthetic-check\"}",
+    "tokens_in": 80,
+    "tokens_out": 40,
+    "cost_usd": 0.00012,
+    "model": "fake"
+  }
+]

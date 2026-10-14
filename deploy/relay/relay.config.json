@@ -1,0 +1,66 @@
+{
+  "price_date": "2026-10-03",
+  "price_source": "https://tokenfactory.nebius.com/api/public/models_info (list prices per 1M tokens, read 2026-10-03)",
+  "upstream_base_url": "https://api.tokenfactory.nebius.com/v1",
+  "limiter_fraction": 0.9,
+  "limiter_counts_cached_tokens": false,
+  "models": {
+    "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B": {
+      "name": "Nemotron 3 Nano",
+      "input_usd_per_m": "0.06",
+      "output_usd_per_m": "0.24",
+      "max_tokens_clamp": 8192,
+      "rpm": 100,
+      "tpm": 800000,
+      "context_length": 262144
+    },
+    "nvidia/Nemotron-3_5-Lightning": {
+      "name": "Nemotron 3.5 Lightning",
+      "input_usd_per_m": "0.06",
+      "output_usd_per_m": "0.24",
+      "max_tokens_clamp": 8192,
+      "rpm": 600,
+      "tpm": 400000,
+      "context_length": 1048576
+    },
+    "nvidia/nemotron-3-super-120b-a12b": {
+      "name": "Nemotron 3 Super",
+      "input_usd_per_m": "0.30",
+      "output_usd_per_m": "0.90",
+      "max_tokens_clamp": 8192,
+      "rpm": 300,
+      "tpm": 200000,
+      "context_length": 262144
+    },
+    "nvidia/Nemotron-3-Ultra-550b-a55b": {
+      "name": "Nemotron 3 Ultra",
+      "input_usd_per_m": "1.00",
+      "output_usd_per_m": "3.00",
+      "max_tokens_clamp": 32768,
+      "rpm": 300,
+      "tpm": 200000,
+      "context_length": 1048576
+    }
+  },
+  "service_tiers": ["flex"],
+  "estimate": {
+    "bytes_per_token": 1,
+    "likely_bytes_per_token": 4,
+    "overhead_tokens": 512,
+    "per_message_tokens": 16,
+    "per_tool_tokens": 64,
+    "tool_tokens_per_byte": 2,
+    "per_tool_key_tokens": 4,
+    "per_tool_astral_char_tokens": 3,
+    "per_tool_escape_char_tokens": 2,
+    "per_tool_call_argument_tokens": 4,
+    "per_argument_number_tokens": 16
+  },
+  "code_share_pct": 25,
+  "code_max_in_flight": 8,
+  "release_5xx_within_ms": 5000,
+  "max_body_bytes": 4194304,
+  "vercel_max_body_bytes": 1048576,
+  "max_response_bytes": 33554432,
+  "reservation_grace_seconds": 120
+}

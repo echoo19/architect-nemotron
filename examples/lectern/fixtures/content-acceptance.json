@@ -1,0 +1,338 @@
+[
+  {
+    "case_id": "synthetic-content-000",
+    "task": {
+      "synthetic": true,
+      "query": "fractions",
+      "candidates": [
+        {
+          "id": "fractions-practice",
+          "topic": "fractions"
+        },
+        {
+          "id": "reading-0",
+          "topic": "reading"
+        }
+      ],
+      "preferences": {
+        "format": "practice"
+      }
+    },
+    "expected": {
+      "content_id": "fractions-practice",
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "signal": "fixture-client-acceptance-not-real-client-feedback"
+    }
+  },
+  {
+    "case_id": "synthetic-content-001",
+    "task": {
+      "synthetic": true,
+      "query": "fractions practice",
+      "candidates": [
+        {
+          "id": "fractions-practice",
+          "topic": "fractions"
+        },
+        {
+          "id": "reading-1",
+          "topic": "reading"
+        }
+      ],
+      "preferences": {
+        "format": "practice"
+      }
+    },
+    "expected": {
+      "content_id": "fractions-practice",
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "signal": "fixture-client-acceptance-not-real-client-feedback"
+    }
+  },
+  {
+    "case_id": "synthetic-content-002",
+    "task": {
+      "synthetic": true,
+      "query": "fractions exercises",
+      "candidates": [
+        {
+          "id": "fractions-practice",
+          "topic": "fractions"
+        },
+        {
+          "id": "reading-2",
+          "topic": "reading"
+        }
+      ],
+      "preferences": {
+        "format": "practice"
+      }
+    },
+    "expected": {
+      "content_id": "fractions-practice",
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "signal": "fixture-client-acceptance-not-real-client-feedback"
+    }
+  },
+  {
+    "case_id": "synthetic-content-003",
+    "task": {
+      "synthetic": true,
+      "query": "fractions",
+      "candidates": [
+        {
+          "id": "fractions-practice",
+          "topic": "fractions"
+        },
+        {
+          "id": "reading-3",
+          "topic": "reading"
+        }
+      ],
+      "preferences": {
+        "format": "practice"
+      }
+    },
+    "expected": {
+      "content_id": "fractions-practice",
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "signal": "fixture-client-acceptance-not-real-client-feedback"
+    }
+  },
+  {
+    "case_id": "synthetic-content-004",
+    "task": {
+      "synthetic": true,
+      "query": "fractions practice",
+      "candidates": [
+        {
+          "id": "fractions-practice",
+          "topic": "fractions"
+        },
+        {
+          "id": "reading-4",
+          "topic": "reading"
+        }
+      ],
+      "preferences": {
+        "format": "practice"
+      }
+    },
+    "expected": {
+      "content_id": "fractions-practice",
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "signal": "fixture-client-acceptance-not-real-client-feedback"
+    }
+  },
+  {
+    "case_id": "synthetic-content-005",
+    "task": {
+      "synthetic": true,
+      "query": "fractions exercises",
+      "candidates": [
+        {
+          "id": "fractions-practice",
+          "topic": "fractions"
+        },
+        {
+          "id": "reading-5",
+          "topic": "reading"
+        }
+      ],
+      "preferences": {
+        "format": "practice"
+      }
+    },
+    "expected": {
+      "content_id": "fractions-practice",
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "signal": "fixture-client-acceptance-not-real-client-feedback"
+    }
+  },
+  {
+    "case_id": "synthetic-content-006",
+    "task": {
+      "synthetic": true,
+      "query": "fractions",
+      "candidates": [
+        {
+          "id": "fractions-practice",
+          "topic": "fractions"
+        },
+        {
+          "id": "reading-6",
+          "topic": "reading"
+        }
+      ],
+      "preferences": {
+        "format": "practice"
+      }
+    },
+    "expected": {
+      "content_id": "fractions-practice",
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "signal": "fixture-client-acceptance-not-real-client-feedback"
+    }
+  },
+  {
+    "case_id": "synthetic-content-007",
+    "task": {
+      "synthetic": true,
+      "query": "fractions practice",
+      "candidates": [
+        {
+          "id": "fractions-practice",
+          "topic": "fractions"
+        },
+        {
+          "id": "reading-7",
+          "topic": "reading"
+        }
+      ],
+      "preferences": {
+        "format": "practice"
+      }
+    },
+    "expected": {
+      "content_id": "fractions-practice",
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "signal": "fixture-client-acceptance-not-real-client-feedback"
+    }
+  },
+  {
+    "case_id": "synthetic-content-008",
+    "task": {
+      "synthetic": true,
+      "query": "fractions exercises",
+      "candidates": [
+        {
+          "id": "fractions-practice",
+          "topic": "fractions"
+        },
+        {
+          "id": "reading-8",
+          "topic": "reading"
+        }
+      ],
+      "preferences": {
+        "format": "practice"
+      }
+    },
+    "expected": {
+      "content_id": "fractions-practice",
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "signal": "fixture-client-acceptance-not-real-client-feedback"
+    }
+  },
+  {
+    "case_id": "synthetic-content-009",
+    "task": {
+      "synthetic": true,
+      "query": "fractions",
+      "candidates": [
+        {
+          "id": "fractions-practice",
+          "topic": "fractions"
+        },
+        {
+          "id": "reading-9",
+          "topic": "reading"
+        }
+      ],
+      "preferences": {
+        "format": "practice"
+      }
+    },
+    "expected": {
+      "content_id": "fractions-practice",
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "signal": "fixture-client-acceptance-not-real-client-feedback"
+    }
+  },
+  {
+    "case_id": "synthetic-content-010",
+    "task": {
+      "synthetic": true,
+      "query": "fractions practice",
+      "candidates": [
+        {
+          "id": "fractions-practice",
+          "topic": "fractions"
+        },
+        {
+          "id": "reading-10",
+          "topic": "reading"
+        }
+      ],
+      "preferences": {
+        "format": "practice"
+      }
+    },
+    "expected": {
+      "content_id": "fractions-practice",
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "signal": "fixture-client-acceptance-not-real-client-feedback"
+    }
+  },
+  {
+    "case_id": "synthetic-content-011",
+    "task": {
+      "synthetic": true,
+      "query": "fractions exercises",
+      "candidates": [
+        {
+          "id": "fractions-practice",
+          "topic": "fractions"
+        },
+        {
+          "id": "reading-11",
+          "topic": "reading"
+        }
+      ],
+      "preferences": {
+        "format": "practice"
+      }
+    },
+    "expected": {
+      "content_id": "fractions-practice",
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "signal": "fixture-client-acceptance-not-real-client-feedback"
+    }
+  }
+]

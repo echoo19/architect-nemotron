@@ -1,0 +1,6 @@
+{
+  "diff": "--- a/harness.py\n+++ b/harness.py\n@@ -1,4 +1,2 @@\n async def run(context, task):\n-    await context.call(\"first\")\n-    await context.call(\"second\")\n     return await context.call(\"final\")\n",
+  "components": [
+    "synthesis"
+  ]
+}

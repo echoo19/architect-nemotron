@@ -1,0 +1,346 @@
+[
+  {
+    "case_id": "synthetic-test-000",
+    "task": {
+      "synthetic": true,
+      "page": 1,
+      "questions": [
+        {
+          "id": "q00",
+          "expression": "2 + 1",
+          "printed_answer": 4
+        }
+      ]
+    },
+    "expected": {
+      "answer_keys": [
+        {
+          "id": "q00",
+          "answer": 3
+        }
+      ],
+      "disagreements": [
+        "q00"
+      ],
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "source": "structured-layout-not-real-image"
+    }
+  },
+  {
+    "case_id": "synthetic-test-001",
+    "task": {
+      "synthetic": true,
+      "page": 2,
+      "questions": [
+        {
+          "id": "q01",
+          "expression": "3 + 2",
+          "printed_answer": 5
+        }
+      ]
+    },
+    "expected": {
+      "answer_keys": [
+        {
+          "id": "q01",
+          "answer": 5
+        }
+      ],
+      "disagreements": [],
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "source": "structured-layout-not-real-image"
+    }
+  },
+  {
+    "case_id": "synthetic-test-002",
+    "task": {
+      "synthetic": true,
+      "page": 3,
+      "questions": [
+        {
+          "id": "q02",
+          "expression": "4 + 3",
+          "printed_answer": 7
+        }
+      ]
+    },
+    "expected": {
+      "answer_keys": [
+        {
+          "id": "q02",
+          "answer": 7
+        }
+      ],
+      "disagreements": [],
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "source": "structured-layout-not-real-image"
+    }
+  },
+  {
+    "case_id": "synthetic-test-003",
+    "task": {
+      "synthetic": true,
+      "page": 4,
+      "questions": [
+        {
+          "id": "q03",
+          "expression": "5 + 4",
+          "printed_answer": 10
+        }
+      ]
+    },
+    "expected": {
+      "answer_keys": [
+        {
+          "id": "q03",
+          "answer": 9
+        }
+      ],
+      "disagreements": [
+        "q03"
+      ],
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "source": "structured-layout-not-real-image"
+    }
+  },
+  {
+    "case_id": "synthetic-test-004",
+    "task": {
+      "synthetic": true,
+      "page": 5,
+      "questions": [
+        {
+          "id": "q04",
+          "expression": "6 + 1",
+          "printed_answer": 7
+        }
+      ]
+    },
+    "expected": {
+      "answer_keys": [
+        {
+          "id": "q04",
+          "answer": 7
+        }
+      ],
+      "disagreements": [],
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "source": "structured-layout-not-real-image"
+    }
+  },
+  {
+    "case_id": "synthetic-test-005",
+    "task": {
+      "synthetic": true,
+      "page": 6,
+      "questions": [
+        {
+          "id": "q05",
+          "expression": "7 + 2",
+          "printed_answer": 9
+        }
+      ]
+    },
+    "expected": {
+      "answer_keys": [
+        {
+          "id": "q05",
+          "answer": 9
+        }
+      ],
+      "disagreements": [],
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "source": "structured-layout-not-real-image"
+    }
+  },
+  {
+    "case_id": "synthetic-test-006",
+    "task": {
+      "synthetic": true,
+      "page": 7,
+      "questions": [
+        {
+          "id": "q06",
+          "expression": "8 + 3",
+          "printed_answer": 12
+        }
+      ]
+    },
+    "expected": {
+      "answer_keys": [
+        {
+          "id": "q06",
+          "answer": 11
+        }
+      ],
+      "disagreements": [
+        "q06"
+      ],
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "source": "structured-layout-not-real-image"
+    }
+  },
+  {
+    "case_id": "synthetic-test-007",
+    "task": {
+      "synthetic": true,
+      "page": 8,
+      "questions": [
+        {
+          "id": "q07",
+          "expression": "9 + 4",
+          "printed_answer": 13
+        }
+      ]
+    },
+    "expected": {
+      "answer_keys": [
+        {
+          "id": "q07",
+          "answer": 13
+        }
+      ],
+      "disagreements": [],
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "source": "structured-layout-not-real-image"
+    }
+  },
+  {
+    "case_id": "synthetic-test-008",
+    "task": {
+      "synthetic": true,
+      "page": 9,
+      "questions": [
+        {
+          "id": "q08",
+          "expression": "10 + 1",
+          "printed_answer": 11
+        }
+      ]
+    },
+    "expected": {
+      "answer_keys": [
+        {
+          "id": "q08",
+          "answer": 11
+        }
+      ],
+      "disagreements": [],
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "source": "structured-layout-not-real-image"
+    }
+  },
+  {
+    "case_id": "synthetic-test-009",
+    "task": {
+      "synthetic": true,
+      "page": 10,
+      "questions": [
+        {
+          "id": "q09",
+          "expression": "11 + 2",
+          "printed_answer": 14
+        }
+      ]
+    },
+    "expected": {
+      "answer_keys": [
+        {
+          "id": "q09",
+          "answer": 13
+        }
+      ],
+      "disagreements": [
+        "q09"
+      ],
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "source": "structured-layout-not-real-image"
+    }
+  },
+  {
+    "case_id": "synthetic-test-010",
+    "task": {
+      "synthetic": true,
+      "page": 11,
+      "questions": [
+        {
+          "id": "q10",
+          "expression": "12 + 3",
+          "printed_answer": 15
+        }
+      ]
+    },
+    "expected": {
+      "answer_keys": [
+        {
+          "id": "q10",
+          "answer": 15
+        }
+      ],
+      "disagreements": [],
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "source": "structured-layout-not-real-image"
+    }
+  },
+  {
+    "case_id": "synthetic-test-011",
+    "task": {
+      "synthetic": true,
+      "page": 12,
+      "questions": [
+        {
+          "id": "q11",
+          "expression": "13 + 4",
+          "printed_answer": 17
+        }
+      ]
+    },
+    "expected": {
+      "answer_keys": [
+        {
+          "id": "q11",
+          "answer": 17
+        }
+      ],
+      "disagreements": [],
+      "review_required": true
+    },
+    "metadata": {
+      "synthetic": true,
+      "source": "structured-layout-not-real-image"
+    }
+  }
+]

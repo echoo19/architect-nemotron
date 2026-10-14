@@ -1,0 +1,928 @@
+{
+  "manifest_version": 1,
+  "dataset": "naver-clova-ix/cord-v2",
+  "dataset_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+  "dataset_revision": "7f0115a4b758a71d6473b8d085751692da2fef98",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "rule_version": "receipts-v2",
+  "rules_sha256": "b552ab6033626d0e5f1792a560932b764b749a7dc17f7f2cbe928653a8f52480",
+  "split": "demo-retake",
+  "title": "CORD v2 development receipts",
+  "unit": "receipts",
+  "note": "These are development receipts. They were used while Architect was being built, so scores on them are not its published results.",
+  "count": 150,
+  "sources": {
+    "evidence-practice": 0,
+    "pilot": 150,
+    "rehearsal": 0
+  },
+  "files": {
+    "demo/retake.json": {
+      "sha256": "660a4c2bdffd2f280619fc536de4379e56d9a81a0a85cf74ecb5b1ac38de34cd"
+    }
+  },
+  "cases_sha256": "5e81a4caade703f852b46fc83b25aed8e535fba63624c96c8b8d7525e3c7b2bf",
+  "cases": [
+    {
+      "case_id": "cord-train-0002",
+      "source": "train/2",
+      "from": "pilot",
+      "case_sha256": "644e7328a33bca169a200c144755c071e7af16ab12bcd364276b076b233569c6"
+    },
+    {
+      "case_id": "cord-train-0008",
+      "source": "train/8",
+      "from": "pilot",
+      "case_sha256": "d335e0acf0a2da9d01f16e32697a6d2d73dbda931189913501680ce5b4f4f736"
+    },
+    {
+      "case_id": "cord-train-0009",
+      "source": "train/9",
+      "from": "pilot",
+      "case_sha256": "9180c83a628ec3fe9114468a0f0e8b06782df3634ff7173ed5b67d975e0a864b"
+    },
+    {
+      "case_id": "cord-train-0010",
+      "source": "train/10",
+      "from": "pilot",
+      "case_sha256": "8f0eacff37c70d71e55a6db11353ed01585f36c5016de8704e89548e09d2f5cf"
+    },
+    {
+      "case_id": "cord-train-0014",
+      "source": "train/14",
+      "from": "pilot",
+      "case_sha256": "eb6bf68b68e6e305057dcb12b9d9b3a17435ae51f55df833445d30345df7a5dc"
+    },
+    {
+      "case_id": "cord-train-0021",
+      "source": "train/21",
+      "from": "pilot",
+      "case_sha256": "296791ee3278d58c85fc611b79d2dffd436f3d4d9d1ecf961663009bc2819187"
+    },
+    {
+      "case_id": "cord-train-0022",
+      "source": "train/22",
+      "from": "pilot",
+      "case_sha256": "89f8dfb3a858092de9f2adb7fe2b60ea7128ddd86d71037f45bebdf60305ed44"
+    },
+    {
+      "case_id": "cord-train-0025",
+      "source": "train/25",
+      "from": "pilot",
+      "case_sha256": "2199b8e45478354677f6d3ddb5699c9164cd7421d5cf86f15fe931e8d5817be5"
+    },
+    {
+      "case_id": "cord-train-0029",
+      "source": "train/29",
+      "from": "pilot",
+      "case_sha256": "43962c7bc0a84fa5451edcb1045b03b9bccef3125b492e5559963bad644ef95a"
+    },
+    {
+      "case_id": "cord-train-0038",
+      "source": "train/38",
+      "from": "pilot",
+      "case_sha256": "b97f1ca8d522cb7dd826742cb89dfc4dda8c577773eecd0878d9cbef5d0ed938"
+    },
+    {
+      "case_id": "cord-train-0039",
+      "source": "train/39",
+      "from": "pilot",
+      "case_sha256": "fab17919a6256055be64938eda3cbf361a328e8c7dcf9ad25f2718f3e93ad156"
+    },
+    {
+      "case_id": "cord-train-0040",
+      "source": "train/40",
+      "from": "pilot",
+      "case_sha256": "d037264846742bd442d325cf31c3f9892ffd2991ddb8d6ce9bf7916aadc23ae1"
+    },
+    {
+      "case_id": "cord-train-0041",
+      "source": "train/41",
+      "from": "pilot",
+      "case_sha256": "0da13f13926dfd8b6419c83cf1235e389a038df0d13cc6a7d0fd3069e33f252c"
+    },
+    {
+      "case_id": "cord-train-0043",
+      "source": "train/43",
+      "from": "pilot",
+      "case_sha256": "47ffff5a2af7ff43e9d7c99081d51b57c02a61e6b615c3263738d4f083aa3216"
+    },
+    {
+      "case_id": "cord-train-0045",
+      "source": "train/45",
+      "from": "pilot",
+      "case_sha256": "4c4fbb71520b6a055c31afb1ba2c8b8f10e26bd5cfa2c5251677cde4777c7b1f"
+    },
+    {
+      "case_id": "cord-train-0049",
+      "source": "train/49",
+      "from": "pilot",
+      "case_sha256": "717b0791919c824b871c1ee1c63b7b3757e16f583e85763c2058e423016b8227"
+    },
+    {
+      "case_id": "cord-train-0051",
+      "source": "train/51",
+      "from": "pilot",
+      "case_sha256": "3603dd3dacf8addd559b8103ce011384921cc242d53a704716109eda39720ff6"
+    },
+    {
+      "case_id": "cord-train-0060",
+      "source": "train/60",
+      "from": "pilot",
+      "case_sha256": "f62649b595d6cc0fc385966dca0b348425631e946e1a6f2e8792e543870141d0"
+    },
+    {
+      "case_id": "cord-train-0069",
+      "source": "train/69",
+      "from": "pilot",
+      "case_sha256": "c660cf21be7038538bfd689fff1534c3e531b7f51c8bf80636b1f6cb5b83c2a8"
+    },
+    {
+      "case_id": "cord-train-0077",
+      "source": "train/77",
+      "from": "pilot",
+      "case_sha256": "492d79a8ad1a6107f8f2d49f25b85eef99e9021a7754c503c22ef0cbde3afaa7"
+    },
+    {
+      "case_id": "cord-train-0081",
+      "source": "train/81",
+      "from": "pilot",
+      "case_sha256": "20d2d236daccb29d1c97f683377819ffdbfda2202d0006b14e8bd684a09f6860"
+    },
+    {
+      "case_id": "cord-train-0083",
+      "source": "train/83",
+      "from": "pilot",
+      "case_sha256": "790327d5fefc32df9d94585c7e45624f8eb2922c509731c8d6a1f7e55284f00b"
+    },
+    {
+      "case_id": "cord-train-0089",
+      "source": "train/89",
+      "from": "pilot",
+      "case_sha256": "df443eb7299564f66b768fbee76cc54d4f37833dbaa2079892cca46ab8f05423"
+    },
+    {
+      "case_id": "cord-train-0092",
+      "source": "train/92",
+      "from": "pilot",
+      "case_sha256": "a780b43ca929f18a4c4e75f35a7054d510919167fd38f067891c5a562e4cb287"
+    },
+    {
+      "case_id": "cord-train-0095",
+      "source": "train/95",
+      "from": "pilot",
+      "case_sha256": "c748674c1d348783834075df0c340f2607a7d74ab98c11653b5e18f8c0237040"
+    },
+    {
+      "case_id": "cord-train-0102",
+      "source": "train/102",
+      "from": "pilot",
+      "case_sha256": "e454a6e78ab679ebb966a04dfd943b83597e7c23d3c9f3525c4c67f3a248d14b"
+    },
+    {
+      "case_id": "cord-train-0112",
+      "source": "train/112",
+      "from": "pilot",
+      "case_sha256": "61271a493b9e87f9d35d4220ae4f3d09a3e678d9334c92b671c271cf14150db6"
+    },
+    {
+      "case_id": "cord-train-0113",
+      "source": "train/113",
+      "from": "pilot",
+      "case_sha256": "b5bba311b6b5c0359b92eff400e78cf69d8fd2928fcc0bf7916e7e06c58fc570"
+    },
+    {
+      "case_id": "cord-train-0125",
+      "source": "train/125",
+      "from": "pilot",
+      "case_sha256": "1178309b136fa5c995953adebbf084bc701fa9c67e57c3ed2158250ac81cd80f"
+    },
+    {
+      "case_id": "cord-train-0131",
+      "source": "train/131",
+      "from": "pilot",
+      "case_sha256": "98f5c8393a2664b921be6ee92bd9372cad916ef34890adeb0fa9730a6792be6d"
+    },
+    {
+      "case_id": "cord-train-0134",
+      "source": "train/134",
+      "from": "pilot",
+      "case_sha256": "b39b409435b40aed9ef5dd4a0140252e5f6169313b14422707a4343f1b6abce7"
+    },
+    {
+      "case_id": "cord-train-0136",
+      "source": "train/136",
+      "from": "pilot",
+      "case_sha256": "7126f76b042861b12631d4deb7a6b4421769018758481693cadb27cfa4032daf"
+    },
+    {
+      "case_id": "cord-train-0137",
+      "source": "train/137",
+      "from": "pilot",
+      "case_sha256": "e65ffb142716d81d77d1ae80228a9cf3c774288a90c8b5e969dd89d6f552144a"
+    },
+    {
+      "case_id": "cord-train-0140",
+      "source": "train/140",
+      "from": "pilot",
+      "case_sha256": "c4d7b91372aac588908aac749c81249322fdc51423d9582b50ccc6afd0b560ac"
+    },
+    {
+      "case_id": "cord-train-0141",
+      "source": "train/141",
+      "from": "pilot",
+      "case_sha256": "6881bc7550507177fd037c3a15370a8e42cb92911ace38ba982049a17447d4f8"
+    },
+    {
+      "case_id": "cord-train-0142",
+      "source": "train/142",
+      "from": "pilot",
+      "case_sha256": "8348fd12a4cf5a32be5599628322cd2b6f0b0e644999dd10418d81fef9d79ce3"
+    },
+    {
+      "case_id": "cord-train-0146",
+      "source": "train/146",
+      "from": "pilot",
+      "case_sha256": "93ec00c5b48da413264ac99aa597dc259bee97e3c536c5b5a7b5d6d26dfd113b"
+    },
+    {
+      "case_id": "cord-train-0147",
+      "source": "train/147",
+      "from": "pilot",
+      "case_sha256": "79d5201f746f0ea2e55788e4f7e070bede99a1035561472b1b315e1cdc9644de"
+    },
+    {
+      "case_id": "cord-train-0156",
+      "source": "train/156",
+      "from": "pilot",
+      "case_sha256": "04660e92b2e1a708289de713891f0450eaea2fe78b3ce32be234b1b4fa783e00"
+    },
+    {
+      "case_id": "cord-train-0162",
+      "source": "train/162",
+      "from": "pilot",
+      "case_sha256": "b2a53a6d60067f60619903d509d210507866385506467df97004631725826964"
+    },
+    {
+      "case_id": "cord-train-0163",
+      "source": "train/163",
+      "from": "pilot",
+      "case_sha256": "79f15cd6b4748406a039ca5af52b67c60596abfab2a69831aeb2444b91fdfae7"
+    },
+    {
+      "case_id": "cord-train-0176",
+      "source": "train/176",
+      "from": "pilot",
+      "case_sha256": "f02fecba456fb6494e9d65ad16c59a89fff44408076a1c20fc3f7a258cd1ade4"
+    },
+    {
+      "case_id": "cord-train-0179",
+      "source": "train/179",
+      "from": "pilot",
+      "case_sha256": "177e6848513113c4c8003d4422b5ae8cf734615f7d6c7fc63a80a9661077e53d"
+    },
+    {
+      "case_id": "cord-train-0180",
+      "source": "train/180",
+      "from": "pilot",
+      "case_sha256": "81c81bdcaa5e684b7ef7bf571692e02532bc3534b589a7467bc608592f9efb36"
+    },
+    {
+      "case_id": "cord-train-0182",
+      "source": "train/182",
+      "from": "pilot",
+      "case_sha256": "99496ca74d57109313229347df4f44c30f4150192902c7ef2ee1ed7a6b515814"
+    },
+    {
+      "case_id": "cord-train-0185",
+      "source": "train/185",
+      "from": "pilot",
+      "case_sha256": "c04f7015da02e32bc12f5ef894df4a26dcb443d7e4b26a40df89ea88f93f51d6"
+    },
+    {
+      "case_id": "cord-train-0188",
+      "source": "train/188",
+      "from": "pilot",
+      "case_sha256": "28c4d668b506879b81904ded3b107d7de2e4e42629429ed12be0bd8b0a884348"
+    },
+    {
+      "case_id": "cord-train-0199",
+      "source": "train/199",
+      "from": "pilot",
+      "case_sha256": "67a46dac680df35de5e8085f82860d4235868a06c62e29481590c37f59d684c3"
+    },
+    {
+      "case_id": "cord-train-0200",
+      "source": "train/200",
+      "from": "pilot",
+      "case_sha256": "d83713db8d7c2ea7d4ef2bd98ac2e2650f1ce0f9f7570899b7bac112d85e90f1"
+    },
+    {
+      "case_id": "cord-train-0208",
+      "source": "train/208",
+      "from": "pilot",
+      "case_sha256": "296accc137b205e60d8d5007fe6200b210a34e428fb17357799078b03cd2de74"
+    },
+    {
+      "case_id": "cord-train-0212",
+      "source": "train/212",
+      "from": "pilot",
+      "case_sha256": "23e3b700afc5a685b79d6f0ddde8e66985f1cf766e2c21ba6d3749c5dfa86d57"
+    },
+    {
+      "case_id": "cord-train-0213",
+      "source": "train/213",
+      "from": "pilot",
+      "case_sha256": "5ee8c77b737fe2c5089451f3c55aaab260f30abfc3d4c8317cd6d7eee0c913ef"
+    },
+    {
+      "case_id": "cord-train-0219",
+      "source": "train/219",
+      "from": "pilot",
+      "case_sha256": "919b2f35cdb62a4fe7a4aed038029bc56136982c8a5ca78a9ec6cb30ec9108ac"
+    },
+    {
+      "case_id": "cord-train-0233",
+      "source": "train/233",
+      "from": "pilot",
+      "case_sha256": "7688e51e47b834539d71e6a4f87de0dcecb0527b39d96b386c45766bbc750a9e"
+    },
+    {
+      "case_id": "cord-train-0237",
+      "source": "train/237",
+      "from": "pilot",
+      "case_sha256": "384fccc56bab0b183f418ca202a47cf38f850cf4bd85a90537143604a5a019f2"
+    },
+    {
+      "case_id": "cord-train-0239",
+      "source": "train/239",
+      "from": "pilot",
+      "case_sha256": "a70dcf645c3f011293d0f8bd53bedd5a04310a6c23d9d95ddbcf0db19d45d5df"
+    },
+    {
+      "case_id": "cord-train-0254",
+      "source": "train/254",
+      "from": "pilot",
+      "case_sha256": "68f230fe1f4c438402f500a3135c07fbed85ffe61d41cbc83efa32dae88cf502"
+    },
+    {
+      "case_id": "cord-train-0255",
+      "source": "train/255",
+      "from": "pilot",
+      "case_sha256": "71f76e44faeae4b31ec87de6d8192ccdc910e7c655d01de38ca51bf5d69f58a5"
+    },
+    {
+      "case_id": "cord-train-0257",
+      "source": "train/257",
+      "from": "pilot",
+      "case_sha256": "a4c4a87e221ab7b3b67577ce0cbaf2d991e7dcb70a96ec329e0da78214c825d1"
+    },
+    {
+      "case_id": "cord-train-0258",
+      "source": "train/258",
+      "from": "pilot",
+      "case_sha256": "a00616f0af4aa15666869851fb97139e9b866a0507ac52ce63b01c603573e857"
+    },
+    {
+      "case_id": "cord-train-0262",
+      "source": "train/262",
+      "from": "pilot",
+      "case_sha256": "ac5764f1dc544de29b052020e4d00b875f11512c7565f38b8ffb40edbee757d6"
+    },
+    {
+      "case_id": "cord-train-0274",
+      "source": "train/274",
+      "from": "pilot",
+      "case_sha256": "b20c9d9fa6018d57899ba16f71967a26912584db5d64c52397103a953ba4af15"
+    },
+    {
+      "case_id": "cord-train-0276",
+      "source": "train/276",
+      "from": "pilot",
+      "case_sha256": "b11591584a7022ba3225fc730e0c15837b56cbeb62761d318d22969e8f2aa360"
+    },
+    {
+      "case_id": "cord-train-0277",
+      "source": "train/277",
+      "from": "pilot",
+      "case_sha256": "8b5d94cd13300143cf956da10ed0d1ef311cdba3d0ce5a08eb6b715ea5e2fb59"
+    },
+    {
+      "case_id": "cord-train-0287",
+      "source": "train/287",
+      "from": "pilot",
+      "case_sha256": "a8d7e9830fe755a5e5c87802380444b095fc096f7d3b3a7238d4b063ad99d672"
+    },
+    {
+      "case_id": "cord-train-0288",
+      "source": "train/288",
+      "from": "pilot",
+      "case_sha256": "c7644f622e05400801340095959276da0d3086bde4bce142915c06940a2494c5"
+    },
+    {
+      "case_id": "cord-train-0294",
+      "source": "train/294",
+      "from": "pilot",
+      "case_sha256": "4a5105ba3b4f472def3819577d86cae272cae486a5328455900dd824df8c556c"
+    },
+    {
+      "case_id": "cord-train-0295",
+      "source": "train/295",
+      "from": "pilot",
+      "case_sha256": "25b9a52a1877a7fe41070935c6f1ee89f7e9bcaf8cc4567bf843583ddddfd8b2"
+    },
+    {
+      "case_id": "cord-train-0296",
+      "source": "train/296",
+      "from": "pilot",
+      "case_sha256": "15ea09d64da8128b29d16a99212127d6b1d5368257e8bdca5c0d6756fadbab7f"
+    },
+    {
+      "case_id": "cord-train-0302",
+      "source": "train/302",
+      "from": "pilot",
+      "case_sha256": "a738c6ab9637b6ae919e61f56c69042bfc1927c5f0a38f2f1e17e6640cd07a91"
+    },
+    {
+      "case_id": "cord-train-0303",
+      "source": "train/303",
+      "from": "pilot",
+      "case_sha256": "2078ed916d19fc9e51b753587f989ce2ceab6caead2d587bcbbed19eb843ef6b"
+    },
+    {
+      "case_id": "cord-train-0307",
+      "source": "train/307",
+      "from": "pilot",
+      "case_sha256": "cbdeef49860051221d7c1641573c8e83bd3b84fd2993eb54a5a339be2e1406c1"
+    },
+    {
+      "case_id": "cord-train-0311",
+      "source": "train/311",
+      "from": "pilot",
+      "case_sha256": "ac572a0c4efdb7e8a8351e0a76ee37b65a6cf7ae2f60422c03abb0236586d3ba"
+    },
+    {
+      "case_id": "cord-train-0312",
+      "source": "train/312",
+      "from": "pilot",
+      "case_sha256": "4457f51763af64c8f8ca537dc7f269fa4c3238ecf9eb4f8bf04d0d31cdd1262d"
+    },
+    {
+      "case_id": "cord-train-0316",
+      "source": "train/316",
+      "from": "pilot",
+      "case_sha256": "db1107f79ca3820997113374747f3543b75338dbc1735eec1506499806039b49"
+    },
+    {
+      "case_id": "cord-train-0332",
+      "source": "train/332",
+      "from": "pilot",
+      "case_sha256": "4aac96e4fc3ca3ea45eba4d3bbb2c94820e4f814ea46449021ec9c41cc3b3ed3"
+    },
+    {
+      "case_id": "cord-train-0336",
+      "source": "train/336",
+      "from": "pilot",
+      "case_sha256": "2b4eb0d32182f932f122188dab53ed9283b3aa8a41ef1e24128d24f953752d61"
+    },
+    {
+      "case_id": "cord-train-0340",
+      "source": "train/340",
+      "from": "pilot",
+      "case_sha256": "880b80c0f9a2343550c1d0ceb4a16f2b570d02c77ac0fac84f5b071b60604970"
+    },
+    {
+      "case_id": "cord-train-0346",
+      "source": "train/346",
+      "from": "pilot",
+      "case_sha256": "e6ab50a0732df9e1ce91ecb7ac1094d67288fe244de235aeb9dbef577e4ca5fb"
+    },
+    {
+      "case_id": "cord-train-0347",
+      "source": "train/347",
+      "from": "pilot",
+      "case_sha256": "d17da60c04b98733ba8b86d8122468446edc7df725d83c22a77622c547bd527c"
+    },
+    {
+      "case_id": "cord-train-0352",
+      "source": "train/352",
+      "from": "pilot",
+      "case_sha256": "d64498e093442cc55be3021a5e646ee8302bcb7bfeb46f0c8cd8c8f420dc027b"
+    },
+    {
+      "case_id": "cord-train-0359",
+      "source": "train/359",
+      "from": "pilot",
+      "case_sha256": "45d63cf196eb7742f6476d5cd9a6de1437480d8bd87630b60be6d591e74f7b00"
+    },
+    {
+      "case_id": "cord-train-0361",
+      "source": "train/361",
+      "from": "pilot",
+      "case_sha256": "9cb1d18d8e3b9b9c7b8e1d7f3d0de64e7c134159b82d8cc0e6c0a6b4616d393e"
+    },
+    {
+      "case_id": "cord-train-0365",
+      "source": "train/365",
+      "from": "pilot",
+      "case_sha256": "ed119f656e0cde12eedbf14630d29a472bc1bc0263be7b282ce6ddc69dd1096e"
+    },
+    {
+      "case_id": "cord-train-0369",
+      "source": "train/369",
+      "from": "pilot",
+      "case_sha256": "af82f0c7f999e9b8252e95f82c3cad667c037b881ad27cf1e52c26f7fccfeff5"
+    },
+    {
+      "case_id": "cord-train-0370",
+      "source": "train/370",
+      "from": "pilot",
+      "case_sha256": "9e5b50d8c391b36fde9cb734318487d274dd3bd26335a64aaa061616f699ade2"
+    },
+    {
+      "case_id": "cord-train-0392",
+      "source": "train/392",
+      "from": "pilot",
+      "case_sha256": "3d023b1ceabaf0636b5d03fedf2353cdaea1608c6b1c6f0691f86301ddf9e6e2"
+    },
+    {
+      "case_id": "cord-train-0394",
+      "source": "train/394",
+      "from": "pilot",
+      "case_sha256": "f88a92b5f86ac13093e67dc567f7c4de1cf1ec3e7f9c4e74a557fff55a40ac3f"
+    },
+    {
+      "case_id": "cord-train-0396",
+      "source": "train/396",
+      "from": "pilot",
+      "case_sha256": "4b55aee06336807ffc6271b2182c7a45303d05234bdb9b2964dffd5fa596513c"
+    },
+    {
+      "case_id": "cord-train-0399",
+      "source": "train/399",
+      "from": "pilot",
+      "case_sha256": "1ca90ea7033efd57087d8ca242c558ff1182f23b0b7a3eff29e54da8848e6ca9"
+    },
+    {
+      "case_id": "cord-train-0400",
+      "source": "train/400",
+      "from": "pilot",
+      "case_sha256": "d71aaf57db72a1f020e23f8fe88ed50580e1386030778a8de73965d024848746"
+    },
+    {
+      "case_id": "cord-train-0401",
+      "source": "train/401",
+      "from": "pilot",
+      "case_sha256": "2d825df7c318be0a5606b70e82b79d43699ad634551c771628fe15ac25650601"
+    },
+    {
+      "case_id": "cord-train-0410",
+      "source": "train/410",
+      "from": "pilot",
+      "case_sha256": "0c8efe9965a72616273578cc77ad7f3ecf9410953d43a170b62599257cf77130"
+    },
+    {
+      "case_id": "cord-train-0412",
+      "source": "train/412",
+      "from": "pilot",
+      "case_sha256": "78010b133d0c5ddbde62e995840ef07d8dd3cca97e67cbe8f2602abd4f9e49a8"
+    },
+    {
+      "case_id": "cord-train-0419",
+      "source": "train/419",
+      "from": "pilot",
+      "case_sha256": "f871d58b148e8676fb03efac83a6cbc44d1c21b7046e806d4fc63184d9139422"
+    },
+    {
+      "case_id": "cord-train-0423",
+      "source": "train/423",
+      "from": "pilot",
+      "case_sha256": "99efeca20a0087157bc4fc6b447ef2dd274bbf845fb7605f576ad17fbd6c2267"
+    },
+    {
+      "case_id": "cord-train-0424",
+      "source": "train/424",
+      "from": "pilot",
+      "case_sha256": "00ec9c1cf588537f8b5d03cdd6052d3f8b210aa7c2a6c2427629fe233686e698"
+    },
+    {
+      "case_id": "cord-train-0436",
+      "source": "train/436",
+      "from": "pilot",
+      "case_sha256": "02011667a49c8f9e6152da841fc74e4c0c14470da498827855ce6a24b6e1ef85"
+    },
+    {
+      "case_id": "cord-train-0438",
+      "source": "train/438",
+      "from": "pilot",
+      "case_sha256": "7d48a5ac387fd1be9dbb8638b45960277a185ba89563764ddbbe3cb9d0b57ab7"
+    },
+    {
+      "case_id": "cord-train-0439",
+      "source": "train/439",
+      "from": "pilot",
+      "case_sha256": "920327406c89eb77b099a1a2129ff7bfc074722333a22ede89815319a1a581f2"
+    },
+    {
+      "case_id": "cord-train-0441",
+      "source": "train/441",
+      "from": "pilot",
+      "case_sha256": "fb3ba82e03f874a843183b9ea7141a1d6cc3aac8afa08b198b3ea01d2a083ae8"
+    },
+    {
+      "case_id": "cord-train-0445",
+      "source": "train/445",
+      "from": "pilot",
+      "case_sha256": "fabe112cd61cc5ab03861bb9de0b85c8de8e78fc137f51ca57a8f41008e98e26"
+    },
+    {
+      "case_id": "cord-train-0446",
+      "source": "train/446",
+      "from": "pilot",
+      "case_sha256": "a35fe34f67aab93ff5996b611ce459564ba273f62bc5e96693a43aeaaf6ad8d6"
+    },
+    {
+      "case_id": "cord-train-0453",
+      "source": "train/453",
+      "from": "pilot",
+      "case_sha256": "c727b74289c26d0ba5b4aecf07f79b96b42908318f21b39f5850925a7d74b994"
+    },
+    {
+      "case_id": "cord-train-0471",
+      "source": "train/471",
+      "from": "pilot",
+      "case_sha256": "9f6d3de121047770b78193d8d1ec30017ca673921e51e77e6aa43f8832a48490"
+    },
+    {
+      "case_id": "cord-train-0476",
+      "source": "train/476",
+      "from": "pilot",
+      "case_sha256": "2254a2dc96b015aec817ef1fa6ab386e3bc8875c47ecf807c46b6cdf0c349bb3"
+    },
+    {
+      "case_id": "cord-train-0481",
+      "source": "train/481",
+      "from": "pilot",
+      "case_sha256": "f0ef4873857fa8d01153a3eac0c3bf9fae10b5e7ce79fdbe6ddd89297d7697d7"
+    },
+    {
+      "case_id": "cord-train-0523",
+      "source": "train/523",
+      "from": "pilot",
+      "case_sha256": "2ec6dce8b0356c4ffee4a165a19e13b9c4a43479545b0f87244ef8d624110c31"
+    },
+    {
+      "case_id": "cord-train-0528",
+      "source": "train/528",
+      "from": "pilot",
+      "case_sha256": "868283cf7d69159e70b5affff52187882f51c52c64ad12d443d012dc963aff67"
+    },
+    {
+      "case_id": "cord-train-0529",
+      "source": "train/529",
+      "from": "pilot",
+      "case_sha256": "4b0892885ff432648e854ecfdd9398ba586959b9979d9d41d9755c966d6f7d04"
+    },
+    {
+      "case_id": "cord-train-0531",
+      "source": "train/531",
+      "from": "pilot",
+      "case_sha256": "95cb76b5aa69388265c6013abca3c351fc6495f033635807647d766c25bcedce"
+    },
+    {
+      "case_id": "cord-train-0532",
+      "source": "train/532",
+      "from": "pilot",
+      "case_sha256": "a5679c005da3b1672075b6950ae24af08d8b676489d5bea932d3573ff525b8d8"
+    },
+    {
+      "case_id": "cord-train-0535",
+      "source": "train/535",
+      "from": "pilot",
+      "case_sha256": "50dd0cae5503747f753718c92179d0de60b5b13f5e67ba9850890c72d204b2e6"
+    },
+    {
+      "case_id": "cord-train-0541",
+      "source": "train/541",
+      "from": "pilot",
+      "case_sha256": "904ef9f83960e51cc9be3ad8443d935f762454e9c56ca3c5715873aeefaa7576"
+    },
+    {
+      "case_id": "cord-train-0558",
+      "source": "train/558",
+      "from": "pilot",
+      "case_sha256": "9940df9b7f3d7fe499169122965447f6e1cfc503293d335eb3f45ca63109fbca"
+    },
+    {
+      "case_id": "cord-train-0563",
+      "source": "train/563",
+      "from": "pilot",
+      "case_sha256": "bac792c0399c4669bf48acb14c9ca12f0e051c9ffe30925f86911f29e7e7dcde"
+    },
+    {
+      "case_id": "cord-train-0565",
+      "source": "train/565",
+      "from": "pilot",
+      "case_sha256": "42b4bae2093138277a4bb04a85d83a8e87eda9567315ba087d93d5261147abb5"
+    },
+    {
+      "case_id": "cord-train-0575",
+      "source": "train/575",
+      "from": "pilot",
+      "case_sha256": "98a2f5582bbf69fc4d9994c23767e06c91f70f94d85727ba8e2f469b5ba3cdae"
+    },
+    {
+      "case_id": "cord-train-0581",
+      "source": "train/581",
+      "from": "pilot",
+      "case_sha256": "3388821c3655a3036e853f62f8da15dff869896142c3c168566d286fcdd4fff6"
+    },
+    {
+      "case_id": "cord-train-0584",
+      "source": "train/584",
+      "from": "pilot",
+      "case_sha256": "b2fa18726f91a0e8e4c891e0f79cbe072fbeca64f3c15b7c7f8a8619ade828c3"
+    },
+    {
+      "case_id": "cord-train-0585",
+      "source": "train/585",
+      "from": "pilot",
+      "case_sha256": "c7058490c6b4be0cc205e73b8bd6083eefefb044b011ee2ca7c2313a3769a385"
+    },
+    {
+      "case_id": "cord-train-0601",
+      "source": "train/601",
+      "from": "pilot",
+      "case_sha256": "76fbb2d7e770f41ff0b6242830030977184201c33952154a8d0460491b342063"
+    },
+    {
+      "case_id": "cord-train-0606",
+      "source": "train/606",
+      "from": "pilot",
+      "case_sha256": "f1d0a3f22712057ac52456a83c95f8dd6b3960d5b237e21a94075fab4f8af9b4"
+    },
+    {
+      "case_id": "cord-train-0608",
+      "source": "train/608",
+      "from": "pilot",
+      "case_sha256": "74803f822a5f099da15c73454ceded5ae1834a2cd3fe97afdb013b3c0fb49562"
+    },
+    {
+      "case_id": "cord-train-0611",
+      "source": "train/611",
+      "from": "pilot",
+      "case_sha256": "36cf7f7e39d6334c61dc1f5fcf819304895b886cb191f15bea9dfc81607986b7"
+    },
+    {
+      "case_id": "cord-train-0631",
+      "source": "train/631",
+      "from": "pilot",
+      "case_sha256": "b32a26d549dd850037579916031819a660dd0e0dc83cc06681374428d60b5c01"
+    },
+    {
+      "case_id": "cord-train-0632",
+      "source": "train/632",
+      "from": "pilot",
+      "case_sha256": "2d4cc914834915d97c663cf6bde0bdb2c1dd88bd151eb78b720230a9bff8371f"
+    },
+    {
+      "case_id": "cord-train-0634",
+      "source": "train/634",
+      "from": "pilot",
+      "case_sha256": "364e7ecd98f4c3a4b7c20de258de4d1732a97a5f3cbe2318e14b54516904700c"
+    },
+    {
+      "case_id": "cord-train-0645",
+      "source": "train/645",
+      "from": "pilot",
+      "case_sha256": "ba2675e2c290ff42d7a42e0f58a0ab86a5e81b06fcf9928b0323a3188547e0f0"
+    },
+    {
+      "case_id": "cord-train-0647",
+      "source": "train/647",
+      "from": "pilot",
+      "case_sha256": "1d64737623eac7c62644c51501fc24ef2eca888494547b8eaf723a9804eb9959"
+    },
+    {
+      "case_id": "cord-train-0659",
+      "source": "train/659",
+      "from": "pilot",
+      "case_sha256": "bb58e7192967e484f3d697b6a37a08f315f18d0dde68d50b87c77c0f9855b2d2"
+    },
+    {
+      "case_id": "cord-train-0664",
+      "source": "train/664",
+      "from": "pilot",
+      "case_sha256": "4fdd888cf1a5ce7df6ade93a6d81417065ca2cb7a6a881e00941fe193b3fee71"
+    },
+    {
+      "case_id": "cord-train-0677",
+      "source": "train/677",
+      "from": "pilot",
+      "case_sha256": "4cbed70c8aeb51f1a9f45b4c373462da17305fafe116575c6f67b916cc4d5197"
+    },
+    {
+      "case_id": "cord-train-0699",
+      "source": "train/699",
+      "from": "pilot",
+      "case_sha256": "950f5df021a8063863ba93335447846b2d9016821f9024fced637d2e9ea38878"
+    },
+    {
+      "case_id": "cord-train-0705",
+      "source": "train/705",
+      "from": "pilot",
+      "case_sha256": "17ad0a6130650d45bf4f97da10b5a6bf37164ef65406fcf2a80b736b8e77bfa8"
+    },
+    {
+      "case_id": "cord-train-0716",
+      "source": "train/716",
+      "from": "pilot",
+      "case_sha256": "4dfe23829490bdf956f1016d0b363fa91828a495df777033256fa471d09e25cb"
+    },
+    {
+      "case_id": "cord-train-0718",
+      "source": "train/718",
+      "from": "pilot",
+      "case_sha256": "48af6ebd99ad183c4b857f6e90375bb3a580dd1a2092cd26bf3caacc317442fc"
+    },
+    {
+      "case_id": "cord-train-0725",
+      "source": "train/725",
+      "from": "pilot",
+      "case_sha256": "0c19ed772478da8e9a8ef319b65f289ac2dc1cc78962af3b82ae04d70a55b508"
+    },
+    {
+      "case_id": "cord-train-0728",
+      "source": "train/728",
+      "from": "pilot",
+      "case_sha256": "98e37c28924f2e1c48c8c7702a3ee2ca636363ec08072c168447503114f570a3"
+    },
+    {
+      "case_id": "cord-train-0736",
+      "source": "train/736",
+      "from": "pilot",
+      "case_sha256": "eb5d7ceffe9b6b3e792e9902f26d73ce43e17ea5e9e46c4be264cd518b217244"
+    },
+    {
+      "case_id": "cord-train-0748",
+      "source": "train/748",
+      "from": "pilot",
+      "case_sha256": "f9d651aaf563dd848e3e877dd15b06fc5294285f8ff0e8de42fe602a0568084a"
+    },
+    {
+      "case_id": "cord-train-0757",
+      "source": "train/757",
+      "from": "pilot",
+      "case_sha256": "e04dce935b608ddddf6b47a014cbeed3b98d2bcb7f36be14f8a5ee4438b3e3db"
+    },
+    {
+      "case_id": "cord-train-0761",
+      "source": "train/761",
+      "from": "pilot",
+      "case_sha256": "b7b8ea2e14e928d30aa0dc3e906fd7c3b65d113ea9e720149c752428a9380a92"
+    },
+    {
+      "case_id": "cord-train-0770",
+      "source": "train/770",
+      "from": "pilot",
+      "case_sha256": "999299ef931b4554cdfb591b110aa51949294fe1c2626818fd7671b2a2907d74"
+    },
+    {
+      "case_id": "cord-train-0774",
+      "source": "train/774",
+      "from": "pilot",
+      "case_sha256": "8acec0ced9cb91109c3e4515954ced3dd2050cda07c817abda69d5f0a474615b"
+    },
+    {
+      "case_id": "cord-train-0779",
+      "source": "train/779",
+      "from": "pilot",
+      "case_sha256": "6f60de1f3d599167273e42222bc8b9c28ac6bda59af41bae33eedb1788986441"
+    },
+    {
+      "case_id": "cord-train-0780",
+      "source": "train/780",
+      "from": "pilot",
+      "case_sha256": "4968d519e2bb2aad14363baca39a52745a50c8714f3fe056f687afcf871ce9dd"
+    },
+    {
+      "case_id": "cord-train-0788",
+      "source": "train/788",
+      "from": "pilot",
+      "case_sha256": "3f53493c99dbc8904583547471e9e71113706acf39cafc2432ce5634cced7092"
+    },
+    {
+      "case_id": "cord-train-0793",
+      "source": "train/793",
+      "from": "pilot",
+      "case_sha256": "1a273b02a2f9268a503a8bbce902b952b40deed7a9400a48742378eeb3cb62cb"
+    },
+    {
+      "case_id": "cord-train-0796",
+      "source": "train/796",
+      "from": "pilot",
+      "case_sha256": "11f6cf4a22157753a9850a4fa0ef3b92a710860634c084d60989ea932ebd7762"
+    }
+  ]
+}

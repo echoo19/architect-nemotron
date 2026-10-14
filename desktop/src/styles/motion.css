@@ -1,0 +1,74 @@
+/* Lectern's motion (© Lectern, MIT: see THIRD_PARTY_NOTICES.md): one curve, --ease
+   (cubic-bezier(0.2, 0, 0, 1)); enter 150 to 200ms, exit 150 or less. Only
+   transform, opacity and clip-path animate. The working mark is the only loop:
+   held 120ms before it shows, so a fast answer never flashes it, then it arrives
+   over 160ms. Nothing else pulses, shimmers or spins. */
+
+/* New paragraphs and cards settle in with a short rise; existing text never moves. */
+.ai-block { animation: ai-block 200ms var(--ease) both; }
+@keyframes ai-block { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+.ai-caret::after {
+  content: ""; display: inline-block; width: 6px; height: 12px; margin-left: 2px; vertical-align: -1px;
+  background: hsl(var(--text-ghost));
+}
+
+/* A state swap: cross-fade and a touch of scale, interruptible. */
+.swap-enter { animation: swap-in 150ms var(--ease) both; }
+@keyframes swap-in { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: none; } }
+
+/* The work fold shuts at once (no height animation); the label swaps in. */
+.chat-fold-open { grid-template-rows: 1fr; }
+.chat-fold-shut { grid-template-rows: 0fr; }
+
+/* The working mark: hold, then arrive. */
+.lectern-working { animation: working-in 160ms var(--ease) 120ms both; }
+@keyframes working-in { from { opacity: 0; } to { opacity: 1; } }
+.lectern-working-board {
+  animation: lectern-retract-board 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+/* The foot follows the board rather than mirroring it in lockstep: a half-beat
+   apart the two ends read as one figure unfolding, in step they read as a
+   mechanism opening. The backwards fill holds the first frame through the
+   delay, so a new loader opens on the line, not on an L. */
+.lectern-working-foot {
+  animation: lectern-retract-foot 1.8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  animation-delay: 0.18s;
+  animation-fill-mode: backwards;
+}
+/* The overhang is 18 user units; the wipe runs to 20, two units into the
+   middle column (WORKING_COLUMN in components/ui/Working.tsx, drawn last). A
+   clip edge is snapped to the device-pixel grid, so a wipe that stopped exactly
+   at the stem's edge left a half-pixel notch at each joint in the line state.
+   Stopping inside solid ink hides the snap: the retracted figure is the column
+   alone, one straight line. While a bar holds retracted it is also hidden, so
+   its anti-aliased edges do not stack on the column's and thicken the line at
+   the joints. Visibility turns visible anywhere between the holds, so the
+   motion is the same. */
+@keyframes lectern-retract-board {
+  0%, 6% { clip-path: inset(0 0 0 20px); visibility: hidden; }
+  40%, 60% { clip-path: inset(0 0 0 0); visibility: visible; }
+  94%, 100% { clip-path: inset(0 0 0 20px); visibility: hidden; }
+}
+@keyframes lectern-retract-foot {
+  0%, 6% { clip-path: inset(0 20px 0 0); visibility: hidden; }
+  40%, 60% { clip-path: inset(0 0 0 0); visibility: visible; }
+  94%, 100% { clip-path: inset(0 20px 0 0); visibility: hidden; }
+}
+/* Under reduced motion the loader holds still. Held as three parts it would
+   keep a nub where the bars' edges meet the column's, so it shows the fourth
+   path instead, the one traced outline (MARK_OUTLINE) every still render draws. */
+.lectern-working-still { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ai-block, .swap-enter, .lectern-working { animation: none; }
+  .lectern-working-board,
+  .lectern-working-foot { animation: none !important; clip-path: none !important; }
+  .lectern-working-board,
+  .lectern-working-foot,
+  .lectern-working-column { display: none !important; }
+  .lectern-working-still { display: inline; }
+}
+@keyframes panel-in { from { opacity: 0; transform: translateX(8px); } to { opacity: 1; transform: none; } }
+/* A skeleton is a static block that fades in once, after 120ms (no shimmer). */
+@keyframes skel-in { from { opacity: 0; } to { opacity: 1; } }

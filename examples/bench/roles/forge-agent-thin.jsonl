@@ -1,0 +1,9 @@
+{"domain": null, "kind": "scenario", "prices": {}, "providers": {"fake": "fake"}, "role": "forge_agent", "variants": [{"model": "fake", "params": {"mode": "agent", "pi_max_turns": 100}}, {"model": "fake", "params": {"mode": "template"}}]}
+{"cost_usd": 0.05, "floor_origin": "synthetic_generated", "kind": "outcome", "outcome": "success", "variant": 0, "wall_s": 60.0}
+{"cost_usd": 0.0, "floor_origin": "synthetic_generated", "kind": "outcome", "outcome": "success", "variant": 1, "wall_s": 5.0}
+{"cost_usd": 0.05, "floor_origin": "synthetic_generated", "kind": "outcome", "outcome": "success", "variant": 0, "wall_s": 60.0}
+{"cost_usd": 0.0, "floor_origin": "synthetic_generated", "kind": "outcome", "outcome": "success", "variant": 1, "wall_s": 5.0}
+{"cost_usd": 0.05, "floor_origin": "synthetic_generated", "kind": "outcome", "outcome": "success", "variant": 0, "wall_s": 60.0}
+{"cost_usd": 0.0, "floor_origin": "synthetic_generated", "kind": "outcome", "outcome": "success", "variant": 1, "wall_s": 5.0}
+{"cost_usd": 0.05, "floor_origin": "synthetic_generated", "kind": "outcome", "outcome": "success", "variant": 0, "wall_s": 60.0}
+{"cost_usd": 0.0, "floor_origin": "synthetic_generated", "kind": "outcome", "outcome": "success", "variant": 1, "wall_s": 5.0}

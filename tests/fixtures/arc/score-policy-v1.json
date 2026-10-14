@@ -1,0 +1,37 @@
+{
+  "metric": "relative_human_action_efficiency.percent.v1",
+  "sdk_version": "0.9.9",
+  "engine_version": "0.9.3",
+  "completed_response_only": true,
+  "aggregate_field": "ScorecardSummary.score",
+  "per_game_field": "ScorecardSummary.environments[id == exact_game_id].score",
+  "unit": "percentage",
+  "raw_range": [
+    0,
+    100
+  ],
+  "normalization_divisor": 100,
+  "per_level_allowance_not_aggregate_max": 1.15,
+  "retrieved_utc": "2026-09-24",
+  "documents": [
+    {
+      "url": "https://docs.arcprize.org/methodology.md",
+      "sha256_utf8": "638493812e677c88568f1dc314b278734dbfeedd64e7e2abe885f681417cd440",
+      "evidence": "Total score is the average of all game scores, resulting in a final score between 0% and 100%. The maximum score per level is capped at 1.15x."
+    },
+    {
+      "url": "https://docs.arcprize.org/api-reference/scorecards/close-scorecard.md",
+      "sha256_utf8": "c3ec4b9d3832ca879b57c1fdba611050ca55a27d029c72be760a9d49a34f6294",
+      "evidence": "Documented completed response example: score=100 and environments[0].score=100. EnvironmentSummary.score is the best run score for this environment."
+    }
+  ],
+  "documented_fixture": {
+    "path": "documented-close-scorecard.json",
+    "sha256_utf8": "9d36f069c3ae6961d297616e9e5dab3f77d52c3476393ff432638ccbb584e7aa",
+    "projection": "Retains unchanged card_id, score and environments from the documented success example; unrelated user/provenance metadata omitted."
+  },
+  "synthetic_fixture": {
+    "path": "synthetic-score-boundaries.json",
+    "kind": "Deliberately synthetic numeric boundary cases; not measured official runs."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "strategy": "grid",
+  "model_ladder": [
+    "fake"
+  ],
+  "max_candidates": 16,
+  "max_rewrites": 3,
+  "enable_rewriting": true,
+  "compile_budget": {
+    "cost_usd": 10,
+    "compute_s": 120
+  }
+}

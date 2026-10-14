@@ -1,0 +1,183 @@
+{
+  "format": "architect-eval-ladder/1",
+  "date": "2026-10-05",
+  "spec_hash": "ff985dd9d7cdea94938fabb5fc6ec909c28996cd6e7c693af60b2778cf6ebfdc",
+  "bar": 0.4,
+  "floor": {
+    "dataset": "bench-receipts-v2-evidence",
+    "cases_sha256": "09a2422b6a1fa87587c7919d0b0b779ecfc8230409fe48c89bafa46a50592218",
+    "practice": 100,
+    "exam": 100
+  },
+  "started_at": "2026-10-05T10:11:33Z",
+  "ended_at": "2026-10-05T10:51:13Z",
+  "stage2_lightning": [
+    {
+      "params": {
+        "retries": 0,
+        "verifier_depth": 0
+      },
+      "practice_score": 0.32
+    },
+    {
+      "params": {
+        "retries": 1,
+        "verifier_depth": 0
+      },
+      "practice_score": 0.3
+    },
+    {
+      "params": {
+        "retries": 0,
+        "verifier_depth": 1
+      },
+      "practice_score": 0.31
+    },
+    {
+      "params": {
+        "retries": 1,
+        "verifier_depth": 1
+      },
+      "practice_score": 0.29
+    }
+  ],
+  "forge": {
+    "engineer": "nvidia/nemotron-3-super-120b-a12b",
+    "settings": {
+      "thinking": false,
+      "temperature": 0.0,
+      "timeout_s": 300,
+      "cap_usd": 1.2,
+      "cap_minutes": 30,
+      "max_measures": 24,
+      "max_submissions": 6,
+      "max_spawns": 0,
+      "pi_max_turns": 400
+    },
+    "started_at": "2026-10-05T10:18:57.020671+00:00",
+    "ended_at": "2026-10-05T10:45:40.853469+00:00",
+    "turns": 149,
+    "agent_usd": 1.1507868,
+    "play_model_calls": 164,
+    "play_model_usd": 0.00970812,
+    "submissions": [
+      {
+        "submission": 1,
+        "practice": {
+          "cases": 100,
+          "correct": 31,
+          "invalid": 0,
+          "over_budget": 0
+        },
+        "practice_score": 0.31,
+        "smoke_passed": false,
+        "verdict": "tuning_failed"
+      },
+      {
+        "submission": 2,
+        "practice": {
+          "cases": 100,
+          "correct": 10,
+          "invalid": 0,
+          "over_budget": 0
+        },
+        "practice_score": 0.1,
+        "smoke_passed": false,
+        "verdict": "tuning_failed"
+      }
+    ],
+    "promoted": null,
+    "codes": [
+      "forge_no_submission"
+    ]
+  },
+  "rungs": [
+    {
+      "model": "nvidia/Nemotron-3_5-Lightning",
+      "preset": "extractor",
+      "params": {
+        "retries": 0,
+        "verifier_depth": 0
+      },
+      "practice_score": 0.32,
+      "exam": {
+        "cases": 100,
+        "correct": 27,
+        "invalid": 0,
+        "over_budget": 0
+      },
+      "exam_score": 0.27,
+      "licensed": false,
+      "ships": false,
+      "codes": [
+        "primary_floor_failed",
+        "primary_evaluation_failed",
+        "tuning_failed"
+      ],
+      "artifact_digest": "dbe712329b21dfd8bb7a51755d0a4a209480422085417c486a437664a32a2d87"
+    },
+    {
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "preset": "extractor",
+      "params": {
+        "retries": 0,
+        "verifier_depth": 0
+      },
+      "practice_score": 0.55,
+      "exam": {
+        "cases": 100,
+        "correct": 51,
+        "invalid": 0,
+        "over_budget": 0
+      },
+      "exam_score": 0.51,
+      "licensed": true,
+      "ships": true,
+      "codes": [],
+      "artifact_digest": "f4c57fabdfdaf49c84c83d1d8d6a8b373e0aa6ec1dd88e2acfe8203246c43d6e"
+    },
+    {
+      "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+      "preset": "extractor",
+      "params": {
+        "retries": 0,
+        "verifier_depth": 0
+      },
+      "practice_score": 0.58,
+      "exam": {
+        "cases": 100,
+        "correct": 49,
+        "invalid": 0,
+        "over_budget": 0
+      },
+      "exam_score": 0.49,
+      "licensed": true,
+      "ships": false,
+      "codes": [],
+      "artifact_digest": "aa064b24001c42de1cce338228dc30bba10737cb574310ba0c0926e75defa4e7"
+    }
+  ],
+  "agent": {
+    "registry_name": "ff985dd9d7cdea94938fabb5fc6ec909c28996cd6e7c693af60b2778cf6ebfdc",
+    "revision": 1,
+    "artifact_version": 5,
+    "artifact_digest": "f4c57fabdfdaf49c84c83d1d8d6a8b373e0aa6ec1dd88e2acfe8203246c43d6e",
+    "model": "nvidia/nemotron-3-super-120b-a12b",
+    "preset": "extractor",
+    "params": {
+      "retries": 0,
+      "verifier_depth": 0
+    }
+  },
+  "spend_relay_ledger_usd": {
+    "total": 1.46845512,
+    "calls": 1813,
+    "stage2_lightning": 0.05920764,
+    "forge_agent": 1.1507868,
+    "forge_play_model": 0.00970812,
+    "lightning_exam": 0.00583056,
+    "super_rung": 0.056079,
+    "ultra_rung": 0.186843
+  },
+  "signature": "HMAC with the build host's key; no Ed25519 seal (no release key yet). Signatures and verification ids are left out of this file."
+}

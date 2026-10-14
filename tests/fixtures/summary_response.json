@@ -1,0 +1,16 @@
+[
+  {
+    "text": "These numbers give a short view of the recorded results.\n\nPlease review the table together and choose the next step.",
+    "tokens_in": 8,
+    "tokens_out": 12,
+    "cost_usd": 2e-05,
+    "model": "fake"
+  },
+  {
+    "text": "These numbers give a short view of the recorded results.\n\nPlease review the table together and choose the next step.",
+    "tokens_in": 8,
+    "tokens_out": 12,
+    "cost_usd": 2e-05,
+    "model": "fake"
+  }
+]

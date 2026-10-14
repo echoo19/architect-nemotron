@@ -1,0 +1,9 @@
+The license is host-attested: it can be checked only where the Architect signing
+key that signed `artifact/report.json` is present, and `ARCHITECT_SIGNING_KEY_FILE`
+names it (a key in a `.architect` folder never counts on its own). No signing key or
+HMAC is shipped. Another host must mint its own license with
+`architect compile --approved-spec @@PACKAGE@@/artifact/spec.json`.
+
+Tests: `pytest tests/` checks the manifest, pins, schemas and the default-off flag
+with no key; the license, wrong-model refusal and fake smoke tests skip without the
+host key.

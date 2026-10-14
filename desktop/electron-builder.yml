@@ -1,0 +1,114 @@
+# Packaging for macOS (signed and notarized), Windows and Linux.
+#   npm run dist:mac   on a Mac (see README: Signing for macOS)
+#   npm run dist:win   on Windows
+# A packaged app runs on a machine with no uv, Python or Node: it carries a pinned uv
+# (resources/uv), which sets up Python on first start (electron/python-launch.cjs), and
+# Pi's dependencies, which run on the app's own binary as Node (ELECTRON_RUN_AS_NODE).
+# Do not turn off Electron's RunAsNode fuse. beforePack fetches uv and stages Pi for each
+# target into vendor/; afterPack refuses an app that lacks either (scripts/pack-hooks.mjs).
+beforePack: scripts/pack-hooks.mjs
+afterPack: scripts/pack-hooks.mjs
+# No auto-update feed (the app has no updater; CI drafts releases). Without this,
+# electron-builder guesses one from .git/config and fails where .git is a file (worktrees).
+publish: null
+appId: io.github.echoo19.architect
+productName: Architect
+copyright: Copyright (c) 2026 echoo19 and Architect contributors
+directories:
+  output: release
+  buildResources: build
+files:
+  - dist/**
+  - dist-electron/**
+  - package.json
+  - "!**/*.map"
+  # node-pty loads its binary from a per-platform optional package, which the
+  # dependency walk leaves out; copy whichever one this machine installed, without its
+  # debug symbols (.pdb, about 10 MB on Windows).
+  - from: node_modules/@lydell
+    to: node_modules/@lydell
+    filter: ["node-pty-*/**", "!**/*.pdb"]
+# node-pty's native module and its spawn-helper must live outside the asar archive.
+asarUnpack:
+  - node_modules/@lydell/**
+  - dist-electron/python-launch.cjs
+# Architect's Python core and its lockfile, read-only beside the app; its environment
+# goes to the user's app data (electron/main.ts sets ARCHITECT_PYTHON_ENV). Pi's
+# node_modules come from vendor/, staged for the target, never from this checkout.
+extraResources:
+  - from: ../architect
+    to: architect/architect
+    filter: ["**/*", "!**/__pycache__/**", "!**/*.pyc", "!backends/pi-node/node_modules", "!backends/pi-node/node_modules/**"]
+  - from: ../pyproject.toml
+    to: architect/pyproject.toml
+  - from: ../uv.lock
+    to: architect/uv.lock
+  - from: ../README.md
+    to: architect/README.md
+  - from: ../LICENSE
+    to: architect/LICENSE
+  - from: ../THIRD_PARTY_NOTICES.md
+    to: architect/THIRD_PARTY_NOTICES.md
+  - from: src/assets/fonts/OFL.txt
+    to: architect/OFL.txt
+  - from: build/third-party/uv-LICENSE-MIT.txt
+    to: uv/LICENSE-MIT.txt
+
+mac:
+  category: public.app-category.developer-tools
+  icon: build/icon.png
+  target:
+    - target: dmg
+    - target: zip
+  hardenedRuntime: true
+  gatekeeperAssess: false
+  entitlements: build/entitlements.mac.plist
+  entitlementsInherit: build/entitlements.mac.plist
+  # Uses APPLE_API_KEY / APPLE_API_KEY_ID / APPLE_API_ISSUER, or APPLE_ID /
+  # APPLE_APP_SPECIFIC_PASSWORD / APPLE_TEAM_ID, from the environment.
+  notarize: true
+  minimumSystemVersion: "12.0"
+  darkModeSupport: true
+  extendInfo:
+    NSDesktopFolderUsageDescription: Architect reads and edits the projects you open from your Desktop.
+    NSDocumentsFolderUsageDescription: Architect reads and edits the projects you open from Documents.
+    NSDownloadsFolderUsageDescription: Architect reads and edits the projects you open from Downloads.
+    NSRemovableVolumesUsageDescription: Architect reads and edits the projects you open from external drives.
+    NSNetworkVolumesUsageDescription: Architect reads and edits the projects you open from network drives.
+  extraResources:
+    - from: vendor/uv/darwin-${arch}
+      to: uv
+    - from: vendor/pi-node/darwin-${arch}/node_modules
+      to: architect/architect/backends/pi-node/node_modules
+dmg:
+  title: Architect ${version}
+  icon: build/icon.png
+  contents:
+    - { x: 150, y: 190, type: file }
+    - { x: 410, y: 190, type: link, path: /Applications }
+  window: { width: 560, height: 380 }
+artifactName: Architect-${version}-${arch}.${ext}
+
+win:
+  icon: build/icon.png
+  target: [nsis]
+  extraResources:
+    - from: vendor/uv/win32-${arch}
+      to: uv
+    - from: vendor/pi-node/win32-${arch}/node_modules
+      to: architect/architect/backends/pi-node/node_modules
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  artifactName: Architect-Setup-${version}.${ext}
+
+linux:
+  icon: build/icon.png
+  category: Development
+  target: [AppImage]
+  extraResources:
+    - from: vendor/uv/linux-${arch}
+      to: uv
+    - from: vendor/pi-node/linux-${arch}/node_modules
+      to: architect/architect/backends/pi-node/node_modules

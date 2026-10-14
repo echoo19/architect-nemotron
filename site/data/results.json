@@ -1,0 +1,394 @@
+{
+ "schema": "architect-site-report/1",
+ "placeholder": false,
+ "source": {
+  "command": "architect bench run (the three plain arms of docs/bench/prereg-nebius.md)",
+  "suite": "v2",
+  "suite_digest": "ee616c4b5fcad218672694a4c7746b04db29d2e1a2ea2e32272a1fccef112f93",
+  "frozen": true
+ },
+ "task": {
+  "id": "receipts",
+  "title": "CORD v2 receipts",
+  "fields": [
+   "total",
+   "subtotal",
+   "tax",
+   "item_count"
+  ],
+  "rules_url": "https://github.com/echoo19/architect-nemotron/blob/main/examples/receipts/RULES.md"
+ },
+ "bar": 0.4,
+ "domain": [
+  0.2,
+  0.8
+ ],
+ "prices_date": "2026-10-03",
+ "delivery": {
+  "split": "delivery",
+  "n": 348,
+  "cases_sha256": "78f6d3d7bf72ced6373ba1e51731c89c4586566436e3eddf62ac33238cecba2f",
+  "test_n": 96
+ },
+ "outcome": {
+  "id": "O5",
+  "headline": "On 348 unseen receipts, plain Super got 180 right to Ultra's 184 at 30% of the cost, and Super passed the exam while Lightning did not."
+ },
+ "arms": [
+  {
+   "arm": "A1",
+   "name": "Ultra, plain prompt",
+   "kind": "plain",
+   "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+   "model_name": "Nemotron 3 Ultra",
+   "builder": null,
+   "builder_name": null,
+   "replicate_of": null,
+   "practice": 0.57,
+   "exam": {
+    "cases": 100,
+    "correct": 49,
+    "invalid": 0,
+    "over_budget": 0,
+    "score": 0.49
+   },
+   "licensed": true,
+   "delivery": {
+    "n": 348,
+    "k": 184,
+    "score": 0.528736,
+    "ci": [
+     0.476261,
+     0.580582
+    ],
+    "invalid": 0,
+    "over_budget": 0,
+    "field_accuracy": 0.861351,
+    "test": {
+     "n": 96,
+     "k": 47
+    }
+   },
+   "cost_per_receipt_usd": 0.000919776,
+   "calls_per_receipt": 1.0,
+   "zero_call_share": 0.0,
+   "p50_s": 0.75,
+   "p95_s": 0.875,
+   "build_cost_usd": 0.186843,
+   "break_even_receipts": null,
+   "links": {
+    "harness": null,
+    "rows": "https://github.com/echoo19/architect-nemotron/blob/main/examples/bench/eval-2026-10-05/A1/rows.jsonl"
+   },
+   "receipt": null
+  },
+  {
+   "arm": "A2",
+   "name": "Super, plain prompt",
+   "kind": "plain",
+   "model": "nvidia/nemotron-3-super-120b-a12b",
+   "model_name": "Nemotron 3 Super",
+   "builder": null,
+   "builder_name": null,
+   "replicate_of": null,
+   "practice": 0.54,
+   "exam": {
+    "cases": 100,
+    "correct": 51,
+    "invalid": 0,
+    "over_budget": 0,
+    "score": 0.51
+   },
+   "licensed": true,
+   "delivery": {
+    "n": 348,
+    "k": 180,
+    "score": 0.517241,
+    "ci": [
+     0.464838,
+     0.569268
+    ],
+    "invalid": 0,
+    "over_budget": 0,
+    "field_accuracy": 0.857759,
+    "test": {
+     "n": 96,
+     "k": 49
+    }
+   },
+   "cost_per_receipt_usd": 0.000276385,
+   "calls_per_receipt": 1.0,
+   "zero_call_share": 0.0,
+   "p50_s": 0.719,
+   "p95_s": 0.906,
+   "build_cost_usd": 0.056079,
+   "break_even_receipts": null,
+   "links": {
+    "harness": null,
+    "rows": "https://github.com/echoo19/architect-nemotron/blob/main/examples/bench/eval-2026-10-05/A2/rows.jsonl"
+   },
+   "receipt": null
+  },
+  {
+   "arm": "A3",
+   "name": "Lightning, plain prompt",
+   "kind": "plain",
+   "model": "nvidia/Nemotron-3_5-Lightning",
+   "model_name": "Nemotron 3.5 Lightning",
+   "builder": null,
+   "builder_name": null,
+   "replicate_of": null,
+   "practice": 0.3,
+   "exam": {
+    "cases": 100,
+    "correct": 26,
+    "invalid": 0,
+    "over_budget": 0,
+    "score": 0.26
+   },
+   "licensed": false,
+   "delivery": {
+    "n": 348,
+    "k": 94,
+    "score": 0.270115,
+    "ci": [
+     0.226161,
+     0.319089
+    ],
+    "invalid": 0,
+    "over_budget": 0,
+    "field_accuracy": 0.746408,
+    "test": {
+     "n": 96,
+     "k": 25
+    }
+   },
+   "cost_per_receipt_usd": 5.7914e-05,
+   "calls_per_receipt": 1.0,
+   "zero_call_share": 0.0,
+   "p50_s": 0.468,
+   "p95_s": 0.672,
+   "build_cost_usd": 0.011744,
+   "break_even_receipts": null,
+   "links": {
+    "harness": null,
+    "rows": "https://github.com/echoo19/architect-nemotron/blob/main/examples/bench/eval-2026-10-05/A3/rows.jsonl"
+   },
+   "receipt": null
+  }
+ ],
+ "footer": [
+  "Prices: Nebius Token Factory list prices of 2026-10-03.",
+  "No build step saw the delivery receipts.",
+  "Regions: Lightning is served from eu-north1, Super and Ultra from us-central1, and latency depends on the region.",
+  "The models may have seen CORD v2 in pretraining.",
+  "The input is text rebuilt from CORD's word annotations. No OCR ran.",
+  "Every model ran at temperature 0 with thinking off. NVIDIA recommends 1.0 for these models."
+ ],
+ "plan": {
+  "doc": "https://github.com/echoo19/architect-nemotron/blob/main/docs/bench/prereg-nebius.md",
+  "gist_url": "https://gist.github.com/echoo19/217554e19b2d06d9c583f96732469dd6",
+  "results_doc": "https://github.com/echoo19/architect-nemotron/blob/main/docs/bench/results-receipts.md"
+ },
+ "ladder": {
+  "build": "Ladder build",
+  "arm": null,
+  "ladder": "Forge ladder",
+  "take": 1,
+  "recorded_at": "2026-10-05T10:51:13Z",
+  "spec_hash": "ff985dd9d7cdea94938fabb5fc6ec909c28996cd6e7c693af60b2778cf6ebfdc",
+  "video_at": null,
+  "bar": 0.4,
+  "floor": {
+   "dataset": "bench-receipts-v2-evidence",
+   "cases_sha256": "09a2422b6a1fa87587c7919d0b0b779ecfc8230409fe48c89bafa46a50592218",
+   "practice": 100,
+   "exam": 100
+  },
+  "ships": "Super",
+  "rungs": [
+   {
+    "name": "Lightning",
+    "model": "Nemotron 3.5 Lightning",
+    "state": "done",
+    "preset": 0.32,
+    "practice": [
+     0.31,
+     0.1
+    ],
+    "examined": 0.32,
+    "exam": {
+     "correct": 27,
+     "cases": 100,
+     "invalid": 0
+    },
+    "exam_cost_per_receipt_usd": 5.83056e-05,
+    "licensed": false
+   },
+   {
+    "name": "Super",
+    "model": "Nemotron 3 Super",
+    "state": "done",
+    "preset": 0.55,
+    "exam": {
+     "correct": 51,
+     "cases": 100,
+     "invalid": 0
+    },
+    "exam_cost_per_receipt_usd": 0.0002782949999999999,
+    "licensed": true,
+    "ships": true
+   },
+   {
+    "name": "Ultra",
+    "model": "Nemotron 3 Ultra",
+    "state": "done",
+    "preset": 0.58,
+    "exam": {
+     "correct": 49,
+     "cases": 100,
+     "invalid": 0
+    },
+    "exam_cost_per_receipt_usd": 0.0009273200000000001,
+    "licensed": true
+   }
+  ],
+  "delivery": null,
+  "retake": null,
+  "agent": {
+   "id": "ff985dd9d7cdea94938fabb5fc6ec909c28996cd6e7c693af60b2778cf6ebfdc",
+   "revision": 1,
+   "artifact_digest": "f4c57fabdfdaf49c84c83d1d8d6a8b373e0aa6ec1dd88e2acfe8203246c43d6e",
+   "model": "nvidia/nemotron-3-super-120b-a12b"
+  },
+  "build_cost_usd": 1.46845512,
+  "forge": {
+   "engineer": "Nemotron 3 Super",
+   "turns": 149,
+   "cost_usd": 1.16049492,
+   "submissions": 2,
+   "accepted": 0
+  }
+ },
+ "checked_ladder": {
+  "build": "Ladder build with rule checks",
+  "recorded_at": "2026-10-06T10:32:27Z",
+  "commit": "1074a80d97ae0435d2790f9203448f1206dc6db6",
+  "spec_hash": "4d80f3d580cac16d3b384eb7f8ca7d84990bd48b8fca0482cca4afb00e0e48cb",
+  "bar": 0.4,
+  "floor": {
+   "dataset": "bench-receipts-v2-evidence",
+   "cases_sha256": "09a2422b6a1fa87587c7919d0b0b779ecfc8230409fe48c89bafa46a50592218",
+   "practice": 100,
+   "exam": 100
+  },
+  "checks": [
+   {
+    "check": "keep_digits",
+    "rule": "Amounts keep every printed digit, so \"226,500.00\" is 22650000."
+   },
+   {
+    "check": "not_copied",
+    "rule": "A subtotal equal to the total is null unless the receipt prints that amount as a subtotal."
+   }
+  ],
+  "ships": "Super",
+  "rungs": [
+   {
+    "name": "Lightning",
+    "model": "Nemotron 3.5 Lightning",
+    "state": "done",
+    "preset": 0.48,
+    "exam": {
+     "correct": 39,
+     "cases": 100,
+     "invalid": 0
+    },
+    "exam_cost_per_receipt_usd": 5.83056e-05,
+    "licensed": false
+   },
+   {
+    "name": "Super",
+    "model": "Nemotron 3 Super",
+    "state": "done",
+    "preset": 0.68,
+    "exam": {
+     "correct": 65,
+     "cases": 100,
+     "invalid": 0
+    },
+    "exam_cost_per_receipt_usd": 0.0002782949999999999,
+    "licensed": true,
+    "ships": true
+   },
+   {
+    "name": "Ultra",
+    "model": "Nemotron 3 Ultra",
+    "state": "done",
+    "preset": 0.78,
+    "exam": {
+     "correct": 71,
+     "cases": 100,
+     "invalid": 0
+    },
+    "exam_cost_per_receipt_usd": 0.00092699,
+    "licensed": true
+   }
+  ],
+  "delivery": null,
+  "agent": {
+   "id": "4d80f3d580cac16d3b384eb7f8ca7d84990bd48b8fca0482cca4afb00e0e48cb",
+   "revision": 1,
+   "artifact_digest": "c6269719e8f5730f5f1717bd26197a3745b71259b61e3e0cac202704842fdc69",
+   "model": "nvidia/nemotron-3-super-120b-a12b"
+  },
+  "build_cost_usd": 0.30784026,
+  "forge": null,
+  "later_sits": [
+   {
+    "recorded_at": "2026-10-06T14:47:42Z",
+    "exam": {
+     "Lightning": 39,
+     "Super": 63,
+     "Ultra": 70
+    },
+    "ships": "Super"
+   },
+   {
+    "recorded_at": "2026-10-06T20:46:57Z",
+    "exam": {
+     "Lightning": 42,
+     "Super": 65,
+     "Ultra": 72
+    },
+    "ships": "Lightning"
+   },
+   {
+    "recorded_at": "2026-10-07T09:38:51Z",
+    "exam": {
+     "Lightning": 39,
+     "Super": 64,
+     "Ultra": 72
+    },
+    "ships": "Super"
+   }
+  ]
+ },
+ "forge_record": {
+  "task": "receipts",
+  "sessions": 12,
+  "accepted": 0,
+  "by_engineer": [
+   {
+    "model_name": "Nemotron 3 Ultra",
+    "sessions": 5
+   },
+   {
+    "model_name": "Nemotron 3 Super",
+    "sessions": 7
+   }
+  ],
+  "in_ladder_build": 1,
+  "doc": "https://github.com/echoo19/architect-nemotron/blob/main/docs/bench/results-receipts.md"
+ }
+}

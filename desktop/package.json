@@ -1,0 +1,60 @@
+{
+  "name": "architect-desktop",
+  "version": "0.1.0",
+  "description": "Architect desktop app: the Architect agent and Forge in a window.",
+  "license": "MIT",
+  "homepage": "https://github.com/echoo19/architect-nemotron",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/echoo19/architect-nemotron.git",
+    "directory": "desktop"
+  },
+  "private": true,
+  "type": "module",
+  "main": "dist-electron/main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json --noEmit && vite build",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "app:bundle": "node scripts/build-electron.mjs",
+    "app": "npm run build && npm run app:bundle && electron .",
+    "test": "vitest run",
+    "dev:fake": "node scripts/dev-fixture.mjs && node scripts/dev-fake.mjs",
+    "capture": "node scripts/capture.mjs",
+    "dist": "npm run build && npm run app:bundle && electron-builder",
+    "dist:mac": "npm run build && npm run app:bundle && electron-builder --mac",
+    "dist:win": "npm run build && npm run app:bundle && electron-builder --win",
+    "dist:dir": "npm run build && npm run app:bundle && electron-builder --dir"
+  },
+  "dependencies": {
+    "@lydell/node-pty": "^1.1.0"
+  },
+  "devDependencies": {
+    "@tabler/icons-react": "^3.48.0",
+    "@testing-library/react": "^16.1.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/ws": "^8.5.13",
+    "@vitejs/plugin-react": "^4.3.4",
+    "@xterm/addon-fit": "^0.10.0",
+    "@xterm/xterm": "^5.5.0",
+    "clsx": "^2.1.1",
+    "electron": "33.4.11",
+    "electron-builder": "^25.1.8",
+    "esbuild": "^0.24.0",
+    "highlight.js": "^11.12.0",
+    "jsdom": "^25.0.1",
+    "mermaid": "^11.17.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.3",
+    "vitest": "^3.0.5",
+    "ws": "^8.18.0",
+    "zustand": "^5.0.2"
+  },
+  "author": {
+    "name": "echoo19"
+  }
+}

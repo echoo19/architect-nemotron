@@ -1,0 +1,20 @@
+{
+  "mode": "offline_scripted_model_real_pi",
+  "live_provider": false,
+  "registry_cli_passed": true,
+  "reuse_fresh_verification": true,
+  "dogfood_native_tests": 12,
+  "dogfood_staged": true,
+  "reviewed_host_match": true,
+  "pi_versions": {
+    "pi-ai": "0.73.1",
+    "pi-agent-core": "0.73.1",
+    "pi-coding-agent": "0.73.1"
+  },
+  "pi_tool_calls": 29,
+  "telemetry_rows": 33,
+  "verification_ids": [
+    "3b4e3e428e84494ba6e5b62912e9a787",
+    "662fc35bb0944c80b567a5ed240b23bb"
+  ]
+}

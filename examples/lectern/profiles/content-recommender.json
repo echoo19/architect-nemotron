@@ -1,0 +1,24 @@
+{
+  "workspace": "../../../.architect/lectern-content-fixture",
+  "models": {
+    "fake": {
+      "provider": "fake",
+      "fixture": "../fixtures/content-responses.json"
+    }
+  },
+  "floors": {
+    "synthetic-content-acceptance": {
+      "kind": "held_out_tasks",
+      "path": "../fixtures/content-acceptance.json"
+    }
+  },
+  "compile": {
+    "max_candidates": 2,
+    "enable_rewriting": false,
+    "max_rewrites": 0,
+    "compile_budget": {
+      "cost_usd": 1,
+      "compute_s": 30
+    }
+  }
+}

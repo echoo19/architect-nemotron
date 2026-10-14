@@ -1,0 +1,50 @@
+{
+  "card_id": "8ae52f21-b40c-457b-9f4e-65bd8381e67f",
+  "score": 100,
+  "environments": [
+    {
+      "id": "am92-80effacb",
+      "runs": [
+        {
+          "id": "am92-80effacb",
+          "guid": "4a38a278-796b-4f42-a28b-a27a68dbf862",
+          "score": 100,
+          "levels_completed": 5,
+          "actions": 136,
+          "resets": 0,
+          "state": "WIN",
+          "completed": true,
+          "level_scores": [
+            100,
+            100,
+            100,
+            100,
+            100
+          ],
+          "level_actions": [
+            12,
+            34,
+            41,
+            26,
+            23
+          ],
+          "level_baseline_actions": [
+            20,
+            40,
+            50,
+            55,
+            60
+          ],
+          "number_of_levels": 0,
+          "number_of_environments": 0
+        }
+      ],
+      "score": 100,
+      "actions": 136,
+      "levels_completed": 5,
+      "completed": true,
+      "level_count": 5,
+      "resets": 0
+    }
+  ]
+}

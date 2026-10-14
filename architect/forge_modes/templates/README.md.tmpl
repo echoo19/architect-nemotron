@@ -1,0 +1,17 @@
+# @@PACKAGE@@
+
+An agent harness exported by `architect forge integrate` (architect @@VERSION@@).
+
+Requirements: `architect>=@@VERSION@@` must be installed in the interpreter that runs
+this package. Native harnesses import `architect.presets`, and sandbox harnesses
+spawn `sys.executable -I -m architect.runtime._sandbox_worker` (`-I` ignores
+`PYTHONPATH`), so a vendored copy on the path is not enough.
+
+Usage: the feature is OFF by default. It runs only when the environment variable
+`@@FLAG@@` is exactly `1`, after human review. Call `verify()` to re-check the
+files, pins and (@@WHERE@@) the license; `run(value, profile=...)` re-verifies at
+load and runs through the Architect runtime. The run uses the workspace you pass
+as `workspace=...`, else the one `ARCHITECT_WORKSPACE` names, else the profile's.
+A profile that names `~/.architect` also reads its stored key or judge code there.
+
+@@LICENSE_README@@

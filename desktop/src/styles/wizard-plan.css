@@ -1,0 +1,135 @@
+/*
+ * The guided build's Describe and Plan steps (clarity spec, steps 1 and 2): the job field
+ * and its examples, the plan's two cards (what the agent does, how Architect picks the
+ * model), the rules sheet and the interview's question. Imported by those screens; the
+ * page, the bar and the stepper are wizard.css.
+ */
+
+/* ---------------------------------------------------------------- step 1, Describe */
+
+.describe-step .ui-card-body { display: flex; flex-direction: column; gap: 0; }
+.describe-step-label { display: block; margin: 0 0 6px; font-size: var(--fs-small); line-height: var(--lh-small); font-weight: 500; color: hsl(var(--text)); }
+.describe-step .describe-field { min-height: 104px; }
+.describe-step .describe-field textarea { min-height: 96px; }
+.describe-where {
+  display: flex; align-items: center; gap: 6px; margin: 12px 0 0;
+  font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-mute));
+}
+.describe-where svg { flex: none; color: hsl(var(--text-faint)); }
+.describe-where b { font-weight: 600; color: hsl(var(--text)); }
+.describe-examples-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  margin: 24px 0 8px; font-size: var(--fs-small); line-height: var(--lh-small); font-weight: 500; color: hsl(var(--text));
+}
+.describe-example-list { border: 1px solid hsl(var(--divider)); border-radius: var(--r-md); overflow: hidden; }
+.describe-example-list .row-trailing svg { color: hsl(var(--text-faint)); }
+.describe-loading { display: grid; place-items: center; min-height: 60vh; }
+/* The describe Composer is only the field here: the screen draws the examples, and the bar sends. */
+.describe-step-field > .ui-card-body { padding: 0; }
+.describe-step-field .describe-examples,
+.describe-step-field .ui-card-footer { display: none; }
+
+/* ---------------------------------------------------------------- step 2, Plan */
+
+.plan-step-cards { display: flex; flex-direction: column; gap: 16px; }
+/* The plan fits a 1440 x 900 window with its bar: the two cards sit a little tighter than a default card. */
+.plan-step-cards .ui-card-header { padding-top: 16px; }
+.plan-step-cards .ui-card-body-card { padding-bottom: 20px; }
+[data-plan-card="pick"] .ui-card-header { padding-bottom: 4px; }
+.plan-pick-sub { margin: 0 0 12px; }
+
+/* What the agent does: label and value rows */
+.plan-kv { display: grid; grid-template-columns: 160px 1fr; column-gap: 24px; margin: 0; }
+.plan-kv > dt, .plan-kv > dd { margin: 0; padding: 8px 0; border-top: 1px solid hsl(var(--hairline)); }
+.plan-kv > dt:first-of-type, .plan-kv > dd:first-of-type { border-top: 0; padding-top: 4px; }
+.plan-kv > dt { font-size: var(--fs-small); line-height: var(--lh-body); color: hsl(var(--text-mute)); }
+.plan-kv > dd { font-weight: 500; color: hsl(var(--ink)); }
+.plan-kv-note { display: block; margin-top: 2px; font-weight: 400; font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-mute)); }
+.plan-kv .ui-button-link { margin-left: 8px; vertical-align: baseline; }
+.plan-sub { margin: 2px 0 0; font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-mute)); }
+
+/* How Architect picks the model: the four steps */
+.plan-method {
+  display: grid; grid-template-columns: repeat(4, 1fr); margin: 0; padding: 0; list-style: none;
+  border: 1px solid hsl(var(--divider)); border-radius: var(--r-md); background: hsl(var(--bg-subtle));
+}
+.plan-method > li { position: relative; padding: 12px 18px 12px 22px; }
+.plan-method > li + li { border-left: 1px solid hsl(var(--hairline)); }
+.plan-method > li + li::before {
+  content: ""; position: absolute; left: -6px; top: 24px; z-index: 1; width: 10px; height: 10px;
+  background: hsl(var(--bg-subtle)); border-top: 1px solid hsl(var(--divider)); border-right: 1px solid hsl(var(--divider));
+  transform: rotate(45deg);
+}
+.plan-method > li.is-mark { background: hsl(var(--accent-50)); }
+.plan-method > li.is-mark.is-err { background: hsl(var(--err-bg)); }
+.plan-method-title { margin: 2px 0 0; font-weight: 600; color: hsl(var(--ink)); }
+.plan-method > li.is-mark .plan-method-title { color: hsl(var(--accent-800)); }
+.plan-method-n { margin-right: 6px; font-size: var(--fs-micro); font-weight: 500; color: hsl(var(--text-faint)); font-variant-numeric: tabular-nums; }
+.plan-method-text { margin: 3px 0 0; font-size: var(--fs-small); line-height: 18px; color: hsl(var(--text-mute)); }
+
+/* The models, with their list prices */
+.plan-tiles { display: grid; grid-auto-columns: 1fr; grid-auto-flow: column; margin-top: 14px; border: 1px solid hsl(var(--hairline)); border-radius: var(--r-md); }
+.plan-tile { display: flex; flex-direction: column; min-width: 0; padding: 10px 16px; }
+.plan-tile + .plan-tile { border-left: 1px solid hsl(var(--hairline)); }
+.plan-tile-name { font-weight: 600; color: hsl(var(--ink)); }
+.plan-tile-full { font-size: var(--fs-micro); line-height: var(--lh-micro); color: hsl(var(--text-mute)); }
+.plan-tile-price { margin-top: 4px; font-weight: 600; color: hsl(var(--ink)); font-variant-numeric: tabular-nums; }
+.plan-tiles-caption { margin: 8px 0 0; font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-mute)); }
+
+/* Writing the plan */
+.plan-wait { display: flex; flex-direction: column; gap: 6px; }
+.plan-wait-line { display: flex; align-items: center; gap: 8px; margin: 0; color: hsl(var(--text)); }
+.plan-wait-detail { margin: 0 0 0 24px; font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-mute)); }
+
+/* The bar's note in two lines */
+.plan-note { display: flex; flex-direction: column; text-align: right; }
+
+@media (max-width: 900px) {
+  .plan-method { grid-template-columns: 1fr 1fr; }
+  .plan-method > li:nth-child(3) { border-left: 0; }
+  .plan-method > li:nth-child(3)::before { display: none; }
+  .plan-kv { grid-template-columns: 120px 1fr; }
+}
+
+/* ---------------------------------------------------------------- the rules sheet */
+
+.rules-intro { margin: 0 0 12px; font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-mute)); }
+.rules-list { margin: 0; padding: 0; list-style: none; counter-reset: rule; }
+.rules-list > li {
+  position: relative; padding: 10px 0 10px 32px; counter-increment: rule;
+  border-top: 1px solid hsl(var(--hairline)); color: hsl(var(--text));
+}
+.rules-list > li:first-child { border-top: 0; }
+.rules-list > li::before {
+  content: counter(rule); position: absolute; left: 0; top: 10px; width: 20px; height: 20px; border-radius: 50%;
+  display: grid; place-items: center; background: hsl(var(--bg-muted)); color: hsl(var(--text-mute));
+  font-size: var(--fs-micro); font-variant-numeric: tabular-nums;
+}
+.rules-list b { font-weight: 600; color: hsl(var(--ink)); }
+.rules-field { display: block; margin-bottom: 2px; }
+.rules-sentence { display: block; font-size: var(--fs-small); line-height: var(--lh-small); }
+.rules-sentence + .rules-sentence { margin-top: 4px; }
+.rules-checks { margin: 0; padding-left: 18px; color: hsl(var(--text)); }
+.rules-checks > li + li { margin-top: 6px; }
+.rules-prose { white-space: pre-line; color: hsl(var(--text)); }
+
+/* ---------------------------------------------------------------- the interview's question */
+
+.wizard-question { display: flex; flex-direction: column; gap: 12px; outline: none; }
+.wizard-question-text { margin: 0; font-size: var(--fs-body); line-height: var(--lh-body); font-weight: 500; color: hsl(var(--text)); white-space: pre-line; }
+.wizard-question .ui-seg { width: 100%; }
+.wizard-question-actions { display: flex; justify-content: flex-end; align-items: center; gap: 8px; }
+.wizard-question-actions:has(> :only-child) { justify-content: flex-start; }
+.wizard-question-cancel { margin-right: auto; color: hsl(var(--text-mute)); }
+.wizard-choices { display: flex; flex-direction: column; border: 1px solid hsl(var(--divider)); border-radius: var(--r-md); }
+.wizard-choice {
+  min-height: 40px; padding: 8px 12px; text-align: left; font: inherit; color: hsl(var(--text));
+  background: transparent; border: 0; cursor: pointer;
+}
+.wizard-choice + .wizard-choice { border-top: 1px solid hsl(var(--hairline)); }
+.wizard-choice:hover { background: hsl(var(--bg-muted)); }
+.wizard-choice.is-on { font-weight: 500; background: hsl(var(--bg-muted)); }
+.wizard-choice:focus-visible { outline: 2px solid hsl(var(--accent-700)); outline-offset: -2px; }
+
+/* The plan's checks did not fit its spec (CHECKS_INVALID): said as a warning, never as a rule. */
+.plan-kv-warn { margin: 12px 0 0; font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--warn)); }

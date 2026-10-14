@@ -1,0 +1,22 @@
+{
+  "name": "local-competition-fixture",
+  "rules": "Synthetic local fixtures only. Use public observations. Not ARC benchmark results.",
+  "action_schema": {
+    "type": "object"
+  },
+  "observation_schema": {
+    "type": "object"
+  },
+  "preview_dataset": "local-parent-v1",
+  "child_support_dataset": "local-support-v1",
+  "compute_cap": {
+    "cost_usd": 1,
+    "compute_s": 55
+  },
+  "small_model": "fake",
+  "submission_constraints": [
+    "Offline fixture demonstration only; submission permissions unverified."
+  ],
+  "rules_status": "unverified",
+  "max_games": 3
+}

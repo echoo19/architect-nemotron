@@ -1,0 +1,334 @@
+/* A conversation: the timeline, messages, Markdown, work folds, notices, asks,
+   diffs, images and side questions. Lectern v2: one type scale, flat surfaces on a
+   divider edge, a 24px chip with a 14px glyph at the head of every timeline row. */
+
+/* ── Conversation ─────────────────────────────────────────────────── */
+.conversation { position: relative; flex: 1; min-height: 0; min-width: 0; display: flex; flex-direction: column; container-type: inline-size; }
+.conversation-fill { flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 32px; text-align: center; }
+
+.timeline-wrap { flex: 1; min-height: 0; position: relative; display: flex; flex-direction: column; }
+.timeline { flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; scroll-behavior: auto; }
+.timeline-inner {
+  max-width: var(--measure); margin: 0 auto; padding: 32px 24px 24px;
+  display: flex; flex-direction: column; gap: 16px;
+  font-size: var(--fs-body); line-height: var(--lh-body); letter-spacing: -0.006em;
+}
+
+.empty { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; padding: 12vh 4px 0; max-width: 560px; }
+.conversation-fill.empty { align-items: center; padding: 32px; margin: 0 auto; }
+.empty h1 { font-size: var(--fs-heading); line-height: var(--lh-heading); }
+
+/* The chip every timeline row leads with: 24px, bg-muted, a 14px glyph. */
+.tl-chip {
+  flex: none; display: inline-grid; place-items: center; width: 24px; height: 24px;
+  border-radius: var(--r-md); background: hsl(var(--bg-muted)); color: hsl(var(--text-mute));
+}
+.tl-chip svg { display: block; }
+
+/* ── Messages ─────────────────────────────────────────────────────── */
+.msg-user { display: flex; justify-content: flex-end; }
+.msg-user-col { max-width: 85%; display: flex; flex-direction: column; align-items: flex-end; }
+.msg-user-bubble {
+  max-width: 100%; padding: 8px 12px; border-radius: var(--r-lg);
+  background: hsl(var(--bg-muted)); color: hsl(var(--text)); white-space: pre-wrap; word-break: break-word;
+}
+.msg-user-bubble.is-command { font-family: var(--font-mono); font-size: var(--fs-small); line-height: var(--lh-small); }
+.msg-user-bubble .cmd-part { white-space: nowrap; }
+.msg-steered { display: inline-flex; align-items: center; gap: 4px; align-self: flex-end; margin-bottom: 4px; font-size: var(--fs-micro); line-height: var(--lh-micro); font-weight: 500; color: hsl(var(--text-faint)); }
+
+/* The answer is prose at reading size, held to a reading measure. */
+.msg-answer {
+  position: relative; max-width: var(--measure-prose); color: hsl(var(--text));
+  font-size: var(--fs-reading); line-height: var(--lh-reading); letter-spacing: -0.006em;
+}
+.msg-text { white-space: pre-wrap; word-break: break-word; }
+
+.msg-actions { display: flex; align-items: center; gap: 2px; margin-top: 4px; opacity: 0; transition: opacity 150ms var(--ease); }
+.msg-actions-end { justify-content: flex-end; }
+.msg-answer:hover .msg-actions, .msg-user:hover .msg-actions, .msg-actions:focus-within { opacity: 1; }
+.msg-meta, .msg-time {
+  display: inline-flex; align-items: center; gap: 8px; padding: 0 4px;
+  font-size: var(--fs-micro); line-height: var(--lh-micro); font-weight: 500; color: hsl(var(--text-faint)); font-variant-numeric: tabular-nums;
+}
+
+.working-row { display: flex; align-items: center; gap: 8px; min-height: 24px; color: hsl(var(--text-mute)); }
+.working-label { font-size: var(--fs-body); }
+.working-time { font-size: var(--fs-micro); color: hsl(var(--text-faint)); font-variant-numeric: tabular-nums; }
+
+.jump {
+  position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); z-index: 5;
+  display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border-radius: var(--r-md);
+  border: 1px solid hsl(var(--divider)); background: hsl(var(--bg-raised)); color: hsl(var(--text));
+  font-size: var(--fs-small); font-weight: 500; box-shadow: var(--shadow-lg); animation: swap-in 150ms var(--ease) both;
+}
+.jump:hover { background: hsl(var(--bg-muted)); }
+
+/* ── Markdown (class names from Hearth's renderer) ───────────────── */
+.md { display: flex; flex-direction: column; gap: 12px; }
+.md-live > :last-child::after, .md-live > :last-child li:last-child::after {
+  content: ""; display: inline-block; width: 6px; height: 12px; margin-left: 2px; vertical-align: -1px;
+  background: hsl(var(--text-ghost));
+}
+.md-heading { margin-top: 8px; font-size: var(--fs-title); line-height: var(--lh-title); font-weight: 580; letter-spacing: -0.011em; }
+.md-list { margin: 0; padding-left: 24px; display: flex; flex-direction: column; gap: 4px; }
+/* Lists in answers mark items with a dash, never a dot. */
+ul.md-list { list-style: none; padding-left: 20px; }
+ul.md-list > li { position: relative; }
+ul.md-list > li::before { content: "–"; position: absolute; left: -16px; color: hsl(var(--text-faint)); }
+.md-code-span {
+  padding: 1px 4px; border-radius: var(--r-xs); background: hsl(var(--bg-muted)); border: 1px solid hsl(var(--hairline));
+  font-size: var(--fs-body);
+}
+.md-code { border: 1px solid hsl(var(--divider)); border-radius: var(--r-md); overflow: hidden; background: hsl(var(--bg-subtle)); }
+.md-code-bar { display: flex; align-items: center; justify-content: space-between; min-height: 32px; padding: 2px 4px 2px 12px; border-bottom: 1px solid hsl(var(--hairline)); }
+.md-code-lang { display: inline-flex; align-items: center; gap: 6px; font-size: var(--fs-micro); line-height: var(--lh-micro); font-weight: 500; color: hsl(var(--text-faint)); }
+.md-code-body { margin: 0; padding: 12px; overflow-x: auto; font-family: var(--font-mono); font-size: var(--fs-small); line-height: 1.6; }
+.md-table-scroll { overflow-x: auto; }
+.md-table { border-collapse: collapse; font-size: var(--fs-body); line-height: var(--lh-body); }
+.md-table th, .md-table td { padding: 6px 12px; border-bottom: 1px solid hsl(var(--hairline)); text-align: left; }
+.md-table th { font-weight: 500; color: hsl(var(--text-mute)); border-bottom-color: hsl(var(--divider)); }
+.md-table [data-align="right"] { text-align: right; font-variant-numeric: tabular-nums; }
+.md-table [data-align="center"] { text-align: center; }
+.md-path {
+  border: 0; background: none; padding: 0; font: inherit; color: hsl(var(--accent-700));
+  text-decoration: underline; text-decoration-color: hsl(var(--accent-700) / 0.35); text-underline-offset: 3px;
+}
+.md-path:hover { text-decoration-color: currentColor; }
+.md-swatch { display: inline-block; width: 10px; height: 10px; margin-right: 4px; border-radius: var(--r-xs); vertical-align: -1px; border: 1px solid hsl(var(--border)); }
+
+/* ── The work fold: a timeline row (chip, label, chevron) over a rail of steps ── */
+.work { font-size: var(--fs-body); }
+.work-head {
+  display: inline-flex; align-items: center; gap: 8px; max-width: 100%; min-width: 0; min-height: 24px; padding: 0 4px 0 0;
+  border: 0; background: none; color: hsl(var(--text-mute)); text-align: left; border-radius: var(--r-md);
+  transition: color 150ms var(--ease);
+}
+.work-head:hover { color: hsl(var(--text)); }
+.work-icon.is-warn { color: hsl(var(--warn)); background: hsl(var(--warn-bg)); }
+.work-label { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.work-chevron { flex: none; color: hsl(var(--text-faint)); transition: transform 200ms var(--ease); }
+.work-chevron.is-open { transform: rotate(90deg); }
+.fold-body { min-height: 0; overflow: hidden; }
+/* The rail runs under the chip's centre. */
+.work-steps {
+  list-style: none; margin: 4px 0 4px 11px; padding: 0 0 0 19px; border-left: 1px solid hsl(var(--divider));
+  display: flex; flex-direction: column; gap: 0;
+}
+.step-head {
+  display: flex; align-items: center; gap: 8px; width: 100%; min-width: 0; min-height: 28px; padding: 4px 0;
+  border: 0; background: none; text-align: left; color: hsl(var(--text-mute)); font-size: var(--fs-small); line-height: var(--lh-small);
+}
+.step-head:disabled { cursor: default; }
+.step-head:not(:disabled):hover .step-name { color: hsl(var(--text)); }
+.step-running .step-name { color: hsl(var(--text)); }
+.step-icon { flex: none; width: 16px; display: inline-flex; justify-content: center; color: hsl(var(--text-faint)); }
+.step-name { flex: none; }
+.step-summary { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--fs-micro); line-height: var(--lh-micro); color: hsl(var(--text-faint)); }
+.step-flag { flex: none; font-size: var(--fs-micro); font-weight: 580; color: hsl(var(--err)); }
+.step-lines { list-style: none; margin: 0 0 4px; padding: 0 0 0 24px; display: flex; flex-direction: column; gap: 2px; font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-faint)); }
+.step-agent { display: inline-flex; align-items: center; gap: 4px; font-weight: 500; color: hsl(var(--text-mute)); }
+.step-result {
+  margin: 4px 0 8px 24px; padding: 8px 12px; max-height: 220px; overflow: auto; white-space: pre-wrap;
+  font-family: var(--font-mono); font-size: var(--fs-micro); line-height: 1.6;
+  background: hsl(var(--bg-subtle)); border: 1px solid hsl(var(--hairline)); border-radius: var(--r-md);
+}
+.work-progress { padding: 4px 0 4px 24px; font-size: var(--fs-small); color: hsl(var(--text-faint)); }
+
+/* ── Notices: a timeline row; an error carries its tone on the chip ─── */
+.notice { display: flex; align-items: flex-start; gap: 8px; font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-mute)); }
+.notice-text { padding-top: 3px; white-space: pre-wrap; word-break: break-word; }
+.notice-warn .tl-chip { color: hsl(var(--warn)); background: hsl(var(--warn-bg)); }
+.notice-error { color: hsl(var(--err)); }
+.notice-error .tl-chip { color: hsl(var(--err)); background: hsl(var(--err-bg)); }
+
+/* ── Plans and results ───────────────────────────────────────────── */
+/* In a build transcript: a one-line fold that opens the plan or report sheet. */
+.plan-chip {
+  align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; max-width: 100%; min-height: 24px; padding: 0 4px 0 0;
+  border: 0; background: none; color: hsl(var(--text-mute)); font-size: var(--fs-body); text-align: left; border-radius: var(--r-md);
+  transition: color 150ms var(--ease);
+}
+.plan-chip:hover { color: hsl(var(--text)); }
+.plan-chip .tl-chip { color: hsl(var(--accent-700)); }
+.plan-chip-title { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.plan-chip-go { flex: none; color: hsl(var(--text-faint)); }
+/* In a normal chat: a compact Facts card. */
+.plan-card-cell { max-width: var(--measure-form); }
+.plan-hashes { margin-top: 16px; padding-top: 12px; border-top: 1px solid hsl(var(--hairline)); }
+.plan-footer { margin-top: 16px; font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-mute)); white-space: pre-wrap; }
+.rows-block h3 { margin-bottom: 4px; font-size: var(--fs-small); font-weight: 500; color: hsl(var(--text-mute)); }
+.text-block {
+  margin: 0; padding: 12px; max-height: 420px; overflow: auto; white-space: pre-wrap; word-break: break-word;
+  font-family: var(--font-mono); font-size: var(--fs-small); line-height: 1.6;
+  background: hsl(var(--bg-subtle)); border: 1px solid hsl(var(--hairline)); border-radius: var(--r-md);
+}
+.text-line { color: hsl(var(--text-mute)); font-size: var(--fs-small); line-height: var(--lh-small); white-space: pre-wrap; }
+
+/* ── Questions and approvals ─────────────────────────────────────── */
+.ask-card {
+  display: flex; flex-direction: column; gap: 12px; padding: 16px 20px; outline: none;
+  border: 1px solid hsl(var(--divider)); border-radius: var(--r-card); background: hsl(var(--bg-raised));
+}
+.ask-card:focus-visible { outline: none; border-color: hsl(var(--accent-700)); box-shadow: var(--shadow-focus); border-radius: var(--r-card); }
+.ask-head { display: flex; align-items: center; gap: 8px; }
+.ask-head .tl-chip { color: hsl(var(--accent-700)); }
+.ask-title { margin: 0; font-size: var(--fs-title); line-height: var(--lh-title); font-weight: 580; letter-spacing: -0.011em; }
+.ask-question { margin: 0; white-space: pre-wrap; font-size: var(--fs-body); line-height: var(--lh-body); font-weight: 500; color: hsl(var(--text)); }
+.ask-detail {
+  margin: 0; padding: 12px; max-height: 260px; overflow: auto; white-space: pre-wrap; word-break: break-word;
+  font-family: var(--font-mono); font-size: var(--fs-micro); line-height: 1.6;
+  background: hsl(var(--bg-subtle)); border: 1px solid hsl(var(--hairline)); border-radius: var(--r-md);
+}
+.ask-detail.is-command { background: hsl(var(--bg-sink)); border-color: transparent; color: hsl(var(--text)); }
+.ask-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ask-why-link { margin-left: auto; }
+.ask-form { display: flex; align-items: center; gap: 8px; }
+.ask-form .ui-input { flex: 1; min-width: 0; }
+.ask-cancel { align-self: flex-start; color: hsl(var(--text-mute)); }
+/* The choices of a numbered question: rows with a hairline between, the number at the start. */
+.ask-choices { display: flex; flex-direction: column; border: 1px solid hsl(var(--divider)); border-radius: var(--r-md); overflow: hidden; }
+.choice {
+  display: flex; align-items: center; gap: 12px; min-height: 40px; padding: 8px 12px; border: 0; background: hsl(var(--bg-raised));
+  text-align: left; font-size: var(--fs-body); line-height: var(--lh-body); color: hsl(var(--text));
+  transition: background-color 150ms var(--ease);
+}
+.choice + .choice { border-top: 1px solid hsl(var(--hairline)); }
+.choice:hover { background: hsl(var(--bg-muted)); }
+.choice:focus-visible { outline: 2px solid hsl(var(--accent-700)); outline-offset: -2px; border-radius: 0; }
+.choice kbd {
+  flex: none; width: 20px; height: 20px; display: grid; place-items: center; border-radius: var(--r-sm);
+  font-family: var(--font-sans); font-size: var(--fs-micro); font-weight: 500; font-variant-numeric: tabular-nums;
+  background: hsl(var(--bg-muted)); color: hsl(var(--text-mute));
+}
+.choice.is-default kbd { background: hsl(var(--accent-700)); color: hsl(var(--on-accent)); }
+/* An ask the card or a dialog answers: one line in the transcript, no frame, no buttons
+   (Enter still answers it when focused). */
+/* Held: the card answers it, so the transcript shows it as a muted row, not a new message. */
+.ask-card.is-held { padding: 8px 12px; border-color: transparent; border-radius: var(--r-md); background: hsl(var(--bg-muted)); }
+.ask-card.is-held .ask-question { font-weight: 400; color: hsl(var(--text-mute)); }
+.ask-card.is-held:focus-visible { outline: none; box-shadow: none; }
+/* An answered ask: a timeline row. */
+.ask-record { display: flex; align-items: center; gap: 8px; font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-faint)); }
+.ask-record .tl-chip { color: hsl(var(--ok)); }
+.ask-record.is-declined .tl-chip { color: hsl(var(--text-mute)); }
+.ask-record-what { max-width: 60%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: hsl(var(--text-mute)); }
+
+/* Edit approvals: a diff of what will change, its lines on hairlines */
+.edit-preview { overflow: hidden; border: 1px solid hsl(var(--divider)); border-radius: var(--r-md); background: hsl(var(--bg-raised)); }
+.edit-preview-head {
+  display: flex; align-items: center; gap: 8px; width: 100%; height: 36px; padding: 0 12px; border: 0;
+  border-bottom: 1px solid hsl(var(--hairline)); background: none; text-align: left;
+  font-size: var(--fs-small); color: hsl(var(--text));
+}
+.edit-preview-head svg { flex: none; color: hsl(var(--text-mute)); }
+.edit-preview-head:hover .edit-preview-name { text-decoration: underline; }
+.edit-preview-name { flex: none; font-weight: 500; }
+.edit-preview-dir { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; direction: rtl; text-align: left; font-size: var(--fs-micro); color: hsl(var(--text-faint)); }
+.edit-preview-meta { flex: none; font-size: var(--fs-micro); color: hsl(var(--text-faint)); font-variant-numeric: tabular-nums; }
+.edit-preview-body { max-height: 320px; overflow: auto; padding: 0; font-family: var(--font-mono); font-size: var(--fs-micro); line-height: 1.6; }
+.edit-preview-body .change-line { grid-template-columns: 24px 1fr; padding: 2px 0; }
+.edit-preview-body .change-line + .change-line { border-top: 1px solid hsl(var(--hairline)); }
+.edit-preview-body .change-sign { text-align: center; }
+.edit-preview-body .is-more .change-code { font-family: var(--font-sans); color: hsl(var(--text-faint)); }
+.ask-why { margin-top: 0; }
+
+/* ── Diffs ───────────────────────────────────────────────────────── */
+.diff-card {
+  display: flex; flex-direction: column; gap: 8px; padding: 16px 20px;
+  border: 1px solid hsl(var(--divider)); border-radius: var(--r-card); background: hsl(var(--bg-raised));
+}
+.diff-head { display: flex; align-items: center; gap: 12px; }
+.diff-title { margin: 0; flex: none; font-size: var(--fs-title); line-height: var(--lh-title); font-weight: 580; letter-spacing: -0.011em; }
+.diff-count { font-size: var(--fs-small); }
+.diff-undo { margin-left: auto; }
+.diff-files { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.diff-file {
+  display: flex; align-items: center; gap: 8px; width: 100%; min-height: 36px; padding: 4px 0; border: 0; background: none;
+  border-top: 1px solid hsl(var(--hairline)); text-align: left; font-size: var(--fs-small); color: hsl(var(--text));
+}
+.diff-path { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.diff-body {
+  margin: 0 0 8px; padding: 8px 0; max-height: 480px; overflow: auto;
+  font-family: var(--font-mono); font-size: var(--fs-micro); line-height: 1.6;
+  background: hsl(var(--bg-subtle)); border-radius: var(--r-md);
+}
+.diff-line { display: block; padding: 0 12px; white-space: pre; }
+.diff-line.is-add { background: hsl(var(--ok-bg)); color: hsl(var(--ok)); }
+.diff-line.is-del { background: hsl(var(--err-bg)); color: hsl(var(--err)); }
+.diff-line.is-hunk { color: hsl(var(--text-faint)); }
+
+/* ── When a conversation could not start, or stopped ─────────────── */
+.failure { text-align: center; }
+.failure p { max-width: 480px; color: hsl(var(--text-mute)); }
+.failure-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: var(--r-card); background: hsl(var(--err-bg)); color: hsl(var(--err)); }
+.failure-detail {
+  max-width: 560px; padding: 12px; text-align: left; white-space: pre-wrap;
+  font-family: var(--font-mono); font-size: var(--fs-micro); line-height: 1.6;
+  background: hsl(var(--bg-subtle)); border: 1px solid hsl(var(--hairline)); border-radius: var(--r-md);
+}
+.stopped {
+  display: flex; align-items: center; gap: 12px; width: calc(100% - 48px); max-width: calc(var(--measure) + 48px); margin: 0 auto 12px;
+  padding: 8px 8px 8px 16px; border-radius: var(--r-lg); background: hsl(var(--warn-bg)); color: hsl(var(--warn)); font-size: var(--fs-small);
+}
+.stopped .button, .stopped .ui-button { margin-left: auto; }
+
+/* Loading: static blocks that fade in once (no shimmer). */
+.skeleton { gap: 12px; }
+.skel { height: 12px; border-radius: var(--r-md); background: hsl(var(--bg-muted)); animation: skel-in 150ms var(--ease) 120ms both; }
+.skel-user { align-self: flex-end; width: 46%; height: 38px; margin: 12px 0 8px; border-radius: var(--r-lg); }
+
+/* ── The changes panel beside a chat ─────────────────────────────── */
+
+/* ── Images and diagrams in answers ──────────────────────────────── */
+.md-image { display: inline-block; max-width: 100%; margin: 4px 0; padding: 0; overflow: hidden; vertical-align: top; cursor: zoom-in; border: 1px solid hsl(var(--divider)); border-radius: var(--r-md); background: hsl(var(--bg-subtle)); }
+.md-image img { display: block; max-width: 100%; max-height: 360px; object-fit: contain; }
+.md-image:hover { border-color: hsl(var(--border-strong)); }
+.md-image-missing { color: hsl(var(--text-faint)); }
+/* The image viewer is a fixed dark stage in both themes. */
+.lightbox { position: fixed; inset: 0; z-index: 90; display: flex; flex-direction: column; background: hsl(0 0% 4% / 0.88); animation: swap-in 150ms var(--ease) both; }
+.lightbox-bar { display: flex; align-items: center; gap: 4px; height: 48px; padding: 0 calc(12px + var(--controls-w)) 0 20px; color: hsl(45 6% 94%); }
+.lightbox-bar .ui-icon-button { color: hsl(45 3% 78%); }
+.lightbox-bar .ui-icon-button:hover:not(:disabled) { background: hsl(0 0% 100% / 0.08); color: hsl(0 0% 100%); }
+.lightbox-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--fs-small); font-weight: 500; }
+.lightbox-scale { margin-right: 8px; font-size: var(--fs-micro); color: hsl(45 3% 62%); }
+.lightbox-stage { flex: 1; min-height: 0; overflow: auto; display: grid; place-items: center; padding: 12px 24px 32px; }
+.lightbox-stage img { transform-origin: center; transition: transform 150ms var(--ease); cursor: zoom-out; border-radius: var(--r-sm); }
+.lightbox-stage img.is-fit { max-width: 100%; max-height: calc(100vh - 100px); object-fit: contain; cursor: zoom-in; }
+.md-diagram { overflow: hidden; border: 1px solid hsl(var(--divider)); border-radius: var(--r-md); background: hsl(var(--bg-raised)); }
+.md-diagram-svg { display: flex; justify-content: center; padding: 16px; overflow-x: auto; }
+.md-diagram-svg svg { max-width: 100%; height: auto; }
+.md-diagram-svg.is-loading { min-height: 120px; }
+.md-diagram-error { margin: 12px 16px 0; font-size: var(--fs-small); color: hsl(var(--warn)); }
+
+/* ── Side questions: a panel over the conversation, above the composer ── */
+.side-chat {
+  position: absolute; right: 20px; bottom: 132px; z-index: 25; width: min(400px, calc(100% - 40px)); max-height: min(60%, 520px);
+  display: flex; flex-direction: column; overflow: hidden;
+  border-radius: var(--r-card); background: hsl(var(--bg-raised)); box-shadow: var(--shadow-overlay);
+}
+.side-chat-head { flex: none; display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 8px 0 16px; border-bottom: 1px solid hsl(var(--hairline)); }
+.side-chat-title { font-size: var(--fs-body); font-weight: 580; color: hsl(var(--text)); }
+.side-chat-head .spacer { flex: 1; }
+.side-chat-list { flex: 1; min-height: 60px; overflow: auto; padding: 12px 16px; display: flex; flex-direction: column; gap: 16px; }
+
+.side-item { display: flex; flex-direction: column; gap: 8px; }
+.side-q { align-self: flex-end; max-width: 85%; padding: 8px 12px; border-radius: var(--r-lg); background: hsl(var(--bg-muted)); font-size: var(--fs-small); line-height: var(--lh-small); white-space: pre-wrap; }
+.side-a { font-size: var(--fs-small); line-height: 1.6; }
+.side-a .md-block { margin: 4px 0; }
+.side-working { display: flex; align-items: center; gap: 8px; font-size: var(--fs-small); color: hsl(var(--text-faint)); }
+.side-working .side-stop { margin-left: auto; }
+.side-error { font-size: var(--fs-small); color: hsl(var(--err)); }
+.side-chat-compose { flex: none; display: flex; align-items: flex-end; gap: 8px; padding: 8px 8px 8px 16px; border-top: 1px solid hsl(var(--hairline)); }
+.side-chat-compose textarea { flex: 1; max-height: 120px; padding: 6px 0; resize: none; border: 0; outline: none; background: none; font: inherit; font-size: var(--fs-small); color: hsl(var(--text)); }
+.side-chat-compose textarea:focus-visible { outline: none; }
+
+/* ── Workspace trust (TrustFolder) ───────────────────────────────── */
+.trust-cell { max-width: 480px; margin-inline: auto; padding: 0 24px; }
+.trust-panel { animation: swap-in 200ms var(--ease) both; }
+.trust-where { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.trust-list { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; }
+.trust-list li { padding: 8px 0; font-size: var(--fs-body); line-height: var(--lh-body); color: hsl(var(--text-mute)); }
+.trust-list li + li { border-top: 1px solid hsl(var(--hairline)); }
+.trust-list li:last-child { color: hsl(var(--text-faint)); font-size: var(--fs-small); line-height: var(--lh-small); }
+/* An edit to an added agent's own files: what saving it does (lib/retake.ts). */
+.edit-preview-stops { margin: 0; padding: 8px 12px; border-bottom: 1px solid hsl(var(--hairline)); font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text)); }

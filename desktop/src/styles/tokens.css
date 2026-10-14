@@ -1,0 +1,158 @@
+/* Lectern design system v2 tokens (design language §2). The pine ramp is Lectern's,
+   generated from seed #0e3932, copied unchanged. HSL triples, used as hsl(var(--x)).
+   Light on :root, dark on html[data-theme="dark"]. Do not edit values here; Lectern
+   is the source (© Lectern, MIT: see THIRD_PARTY_NOTICES.md). */
+:root {
+  /* Ground and surfaces */
+  --bg-subtle: 45 12% 97.6%;
+  --bg: 0 0% 100%;
+  --bg-raised: 0 0% 100%;
+  --bg-muted: 45 9% 95%;
+  --bg-sink: 45 7% 92%;
+  --bg-well: 45 12% 97.6%;
+  /* Lines */
+  --hairline: 45 8% 93.5%;
+  --divider: 45 6% 90%;
+  --border: 45 5% 84%;
+  --border-strong: 45 4% 72%;
+  /* The unchecked ring, an off switch. */
+  --control: 45 3% 56%;
+  /* Text */
+  --ink: 0 0% 4%;
+  --text: 45 6% 11%;
+  --text-mute: 45 4% 36%;
+  --text-faint: 45 3% 42%;
+  /* Not for text: hairlines, rules and glyphs with no characters. */
+  --text-ghost: 45 3% 66%;
+  /* Status */
+  --ok: 168 76% 24%;
+  --ok-bg: 162 38% 93%;
+  --warn: 30 100% 33%;
+  --warn-bg: 38 89% 93%;
+  --err: 5 81% 40%;
+  --err-bg: 4 91% 95%;
+  /* Accent: Lectern's pine ramp. 700 is the control colour (#275049); 800 is hover. */
+  --accent-50: 165 27.4% 96.3%;
+  --accent-100: 165 23.3% 92.7%;
+  --accent-200: 166 23.3% 85.4%;
+  --accent-300: 166 19.7% 74.4%;
+  --accent-400: 167 17.1% 61.2%;
+  --accent-500: 167 16.1% 48.5%;
+  --accent-600: 168 20.8% 39%;
+  --accent-700: 169 34.2% 23.5%;
+  --accent-800: 169 45.5% 15.7%;
+  --accent-900: 169 46.7% 11.1%;
+  --on-accent: 0 0% 100%;
+  /* The field halo only. */
+  --focus-ring: 169 34.2% 23.5% / 0.32;
+  --knob: 0 0% 100%;
+  /* Dialog scrim. Its own token because --text inverts. */
+  --scrim: 30 10% 6%;
+  --scrim-alpha: 0.32;
+  /* Categorical tints: a kind, never a state. */
+  --tint-1: 16 100% 95%;
+  --tint-1-ink: 16 34% 31%;
+  --tint-2: 45 64% 91%;
+  --tint-2-ink: 43 43% 25%;
+  --tint-3: 129 49% 93%;
+  --tint-3-ink: 134 25% 27%;
+  --tint-4: 205 100% 94%;
+  --tint-4-ink: 204 42% 30%;
+  /* Measures */
+  --measure-form: 640px;
+  --measure-list: 1000px;
+  --measure-prose: 68ch;
+  --sidebar-w: 224px;
+
+  /* Shadows: floating layers only (§2.6), warm-tinted. */
+  --shadow-lg: 0 0 0 1px rgba(28, 24, 18, 0.04), 0 2px 4px rgba(28, 24, 18, 0.04), 0 8px 24px rgba(28, 24, 18, 0.08);
+  --shadow-overlay: 0 0 0 1px rgba(28, 24, 18, 0.05), 0 4px 8px rgba(28, 24, 18, 0.04), 0 24px 56px -8px rgba(28, 24, 18, 0.18);
+  --shadow-focus: 0 0 0 3px hsl(var(--focus-ring));
+  --shadow-invalid: 0 0 0 3px hsl(var(--err) / 0.16);
+  --shadow-thumb: 0 1px 2px rgba(15, 23, 42, 0.05), inset 0 0 0 1px hsl(var(--hairline));
+  --shadow-knob: 0 1px 2px rgba(15, 23, 42, 0.18), 0 0 0 0.5px rgba(15, 23, 42, 0.08);
+
+  /* Old names, kept as aliases until nothing uses them (redesign v2 §3.1). A card
+     sits flat on the ground with a divider edge; only floating layers cast a shadow.
+     The two raise shadows are a transparent shadow, not `none`, so a list that
+     appends a ring to them stays valid. */
+  --card: var(--bg-raised);
+  --card-line: var(--divider);
+  --board: var(--bg-subtle);
+  --sink: var(--bg-sink);
+  --raise: 0 0 #0000;
+  --raise-hi: 0 0 #0000;
+  --pop: var(--shadow-lg);
+  --pop-hi: var(--shadow-overlay);
+
+  /* Native controls follow this: checkbox, radio, select popup, scrollbar. */
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  --bg-subtle: 45 3% 8%;
+  --bg: 45 3% 11%;
+  --bg-raised: 45 3% 13%;
+  --bg-muted: 45 3% 16.5%;
+  --bg-sink: 45 3% 20%;
+  --bg-well: 45 3% 8%;
+  --hairline: 45 3% 17%;
+  --divider: 45 3% 20%;
+  --border: 45 3% 27%;
+  --border-strong: 45 3% 37%;
+  --control: 45 3% 44%;
+  --ink: 0 0% 100%;
+  --text: 45 6% 94%;
+  --text-mute: 45 3% 68%;
+  --text-faint: 45 3% 58%;
+  --text-ghost: 45 3% 40%;
+  --ok: 162 52% 64%;
+  --ok-bg: 164 34% 14%;
+  --warn: 38 86% 65%;
+  --warn-bg: 34 46% 15%;
+  --err: 4 82% 70%;
+  --err-bg: 4 44% 17%;
+  --accent-50: 166 7.2% 10.1%;
+  --accent-100: 166 9.4% 13.5%;
+  --accent-200: 167 14.8% 18.5%;
+  --accent-300: 167 15.9% 27.9%;
+  --accent-400: 167 16.6% 37.8%;
+  --accent-500: 167 16.8% 46.2%;
+  --accent-600: 167 17.7% 53%;
+  --accent-700: 167 16.9% 48.8%;
+  --accent-800: 167 18.2% 58.9%;
+  --accent-900: 166 45.4% 86.7%;
+  --on-accent: 0 0% 4%;
+  --focus-ring: 167 16.9% 48.8% / 0.32;
+  --knob: 0 0% 96%;
+  --scrim: 0 0% 0%;
+  --scrim-alpha: 0.6;
+  --tint-1: 17 27% 18%;
+  --tint-1-ink: 15 59% 82%;
+  --tint-2: 42 30% 16%;
+  --tint-2-ink: 44 40% 76%;
+  --tint-3: 132 18% 17%;
+  --tint-3-ink: 131 29% 78%;
+  --tint-4: 204 30% 18%;
+  --tint-4-ink: 205 61% 81%;
+  /* A shadow does not read on a dark ground; floating layers keep a hairline of light. */
+  --shadow-lg: 0 0 0 1px rgb(255 255 255 / 0.06), 0 8px 24px rgb(0 0 0 / 0.5);
+  --shadow-overlay: 0 0 0 1px rgb(255 255 255 / 0.07), 0 24px 56px -8px rgb(0 0 0 / 0.7);
+  --shadow-thumb: 0 1px 2px rgb(0 0 0 / 0.3), inset 0 0 0 1px hsl(var(--hairline));
+  color-scheme: dark;
+}
+
+/* Radii, motion and measure (redesign v2 §3.4). */
+:root {
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-card: 16px;
+  --r-full: 9999px;
+  --r-bubble: var(--r-lg);
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --ease-enter: var(--ease);
+  --ease-fold: var(--ease);
+  --measure: 760px;
+}

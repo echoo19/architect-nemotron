@@ -1,0 +1,1433 @@
+{
+  "manifest_version": 1,
+  "dataset": "naver-clova-ix/cord-v2",
+  "dataset_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+  "dataset_revision": "7f0115a4b758a71d6473b8d085751692da2fef98",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "rule_version": "receipts-v2",
+  "rules_sha256": "b552ab6033626d0e5f1792a560932b764b749a7dc17f7f2cbe928653a8f52480",
+  "split": "demo-floor",
+  "title": "CORD v2 development receipts",
+  "unit": "receipts",
+  "note": "These are development receipts. They were used while Architect was being built, so scores on them are not its published results.",
+  "count": 200,
+  "sources": {
+    "evidence-practice": 100,
+    "pilot": 0,
+    "rehearsal": 100
+  },
+  "files": {
+    "demo/floor.json": {
+      "sha256": "beecaaef901d82b8f86f75daa32753ecbe8814987bfd6a419c9186aa44059ec4"
+    }
+  },
+  "cases_sha256": "ae8af94056a5bf8016b7f5f4079c624795d911b3a9dbafd0bf4dae04f82b8114",
+  "partition": {
+    "rule": "sorted case_id; even positions tune, odd positions are held out",
+    "tuning": 100,
+    "held_out": 100
+  },
+  "cases": [
+    {
+      "case_id": "cord-train-0001",
+      "source": "train/1",
+      "from": "evidence-practice",
+      "case_sha256": "3bf46eec84c726d9ab0a8a8bca144bf0515489040deeb2846162ff10a5ceac33",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0005",
+      "source": "train/5",
+      "from": "evidence-practice",
+      "case_sha256": "5fe1ee2102b55f2b870c7eb1eca49730c05dfacfbee3d8ad967747be4aaf640b",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0011",
+      "source": "train/11",
+      "from": "evidence-practice",
+      "case_sha256": "fc3db2b5eae1cde0c4601dcd4924b48ce41ea77c28f59d21b2feace4d6e15eb4",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0013",
+      "source": "train/13",
+      "from": "rehearsal",
+      "case_sha256": "bbe95b9fb80399d1a2752806ed99e048e80f9295e95f920535ee9bdbcacdf569",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0018",
+      "source": "train/18",
+      "from": "rehearsal",
+      "case_sha256": "d3978b9325074a390023451a3113b67f861f95a5e519473db82d342e6ae58a58",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0020",
+      "source": "train/20",
+      "from": "evidence-practice",
+      "case_sha256": "3f5814c598d8b69b1b1fe2f77aca7c09f6e11fad3fe2d99276d5197b6a5b36d9",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0024",
+      "source": "train/24",
+      "from": "rehearsal",
+      "case_sha256": "67b5111e3dcccd654b22d4b519918c50669c7e3da283da3d52b4a86840e3c257",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0034",
+      "source": "train/34",
+      "from": "evidence-practice",
+      "case_sha256": "214293ce9d5ff1f1afdc482b75e27cc0f22bf4892d4696b050d4fe9b2119f9bc",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0037",
+      "source": "train/37",
+      "from": "rehearsal",
+      "case_sha256": "a54ea06f8c7589afd00cc4285f6613f79619fe826895cd35af8b25942a6f91ee",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0046",
+      "source": "train/46",
+      "from": "rehearsal",
+      "case_sha256": "d0a6bbf819b8ab7d218defaa634be8288a236d1d66a8c159276bbd7491468b43",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0050",
+      "source": "train/50",
+      "from": "evidence-practice",
+      "case_sha256": "e955d5f2f3ce424ec6caba97a9205e6ef51dddb8ab6c768499401ec5777a4d05",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0057",
+      "source": "train/57",
+      "from": "rehearsal",
+      "case_sha256": "871d79800fefb0835b5db445d60a01eb42157d3ba7ac06d4bada219e9507a9b5",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0058",
+      "source": "train/58",
+      "from": "rehearsal",
+      "case_sha256": "720b3d5f2b6999818523ea5ffa28f7c18db701e0f68c4f60c97bd0d5685dbb8f",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0059",
+      "source": "train/59",
+      "from": "rehearsal",
+      "case_sha256": "6f6b3b2e6810e494e88743f6666455d9843e999091ae53935b37f652cdbc44f7",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0061",
+      "source": "train/61",
+      "from": "evidence-practice",
+      "case_sha256": "8e7ee9763bdc49177a46d8800a2154f8242acc165906e8876cf33f12f2d6fa94",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0063",
+      "source": "train/63",
+      "from": "evidence-practice",
+      "case_sha256": "bace8dc501afe620d71a6494b59baa7af854356dbccb33ecd2f8b4285688d289",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0065",
+      "source": "train/65",
+      "from": "rehearsal",
+      "case_sha256": "c7d55bb39f7548450a78ef4701f2163aa1c7e05744fce471d4bf71496b9ad833",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0066",
+      "source": "train/66",
+      "from": "rehearsal",
+      "case_sha256": "f530cd8b59d266d2e08dd3fea7397ec30355fba75743887897affeb45dfe2e71",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0068",
+      "source": "train/68",
+      "from": "evidence-practice",
+      "case_sha256": "47797efab84942f9d4a9f6c6dc4f6c9b5d7ce441820216c913f109311d07992b",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0072",
+      "source": "train/72",
+      "from": "evidence-practice",
+      "case_sha256": "958d51e0eeb4aabebcf74c80363fdabb9357c8bfc4700ba6ee9217e7b4f52cb0",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0074",
+      "source": "train/74",
+      "from": "rehearsal",
+      "case_sha256": "07d92f93597d87cbb6deb9d2f26ad043450b1b3464c951433d1d6ddd53ece6ec",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0078",
+      "source": "train/78",
+      "from": "evidence-practice",
+      "case_sha256": "799fbb774da08bc6cb14cb97682bd3a33157751f639b8d1401205d10a32cc984",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0082",
+      "source": "train/82",
+      "from": "evidence-practice",
+      "case_sha256": "62a7a0d02fe226636c773fd742d72ee73965a1f2860eaeb017d21cf937f9d798",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0088",
+      "source": "train/88",
+      "from": "evidence-practice",
+      "case_sha256": "6e890c67cd86af58d666b8ad9aeb301931f228d5c9c0383d91bb61d7bd255e6d",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0093",
+      "source": "train/93",
+      "from": "rehearsal",
+      "case_sha256": "7e33ec5cb0756bc7bff49deb2063d180b2c8cf965430d03dc977a5f6809049e1",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0094",
+      "source": "train/94",
+      "from": "rehearsal",
+      "case_sha256": "580f3d1cdf49ad60494ba5e20f9451ac89e6b076f13fae0f5b02a39d62982820",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0098",
+      "source": "train/98",
+      "from": "evidence-practice",
+      "case_sha256": "3fc4e08d09404805d53b8274bb694e7a83fd14f3c142f3508a9817947a95e54d",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0103",
+      "source": "train/103",
+      "from": "evidence-practice",
+      "case_sha256": "3e79390b657f37316b1a45854e7e7bac519a2125e6ec7e0e427e65fccf5af6c0",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0106",
+      "source": "train/106",
+      "from": "rehearsal",
+      "case_sha256": "70b33322a81e0647412e3b752b7a3a45dc6b65b4f1804541df0dfc0c1302a544",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0111",
+      "source": "train/111",
+      "from": "evidence-practice",
+      "case_sha256": "9e11efde9aea8bb390043b5fb0df437473275a366636ac06adca295f46c2ab64",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0114",
+      "source": "train/114",
+      "from": "rehearsal",
+      "case_sha256": "0483118a86b08a235a50e80e619a31dfd35fa5966f3f35a0a50e9835714788ef",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0117",
+      "source": "train/117",
+      "from": "rehearsal",
+      "case_sha256": "012b8cebb40c15cffc4a4016b08411c6d44433b16c55e98cc267920ef481c84b",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0120",
+      "source": "train/120",
+      "from": "rehearsal",
+      "case_sha256": "d576abf15ab5452c8e1dc5b568d82f6a2dbcd4e12562e9752087f870e265a0d5",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0121",
+      "source": "train/121",
+      "from": "rehearsal",
+      "case_sha256": "f37e245d3a8873ad7de37750e949babafc34ef2cb2968b4b536d754a4e315dc0",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0122",
+      "source": "train/122",
+      "from": "rehearsal",
+      "case_sha256": "15bc7f2c482aed8edd5f9ea3cff6f07a4ddaa807cdf94c6318b25ca3cc09f7d5",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0123",
+      "source": "train/123",
+      "from": "evidence-practice",
+      "case_sha256": "8a27c8b59b50a4e96584fdead8e45a3cbe155232615043aafe34511db4e6c26d",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0126",
+      "source": "train/126",
+      "from": "rehearsal",
+      "case_sha256": "915f6155822c5e654b3bc38a2c655a46bc1a782f812722c083e0d695741e48aa",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0128",
+      "source": "train/128",
+      "from": "evidence-practice",
+      "case_sha256": "535637af66fc7aa01cf0668bf5450a6ba3c5cff41d195c322622e578c79d14c6",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0130",
+      "source": "train/130",
+      "from": "rehearsal",
+      "case_sha256": "f9da9545e0198c8a93d5bf8175a28cea84c34016df3fcde2e74e62a394cad28e",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0132",
+      "source": "train/132",
+      "from": "rehearsal",
+      "case_sha256": "6bc39bbf587289e4bc29abc8f827c9409260765af200d08dc2e5530b938549ae",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0135",
+      "source": "train/135",
+      "from": "rehearsal",
+      "case_sha256": "5c6f47991a46c8d61309de39b10171e0107024d730a7a2ff4a36ec3eec7f8c5f",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0139",
+      "source": "train/139",
+      "from": "evidence-practice",
+      "case_sha256": "a79a370c381d56076fce4169a371313e8bae87d05aa68caac331dc8f60fbbfee",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0149",
+      "source": "train/149",
+      "from": "rehearsal",
+      "case_sha256": "a2cdacf7dc69b7079c867bb71abfbb8a68bef581ccadd1fc6529e9d7acbb4f94",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0150",
+      "source": "train/150",
+      "from": "rehearsal",
+      "case_sha256": "448a3db13019e8c39080b4e146509b93ec00b069b431664a063582dc6a91a061",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0151",
+      "source": "train/151",
+      "from": "evidence-practice",
+      "case_sha256": "9a375e33152266eeb5491b4ed68e5f0910cfae8e26da16048438a8a9db033c3d",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0153",
+      "source": "train/153",
+      "from": "evidence-practice",
+      "case_sha256": "fe95e79f0a706622feceb7727f89b73774abf050353f7969a8e41f6864311e83",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0157",
+      "source": "train/157",
+      "from": "evidence-practice",
+      "case_sha256": "2ab2a5d35c6e43eae6c1e133104c732adb92d9f0d9bbb54b97847188a86b3d61",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0158",
+      "source": "train/158",
+      "from": "rehearsal",
+      "case_sha256": "8ea004874677c1072682513560e4c8ccae147482a835018b0093e769b409ac28",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0160",
+      "source": "train/160",
+      "from": "rehearsal",
+      "case_sha256": "e4863bd0f3ef2f8786240c7691e3758bb8ea32c8956a6f63b2862fbd2bf87df7",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0161",
+      "source": "train/161",
+      "from": "rehearsal",
+      "case_sha256": "a0db61e806fe2a5ea918000de78642f6905793db3bda4326211d2c1492a4bc51",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0175",
+      "source": "train/175",
+      "from": "rehearsal",
+      "case_sha256": "2664d86e4e1e7e09c392bdac8a67f6dde1785efa1eac2ba2192e5ea7a85d30f9",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0177",
+      "source": "train/177",
+      "from": "rehearsal",
+      "case_sha256": "e42c2b4320d46945657b29cc41d05615a3b49a4e4ad8c08129afbeb174622d3c",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0181",
+      "source": "train/181",
+      "from": "rehearsal",
+      "case_sha256": "82fb39b77f1daecca72564800b81befa8c90cdf16f4a727d8a4b259ef2f27098",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0187",
+      "source": "train/187",
+      "from": "rehearsal",
+      "case_sha256": "5caa3ab8c204819da35a481a94429b2a4126523184036bd28d99da7066c41b20",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0192",
+      "source": "train/192",
+      "from": "rehearsal",
+      "case_sha256": "ef6c7c36623d0adc42da5c2a089554e4a80c7c9903f1c1a28647a0d672a68050",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0193",
+      "source": "train/193",
+      "from": "evidence-practice",
+      "case_sha256": "75208c44d70329d44122bd2b2c2b77ae11bed60ee2e3d68aa9c71765a7ae132f",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0195",
+      "source": "train/195",
+      "from": "evidence-practice",
+      "case_sha256": "f5a3edd745c41b8e98eead805e265f2e9429d12c2cfaaeb025ca5cee66adea40",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0202",
+      "source": "train/202",
+      "from": "evidence-practice",
+      "case_sha256": "d41acd64192af26872c401fa61ffff18e2d7ba2650a357530cf2ad505d29ea70",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0206",
+      "source": "train/206",
+      "from": "rehearsal",
+      "case_sha256": "37ca30a975f399a90ae3233e1ddb9c0da184cec39d9cd55381b1be580344d6c6",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0209",
+      "source": "train/209",
+      "from": "rehearsal",
+      "case_sha256": "dd44c5b2fec015100f9ed0a11f9a526e865f33207ffdcf25dc1372eec08593a7",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0214",
+      "source": "train/214",
+      "from": "rehearsal",
+      "case_sha256": "4e36e00d098e229e2bdc585c21e458d5e33917b05506f53dee1dad5e4f8defd7",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0220",
+      "source": "train/220",
+      "from": "rehearsal",
+      "case_sha256": "e4410f9088f4106a5f2fcfe29bad061cb9e2a47cb72dc0c598acb807b3913d12",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0222",
+      "source": "train/222",
+      "from": "rehearsal",
+      "case_sha256": "8a2c30678e54df2adb98fc79dbdd5a3b54fa7cab20df34d88c5ee5c60ce81bd0",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0224",
+      "source": "train/224",
+      "from": "evidence-practice",
+      "case_sha256": "12cf164cd6bac88b34a5c1f1b2f58f0f937fbefb0a9e77e70976e3da79103183",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0226",
+      "source": "train/226",
+      "from": "evidence-practice",
+      "case_sha256": "58476df026f58a412e5ef423467b56ba4ba23e33d75953160b07b3fcb54d4a83",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0228",
+      "source": "train/228",
+      "from": "rehearsal",
+      "case_sha256": "b8d69d928fb8ab8cbdd994c07da119459080f6adce60e7aaea9b2de806c3eb9b",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0230",
+      "source": "train/230",
+      "from": "rehearsal",
+      "case_sha256": "4c7a20cabb135d655c86c56ae2b8686478da66bbe2886a59d3af7905d5c15a33",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0231",
+      "source": "train/231",
+      "from": "rehearsal",
+      "case_sha256": "ce8358ca237ef6aff39bd4be455d797fb86c5bfc0951e24d114262ec854f8b0c",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0232",
+      "source": "train/232",
+      "from": "rehearsal",
+      "case_sha256": "5e11ba3a01f77c38d7ed7c1a702a4f842904108eb89601d8a89b4953f5365bd6",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0236",
+      "source": "train/236",
+      "from": "evidence-practice",
+      "case_sha256": "92d9b420ca1f181779c0f93d2d80087d7f3a76fd8fdffdb5c108ea4f832283c5",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0240",
+      "source": "train/240",
+      "from": "evidence-practice",
+      "case_sha256": "5de6903bf500614bec64bde1535a3435ef7e1260e605892fbdc1ab9176858531",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0243",
+      "source": "train/243",
+      "from": "evidence-practice",
+      "case_sha256": "f1a0b9393e3d48b55d3f73c68a4a61c1ac731179ffc0aeb9e9d41e908d7cfd94",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0248",
+      "source": "train/248",
+      "from": "evidence-practice",
+      "case_sha256": "92a8d6981505a52ad489449b2d39317c78a10b6537ee3d2ce464e8e0e7b27894",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0249",
+      "source": "train/249",
+      "from": "rehearsal",
+      "case_sha256": "bb78b4d4695e8403954e62bd82f2d8463c9c86d0de23baa933f420c3b2f12896",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0260",
+      "source": "train/260",
+      "from": "rehearsal",
+      "case_sha256": "45610fc50dc037b6510b48f1b9ba2e8b86f1ef409483eb8386bb70ea36c0f00e",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0261",
+      "source": "train/261",
+      "from": "evidence-practice",
+      "case_sha256": "78065613d6b4cb31cfe4ff58dfa1f2affe02ec7fe7ebe37032d8f9bd53f86144",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0265",
+      "source": "train/265",
+      "from": "evidence-practice",
+      "case_sha256": "2e9ab83a82da1da0ee630d1da1e29e99232c03aa508c458fa9777a967cc5ff9f",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0270",
+      "source": "train/270",
+      "from": "rehearsal",
+      "case_sha256": "6278e913f65c3701caf71d7a2210321041d2e1b7684c4dd88cf44c719655daf7",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0272",
+      "source": "train/272",
+      "from": "rehearsal",
+      "case_sha256": "7fb55a36f5fb2ad5b06a1d5911c710a3e39c3495ecfb8619a36202e1d09045dd",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0278",
+      "source": "train/278",
+      "from": "evidence-practice",
+      "case_sha256": "dec745d8166d8cf0bca1847c0fdc33c1e8ab2cfad3935e68e0c1bc533fffa246",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0280",
+      "source": "train/280",
+      "from": "evidence-practice",
+      "case_sha256": "09ee4e961e01fca5c25b6fea91c1bbd785c807c3b9e3267b7c877e39918f4266",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0281",
+      "source": "train/281",
+      "from": "rehearsal",
+      "case_sha256": "06f21cf6475b0d3489556246425e64f9192c385879db0db0cd408b8e48def7e9",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0286",
+      "source": "train/286",
+      "from": "evidence-practice",
+      "case_sha256": "122af20f01e72b4ba4172304fcfd7e5f215adcd02fac4c2bc068c899a11134b2",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0289",
+      "source": "train/289",
+      "from": "rehearsal",
+      "case_sha256": "9ab7e7f012e38b1b4550c8fe25ece25ccfdfacaef9b2d0a86a92acc2807e9a94",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0297",
+      "source": "train/297",
+      "from": "evidence-practice",
+      "case_sha256": "9661d76dbffb886e31645b01b26cda645897c805d645320074ebcf07650f0cde",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0298",
+      "source": "train/298",
+      "from": "rehearsal",
+      "case_sha256": "8c0c3ba678bd2f71a3e4f36f546f83e4683f006d5fe3fd286f8ac8faed487ff0",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0304",
+      "source": "train/304",
+      "from": "rehearsal",
+      "case_sha256": "ec359a6436502be558d3909435736dc278ec68c8240f749fd5dc5cfbd8769e88",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0305",
+      "source": "train/305",
+      "from": "rehearsal",
+      "case_sha256": "f329e126684165d6c160faa06711cc7cc78ed786183cb83f75f9b9ea82707d7b",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0306",
+      "source": "train/306",
+      "from": "evidence-practice",
+      "case_sha256": "e58824fda788359eac9410162e5fcf460aeed12ad267fba6a6627b4c4ddeef04",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0310",
+      "source": "train/310",
+      "from": "rehearsal",
+      "case_sha256": "f499598b863b8324423fd6585b47b1e09eb45f4fee6502528936295e24cae62c",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0314",
+      "source": "train/314",
+      "from": "evidence-practice",
+      "case_sha256": "6543fe348b90fa8246e945c83fc1ac5039596e03a13c23b0986f171818aa0522",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0318",
+      "source": "train/318",
+      "from": "evidence-practice",
+      "case_sha256": "849c38180f9aea41cba7d9aa2615a079980a21b97e9b28d6800165c662f2ad8a",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0321",
+      "source": "train/321",
+      "from": "evidence-practice",
+      "case_sha256": "e3b2b4748d69ce95374f1bff28109959bc890be1fcd371d351d2a126f59e2703",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0324",
+      "source": "train/324",
+      "from": "rehearsal",
+      "case_sha256": "78877c8c665b1810a2f431ce64e0e9af109e0ee8aff5ccfb39931852f5b09608",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0326",
+      "source": "train/326",
+      "from": "rehearsal",
+      "case_sha256": "75afb723c5b86b0d5e0b0dce1e0c2f5e4e4ea38af458210c65b1110ba2170767",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0331",
+      "source": "train/331",
+      "from": "evidence-practice",
+      "case_sha256": "d38339b4c7f16954c1bf7bb94938e891caaff2606aa8c1f3c2956e5a222431e8",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0337",
+      "source": "train/337",
+      "from": "evidence-practice",
+      "case_sha256": "30301b7f4a4a28e623ed356fe969486f830078576db7534eb5f08541c418f1b7",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0339",
+      "source": "train/339",
+      "from": "rehearsal",
+      "case_sha256": "53d627f5ec331b4a46171196b449d128e3456126dea453d3132712e48e1c0655",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0343",
+      "source": "train/343",
+      "from": "evidence-practice",
+      "case_sha256": "74dcb4ff3da0b27530673fcccd6eea377857fb7b0bfd0a1d4195b8932a1af7e4",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0355",
+      "source": "train/355",
+      "from": "rehearsal",
+      "case_sha256": "4e6a96f7d107703f94b28638176aa571e5a2ad6bf0a7b45db9a838e2d1db926b",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0356",
+      "source": "train/356",
+      "from": "rehearsal",
+      "case_sha256": "cc9c1dd135c0a586746a36e957449732c8b259859862c71391a7d8f1c600f4ca",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0358",
+      "source": "train/358",
+      "from": "rehearsal",
+      "case_sha256": "c5023d86511a508e3e6f5639402cefb79a9618e7e96452da69655b3dcaa0ce92",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0364",
+      "source": "train/364",
+      "from": "rehearsal",
+      "case_sha256": "e34086c5d8a266a0b644352258d7f0bc2e494cc61a3a0087afc2e525b875a29c",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0366",
+      "source": "train/366",
+      "from": "evidence-practice",
+      "case_sha256": "7fc155707199e1752a77d0c0bed7a5fc1880322a4062e61db9c63bbca0f60015",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0368",
+      "source": "train/368",
+      "from": "evidence-practice",
+      "case_sha256": "a3f0e89f4993fda0da9b6a677f22f0f524b14ca78831dae8139ae4e6157f5f03",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0372",
+      "source": "train/372",
+      "from": "evidence-practice",
+      "case_sha256": "174cbe2d3f1c1f5d53bf7fb081bd5303e7913dc00f97339fd3ae18f991e89dec",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0375",
+      "source": "train/375",
+      "from": "rehearsal",
+      "case_sha256": "0dec501ca6c93f077fb3d0defb07f403b672fecdef317128153b18e3f0f95a11",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0376",
+      "source": "train/376",
+      "from": "rehearsal",
+      "case_sha256": "2cd655537db7e60c0eecadb9bc546996cd29fbd80200a48b87c595a5564fcb0a",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0378",
+      "source": "train/378",
+      "from": "rehearsal",
+      "case_sha256": "e208e4704d88c726c47039d198473f40221244e7114e12216aab8e1bc47cfb40",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0379",
+      "source": "train/379",
+      "from": "evidence-practice",
+      "case_sha256": "490a4c37dea74bf6b7832c6990bca5b3510dd8b040c2f1838a90eb78a3505ddd",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0381",
+      "source": "train/381",
+      "from": "evidence-practice",
+      "case_sha256": "44314bb12deb73b7271d1882c4af76d500206d0a4470ccdb0f7e57672182a73f",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0385",
+      "source": "train/385",
+      "from": "evidence-practice",
+      "case_sha256": "867f5b538d5077481f127dc04af1093f01dd5efc6887cab9d5f08e41c17feaec",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0388",
+      "source": "train/388",
+      "from": "rehearsal",
+      "case_sha256": "a6470016f696cbea8c269e7f730b44a9c1593d8d3e2e808d1b61ff3d81be8249",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0395",
+      "source": "train/395",
+      "from": "evidence-practice",
+      "case_sha256": "3c89bea0ae2ff515c0f902f4556493b496542d71aa55bc798f274dfa6b7976d0",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0402",
+      "source": "train/402",
+      "from": "rehearsal",
+      "case_sha256": "52e0e650c2c3906349f671cb9ede8e1e341a4fec740dee9a69488ff8cf125fd9",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0406",
+      "source": "train/406",
+      "from": "rehearsal",
+      "case_sha256": "ee22ce819711f53d1b80e70fc9a35114a6ff2c1518d102ba987d5bbe86b4c31f",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0407",
+      "source": "train/407",
+      "from": "evidence-practice",
+      "case_sha256": "068c48c2fb1791081ff26d23fa74f78f50f58b7e1be066653fc86515105d651f",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0413",
+      "source": "train/413",
+      "from": "rehearsal",
+      "case_sha256": "e5471c950f8bd8a8cad9e64d7f736f07030db4d570eb0073be0a98d1dc4355c9",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0414",
+      "source": "train/414",
+      "from": "rehearsal",
+      "case_sha256": "651023e1f1fb717fdf6fd1292f084bfa9dddf29699d8b2f740db673f30d6c733",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0415",
+      "source": "train/415",
+      "from": "evidence-practice",
+      "case_sha256": "4a5c637a0a4abd3560665d3b19d9bb1922e7fb86780d21301bf4e279f539e9f2",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0417",
+      "source": "train/417",
+      "from": "evidence-practice",
+      "case_sha256": "690a41f1f0e583bdf9040cdf13e0de1c58901436264cab4c97c90b56ab804c82",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0418",
+      "source": "train/418",
+      "from": "rehearsal",
+      "case_sha256": "9ef10077f6b35a6db3709744bf7f0c9e0fd5020a6bc96769b37ee59e4de4e305",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0429",
+      "source": "train/429",
+      "from": "evidence-practice",
+      "case_sha256": "8673043866d3fd0a146fe5b5da8565b210cbf4ef2cc8e789c4f627ad8f92fb1b",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0431",
+      "source": "train/431",
+      "from": "rehearsal",
+      "case_sha256": "2bffc97848eca36ea7140b2c6254251e32185243181857ff8cf73b7e0427dd44",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0432",
+      "source": "train/432",
+      "from": "rehearsal",
+      "case_sha256": "c27ad5dbc8eebf0531c0ce99a2bc374fe2ba08f9ff11ccc6828d5237d0481dae",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0433",
+      "source": "train/433",
+      "from": "evidence-practice",
+      "case_sha256": "6a2a401548980b5b6dab96b242cf49b320f1bb5f9b7d24a1d1eed5c169de1a16",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0437",
+      "source": "train/437",
+      "from": "rehearsal",
+      "case_sha256": "8b6d7c5ebb6bc52577a01f94f67d1bc6b3904240d06cf779faee219276c72b1e",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0442",
+      "source": "train/442",
+      "from": "rehearsal",
+      "case_sha256": "eebfe975af3bd4ccc70789e219685db2dd60b917808168a471e975e4fc8bff6e",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0447",
+      "source": "train/447",
+      "from": "rehearsal",
+      "case_sha256": "09ab56e996268fbe17dfa35d356f2c01bebe34f5af1336c26644628a16cf1099",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0455",
+      "source": "train/455",
+      "from": "rehearsal",
+      "case_sha256": "e746af0df8aa71728eff458c763ac1b4a9f822e304cc98020911faaf5a3a5d92",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0456",
+      "source": "train/456",
+      "from": "evidence-practice",
+      "case_sha256": "85bea0124d9f68dede369daf2b03e8e14118e99bda0ef631aaaf398794662545",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0458",
+      "source": "train/458",
+      "from": "rehearsal",
+      "case_sha256": "f6271c515aa0434c927222188f563f2aeaefce48d02ee025fba4e3c48456ba08",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0461",
+      "source": "train/461",
+      "from": "rehearsal",
+      "case_sha256": "d1572fad2e8aaaff980934c2574d4de87ea9921b1ff172e1e8c8dac19c240be6",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0464",
+      "source": "train/464",
+      "from": "evidence-practice",
+      "case_sha256": "8be7fbb7d3c93fbb186c824487b87f3922a1824727a6637be1739ed9cf72b2d0",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0468",
+      "source": "train/468",
+      "from": "evidence-practice",
+      "case_sha256": "6d285dc359d1c8fd1f2c4f8001a768812e1abe10025b14fbbf89c56087bd05e4",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0472",
+      "source": "train/472",
+      "from": "evidence-practice",
+      "case_sha256": "bcec52a5c294879e83e3ea88fb725a9dcbeae0390a5c0f68c7a92132e33c6645",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0477",
+      "source": "train/477",
+      "from": "rehearsal",
+      "case_sha256": "5e63fdc9f216927e88494f511613f203023732933dbb741f92860a1315fbf839",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0478",
+      "source": "train/478",
+      "from": "evidence-practice",
+      "case_sha256": "f1912d99ad6937fd28343869ff5eeaf9c516d6d6de67725c07a032b82b0054b8",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0479",
+      "source": "train/479",
+      "from": "rehearsal",
+      "case_sha256": "93fa6197c6c4d532067407e91cdcdbf12897c4ed3791c6f76a223b5a5cfeb9fe",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0484",
+      "source": "train/484",
+      "from": "evidence-practice",
+      "case_sha256": "5ed0a25a83659b302aec725f4b1c5da2acdeb67070d8c85e755c8fa138d8aa10",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0488",
+      "source": "train/488",
+      "from": "evidence-practice",
+      "case_sha256": "1faf1ef7ac0dcbe9dfe5238aa70e5c3c610b345c442c29055b8d238869c0717c",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0494",
+      "source": "train/494",
+      "from": "evidence-practice",
+      "case_sha256": "90adec07e9f706faf5dd8c42ad4ab996ebe5eeddd664ca2b2f85d01814270c35",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0496",
+      "source": "train/496",
+      "from": "rehearsal",
+      "case_sha256": "4bc2b32b9023da8699b5a08075091770a1d86d61649ab831897efadf76d11536",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0508",
+      "source": "train/508",
+      "from": "rehearsal",
+      "case_sha256": "e0557b5c6ef929082b70d8e25839d19dce3ae63258e0e7341eebc5199ab5e80b",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0510",
+      "source": "train/510",
+      "from": "evidence-practice",
+      "case_sha256": "b7d84867c5f5433a6c742e5c7fbe65c69cddef8a4886463043fa0c7bca3222fe",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0512",
+      "source": "train/512",
+      "from": "evidence-practice",
+      "case_sha256": "3b1e1b32f38803964b121faf0978f2c5ae5e423fc382c0b0e1c5023e3ddafb5c",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0514",
+      "source": "train/514",
+      "from": "rehearsal",
+      "case_sha256": "0b9f2b4d04751773588f614e3b4af347f9596e3adcda16434e0ea53b83f40300",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0519",
+      "source": "train/519",
+      "from": "rehearsal",
+      "case_sha256": "3f1f8a195572c7f77acfda4813a24bf1dc9c7931b7736b82c1d908ba4f243302",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0520",
+      "source": "train/520",
+      "from": "evidence-practice",
+      "case_sha256": "d847c5d84c18441da0a6bceb6d92928d6d9ac3c2e737c1ae757d6642946c4ca1",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0527",
+      "source": "train/527",
+      "from": "evidence-practice",
+      "case_sha256": "7756e246baf732c04e656fc90e154cacf9597c2ca80b85d62ff0c60b44cacec1",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0537",
+      "source": "train/537",
+      "from": "rehearsal",
+      "case_sha256": "c9d2916e97a2b67619e9bf9f301db1e9c56df3d28d6259b50fb5833689c5e1c6",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0538",
+      "source": "train/538",
+      "from": "rehearsal",
+      "case_sha256": "16f7f72298025ec5222a86f03aafe384c010c2b6804dcc899cbb2f5618c2e512",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0544",
+      "source": "train/544",
+      "from": "evidence-practice",
+      "case_sha256": "8c0f5fcdee5f13e8817168258ac0318930d3f649098759e1c7e77109c4227364",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0547",
+      "source": "train/547",
+      "from": "rehearsal",
+      "case_sha256": "5d8f78de10dc7d7632572034daa2b8a7f7c586d584345cec3f5c30bd086b1eb5",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0548",
+      "source": "train/548",
+      "from": "evidence-practice",
+      "case_sha256": "1308764398473bcc8b59fb595a1de7590145c796ff170d97957e69b0e2381b91",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0564",
+      "source": "train/564",
+      "from": "evidence-practice",
+      "case_sha256": "ad3e03cd9916c02f8554395f4f9f67f91719b3c4f4156f482a9e6fd094ab21aa",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0569",
+      "source": "train/569",
+      "from": "evidence-practice",
+      "case_sha256": "e2bd4271441515a4ca820de869483a468e0a5727d0d4e2b72601ad4e642ae7e5",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0571",
+      "source": "train/571",
+      "from": "evidence-practice",
+      "case_sha256": "e37ef7f0f5ef60bc51c21f78ac4d787c0fddd23a72bdc8876a00c92b80ed8e61",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0574",
+      "source": "train/574",
+      "from": "evidence-practice",
+      "case_sha256": "b9ddf48a62919a74467d3b23121262452d533ac1192f34ca08cc79e49a62a54c",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0580",
+      "source": "train/580",
+      "from": "evidence-practice",
+      "case_sha256": "fa10b7c57e8a3dd907ff1c95413a97b6eead7b2d99988d00b3d7c74f07114830",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0586",
+      "source": "train/586",
+      "from": "evidence-practice",
+      "case_sha256": "f0d336fed209cc05f5fc9c9e171a62e3ca395644e6a4ec3def6dabcf6f56a6de",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0602",
+      "source": "train/602",
+      "from": "evidence-practice",
+      "case_sha256": "c866e42c1dc1582c31eafed98b2fb9da419e071dc9bed5a7e8147c2aaa781af2",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0603",
+      "source": "train/603",
+      "from": "rehearsal",
+      "case_sha256": "b3dce27b919b1998badae853b3a9fa7c24cd7ca233fb604db4588ae87159bea9",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0604",
+      "source": "train/604",
+      "from": "rehearsal",
+      "case_sha256": "e28919e77e132c9808bd6fe1313f8deaf3f504d1889343b09cfc301bf938488d",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0605",
+      "source": "train/605",
+      "from": "rehearsal",
+      "case_sha256": "e805974282e36d2979eeaed0db2b355536308a4d61080533faed62cd94c10a0a",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0613",
+      "source": "train/613",
+      "from": "rehearsal",
+      "case_sha256": "bb54e1fb5c59d07126a9821481e60d076de4687b405c13278ea9607c017a4c50",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0614",
+      "source": "train/614",
+      "from": "rehearsal",
+      "case_sha256": "fc0e61cd537658ce493b475172b786b13bd211718df8a59b9cb4d22fad60c837",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0618",
+      "source": "train/618",
+      "from": "evidence-practice",
+      "case_sha256": "975260f018db5f550efc33fbf097e28e27f1b0e73c5c714fb8742031184c6ed7",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0621",
+      "source": "train/621",
+      "from": "evidence-practice",
+      "case_sha256": "d660d2df4db684231c66080fcc4d2704443c2677c6136dcfb0c80838bd427f67",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0623",
+      "source": "train/623",
+      "from": "evidence-practice",
+      "case_sha256": "f612ea387fcbf70f3d5eeaa06c75a82171534eac76231f65219f9e9d5a4fb71b",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0628",
+      "source": "train/628",
+      "from": "evidence-practice",
+      "case_sha256": "38cb8880523ee5cc79de5a54158453063201c8dd6057109f07dfa9450e973df6",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0630",
+      "source": "train/630",
+      "from": "rehearsal",
+      "case_sha256": "17ac39b936de14fdc02758ffa3231ed3ee99d34d36e98d16ac0ebee0d08dbcf5",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0635",
+      "source": "train/635",
+      "from": "rehearsal",
+      "case_sha256": "8a485f5d6488b77cce9fff68ed62633ee412caee304bb1237a5bcd47b384a1ee",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0640",
+      "source": "train/640",
+      "from": "evidence-practice",
+      "case_sha256": "b7e6fd31d2f61f3ce807f5dc2c74f9772deb23878812ee186ae23b19a08d39f4",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0652",
+      "source": "train/652",
+      "from": "evidence-practice",
+      "case_sha256": "a185fa59eaebe3fc4f71d538ad24f93e32240999031030734ac0ba3be3da451e",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0656",
+      "source": "train/656",
+      "from": "evidence-practice",
+      "case_sha256": "3e7e899344c23523f14e5d8319f78c0f61e8d80aeed2a7f4430d2b2293f57b72",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0666",
+      "source": "train/666",
+      "from": "evidence-practice",
+      "case_sha256": "30bee1f16794fa37e49e919a7e4e0e23a725e5b9a0e8624168dceee8073dd39a",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0667",
+      "source": "train/667",
+      "from": "rehearsal",
+      "case_sha256": "b8e6b2a4b0ca21a92693c40623753f4097df85fae2b6420ff05412912a44a385",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0680",
+      "source": "train/680",
+      "from": "evidence-practice",
+      "case_sha256": "40c66a82f83ed4eb0a52d40ee3e2dbf8cb042cbde088876131c9053dd80b4d87",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0681",
+      "source": "train/681",
+      "from": "rehearsal",
+      "case_sha256": "e210cb43301a1d213f02a0ac1502b166c78507384f99cbfead1f0b239959b2f8",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0685",
+      "source": "train/685",
+      "from": "evidence-practice",
+      "case_sha256": "905d136b1c6a2bc2797bb8cf5d853048d851c254f28ee59ddb53a8abab94be3c",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0688",
+      "source": "train/688",
+      "from": "evidence-practice",
+      "case_sha256": "de4fba439653d481db8e42b258fe2f3199b89396ccf7d26408f53a5af9178611",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0693",
+      "source": "train/693",
+      "from": "evidence-practice",
+      "case_sha256": "0140db94727dcef995826c5a8010a3b9a851686fb111ad48533b7cf1758aacdd",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0697",
+      "source": "train/697",
+      "from": "rehearsal",
+      "case_sha256": "4f7839e9c466f66f5e3800a0209e46ae9adf30c47aa81fca69ea8cd88e481bbf",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0700",
+      "source": "train/700",
+      "from": "evidence-practice",
+      "case_sha256": "e2db4288160ace4d7b48c5d13ebfc257b93f4bff75f2ce9cb40b1c9874ad63ca",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0702",
+      "source": "train/702",
+      "from": "evidence-practice",
+      "case_sha256": "0878d941bb60be8c05cded2a0282ae709338c6b3dc22d330c4da40a4d2164064",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0707",
+      "source": "train/707",
+      "from": "rehearsal",
+      "case_sha256": "01e402131c7fa3ea59d9cb5187c2bab7d4b14cf91486774d4d7bbcee99425fe0",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0714",
+      "source": "train/714",
+      "from": "rehearsal",
+      "case_sha256": "e598ecf88927ae1a82184a4829448719f7277c6a5cb6fa55208147b58abdb474",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0720",
+      "source": "train/720",
+      "from": "evidence-practice",
+      "case_sha256": "58790730ee4f68498e77953d99862488a097d8a285c1c44857a9ea0d53eb4f02",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0727",
+      "source": "train/727",
+      "from": "rehearsal",
+      "case_sha256": "6819ca4b9f12d0ce38dfe74c2c69eeaaad5a741049c7512395d02054866682c6",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0729",
+      "source": "train/729",
+      "from": "evidence-practice",
+      "case_sha256": "fab036210454a8db6c9f2b62576e7bf65ff858f57ae0e3fe418f61f54c442ee9",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0738",
+      "source": "train/738",
+      "from": "evidence-practice",
+      "case_sha256": "6a53779f8180e9d45f04a36d854b788b878a368a5eabb20a05ad9a10522987d0",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0743",
+      "source": "train/743",
+      "from": "evidence-practice",
+      "case_sha256": "86420a101df63ca6ba2ee8d2523a0e733a82c9627ebbf36604c54c66ca76f6ed",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0752",
+      "source": "train/752",
+      "from": "evidence-practice",
+      "case_sha256": "f42966cfd75920878819f0f89b919b49a91a7287834d6e404a8c151c3cf2b1a6",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0762",
+      "source": "train/762",
+      "from": "evidence-practice",
+      "case_sha256": "e6aaafa77f9c85e8aa7c1f0da4d1941b4937eed1661917886109bbf05c880dac",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0768",
+      "source": "train/768",
+      "from": "evidence-practice",
+      "case_sha256": "d0ba9e8954213dfc3ecf07114aba109bb4f536c18bb66c2f22870ea33df92c7b",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0775",
+      "source": "train/775",
+      "from": "evidence-practice",
+      "case_sha256": "d90041fec846a6b4be7913f9d984d0f2c20ce5695dc2f764aea0cebd43863a77",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0781",
+      "source": "train/781",
+      "from": "evidence-practice",
+      "case_sha256": "ecbdb11ba095bc05ae24ed7eb39e331a56c33c12895c796d7ab37c528a484fde",
+      "partition": "held_out"
+    },
+    {
+      "case_id": "cord-train-0787",
+      "source": "train/787",
+      "from": "rehearsal",
+      "case_sha256": "df5c58aa00cadc3fa276e5e703f8f197047c9694dc04b833bae848f8f5b2112f",
+      "partition": "tuning"
+    },
+    {
+      "case_id": "cord-train-0794",
+      "source": "train/794",
+      "from": "rehearsal",
+      "case_sha256": "5f3ebe89dd7e6704cf792a8e489b2e042c37a53831d2e940d81a961e0f6a0c6b",
+      "partition": "held_out"
+    }
+  ]
+}

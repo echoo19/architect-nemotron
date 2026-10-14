@@ -1,0 +1,30 @@
+{
+  "bench_id": "dc0942b7-9b87-4a50-a500-68137c16c2dd",
+  "bound_usd": 0.357664896,
+  "cancelled": false,
+  "evidence": [
+    "live_billed"
+  ],
+  "skipped": [],
+  "summary": {
+    "per_cell": [
+      {
+        "fallback_rate": null,
+        "licensed_count": 0,
+        "max_held_out": 0.26,
+        "mean_cost_avoided_usd": null,
+        "mean_cost_usd": 0.03781218000000002,
+        "mean_held_out": 0.26,
+        "mean_regret": null,
+        "mean_wall_s": 705.0309999999881,
+        "min_held_out": 0.26,
+        "model": "lightning",
+        "probe": null,
+        "repeats": 1,
+        "route_accuracy": null,
+        "task_id": "receipts",
+        "variant": "default"
+      }
+    ]
+  }
+}

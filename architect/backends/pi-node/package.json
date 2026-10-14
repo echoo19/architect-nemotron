@@ -1,0 +1,17 @@
+{
+  "name": "architect-pi-bridge",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "dependencies": {
+    "@mariozechner/pi-ai": "0.73.1",
+    "@mariozechner/pi-agent-core": "0.73.1",
+    "@mariozechner/pi-coding-agent": "0.73.1"
+  },
+  "overrides": {
+    "basic-ftp": "6.2.2"
+  }
+}

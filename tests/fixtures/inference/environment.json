@@ -1,0 +1,9 @@
+[
+  {
+    "text": "{\"task\": \"Find a route through the observed grid\", \"input_schema\": {\"type\": \"object\"}, \"output_schema\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}, \"floor\": {\"kind\": \"held_out_game_score\", \"limit\": 0.8, \"dataset\": \"preview-grid-games\"}, \"budget\": {\"cost_usd\": 0.1, \"compute_s\": 60}, \"model_target\": \"fake\", \"lifecycle\": \"expire\", \"domain\": \"explorer\", \"tools\": [\"move\"], \"pipeline\": []}",
+    "tokens_in": 150,
+    "tokens_out": 450,
+    "cost_usd": 0.002,
+    "model": "fake"
+  }
+]

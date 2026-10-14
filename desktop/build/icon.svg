@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <!-- Architect's icon: Lectern's mark reversed (white on deep pine, #0E3A33), flat, on the macOS icon grid.
+       The mark is one traced outline (MARK_OUTLINE in src/components/ui/Working.tsx), so no seam shows at the joints. -->
+  <rect x="100" y="100" width="824" height="824" rx="186" fill="#0E3A33"/>
+  <g transform="translate(512 512) scale(7.2) translate(-50 -49)" fill="#FFFFFF">
+    <path d="M25 23 L57 16 L57 65.9375 L75 62 L75 75 L43 82 L43 32.0625 L25 36 Z"/>
+  </g>
+</svg>

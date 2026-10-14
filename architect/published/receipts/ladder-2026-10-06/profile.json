@@ -1,0 +1,82 @@
+{
+  "workspace": ".",
+  "models": {
+    "nvidia/Nemotron-3_5-Lightning": {
+      "provider": "openai",
+      "base_url": "https://architect-relay.vercel.app/v1",
+      "api_key_ref": "nebius",
+      "temperature": 0.0,
+      "max_tokens": 512
+    },
+    "nvidia/nemotron-3-super-120b-a12b": {
+      "provider": "openai",
+      "base_url": "https://architect-relay.vercel.app/v1",
+      "api_key_ref": "nebius",
+      "temperature": 0.0,
+      "max_tokens": 512
+    },
+    "nvidia/Nemotron-3-Ultra-550b-a55b": {
+      "provider": "openai",
+      "base_url": "https://architect-relay.vercel.app/v1",
+      "api_key_ref": "nebius",
+      "temperature": 0.0,
+      "max_tokens": 512
+    }
+  },
+  "inference": {
+    "provider": "openai",
+    "base_url": "https://architect-relay.vercel.app/v1",
+    "api_key_ref": "nebius",
+    "model": "nvidia/nemotron-3-super-120b-a12b"
+  },
+  "forge_agent": {
+    "provider": "openai",
+    "base_url": "https://architect-relay.vercel.app/v1",
+    "api_key_ref": "nebius",
+    "model": "nvidia/nemotron-3-super-120b-a12b",
+    "think": false,
+    "temperature": 0.0,
+    "timeout_s": 300
+  },
+  "floors": {
+    "bench-receipts-v2-evidence": {
+      "kind": "held_out_tasks",
+      "path": "floors/evidence.json",
+      "smoke": "floors/evidence-practice.json",
+      "checker": "receipt_v1",
+      "manifest": "floors/evidence.manifest.json"
+    }
+  },
+  "compile": {
+    "model_ladder": [
+      "nvidia/Nemotron-3_5-Lightning",
+      "nvidia/nemotron-3-super-120b-a12b",
+      "nvidia/Nemotron-3-Ultra-550b-a55b"
+    ],
+    "max_candidates": 4,
+    "rung_candidates": [
+      4,
+      1,
+      1
+    ],
+    "enable_rewriting": false,
+    "max_rewrites": 0,
+    "compile_budget": {
+      "cost_usd": 0.6,
+      "compute_s": 3600
+    },
+    "forge": {
+      "enabled": false,
+      "mode": "agent",
+      "trigger": "always",
+      "feedback": "per_case",
+      "max_usd": 1.2,
+      "max_s": 1800.0,
+      "max_measures": 24,
+      "max_submissions": 6,
+      "max_spawns": 0,
+      "pi_max_turns": 400,
+      "max_rungs": 1
+    }
+  }
+}

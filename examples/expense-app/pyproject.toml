@@ -1,0 +1,30 @@
+[project]
+name = "expense-app"
+version = "0.1.0"
+description = "A small expense API for a bookkeeper: receipt text in, daily totals out"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115,<1",
+    "pydantic>=2.10,<3",
+    "uvicorn>=0.34,<1",
+]
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.13,<3",
+    "pytest>=8",
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-rs"
+markers = [
+    "receipt_agent: needs Architect's receipt agent wired into app/extract.py",
+]

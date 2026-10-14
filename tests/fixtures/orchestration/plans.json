@@ -1,0 +1,75 @@
+{
+  "similar": {
+    "tasks": [
+      {
+        "id": "summary-a",
+        "request": "Summarize the first table of numbers in one sentence",
+        "input": {"numbers": [1, 2, 3]},
+        "domain": "synthesizer",
+        "model": "fake",
+        "budget": {"cost_usd": 0.1, "compute_s": 60},
+        "tools": [],
+        "depends_on": []
+      },
+      {
+        "id": "summary-b",
+        "request": "Summarize the second table of numbers in one sentence",
+        "input": {"numbers": [4, 5, 6]},
+        "domain": "synthesizer",
+        "model": "fake",
+        "budget": {"cost_usd": 0.1, "compute_s": 60},
+        "tools": [],
+        "depends_on": []
+      },
+      {
+        "id": "combine",
+        "request": "Summarize both table summaries in one sentence",
+        "input": {"style": "brief"},
+        "domain": "synthesizer",
+        "model": "fake",
+        "budget": {"cost_usd": 0.1, "compute_s": 60},
+        "tools": [],
+        "depends_on": ["summary-a", "summary-b"]
+      }
+    ]
+  },
+  "chain": {
+    "tasks": [
+      {"id": "hard", "request": "Solve the unreachable table task", "input": {"numbers": [7]},
+       "domain": "synthesizer", "depends_on": []},
+      {"id": "after-hard", "request": "Summarize the solved table task", "input": {},
+       "domain": "synthesizer", "depends_on": ["hard"]},
+      {"id": "independent", "request": "Summarize an independent table of numbers",
+       "input": {"numbers": [8]}, "domain": "synthesizer", "depends_on": []}
+    ]
+  },
+  "greedy": {
+    "tasks": [
+      {"id": "greedy", "request": "Summarize a table of numbers with an enormous budget",
+       "input": {"numbers": [9]}, "domain": "synthesizer",
+       "budget": {"cost_usd": 1000.0, "compute_s": 1000000.0}}
+    ]
+  },
+  "repo": {
+    "tasks": [
+      {"id": "edit", "request": "Describe a repository change for a table summary",
+       "input": {"repo": "/somewhere/else", "numbers": [1]}, "domain": "synthesizer"}
+    ]
+  },
+  "single": {
+    "tasks": [
+      {"id": "only", "request": "Summarize a table of numbers in one sentence",
+       "input": {"numbers": [1]}, "domain": "synthesizer"}
+    ]
+  },
+  "independent_three": {
+    "tasks": [
+      {"id": "one", "request": "Summarize table one of numbers", "input": {"numbers": [1]},
+       "domain": "synthesizer"},
+      {"id": "two", "request": "Summarize table two of numbers", "input": {"numbers": [2]},
+       "domain": "synthesizer"},
+      {"id": "three", "request": "Summarize table three of numbers", "input": {"numbers": [3]},
+       "domain": "synthesizer"}
+    ]
+  }
+}

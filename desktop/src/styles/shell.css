@@ -1,0 +1,131 @@
+/* The window: chrome, the main column, the conversation header, the empty states,
+   toasts, banners and the start-up and crash screens. */
+
+/* ── Shell ─────────────────────────────────────────────────────────── */
+.app { display: flex; height: 100vh; background: hsl(var(--bg)); }
+.app-loading { height: 100vh; }
+.main { flex: 1; min-width: 0; display: flex; flex-direction: column; position: relative; }
+
+.working-region {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 12px; min-height: 240px; color: hsl(var(--text-mute)); font-size: var(--fs-small);
+}
+.palette { position: relative; width: 620px; max-width: 92vw; }
+.palette .menu { position: static; width: 100% !important; max-width: none; }
+.palette .menu-items { max-height: 56vh; }
+.picker-path { font-size: var(--fs-micro); color: hsl(var(--text-mute)); word-break: break-all; }
+.picker-list { list-style: none; margin: 0; padding: 0; max-height: 50vh; overflow: auto; border: 1px solid hsl(var(--hairline)); border-radius: var(--r-sm); }
+.picker-row {
+  display: flex; align-items: center; gap: 8px; width: 100%; padding: 7px 10px; border: 0;
+  background: transparent; text-align: left; color: hsl(var(--text));
+}
+.picker-row:hover { background: hsl(var(--bg-muted)); }
+
+.toast {
+  position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 60;
+  padding: 10px 14px; border-radius: var(--r-md); background: hsl(var(--card));
+  border: 1px solid hsl(var(--card-line)); box-shadow: var(--shadow-overlay); font-size: var(--fs-small);
+  animation: swap-in 180ms var(--ease-enter) both; max-width: 560px;
+}
+.toast-error { border-color: hsl(var(--err) / 0.4); color: hsl(var(--err)); }
+
+.banner {
+  display: flex; align-items: center; gap: 12px; padding: 8px 16px; font-size: var(--fs-small);
+  background: hsl(var(--bg-muted)); border-bottom: 1px solid hsl(var(--divider)); color: hsl(var(--text-mute));
+}
+.banner-warn { background: hsl(var(--warn-bg)); color: hsl(var(--warn)); }
+.conv-header {
+  display: flex; align-items: center; gap: 10px; height: 48px; flex: none; padding: 0 14px 0 20px;
+  border-bottom: 1px solid hsl(var(--hairline));
+}
+.conv-title {
+  border: 0; background: none; padding: 4px 6px; margin-left: -6px; border-radius: var(--r-sm);
+  font-size: var(--fs-body); font-weight: 580; color: hsl(var(--ink)); letter-spacing: -0.01em;
+  max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.conv-title:hover { background: hsl(var(--bg-muted)); }
+.conv-title-form { flex: 0 1 360px; }
+.conv-title-input { height: 30px; font-weight: 580; }
+
+/* The shell never scrolls: focusing something in a pane must not slide the window. */
+html, body, #root, .app, .main, .conversation-row { overflow: clip; }
+.toast { display: flex; align-items: center; gap: 12px; }
+.toast-action {
+  display: inline-flex; align-items: center; gap: 6px; margin: -4px -6px -4px 0; height: 26px; padding: 0 8px; border: 0; border-radius: var(--r-md);
+  background: hsl(var(--accent-700) / 0.12); color: hsl(var(--accent-700)); font-size: var(--fs-small); font-weight: 580;
+}
+html[data-theme="dark"] .toast-action { color: hsl(var(--accent-700)); background: hsl(var(--accent-700) / 0.12); }
+.toast-action:hover { background: hsl(var(--accent-700) / 0.2); }
+.toast-action kbd { font-family: var(--font-mono); font-size: var(--fs-micro); font-weight: 400; opacity: 0.75; }
+/* ── Window chrome, sidebar, start screen, conversation surfaces ────── */
+
+/* Electron draws the window controls over the top-right corner (titleBarOverlay);
+   these strips are what drags the window. */
+.drag { -webkit-app-region: drag; }
+.no-drag, .drag button, .drag input, .drag form { -webkit-app-region: no-drag; }
+:root { --titlebar-h: 48px; --controls-w: 0px; }
+html.is-electron.is-win { --controls-w: 138px; }
+
+/* ── Conversation header ────────────────────────────────────────────── */
+.conversation-row { flex: 1; min-height: 0; min-width: 0; display: flex; }
+.conv-header { height: var(--titlebar-h); padding: 0 calc(12px + var(--controls-w)) 0 20px; gap: 8px; border-bottom-color: transparent; }
+.main.no-sidebar .conv-header, .main.no-sidebar .screen-head, .main.no-sidebar .forge-head { padding-left: 56px; }
+.conv-kind-icon { flex: none; color: hsl(var(--text-faint)); }
+.conv-title { font-size: var(--fs-body); }
+.chip-button {
+  display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 9px; border: 0; border-radius: var(--r-md);
+  background: hsl(var(--bg-muted)); color: hsl(var(--text-mute)); font-size: var(--fs-micro); font-weight: 500;
+}
+.chip-button:hover { color: hsl(var(--text)); background: hsl(var(--bg-sink)); }
+.diff-chip {
+  display: inline-flex; align-items: center; gap: 7px; height: 28px; padding: 0 10px; border-radius: var(--r-md);
+  border: 1px solid hsl(var(--card-line)); background: hsl(var(--card)); color: hsl(var(--text-mute));
+  font-size: var(--fs-micro); font-weight: 580;
+}
+.diff-chip:hover, .diff-chip.is-on { border-color: hsl(var(--border-strong)); color: hsl(var(--text)); }
+
+/* Screens fade in rather than snap. */
+.main > .screen, .main > .conversation-row, .main > .forge { animation: swap-in 200ms var(--ease-enter) both; }
+
+/* Startup */
+.app-loading { gap: 16px; }
+
+/* Whatever sits under the window controls shares their colour. */
+.forge-head { background: hsl(var(--bg-subtle)); }
+@container (max-width: 360px) {
+  .conv-header .conv-title { min-width: 0; }
+}
+
+/* macOS: the traffic lights sit in the top-left; full screen hides them. */
+html.is-electron.is-mac .main.no-sidebar .conv-header,
+html.is-electron.is-mac .main.no-sidebar .screen-head,
+html.is-electron.is-mac .main.no-sidebar .forge-head { padding-left: 128px; }
+html.is-electron.is-mac.is-fullscreen .main.no-sidebar .conv-header,
+html.is-electron.is-mac.is-fullscreen .main.no-sidebar .screen-head,
+html.is-electron.is-mac.is-fullscreen .main.no-sidebar .forge-head { padding-left: 56px; }
+.crash { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 32px; text-align: center; }
+.crash h1 { font-size: var(--fs-heading); }
+.crash p { color: hsl(var(--text-mute)); max-width: 420px; }
+.crash-compact h1 { font-size: var(--fs-title); }
+.crash-compact .button-row { flex-wrap: wrap; justify-content: center; }
+
+/* Folder and branch in the header read as text with an icon, not filled pills. */
+.chip-button { background: none; padding: 0 6px; }
+.chip-button:hover { background: hsl(var(--bg-muted)); }
+
+/* ── Redesign v2: the empty window and the card errors ─────────────── */
+.no-conversation { gap: 8px; }
+.no-conversation-mark { width: 24px; height: 32px; margin-bottom: 8px; }
+.no-conversation h1 { font-size: var(--fs-title); line-height: var(--lh-title); font-weight: 580; color: hsl(var(--ink)); }
+.no-conversation p { font-size: var(--fs-body); line-height: var(--lh-body); color: hsl(var(--text-mute)); }
+.no-conversation .button-row { margin-top: 12px; }
+/* CardError: a 24px err glyph, one line, Retry. */
+.card-error .card-error-glyph { color: hsl(var(--err)); flex: none; }
+.failure.card-error h1 { font-size: var(--fs-title); line-height: var(--lh-title); font-weight: 580; }
+.failure.card-error .button-row { justify-content: center; margin-top: 8px; }
+.stopped.card-error {
+  display: flex; align-items: center; gap: 12px; padding: 12px 16px; font-size: var(--fs-body);
+  border: 1px solid hsl(var(--divider)); border-radius: var(--r-card); background: hsl(var(--bg-raised)); color: hsl(var(--text));
+}
+.forge-composer .stopped.card-error { width: 100%; max-width: none; }
+.stopped.card-error > span { flex: 1; min-width: 0; color: hsl(var(--text)); }

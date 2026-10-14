@@ -1,0 +1,26 @@
+{
+  "artifact_digest": "f4c57fabdfdaf49c84c83d1d8d6a8b373e0aa6ec1dd88e2acfe8203246c43d6e",
+  "component_count": 1,
+  "compute_s": 1.7030000000086147,
+  "cost_usd": 0.00035040000000000006,
+  "failures": [],
+  "floor_kind": "held_out_tasks",
+  "floor_limit": 0.4,
+  "floor_score": 0.51,
+  "held_out_count": 100,
+  "held_out_counts": {
+    "cases": 100,
+    "correct": 51,
+    "invalid": 0,
+    "over_budget": 0
+  },
+  "mean_cost_usd": 0.0002782949999999999,
+  "passed": true,
+  "secondary_floor_kind": null,
+  "secondary_floor_limit": null,
+  "secondary_floor_score": null,
+  "signature": "ce33e66d7746366967c7634e05df2010ac244225925dcb472ca3d5d591610602",
+  "spec_hash": "ff985dd9d7cdea94938fabb5fc6ec909c28996cd6e7c693af60b2778cf6ebfdc",
+  "tokens": 1079,
+  "verification_id": "787f2431ba004128b3e04ea20d211aeb"
+}

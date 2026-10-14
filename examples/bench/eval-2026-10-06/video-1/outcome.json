@@ -1,0 +1,145 @@
+{
+  "format": "architect-eval-ladder/1",
+  "date": "2026-10-06",
+  "spec_hash": "4d80f3d580cac16d3b384eb7f8ca7d84990bd48b8fca0482cca4afb00e0e48cb",
+  "checks": [
+    "keep_digits",
+    "not_copied"
+  ],
+  "bar": 0.4,
+  "floor": {
+    "dataset": "bench-receipts-v2-evidence",
+    "cases_sha256": "09a2422b6a1fa87587c7919d0b0b779ecfc8230409fe48c89bafa46a50592218",
+    "practice": 100,
+    "exam": 100
+  },
+  "commit": "eedd8d99cf22d920c17ac31d683f89f358c85685",
+  "app_build": "b8940f8a000978e18f144a2f3887a603123917ebdbc80139d6a1869d76d5b1aa",
+  "started_at": "2026-10-06T14:27:08Z",
+  "ended_at": "2026-10-06T14:47:42Z",
+  "made_with": "The desktop app, recorded for the demo video: /make @receipt-reader.json in a copy of examples/expense-app, then Build it. The workspace was new, with no library and no registry, so no rung could warm-start.",
+  "profile": "examples/bench/eval-2026-10-06/ladder/profile.json as it is, so every model call went through the deployed relay.",
+  "stage2_lightning": [
+    {
+      "params": {
+        "retries": 0,
+        "verifier_depth": 0
+      },
+      "practice_score": 0.48
+    },
+    {
+      "params": {
+        "retries": 1,
+        "verifier_depth": 0
+      },
+      "practice_score": 0.48
+    },
+    {
+      "params": {
+        "retries": 0,
+        "verifier_depth": 1
+      },
+      "practice_score": 0.47
+    },
+    {
+      "params": {
+        "retries": 1,
+        "verifier_depth": 1
+      },
+      "practice_score": 0.44
+    }
+  ],
+  "forge": {
+    "enabled": false
+  },
+  "warm_started": false,
+  "rungs": [
+    {
+      "model": "nvidia/Nemotron-3_5-Lightning",
+      "preset": "extractor",
+      "params": {
+        "retries": 0,
+        "verifier_depth": 0
+      },
+      "practice_score": 0.48,
+      "exam": {
+        "cases": 100,
+        "correct": 39,
+        "invalid": 0,
+        "over_budget": 0
+      },
+      "exam_score": 0.39,
+      "licensed": false,
+      "ships": false,
+      "codes": [
+        "primary_floor_failed",
+        "primary_evaluation_failed"
+      ],
+      "artifact_digest": "81ba2ce1ad174cfbc21143529dbd4b073a02ed9465359ffc97bf90031e2d753f"
+    },
+    {
+      "model": "nvidia/nemotron-3-super-120b-a12b",
+      "preset": "extractor",
+      "params": {
+        "retries": 0,
+        "verifier_depth": 0
+      },
+      "practice_score": 0.68,
+      "exam": {
+        "cases": 100,
+        "correct": 63,
+        "invalid": 0,
+        "over_budget": 0
+      },
+      "exam_score": 0.63,
+      "licensed": true,
+      "ships": true,
+      "codes": [],
+      "artifact_digest": "c6269719e8f5730f5f1717bd26197a3745b71259b61e3e0cac202704842fdc69"
+    },
+    {
+      "model": "nvidia/Nemotron-3-Ultra-550b-a55b",
+      "preset": "extractor",
+      "params": {
+        "retries": 0,
+        "verifier_depth": 0
+      },
+      "practice_score": 0.78,
+      "exam": {
+        "cases": 100,
+        "correct": 70,
+        "invalid": 0,
+        "over_budget": 0
+      },
+      "exam_score": 0.7,
+      "licensed": true,
+      "ships": false,
+      "codes": [],
+      "artifact_digest": "564d3f49c8c067dcba3deb8a4d4ebe25bfb832c9dbf635fb8cdc195956055d44"
+    }
+  ],
+  "agent": {
+    "registry_name": "receipt-reader",
+    "revision": 1,
+    "artifact_version": 5,
+    "artifact_digest": "c6269719e8f5730f5f1717bd26197a3745b71259b61e3e0cac202704842fdc69",
+    "model": "nvidia/nemotron-3-super-120b-a12b",
+    "preset": "extractor",
+    "params": {
+      "retries": 0,
+      "verifier_depth": 0
+    },
+    "installed_at": "2026-10-06T14:47:42Z"
+  },
+  "spend_usd": {
+    "total": 0.30783474,
+    "calls": 1500,
+    "runs": 909,
+    "stage2_lightning": 0.05910318,
+    "lightning_exam": 0.00583056,
+    "super_rung": 0.05607,
+    "ultra_rung": 0.186831,
+    "source": "Architect's own count of the build's calls, from the run log in the build's workspace, at the 2026-10-03 list prices. The stage figures add up to the total."
+  },
+  "signature": "HMAC with the build workspace's key and an Ed25519 seal by the release key, fingerprint 39762f2071b307da0db6ada328bc0743b228351fe2b78d890b50d09bf6cc30f8. The three exam reports are beside this file as Stage 4 wrote them: exam-lightning.json, exam-super.json and exam-ultra.json. Signatures and verification ids are left out of this file."
+}

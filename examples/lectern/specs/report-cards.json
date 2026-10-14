@@ -1,0 +1,43 @@
+{
+  "task": "Draft two short paragraphs from synthetic progress data. Human review is required.",
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "synthetic",
+      "completed",
+      "assigned",
+      "topic"
+    ],
+    "properties": {
+      "synthetic": {
+        "const": true
+      },
+      "completed": {
+        "type": "integer"
+      },
+      "assigned": {
+        "type": "integer"
+      },
+      "topic": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": false
+  },
+  "output_schema": {
+    "type": "string"
+  },
+  "floor": {
+    "kind": "human_edit_rate",
+    "limit": 0.1,
+    "dataset": "synthetic-report-edits",
+    "minimum_samples": 30
+  },
+  "budget": {
+    "cost_usd": 0.1,
+    "compute_s": 5
+  },
+  "model_target": "fake",
+  "lifecycle": "install",
+  "domain": "synthesizer"
+}

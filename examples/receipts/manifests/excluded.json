@@ -1,0 +1,1444 @@
+{
+  "manifest_version": 1,
+  "dataset": "naver-clova-ix/cord-v2",
+  "dataset_url": "https://huggingface.co/datasets/naver-clova-ix/cord-v2",
+  "dataset_revision": "7f0115a4b758a71d6473b8d085751692da2fef98",
+  "license": "CC-BY-4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "rule_version": "receipts-v2",
+  "rules_sha256": "b552ab6033626d0e5f1792a560932b764b749a7dc17f7f2cbe928653a8f52480",
+  "count": 202,
+  "reasons": {
+    "duplicate": 140,
+    "garbled_text": 3,
+    "label_conflict": 24,
+    "label_wrong": 15,
+    "rule_conflict": 20
+  },
+  "meanings": {
+    "duplicate": "a copy of the kept case",
+    "garbled_text": "the rebuilt text pairs amounts with the wrong lines, because CORD put them in the row_id of a neighbouring line",
+    "label_conflict": "copies of one receipt carry different labels, so it has no single answer",
+    "label_wrong": "a label contradicts the printed text",
+    "rule_conflict": "a label follows a CORD habit that the prompt rules settle the other way"
+  },
+  "near_duplicates": [
+    {
+      "sources": [
+        "test/44",
+        "train/662"
+      ],
+      "differs": "the item name, \"Combo 1\" or \"Combo 2\""
+    },
+    {
+      "sources": [
+        "test/84",
+        "validation/14"
+      ],
+      "differs": "the order of the two items"
+    },
+    {
+      "sources": [
+        "test/96",
+        "validation/4"
+      ],
+      "differs": "the option, \"Tidak Pedas\" or \"Sedang\", and the row breaks"
+    },
+    {
+      "sources": [
+        "train/36",
+        "train/362"
+      ],
+      "differs": "line wraps, and one copy prints the card and change lines"
+    },
+    {
+      "sources": [
+        "train/56",
+        "validation/65"
+      ],
+      "differs": "one copy prints \"DPP 49.636\""
+    },
+    {
+      "sources": [
+        "train/66",
+        "train/691"
+      ],
+      "differs": "one copy prints \"DPP 52.636\""
+    },
+    {
+      "sources": [
+        "train/147",
+        "train/692"
+      ],
+      "differs": "one copy prints the option \"*Gula Murni 100%\""
+    },
+    {
+      "sources": [
+        "train/159",
+        "train/593"
+      ],
+      "differs": "one copy prints \"TL 46,000\"; the subtotal labels differ"
+    },
+    {
+      "sources": [
+        "train/197",
+        "train/215"
+      ],
+      "differs": "the payment label, \"Cash\" or \"Apply Amount\""
+    },
+    {
+      "sources": [
+        "train/212",
+        "train/227"
+      ],
+      "differs": "the item code, \"2005 CHEESE JOHN\" or \"2005-CHEESE JOHN\""
+    },
+    {
+      "sources": [
+        "train/276",
+        "train/732"
+      ],
+      "differs": "line breaks, and one copy prints \"TAKEOUT(1):\""
+    },
+    {
+      "sources": [
+        "train/330",
+        "train/348"
+      ],
+      "differs": "one copy prints \"Sales included PB1\""
+    },
+    {
+      "sources": [
+        "train/390",
+        "validation/47"
+      ],
+      "differs": "the option, \"Pedas\" or \"Sedang\", and the row breaks"
+    },
+    {
+      "sources": [
+        "train/443",
+        "train/675"
+      ],
+      "differs": "the spelling \"Yalk\" or \"Yolk\", and one option line"
+    },
+    {
+      "sources": [
+        "train/474",
+        "train/753"
+      ],
+      "differs": "one copy prints \"Incl. 10% 2,955\"; the tax labels differ"
+    },
+    {
+      "sources": [
+        "train/530",
+        "validation/77"
+      ],
+      "differs": "one copy prints \"Total Tax Included: Rp 5272.73\"; the tax labels differ"
+    }
+  ],
+  "receipts": [
+    {
+      "source": "train/6",
+      "reason": "duplicate",
+      "kept": "cord-test-0095",
+      "ground_truth_sha256": "3319c7c4efaa1a73f2dec669872d9b218e465530f7b56ae58d75693a69e23798"
+    },
+    {
+      "source": "train/15",
+      "reason": "duplicate",
+      "kept": "cord-validation-0035",
+      "ground_truth_sha256": "8fa04c0d8e0f21725a0dba1f2b6260b5c487bbd558b4b8c242653de61af3c0c5"
+    },
+    {
+      "source": "train/19",
+      "reason": "label_conflict",
+      "group": [
+        "test/70",
+        "train/19"
+      ],
+      "ground_truth_sha256": "6637ed96038edfc648b31bcf1a114ccb3b3f33fefee72b64ee3b1e629714db30"
+    },
+    {
+      "source": "train/35",
+      "reason": "rule_conflict",
+      "note": "the lone \"Sub Total\", with only tender and change lines after it, is labelled the subtotal with no total; the rules make it the total",
+      "ground_truth_sha256": "a7b49a4eb15ab1da47f82fbfdb8a5a939e60316e471c6e0dd4644c2a2a707099"
+    },
+    {
+      "source": "train/44",
+      "reason": "duplicate",
+      "kept": "cord-test-0075",
+      "ground_truth_sha256": "918c7245c58c34e8d181dece0aece7f88ffad488b84b1255a5889910dbac47e0"
+    },
+    {
+      "source": "train/47",
+      "reason": "duplicate",
+      "kept": "cord-test-0068",
+      "ground_truth_sha256": "36e944a5a13f28945f13248da0c9cb493bd8cfb971b694b92a8ccd14a3b8fd42"
+    },
+    {
+      "source": "train/52",
+      "reason": "rule_conflict",
+      "note": "the lone \"Sub Total\", with only tender and change lines after it, is labelled the subtotal with no total; the rules make it the total",
+      "ground_truth_sha256": "59f9a2c3eba3f8e7ab7bcebadfad06550dc01e9e44b555ed516a25c02a5d02f3"
+    },
+    {
+      "source": "train/55",
+      "reason": "duplicate",
+      "kept": "cord-test-0093",
+      "ground_truth_sha256": "890a617624b7e6e16b756fe272ac671d04d3c4c84fc3f019f42c6a12cb8d2b1e"
+    },
+    {
+      "source": "train/56",
+      "reason": "duplicate",
+      "kept": "cord-validation-0065",
+      "ground_truth_sha256": "d058a03ae4239276d0285526e6462f8688c170d38d8fdf356bbcf45f798b2081"
+    },
+    {
+      "source": "train/71",
+      "reason": "duplicate",
+      "kept": "cord-test-0093",
+      "ground_truth_sha256": "089fbf1622aa3e93017570998bc6a7182834045cda80ec68edf5e5d352e2e505"
+    },
+    {
+      "source": "train/80",
+      "reason": "duplicate",
+      "kept": "cord-test-0093",
+      "ground_truth_sha256": "bc0d39036dac7eea94d1abdbe38f80494ae3bb01745ca708b565f78163c40071"
+    },
+    {
+      "source": "train/84",
+      "reason": "rule_conflict",
+      "note": "a copy of validation/53",
+      "ground_truth_sha256": "f67d3b2ad38a6d4aa2ee988f8195a2ac69555f53af5f2c35a048de4b97f3f3f6"
+    },
+    {
+      "source": "train/85",
+      "reason": "duplicate",
+      "kept": "cord-validation-0051",
+      "ground_truth_sha256": "3632c0b31f374a225a6039d6da9fdb26cc99f96df235c3bf4bec62ddb8eeceab"
+    },
+    {
+      "source": "train/97",
+      "reason": "duplicate",
+      "kept": "cord-train-0095",
+      "ground_truth_sha256": "fa2342cbea6707094c5c5c16b47ca6ea1ff3792dd28b250c834bdc53374e7195"
+    },
+    {
+      "source": "train/107",
+      "reason": "duplicate",
+      "kept": "cord-test-0086",
+      "ground_truth_sha256": "beaad6b5e489c7f0a3551bf0b10c83eac70e4fd89520c98ccf891fe7a25af84a"
+    },
+    {
+      "source": "train/109",
+      "reason": "duplicate",
+      "kept": "cord-train-0058",
+      "ground_truth_sha256": "99903bf814f895b8bce7bfe943a7f05f49272c0406d75009040fa3b7ad02e46e"
+    },
+    {
+      "source": "train/110",
+      "reason": "duplicate",
+      "kept": "cord-train-0102",
+      "ground_truth_sha256": "bffd5a1fa2cc60f4289d6831748c87ee56a27183cf4eb01f4d093f98b8b3190f"
+    },
+    {
+      "source": "train/119",
+      "reason": "duplicate",
+      "kept": "cord-test-0077",
+      "ground_truth_sha256": "0a54311ed31f9ef1eef8cdf16297df10692fcb761107516cfee9b39d82874a41"
+    },
+    {
+      "source": "train/127",
+      "reason": "label_conflict",
+      "group": [
+        "validation/56",
+        "train/127",
+        "train/463",
+        "train/546",
+        "train/658"
+      ],
+      "ground_truth_sha256": "bf30062f07f63654ac41f557d7bbc9e1e9d83dd5e959772e8f5ad9d89b98b589"
+    },
+    {
+      "source": "train/133",
+      "reason": "duplicate",
+      "kept": "cord-test-0025",
+      "ground_truth_sha256": "22cb38973c2b41823b9e59167605238c315f7af060c027a33cb523d26d208623"
+    },
+    {
+      "source": "train/145",
+      "reason": "duplicate",
+      "kept": "cord-train-0090",
+      "ground_truth_sha256": "dbfc41289d47e0c5d6542a426685989a18f25b82ff29e8f15a7889fd8cc1d8f2"
+    },
+    {
+      "source": "train/148",
+      "reason": "duplicate",
+      "kept": "cord-train-0034",
+      "ground_truth_sha256": "7c3e80dc5cda936a9f0a8eecd8a474a206f2468c6ac5da2c67a391e81cdb0479"
+    },
+    {
+      "source": "train/159",
+      "reason": "label_conflict",
+      "group": [
+        "train/159",
+        "train/593"
+      ],
+      "ground_truth_sha256": "a8b8a1ef612b72f66ef7de2b186a77c5f020d962e3384eee5577e4e8c047b3e8"
+    },
+    {
+      "source": "train/164",
+      "reason": "duplicate",
+      "kept": "cord-test-0093",
+      "ground_truth_sha256": "66943bc6f8a9d90f667e3e0f0eb4a5fba321ca27c1e32b66a838c6f9291f6997"
+    },
+    {
+      "source": "train/166",
+      "reason": "label_conflict",
+      "group": [
+        "train/166",
+        "train/671"
+      ],
+      "ground_truth_sha256": "b08162d0b740b5efa3d71f5e70cc2807c4916be08d642dd7f4ce7613e5fe35b0"
+    },
+    {
+      "source": "train/168",
+      "reason": "duplicate",
+      "kept": "cord-validation-0096",
+      "ground_truth_sha256": "8394e301e155e7ec88163afb868f677de54f2418d393f9ea8a0f1cfc0cb77f82"
+    },
+    {
+      "source": "train/172",
+      "reason": "duplicate",
+      "kept": "cord-test-0089",
+      "ground_truth_sha256": "4f79b0832c3a86cc71e60d99417f3e9c5f24bd95dcf3ffbcac41515c0857c3a1"
+    },
+    {
+      "source": "train/174",
+      "reason": "label_conflict",
+      "group": [
+        "validation/16",
+        "validation/38",
+        "train/174"
+      ],
+      "ground_truth_sha256": "627f09b2c95b5f2f9d0e644095500f87bfd084402fce984ac3216b9b18447d5e"
+    },
+    {
+      "source": "train/183",
+      "reason": "duplicate",
+      "kept": "cord-validation-0085",
+      "ground_truth_sha256": "f9d96fc40c5302eaf06e29b16288dcb21ae1dbff6f534f213731f8fe01433e14"
+    },
+    {
+      "source": "train/189",
+      "reason": "duplicate",
+      "kept": "cord-train-0038",
+      "ground_truth_sha256": "d04df32d1576d6bc8f60cda4027c19139dc944c497597b3511ef871c13fa7fa6"
+    },
+    {
+      "source": "train/191",
+      "reason": "label_wrong",
+      "note": "the tax label joins the DPP amounts \"30.273\" and \"200\"; the receipt prints \"PPN= 3.027\"",
+      "ground_truth_sha256": "fd4e7bbd2524be8566a66c9678ea77164d64310114cbd2de94c77625e5ed8407"
+    },
+    {
+      "source": "train/201",
+      "reason": "duplicate",
+      "kept": "cord-train-0169",
+      "ground_truth_sha256": "319f235057e6a038aebb58aae58a4630a8e09cb7c480f3068db37f33d07b0abf"
+    },
+    {
+      "source": "train/207",
+      "reason": "duplicate",
+      "kept": "cord-train-0115",
+      "ground_truth_sha256": "23bf3f75773d907b3f7aba1aecf557ff82887038a9705f0ead1c3031c40a083c"
+    },
+    {
+      "source": "train/211",
+      "reason": "rule_conflict",
+      "note": "the extra \"1 Extra Jelly Lychee\" counts as an item",
+      "ground_truth_sha256": "d6ffad99432281b6897a8e1243ead1103a77b82cd465aae01f54400563c4ec09"
+    },
+    {
+      "source": "train/215",
+      "reason": "duplicate",
+      "kept": "cord-train-0197",
+      "ground_truth_sha256": "83109b4aef51684491f4a080029ea9178c6b6b526cccb843893891780e0d3f30"
+    },
+    {
+      "source": "train/217",
+      "reason": "duplicate",
+      "kept": "cord-train-0131",
+      "ground_truth_sha256": "8ce70fcab0690d0167bad6c00412dd9b673553b09d095040357d028d608d7d3b"
+    },
+    {
+      "source": "train/221",
+      "reason": "duplicate",
+      "kept": "cord-validation-0006",
+      "ground_truth_sha256": "3c49f81766184b865d80d88144bc45452af621923aca151209c2682a53d3d600"
+    },
+    {
+      "source": "train/223",
+      "reason": "duplicate",
+      "kept": "cord-test-0090",
+      "ground_truth_sha256": "1114698d9440cd8e72be78044adac87ecf11809454893f15f802e498d5dacfc3"
+    },
+    {
+      "source": "train/227",
+      "reason": "duplicate",
+      "kept": "cord-train-0212",
+      "ground_truth_sha256": "20b8ff47c221ddde0af3b8d20d12d5b4f7aa3589f137892bd6d892a146a3e35b"
+    },
+    {
+      "source": "train/234",
+      "reason": "duplicate",
+      "kept": "cord-validation-0030",
+      "ground_truth_sha256": "b6befe887c89598d88d7b5ba05f9a9be7e35b9ffe2577a66c1cb056c567e2786"
+    },
+    {
+      "source": "train/244",
+      "reason": "duplicate",
+      "kept": "cord-train-0004",
+      "ground_truth_sha256": "e6ea18927b7498e07dba3cbc7d69bda7fe138cd033429cd076d3d7a42900a4cb"
+    },
+    {
+      "source": "train/247",
+      "reason": "duplicate",
+      "kept": "cord-validation-0012",
+      "ground_truth_sha256": "c38266f012e43cb361b0d8dd14014e9cac9913520fc8c24ebb112fd78d408f96"
+    },
+    {
+      "source": "train/251",
+      "reason": "duplicate",
+      "kept": "cord-test-0050",
+      "ground_truth_sha256": "ecd5b655e542fd0e4fae86a3ed994d8cc9e3649d402991faa5e01ff5a25869b0"
+    },
+    {
+      "source": "train/256",
+      "reason": "duplicate",
+      "kept": "cord-train-0029",
+      "ground_truth_sha256": "a45d37219733cc57a956450def9f882bd39fe709f1dda0180eca04c86631d999"
+    },
+    {
+      "source": "train/259",
+      "reason": "duplicate",
+      "kept": "cord-train-0250",
+      "ground_truth_sha256": "b79a0e1ad582f18193bd15aecf7312e918da9673eee6a68404f517d022e56b62"
+    },
+    {
+      "source": "train/263",
+      "reason": "duplicate",
+      "kept": "cord-train-0043",
+      "ground_truth_sha256": "9e34003a84653df803e471f2d1de35d7c9e7c86e3d2bc0520dddaedcdb0a052b"
+    },
+    {
+      "source": "train/267",
+      "reason": "duplicate",
+      "kept": "cord-test-0096",
+      "ground_truth_sha256": "ed4b14265877cfa99a9e6667d013fa301acde1488ed19043a86fca8c3150c591"
+    },
+    {
+      "source": "train/268",
+      "reason": "duplicate",
+      "kept": "cord-train-0061",
+      "ground_truth_sha256": "2813553a0380d12b92fc9e6a74e08ffabf2d20b783691696d280b78f35c257c9"
+    },
+    {
+      "source": "train/271",
+      "reason": "label_wrong",
+      "note": "the subtotal label is the \"3 Total 36.000\" line; no subtotal is printed apart from the total",
+      "ground_truth_sha256": "efaa5f02a82f6fb93add7080374cbfc5cd8040702c126df7cd3d65351cc97476"
+    },
+    {
+      "source": "train/283",
+      "reason": "duplicate",
+      "kept": "cord-validation-0028",
+      "ground_truth_sha256": "67174881e4af1ec5bda970f8a1b42087b984756859e977cc0b037406649ea67b"
+    },
+    {
+      "source": "train/285",
+      "reason": "duplicate",
+      "kept": "cord-train-0265",
+      "ground_truth_sha256": "22143285dd4595f02c4c02316a17ef6525bd33497465307633cd0967b4d278e6"
+    },
+    {
+      "source": "train/290",
+      "reason": "label_wrong",
+      "note": "tax is null, but the receipt prints \"Pajak Resto 9,818\" (annotated as a discount)",
+      "ground_truth_sha256": "1cb4927995c65221906aaa90da97093ca026ad1b549c21f031c4bb48566dd712"
+    },
+    {
+      "source": "train/291",
+      "reason": "duplicate",
+      "kept": "cord-test-0010",
+      "ground_truth_sha256": "dcbccc1a5e025183a46b3e56a5a8bae1f98d70b04ede682a63691650b9cf01e6"
+    },
+    {
+      "source": "train/293",
+      "reason": "garbled_text",
+      "note": "three item prices sit in the row_id of the next item, so the text pairs them with the wrong items",
+      "ground_truth_sha256": "332cfff7492446c588145e15a6f82c2a1e26b15d1cc585da2cbda0e9df4c4fb3"
+    },
+    {
+      "source": "train/308",
+      "reason": "rule_conflict",
+      "note": "the extras \"Extra Jelly Lychee\" and \"Extra Ice Cream\" count as items",
+      "ground_truth_sha256": "5a121ae69028bdbf772cce86b30caad5e14f0c2da41c2a6f3919ed9d693ace4e"
+    },
+    {
+      "source": "train/309",
+      "reason": "duplicate",
+      "kept": "cord-train-0073",
+      "ground_truth_sha256": "05228378feaf91bc79e898dc77c413aac35e394a1226619633af85bb9bb4b6cc"
+    },
+    {
+      "source": "train/325",
+      "reason": "duplicate",
+      "kept": "cord-validation-0045",
+      "ground_truth_sha256": "40ed05ded72e7cc49f55cf5c6fb5e89abc2208204354ecf26241c44860a31c8e"
+    },
+    {
+      "source": "train/333",
+      "reason": "label_wrong",
+      "note": "the subtotal label is the item line \"TMP KpK 54,000\"; no subtotal is printed",
+      "ground_truth_sha256": "f980d919662d7ca6f757341eb7d2479de559faa793b80dc6dc9aeb171192f1e0"
+    },
+    {
+      "source": "train/338",
+      "reason": "duplicate",
+      "kept": "cord-train-0113",
+      "ground_truth_sha256": "be71dbbd19cd676923c14c7823551b36d42f522db0198ffad31a2d1950236242"
+    },
+    {
+      "source": "train/345",
+      "reason": "duplicate",
+      "kept": "cord-test-0005",
+      "ground_truth_sha256": "e735238d0053310ae98dca2000615acb43e5254be80aea51c84e830b16072b50"
+    },
+    {
+      "source": "train/348",
+      "reason": "duplicate",
+      "kept": "cord-train-0330",
+      "ground_truth_sha256": "80f24accdeee234efd2397647a8a29066aeadcadaee9074d134f8cc5690eefd7"
+    },
+    {
+      "source": "train/349",
+      "reason": "duplicate",
+      "kept": "cord-train-0036",
+      "ground_truth_sha256": "9003ef454aa558aec69c3bd1c3635e1fcdccfa8c403a264568a738511b57869e"
+    },
+    {
+      "source": "train/353",
+      "reason": "duplicate",
+      "kept": "cord-validation-0036",
+      "ground_truth_sha256": "ee606ea348c5088f398eb35c6bba6f1250aa4b5259dbdec658f92bf0cce1078c"
+    },
+    {
+      "source": "train/354",
+      "reason": "duplicate",
+      "kept": "cord-test-0079",
+      "ground_truth_sha256": "7017eca191a1508a4a76c94a1d552bda5022a9f8aa23115a8aba35ea22cc26ec"
+    },
+    {
+      "source": "train/357",
+      "reason": "rule_conflict",
+      "note": "the extra \"1 Extra Whipping Cream\" counts as an item",
+      "ground_truth_sha256": "2c91db2baa887d1e050c3eb2dc276081dbec325a00bdd0acb54e9e490c3045f0"
+    },
+    {
+      "source": "train/360",
+      "reason": "duplicate",
+      "kept": "cord-train-0209",
+      "ground_truth_sha256": "d1c2ec4d830cf91529139bd4ad6be76f7766409f456bbc8ac3864d7c60600b10"
+    },
+    {
+      "source": "train/362",
+      "reason": "duplicate",
+      "kept": "cord-train-0036",
+      "ground_truth_sha256": "24267f66e764593a9fdac812e177ef5632b8817ff8d12ec6f883391e0a2a36d0"
+    },
+    {
+      "source": "train/387",
+      "reason": "duplicate",
+      "kept": "cord-train-0090",
+      "ground_truth_sha256": "1650c880dad6bf468333f81b71cfb9f5e591e52332de71459eb7c0edd94c6e65"
+    },
+    {
+      "source": "train/390",
+      "reason": "duplicate",
+      "kept": "cord-validation-0047",
+      "ground_truth_sha256": "904d87d8102c191b859848e2a4e1ad33b7acd6e5b29d879b603d00fff8c5da28"
+    },
+    {
+      "source": "train/391",
+      "reason": "duplicate",
+      "kept": "cord-train-0204",
+      "ground_truth_sha256": "fb029faa02ba33bf5e7fe07a94b562a8bc453eea706245553c2dd9da05e7367c"
+    },
+    {
+      "source": "train/398",
+      "reason": "rule_conflict",
+      "note": "the option \"CHANGE TO CHICKEN BOX\" counts as an item",
+      "ground_truth_sha256": "cdb892d1e38d127faaa3ee59416204be2b20b628dcf438856d11a360364c7f0c"
+    },
+    {
+      "source": "train/405",
+      "reason": "duplicate",
+      "kept": "cord-train-0141",
+      "ground_truth_sha256": "3c69fe3727eb03d91f9aeba8bbda63c91d928348eb63f21234fe48c9c70f24b7"
+    },
+    {
+      "source": "train/409",
+      "reason": "duplicate",
+      "kept": "cord-test-0096",
+      "ground_truth_sha256": "6557a493fe52c46cad2291ac6c792395923d3c0016a81369e83c8238a097c463"
+    },
+    {
+      "source": "train/420",
+      "reason": "duplicate",
+      "kept": "cord-validation-0098",
+      "ground_truth_sha256": "7d69ed9771a9b2683cd873ae9d757692777813792abdc694473965c801f1e5e4"
+    },
+    {
+      "source": "train/421",
+      "reason": "label_wrong",
+      "note": "the tax label keeps the rate: \"Pb1 10% 4,818\" became 104818",
+      "ground_truth_sha256": "e4362e33d795be48422ec2bbf4ef9e092fc4b9fd28a97fbbbf465bbf3e1b20da"
+    },
+    {
+      "source": "train/425",
+      "reason": "garbled_text",
+      "note": "the amounts sit one row_id above their labels, so the text reads \"VAT 10% 135,003\"",
+      "ground_truth_sha256": "d6b8e39e99476e002b8e5e0101b01b391ccb7b36c16f164eea554608722e1fdc"
+    },
+    {
+      "source": "train/426",
+      "reason": "duplicate",
+      "kept": "cord-test-0029",
+      "ground_truth_sha256": "bbaaf2f46992d5ccda66629bb9cb7bc049cbe76821584578fa91003cddb9b716"
+    },
+    {
+      "source": "train/428",
+      "reason": "duplicate",
+      "kept": "cord-test-0044",
+      "ground_truth_sha256": "158e1eeff43b9f79d5439853c683dd3d2496d4a4777d4694c31539dbfa688a57"
+    },
+    {
+      "source": "train/435",
+      "reason": "label_wrong",
+      "note": "the tax label keeps the rate: \"Pb1 10% 7,000\" became 1107000",
+      "ground_truth_sha256": "4907c440bda8413d1ee694f70cf973a57da22119cd18474a4384dbbd8bc7565b"
+    },
+    {
+      "source": "train/448",
+      "reason": "duplicate",
+      "kept": "cord-train-0068",
+      "ground_truth_sha256": "715fffb76403eef84ead4c6e5e565d9d2f8c521948bc137eddd8a60ff4be6ab5"
+    },
+    {
+      "source": "train/451",
+      "reason": "duplicate",
+      "kept": "cord-train-0163",
+      "ground_truth_sha256": "d4a7cbf3edd9b3296a7b780c21abd0ef6034efe355f2d0e83035a813a970b2a5"
+    },
+    {
+      "source": "train/460",
+      "reason": "rule_conflict",
+      "note": "the lone \"Sub Total\", with only tender and change lines after it, is labelled the subtotal with no total; the rules make it the total",
+      "ground_truth_sha256": "2490bad0d91ec37889531e198323c32fbd6f15aaf71a5e7ab88d3895c73aed4c"
+    },
+    {
+      "source": "train/463",
+      "reason": "label_conflict",
+      "group": [
+        "validation/56",
+        "train/127",
+        "train/463",
+        "train/546",
+        "train/658"
+      ],
+      "ground_truth_sha256": "7b74ffd1720f7373e30e77ff4d03b724d0c083435269c125d3f951929de07ef7"
+    },
+    {
+      "source": "train/466",
+      "reason": "duplicate",
+      "kept": "cord-train-0255",
+      "ground_truth_sha256": "48264d00daba3bbb9f106c13bca05c08de142c6a216eb94d01bbad1d8911ee33"
+    },
+    {
+      "source": "train/467",
+      "reason": "duplicate",
+      "kept": "cord-train-0096",
+      "ground_truth_sha256": "7e6cb6521568b2f27b580ee10004db3710442cbe49bf4fd9f1c657e13444bb50"
+    },
+    {
+      "source": "train/470",
+      "reason": "duplicate",
+      "kept": "cord-train-0238",
+      "ground_truth_sha256": "2d149d699c0beacd7390af6fef61e47e657a4208932c2404b19c002c6bda6d85"
+    },
+    {
+      "source": "train/474",
+      "reason": "label_conflict",
+      "group": [
+        "train/474",
+        "train/753"
+      ],
+      "ground_truth_sha256": "c779f82f55b97c879c21f8201e699998a6375f3083544f0ca4ca224768aa2f6f"
+    },
+    {
+      "source": "train/475",
+      "reason": "duplicate",
+      "kept": "cord-train-0103",
+      "ground_truth_sha256": "161ef2d6889cde21851c74d308b5763c9d020c5055791541087f9b263fc807b0"
+    },
+    {
+      "source": "train/483",
+      "reason": "duplicate",
+      "kept": "cord-validation-0097",
+      "ground_truth_sha256": "b3a380c50c6a2a6bc36b43ea0a3f542799ff196279012894566a43676801c952"
+    },
+    {
+      "source": "train/489",
+      "reason": "duplicate",
+      "kept": "cord-validation-0067",
+      "ground_truth_sha256": "b9b6ed915a725d7aac8c3f7f9503d73fc98f8c718ca79d342417e23b6e4b1322"
+    },
+    {
+      "source": "train/490",
+      "reason": "label_wrong",
+      "note": "total is null, but the receipt prints \"Total Rp. 250.000\" (annotated as the item price)",
+      "ground_truth_sha256": "47e564ad439bfe773e32c45180efb6d4eeb6278a41d3d2f86e7186a76cfd485e"
+    },
+    {
+      "source": "train/491",
+      "reason": "duplicate",
+      "kept": "cord-train-0450",
+      "ground_truth_sha256": "ee2b9bbffd66774f7cb9034b4ef4ff831eace4f5397a93960ce1c171eeaa1f98"
+    },
+    {
+      "source": "train/495",
+      "reason": "label_wrong",
+      "note": "the tax label is the rate \"10.000%\"; the amount is \"546\"",
+      "ground_truth_sha256": "870d6c24b454a7ab7045599ccfb5508db33ab6e894dcaee3c2db9882cc4d299f"
+    },
+    {
+      "source": "train/498",
+      "reason": "duplicate",
+      "kept": "cord-validation-0030",
+      "ground_truth_sha256": "f5d30c506015b14f70323be9301e86022d1c59cb16e178fc58c0c3ad82d79f0e"
+    },
+    {
+      "source": "train/500",
+      "reason": "label_wrong",
+      "note": "total is null, but the receipt prints \"GRAND TOTAL 70,000\"",
+      "ground_truth_sha256": "f14d3e058e7555f525eb2adaaa5ab1716d381193aac8ee75b379617aadf900da"
+    },
+    {
+      "source": "train/503",
+      "reason": "label_wrong",
+      "note": "the merchandise subtotal \"MDSE ST RP36362\" counts as an item",
+      "ground_truth_sha256": "7e588a4c578520d7c45bed45acbb0ce705538c5eec0774c0721787199e9c037a"
+    },
+    {
+      "source": "train/504",
+      "reason": "duplicate",
+      "kept": "cord-train-0281",
+      "ground_truth_sha256": "d63b3d67fced9eb86221d8a15a7f8e751e2c21ac8ee96fd9ebaa8ce78f602881"
+    },
+    {
+      "source": "train/506",
+      "reason": "duplicate",
+      "kept": "cord-test-0068",
+      "ground_truth_sha256": "a75338ee83e8500b0f8d6f1b3d1d88177e84a128f722f9dfb4ad8d2192b440da"
+    },
+    {
+      "source": "train/507",
+      "reason": "rule_conflict",
+      "note": "total is null, but the only amount line, \"Jml Rupiah Rp. 217,685\", is the total",
+      "ground_truth_sha256": "7f6911706ac4e7d3aee1c43f3d97d0fd2aef555677a37a45813158a2d4165ca3"
+    },
+    {
+      "source": "train/513",
+      "reason": "duplicate",
+      "kept": "cord-train-0326",
+      "ground_truth_sha256": "a5208faa07b6945b3d0284056621cb01610280ddd6cfe06cbe4dea4e3152e1d4"
+    },
+    {
+      "source": "train/525",
+      "reason": "duplicate",
+      "kept": "cord-train-0485",
+      "ground_truth_sha256": "a1dfb40bb5083cb8436b28ac4e8db1b6e29b31002e2d7317907b6c8eae0dbd9f"
+    },
+    {
+      "source": "train/530",
+      "reason": "label_conflict",
+      "group": [
+        "validation/77",
+        "train/530"
+      ],
+      "ground_truth_sha256": "ec435c201aab9d1592c9016ab1e550c0b296776ddb057f366642cd8b86a6a6d5"
+    },
+    {
+      "source": "train/533",
+      "reason": "duplicate",
+      "kept": "cord-train-0208",
+      "ground_truth_sha256": "be040ce42350c1ef94e4229f9e4825c135902b37170caac4329f1ca4521c506a"
+    },
+    {
+      "source": "train/536",
+      "reason": "duplicate",
+      "kept": "cord-train-0155",
+      "ground_truth_sha256": "377870258fcd4034b31253a4b2869cff4270387e5c80d1efa9b4fcad02b36445"
+    },
+    {
+      "source": "train/546",
+      "reason": "label_conflict",
+      "group": [
+        "validation/56",
+        "train/127",
+        "train/463",
+        "train/546",
+        "train/658"
+      ],
+      "ground_truth_sha256": "367eca0ba54d8512ecc653ee780a61effe0ed9e94301736291008f81b533ad92"
+    },
+    {
+      "source": "train/552",
+      "reason": "duplicate",
+      "kept": "cord-train-0379",
+      "ground_truth_sha256": "aa2550ea39562e36ac322d783d68d64d7090d027b35dea5ae38d3900cd49fae6"
+    },
+    {
+      "source": "train/555",
+      "reason": "rule_conflict",
+      "note": "the upgrade lines \"1 UP Drink\" and \"1 UP Orange\" count as items",
+      "ground_truth_sha256": "465164e0f4e98054dc1d06d04d8e44c166fe146593762376354cbb4a230d7613"
+    },
+    {
+      "source": "train/561",
+      "reason": "duplicate",
+      "kept": "cord-train-0531",
+      "ground_truth_sha256": "f2cf516ff1fdd9fc19eb13e2351854a8f9a17c5411598f4c3f1919bbdba6aa09"
+    },
+    {
+      "source": "train/562",
+      "reason": "duplicate",
+      "kept": "cord-train-0007",
+      "ground_truth_sha256": "e77d068551fdaa364ba20fcdc03bf12682232819343a60e1d049ca2543462df6"
+    },
+    {
+      "source": "train/566",
+      "reason": "duplicate",
+      "kept": "cord-train-0073",
+      "ground_truth_sha256": "2188bc74844942afcd363dd00a2a4e6298786b18dc5cda1fc554e08ad0cff7dc"
+    },
+    {
+      "source": "train/568",
+      "reason": "garbled_text",
+      "note": "each item price sits in the row_id of the line above its item",
+      "ground_truth_sha256": "59f71abb0d313795ee37bed1b30ab53ef64497cbbb0a599046016ef3d8a579e6"
+    },
+    {
+      "source": "train/572",
+      "reason": "rule_conflict",
+      "note": "the lone \"Sub Total\", with only tender and change lines after it, is labelled the subtotal with no total; the rules make it the total",
+      "ground_truth_sha256": "2272e3439252af7c4e254922ef6eeb63023da41481620c41a5bcd6dcf8873dc0"
+    },
+    {
+      "source": "train/576",
+      "reason": "duplicate",
+      "kept": "cord-train-0216",
+      "ground_truth_sha256": "9e69142b16babccda5a62e885f5be72bd25251f686a2ac43f948d722467e4c9d"
+    },
+    {
+      "source": "train/578",
+      "reason": "duplicate",
+      "kept": "cord-train-0120",
+      "ground_truth_sha256": "87e190116cdf9910eb46388f504746d12c5816924021d29f7d19da67b0a4466f"
+    },
+    {
+      "source": "train/579",
+      "reason": "label_conflict",
+      "group": [
+        "test/37",
+        "train/579"
+      ],
+      "ground_truth_sha256": "3fa29fc3d32aeb8a46279a2dad575c8c7be229b6b7f0ffb5eb4b89be45c0af5a"
+    },
+    {
+      "source": "train/589",
+      "reason": "duplicate",
+      "kept": "cord-test-0028",
+      "ground_truth_sha256": "dec4342d2b88fb320c16ee0d4902a02ce96ab9ee01e7db26cca20e92a13af937"
+    },
+    {
+      "source": "train/592",
+      "reason": "label_wrong",
+      "note": "tax is null, but the receipt prints \"PB 1 4,955\" (annotated as a discount)",
+      "ground_truth_sha256": "40a1f071b5f47297c7243e9cceb4dbc66ecf771317bbcfbf650f397d7b1b957b"
+    },
+    {
+      "source": "train/593",
+      "reason": "label_conflict",
+      "group": [
+        "train/159",
+        "train/593"
+      ],
+      "note": "\"TL 46,000\" is labelled the subtotal above \"TOTAL 46,000\"; the rules make TL a total",
+      "ground_truth_sha256": "5e023599abb526e964a3713bc73441c6bb0df4e82660a43146ddb31309393bc5"
+    },
+    {
+      "source": "train/594",
+      "reason": "duplicate",
+      "kept": "cord-train-0412",
+      "ground_truth_sha256": "daab00a7e2219e26669b7165d4e2daa9f8ade03eb71f197e0ac760396aef4753"
+    },
+    {
+      "source": "train/595",
+      "reason": "label_conflict",
+      "group": [
+        "train/595",
+        "train/764"
+      ],
+      "ground_truth_sha256": "aa8459dc85e121bce7153dd1da5344954f7aab2eca1ccfd57513e0c1dc2b073a"
+    },
+    {
+      "source": "train/597",
+      "reason": "duplicate",
+      "kept": "cord-train-0131",
+      "ground_truth_sha256": "51ce8b14672ade7fc6627b15d9ba3db3ada30ad32be3accb0bf5f71a8a28eb28"
+    },
+    {
+      "source": "train/600",
+      "reason": "label_conflict",
+      "group": [
+        "train/600",
+        "train/783"
+      ],
+      "ground_truth_sha256": "26068f7284252c8be4dcdaafe8a7aacac019c36f44c43ced8ea6f29c13710c06"
+    },
+    {
+      "source": "train/607",
+      "reason": "rule_conflict",
+      "note": "the drink \"Milo 1 0\" is labelled part of the steak, but the receipt prints \"ITEMS: 2\"",
+      "ground_truth_sha256": "6e2c93cbe0884175ab0a5f1c132a93a713c4d6216ce7a7c7b94d8eeef92e7cde"
+    },
+    {
+      "source": "train/615",
+      "reason": "duplicate",
+      "kept": "cord-train-0102",
+      "ground_truth_sha256": "5bfb8df834a28a1a6c6211ec748990a0127792f9fd5e683e2cb31293269b6031"
+    },
+    {
+      "source": "train/617",
+      "reason": "duplicate",
+      "kept": "cord-train-0294",
+      "ground_truth_sha256": "6bfcba5233d6bae9a92fff97ef1d7475f2071170cced0a72d5857c6f287dc544"
+    },
+    {
+      "source": "train/620",
+      "reason": "duplicate",
+      "kept": "cord-validation-0032",
+      "ground_truth_sha256": "a62ffe06ddeb4f96ea6a526f00e28a4b9500ed7d9710898a3175cbb310d75c60"
+    },
+    {
+      "source": "train/625",
+      "reason": "duplicate",
+      "kept": "cord-train-0486",
+      "ground_truth_sha256": "0587576e850dc9bb56950781001c02f7ce961b3f28b08fd44c920b2ce9bdd6eb"
+    },
+    {
+      "source": "train/626",
+      "reason": "duplicate",
+      "kept": "cord-train-0060",
+      "ground_truth_sha256": "d1c64b32f57c35f31f6418b2bca64a94806e52db83065a7d19663d2c650a46db"
+    },
+    {
+      "source": "train/627",
+      "reason": "duplicate",
+      "kept": "cord-validation-0096",
+      "ground_truth_sha256": "c14c4d45178295c14daa58c2b7d2ded022df7e1745da619103567a0220018327"
+    },
+    {
+      "source": "train/636",
+      "reason": "duplicate",
+      "kept": "cord-train-0007",
+      "ground_truth_sha256": "81953a49093548e91755de1f558f41694cbf2014b131aa5eea2a56cf653c4afe"
+    },
+    {
+      "source": "train/641",
+      "reason": "duplicate",
+      "kept": "cord-train-0195",
+      "ground_truth_sha256": "66bf0c2f8d7007c6658c5897145acc2555af952389c65d6a4ccbff2a8627747d"
+    },
+    {
+      "source": "train/643",
+      "reason": "duplicate",
+      "kept": "cord-test-0079",
+      "ground_truth_sha256": "564202f926b2c49cafee812def754d165dbd5f1689a6964930992a97c8c77e7a"
+    },
+    {
+      "source": "train/646",
+      "reason": "duplicate",
+      "kept": "cord-train-0335",
+      "ground_truth_sha256": "a76fd25e7cb0e4d7141532c2329a44ea37b91edd923db0e35ad121c73fb5dee6"
+    },
+    {
+      "source": "train/648",
+      "reason": "duplicate",
+      "kept": "cord-test-0067",
+      "ground_truth_sha256": "e4600f225c9e522204d8d8e93bc1653a6b39446df22548b67c2100643bfa77bc"
+    },
+    {
+      "source": "train/650",
+      "reason": "duplicate",
+      "kept": "cord-train-0477",
+      "ground_truth_sha256": "09fe38336f117807b89b81f442b89f38eeeac9f4f853b6ca4332408fd98ed719"
+    },
+    {
+      "source": "train/654",
+      "reason": "duplicate",
+      "kept": "cord-train-0078",
+      "ground_truth_sha256": "27b0e46c18e10d3b633fbad7a06e0ba167dc3b74b745567b2105419a91543450"
+    },
+    {
+      "source": "train/657",
+      "reason": "duplicate",
+      "kept": "cord-train-0163",
+      "ground_truth_sha256": "e9ffcb653584a4f050ee98790c4ba1b107e633758b2494acebbdc145a87fd40b"
+    },
+    {
+      "source": "train/658",
+      "reason": "label_conflict",
+      "group": [
+        "validation/56",
+        "train/127",
+        "train/463",
+        "train/546",
+        "train/658"
+      ],
+      "ground_truth_sha256": "3c868933f2d8a8015b42d277af9aeb0a19f51f8387cab219c913e0e4ee20c116"
+    },
+    {
+      "source": "train/662",
+      "reason": "duplicate",
+      "kept": "cord-test-0044",
+      "ground_truth_sha256": "09af4cabc803223881be9ed0b6514ca82b33e902a0f07ae54e990c35f1e227c4"
+    },
+    {
+      "source": "train/663",
+      "reason": "duplicate",
+      "kept": "cord-test-0093",
+      "ground_truth_sha256": "f249d742127586d0f04b314c02af3beb983125ae9ce67f3ae5c97a3e4addc0f9"
+    },
+    {
+      "source": "train/665",
+      "reason": "duplicate",
+      "kept": "cord-train-0310",
+      "ground_truth_sha256": "0a43bb384b9e1206e5d89614f90a368310e2d253ddd85b7d8033ff3b9b685e15"
+    },
+    {
+      "source": "train/669",
+      "reason": "duplicate",
+      "kept": "cord-train-0126",
+      "ground_truth_sha256": "8f3106a5c10b1d3233e55adf079125174eb191a8c0b8bd9b7857271b0e3edb78"
+    },
+    {
+      "source": "train/670",
+      "reason": "label_wrong",
+      "note": "total is null, but the receipt prints \"Total Rp. 200.000\" (annotated as the item price)",
+      "ground_truth_sha256": "8eb565c9017ad338974d85e5659dfa99e6aa4287685705d5a020b473b21dad90"
+    },
+    {
+      "source": "train/671",
+      "reason": "label_conflict",
+      "group": [
+        "train/166",
+        "train/671"
+      ],
+      "ground_truth_sha256": "7a01a2a61b3bc363811e38e4b9596ad47581bc3215b5779cb4b82cdd64eec0ed"
+    },
+    {
+      "source": "train/672",
+      "reason": "duplicate",
+      "kept": "cord-test-0068",
+      "ground_truth_sha256": "94c3f449817f99bfb4b54c370ea721752560c7f3a2b80666cc5e36e723d424ef"
+    },
+    {
+      "source": "train/673",
+      "reason": "duplicate",
+      "kept": "cord-train-0639",
+      "ground_truth_sha256": "a339232b10d90f4778e9c247c9f5ede9305657d551fb9fd5a8059ceee25db19e"
+    },
+    {
+      "source": "train/674",
+      "reason": "duplicate",
+      "kept": "cord-train-0266",
+      "ground_truth_sha256": "5912bee80767d90962fa8828b3c54a2d1ba5b9ea263422e75765c74745c7293f"
+    },
+    {
+      "source": "train/675",
+      "reason": "duplicate",
+      "kept": "cord-train-0443",
+      "ground_truth_sha256": "dfb4869ac03bae6182f4713d64bd125248be0642f284051b8e389dcb96e41033"
+    },
+    {
+      "source": "train/676",
+      "reason": "label_wrong",
+      "note": "the subtotal label is \"GT 22,000\", which reads as the item line under \"1 22,000\"",
+      "ground_truth_sha256": "09b5d36251f651d753e6b9fb9418b8aae9346d5f66279af6493a7396f354b3bc"
+    },
+    {
+      "source": "train/679",
+      "reason": "duplicate",
+      "kept": "cord-train-0018",
+      "ground_truth_sha256": "b8e242394d27275f601eaac4f3ccf5c4eb6278ec61a288685a851e759e967823"
+    },
+    {
+      "source": "train/683",
+      "reason": "rule_conflict",
+      "note": "the lone \"Sub Total\", with only tender and change lines after it, is labelled the subtotal with no total; the rules make it the total",
+      "ground_truth_sha256": "59d9e74563db16aec1d24d5c51a65b10f455f63f71b5130fb0b64ebda0578cbe"
+    },
+    {
+      "source": "train/684",
+      "reason": "duplicate",
+      "kept": "cord-train-0295",
+      "ground_truth_sha256": "ab5fbdde50a9f56a36eef6c343372a296f06e20dea96bc4b7d9acb5331a8ba64"
+    },
+    {
+      "source": "train/691",
+      "reason": "duplicate",
+      "kept": "cord-train-0066",
+      "ground_truth_sha256": "714510a3500c7bae8f9459aa6df36dc4b7340388b5a21699c182f326a398cb0e"
+    },
+    {
+      "source": "train/692",
+      "reason": "duplicate",
+      "kept": "cord-train-0147",
+      "ground_truth_sha256": "942c96e5dbebf75a40830bb5f64a1ed256dc867301e5e777853fabaf40509eef"
+    },
+    {
+      "source": "train/694",
+      "reason": "label_wrong",
+      "note": "a copy of train/490",
+      "ground_truth_sha256": "e7b0ccb6597bcb327a144e70751e842ff7fcba584609acdce0937653c49465f6"
+    },
+    {
+      "source": "train/698",
+      "reason": "duplicate",
+      "kept": "cord-train-0628",
+      "ground_truth_sha256": "bf69d4ce551a6c8e43bd236d83ca416b6684ed8763801081c5c338e392b7a62e"
+    },
+    {
+      "source": "train/703",
+      "reason": "duplicate",
+      "kept": "cord-train-0531",
+      "ground_truth_sha256": "018da48bcd9ded7020256703638288661857bff4d1671e0772b3cf8a624794f5"
+    },
+    {
+      "source": "train/704",
+      "reason": "duplicate",
+      "kept": "cord-train-0438",
+      "ground_truth_sha256": "dd811b551a217aa286d3bb24bb55a5ec8a7a821e440da4224b6f4867f659a468"
+    },
+    {
+      "source": "train/711",
+      "reason": "duplicate",
+      "kept": "cord-train-0124",
+      "ground_truth_sha256": "9d61efb8d458ea101a4ea5972326f97e22340f2c068d10a6e6c46cca1847b213"
+    },
+    {
+      "source": "train/713",
+      "reason": "duplicate",
+      "kept": "cord-train-0237",
+      "ground_truth_sha256": "d23118e70348a9800e253c3e41352559a023a57387389ee31f9f0083f3ef7ad2"
+    },
+    {
+      "source": "train/717",
+      "reason": "rule_conflict",
+      "note": "the extra \"1 Extra Jelly Lychee\" counts as an item",
+      "ground_truth_sha256": "caceafa21667c0f6d4984d8dc4c51940245a26d1a53731d3915ebf2225220c88"
+    },
+    {
+      "source": "train/719",
+      "reason": "duplicate",
+      "kept": "cord-train-0640",
+      "ground_truth_sha256": "d83a495e2fe7e204b9fb1efbd5cf1f84e83580e77d822e9abefb0cba909d5b8e"
+    },
+    {
+      "source": "train/722",
+      "reason": "rule_conflict",
+      "note": "the bag and knife lines are labelled part of the cake, while the free candles count as an item",
+      "ground_truth_sha256": "483b2867c1a5bb3c5e6e48fd21bd4d90e941c61e06fd77f2f005dd0c282f6219"
+    },
+    {
+      "source": "train/723",
+      "reason": "duplicate",
+      "kept": "cord-train-0090",
+      "ground_truth_sha256": "e81b5f61862de81b604c8e5f10847c471c607ec221293e8afa203c60738096de"
+    },
+    {
+      "source": "train/726",
+      "reason": "duplicate",
+      "kept": "cord-train-0418",
+      "ground_truth_sha256": "f44de159c07373882cd123764ac6f4c771b578321d6201a031a31f048c5659bb"
+    },
+    {
+      "source": "train/732",
+      "reason": "duplicate",
+      "kept": "cord-train-0276",
+      "ground_truth_sha256": "4b8a3c6f9110838a3ab162c40b767d5eebf936d3180b246300a6df8f0c036b52"
+    },
+    {
+      "source": "train/733",
+      "reason": "duplicate",
+      "kept": "cord-validation-0089",
+      "ground_truth_sha256": "ebe6853e676282fc0dbddf7a77abf4ce307d74d3352c3652207c8f7d42de8389"
+    },
+    {
+      "source": "train/739",
+      "reason": "rule_conflict",
+      "note": "the extra \"2 Extra Jelly Lychee\" counts as an item",
+      "ground_truth_sha256": "33cc07974a379f484f9dc79fcaca9718120c9a92dd05e027bf9b5fba6915ffe6"
+    },
+    {
+      "source": "train/746",
+      "reason": "duplicate",
+      "kept": "cord-train-0022",
+      "ground_truth_sha256": "cc9fb4364590f6bdd22a99248d6378048555dc1a793e6a7280d1ed787a4c2c78"
+    },
+    {
+      "source": "train/753",
+      "reason": "label_conflict",
+      "group": [
+        "train/474",
+        "train/753"
+      ],
+      "ground_truth_sha256": "2bb41a38e4d538003a863ba380c329c0074af9c0e2aa075f44bfe7ae1d6853cf"
+    },
+    {
+      "source": "train/755",
+      "reason": "duplicate",
+      "kept": "cord-validation-0047",
+      "ground_truth_sha256": "c614375100b8cc882365b7ffd7a2ff493edc660b2fc180d27391c3aca117d9aa"
+    },
+    {
+      "source": "train/760",
+      "reason": "duplicate",
+      "kept": "cord-train-0118",
+      "ground_truth_sha256": "29d3e709a6c3bc8de7e25cc5b0ce391cfa4eb75f46e4c54477f50256f6a4a4ff"
+    },
+    {
+      "source": "train/764",
+      "reason": "label_conflict",
+      "group": [
+        "train/595",
+        "train/764"
+      ],
+      "ground_truth_sha256": "73e17df38d332f3b597de15acf262c2a129cd4e560a2868f0ec1e3228cda9c39"
+    },
+    {
+      "source": "train/765",
+      "reason": "duplicate",
+      "kept": "cord-test-0080",
+      "ground_truth_sha256": "a08960153fd8fbb09111f76f8c649bc777a396112d760f93a5b764dae9cece2c"
+    },
+    {
+      "source": "train/766",
+      "reason": "duplicate",
+      "kept": "cord-test-0069",
+      "ground_truth_sha256": "53a39cee10901fd85e758554110d8ce1e0636bd2a05a53eedb945c497bc0bbda"
+    },
+    {
+      "source": "train/772",
+      "reason": "duplicate",
+      "kept": "cord-train-0581",
+      "ground_truth_sha256": "e479173c3fe0ea17774e3094200c6791a5c61a8c299df76afba75029849b2b71"
+    },
+    {
+      "source": "train/773",
+      "reason": "duplicate",
+      "kept": "cord-train-0677",
+      "ground_truth_sha256": "bb1e20d388defd6dc497cf08d74e7e9560ed844774bf2e572e4d6b29d6882237"
+    },
+    {
+      "source": "train/783",
+      "reason": "label_conflict",
+      "group": [
+        "train/600",
+        "train/783"
+      ],
+      "ground_truth_sha256": "d6b3e6da414b3f17241adbfa8efe3981e7d2ed15ddaf349daf8288161525d07c"
+    },
+    {
+      "source": "train/785",
+      "reason": "duplicate",
+      "kept": "cord-test-0031",
+      "ground_truth_sha256": "4e5d7190f34182f9c9d06af9efd208dd926179c447be5c43aba41beae1602580"
+    },
+    {
+      "source": "train/789",
+      "reason": "duplicate",
+      "kept": "cord-train-0724",
+      "ground_truth_sha256": "149c9b75b9a4a20f6a440960205f9f19b934b4f188256b993f2a48c14394b99c"
+    },
+    {
+      "source": "train/792",
+      "reason": "duplicate",
+      "kept": "cord-train-0537",
+      "ground_truth_sha256": "beb06ea8523e09c67b122aac3b750fd878910a3b834c9fe53726ee8b3de8f88e"
+    },
+    {
+      "source": "train/795",
+      "reason": "duplicate",
+      "kept": "cord-train-0004",
+      "ground_truth_sha256": "651aede20073539a1f7909447044301874c9d60aacf20cf107217f7a589f2ddc"
+    },
+    {
+      "source": "train/797",
+      "reason": "duplicate",
+      "kept": "cord-test-0033",
+      "ground_truth_sha256": "af0165aaa62a2648d4cfeb84cdaa6681cd1136ca72a42e893be9334ff7320814"
+    },
+    {
+      "source": "train/798",
+      "reason": "duplicate",
+      "kept": "cord-train-0380",
+      "ground_truth_sha256": "3c31b42872f45a46c059cc248a112593e86d3b679a021bc89ce826edfb9bbfc3"
+    },
+    {
+      "source": "validation/4",
+      "reason": "duplicate",
+      "kept": "cord-test-0096",
+      "ground_truth_sha256": "6f3dfe9ffb96aa4475ee1fbc012c61ab3adab7a2e61a43b66bf5814f538c6442"
+    },
+    {
+      "source": "validation/14",
+      "reason": "duplicate",
+      "kept": "cord-test-0084",
+      "ground_truth_sha256": "b99a7c1cd160384678ac570b1b4694cbee2cc3c9793346a0884017004f233703"
+    },
+    {
+      "source": "validation/16",
+      "reason": "label_conflict",
+      "group": [
+        "validation/16",
+        "validation/38",
+        "train/174"
+      ],
+      "ground_truth_sha256": "86186bbb3dfc8ada7bb7b99c06807abdd52492f84be5798dd411c4c6d657ad2a"
+    },
+    {
+      "source": "validation/21",
+      "reason": "label_wrong",
+      "note": "the line \"Discount BCA 15%\" counts as an item",
+      "ground_truth_sha256": "56fc3a906618cf556d4a62b4d2cb794895686006d66188828bf44f0eae1262f2"
+    },
+    {
+      "source": "validation/27",
+      "reason": "duplicate",
+      "kept": "cord-test-0093",
+      "ground_truth_sha256": "d7ce174419784b74b9c722d044ed7892e3d4b8efad1fbc24ad0ef6bb70bcf1bd"
+    },
+    {
+      "source": "validation/29",
+      "reason": "rule_conflict",
+      "note": "the lone \"Sub Total\", with only tender and change lines after it, is labelled the subtotal with no total; the rules make it the total",
+      "ground_truth_sha256": "1f6912989e261c362710167b1351627f9ea64dc654ca4a322525a7fd042a52fb"
+    },
+    {
+      "source": "validation/38",
+      "reason": "label_conflict",
+      "group": [
+        "validation/16",
+        "validation/38",
+        "train/174"
+      ],
+      "ground_truth_sha256": "cbd0e4bef80195d846af791e4b2173a64396e175dd9026385215a995739a869a"
+    },
+    {
+      "source": "validation/44",
+      "reason": "duplicate",
+      "kept": "cord-test-0093",
+      "ground_truth_sha256": "0b2bca9a8a12d79ec39f3f3b65788d0329f399cd190c34da57c2cd2c5c48cf8f"
+    },
+    {
+      "source": "validation/53",
+      "reason": "rule_conflict",
+      "note": "the bag line \"*Plastik kcl\" is labelled part of the pastry",
+      "ground_truth_sha256": "0b5f7abc684b861ce65198e96b794e5a585958b44a069c22278f5a46a29b0404"
+    },
+    {
+      "source": "validation/56",
+      "reason": "label_conflict",
+      "group": [
+        "validation/56",
+        "train/127",
+        "train/463",
+        "train/546",
+        "train/658"
+      ],
+      "ground_truth_sha256": "88c07618f9488164a03bbef1690fe13efb6174a98939bce69ade821ad4bf1832"
+    },
+    {
+      "source": "validation/58",
+      "reason": "duplicate",
+      "kept": "cord-test-0080",
+      "ground_truth_sha256": "4e26a55d301d60ed287f197c55cd1a64559eb0c8b4145d4e1e6c84d49f3f765f"
+    },
+    {
+      "source": "validation/59",
+      "reason": "duplicate",
+      "kept": "cord-test-0038",
+      "ground_truth_sha256": "3547adc2432c325bd984a8310638a1296aee218b04703d0b37d5aed8cf026048"
+    },
+    {
+      "source": "validation/73",
+      "reason": "duplicate",
+      "kept": "cord-test-0068",
+      "ground_truth_sha256": "abb873dfe18e40ffe530682dc7c3cc64d083f334c69bff0610b6096a5d45ad98"
+    },
+    {
+      "source": "validation/77",
+      "reason": "label_conflict",
+      "group": [
+        "validation/77",
+        "train/530"
+      ],
+      "ground_truth_sha256": "751db3280f8f060bd2f3aca580131c8ac483832a0ecb0030ca8971e34fce0f50"
+    },
+    {
+      "source": "test/9",
+      "reason": "rule_conflict",
+      "note": "the lone \"Sub Total\", with only tender and change lines after it, is labelled the subtotal with no total; the rules make it the total",
+      "ground_truth_sha256": "814abe36017fec68e511a91990f597518c52b83a3088a0eb118ccce20e387fac"
+    },
+    {
+      "source": "test/37",
+      "reason": "label_conflict",
+      "group": [
+        "test/37",
+        "train/579"
+      ],
+      "ground_truth_sha256": "359d8af7acb701439ac2d8e90efb67675790e99413bc697ac47683f50ae12776"
+    },
+    {
+      "source": "test/60",
+      "reason": "rule_conflict",
+      "note": "the topping line \"Topping Milo Sparkle\" counts as an item",
+      "ground_truth_sha256": "d01e9f87ae30b890b440dc95af498dd0ca07e57df0dcf467ae87d1bedfb6bf90"
+    },
+    {
+      "source": "test/70",
+      "reason": "label_conflict",
+      "group": [
+        "test/70",
+        "train/19"
+      ],
+      "ground_truth_sha256": "55363272710f34e146cd984de3f21296c4897158b6c96b53fce76b37175fb9ad"
+    }
+  ]
+}

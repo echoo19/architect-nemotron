@@ -1,0 +1,15 @@
+# Evidence for @@PACKAGE@@
+
+This package was exported by `architect forge integrate` (architect @@VERSION@@).
+`EVIDENCE.json` holds the content-free evidence: identities, scores, counts, costs
+and closed labels. No held-out, tuning, authored or floor-dataset case is included.
+
+@@LICENSE_EVIDENCE@@
+2. Child harnesses (if any) are licensed on their own `case_origin` floors, which
+   are weaker than the parent's floor. A child license never stands in for the
+   parent's.
+3. Tuning numbers (Forge checks, measures and submissions) are evidence, not a
+   license. Only the parent's Stage 4 report is a license.
+
+The feature is off unless `@@FLAG@@=1` is set, and a human must review the
+integration before enabling it.

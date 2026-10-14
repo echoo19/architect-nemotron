@@ -1,0 +1,31 @@
+[
+  {
+    "tool_calls": [
+      {
+        "id": "call-1",
+        "name": "forge_check",
+        "arguments": {}
+      }
+    ]
+  },
+  {
+    "tool_calls": [
+      {
+        "id": "call-2",
+        "name": "forge_measure",
+        "arguments": {}
+      }
+    ]
+  },
+  {
+    "tool_calls": [
+      {
+        "id": "call-3",
+        "name": "forge_submit",
+        "arguments": {
+          "note": "workspace incumbent template"
+        }
+      }
+    ]
+  }
+]

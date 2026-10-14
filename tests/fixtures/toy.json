@@ -1,0 +1,16 @@
+[
+  {
+    "text": "private-input-do-not-log",
+    "tokens_in": 5,
+    "tokens_out": 5,
+    "cost_usd": 0.01,
+    "model": "fake"
+  },
+  {
+    "text": "private-input-do-not-log",
+    "tokens_in": 5,
+    "tokens_out": 5,
+    "cost_usd": 0.01,
+    "model": "fake"
+  }
+]

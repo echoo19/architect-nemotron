@@ -1,0 +1,211 @@
+{
+  "accepted": true,
+  "score_source": "local_fixture",
+  "compliance": "unverified",
+  "model_kind": "deterministic_public_observation_fixture",
+  "approval_required": false,
+  "proposal_spec_hash": "1dc22e5063825fff3ee1cfa4992ce2fdc17dae00cbad7a5028fbbcb9d6a9f62e",
+  "games": {
+    "families": 3,
+    "family_names": [
+      "local-navigation-v1",
+      "local-switches-v1",
+      "local-sequence-v1"
+    ],
+    "runs": [
+      {
+        "accepted": true,
+        "stages": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "licensed_before_play": true,
+        "fresh_verification": true,
+        "full_rollout": true,
+        "held_out_count": 3,
+        "score": 1.0,
+        "actions_used": 36,
+        "tokens_in": 3400,
+        "tokens_out": 3400,
+        "wall_time_s": 0.21899999998277053
+      },
+      {
+        "accepted": true,
+        "stages": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "licensed_before_play": true,
+        "fresh_verification": true,
+        "full_rollout": true,
+        "held_out_count": 3,
+        "score": 1.0,
+        "actions_used": 30,
+        "tokens_in": 2800,
+        "tokens_out": 2800,
+        "wall_time_s": 0.1720000000204891
+      },
+      {
+        "accepted": true,
+        "stages": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "licensed_before_play": true,
+        "fresh_verification": true,
+        "full_rollout": true,
+        "held_out_count": 3,
+        "score": 1.0,
+        "actions_used": 29,
+        "tokens_in": 2700,
+        "tokens_out": 2700,
+        "wall_time_s": 0.18699999997625127
+      }
+    ],
+    "public_probes": 3,
+    "wall_time_s": 0.6089999999967404,
+    "telemetry_rows": 30
+  },
+  "competition": {
+    "accepted": true,
+    "exact_fixture_approved": true,
+    "stages": [
+      1,
+      2,
+      4
+    ],
+    "held_out_count": 3,
+    "score": 1.0,
+    "metric": "local_win_fraction",
+    "children": [
+      {
+        "accepted": true,
+        "stages": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "licensed_before_play": true,
+        "fresh_verification": true,
+        "full_rollout": true,
+        "held_out_count": 3,
+        "score": 1.0,
+        "actions_used": 35,
+        "tokens_in": 3300,
+        "tokens_out": 3300,
+        "wall_time_s": 0.15700000000651926
+      },
+      {
+        "accepted": true,
+        "stages": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "licensed_before_play": true,
+        "fresh_verification": true,
+        "full_rollout": true,
+        "held_out_count": 3,
+        "score": 1.0,
+        "actions_used": 30,
+        "tokens_in": 2800,
+        "tokens_out": 2800,
+        "wall_time_s": 0.15600000001722947
+      },
+      {
+        "accepted": true,
+        "stages": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "licensed_before_play": true,
+        "fresh_verification": true,
+        "full_rollout": true,
+        "held_out_count": 3,
+        "score": 1.0,
+        "actions_used": 30,
+        "tokens_in": 2800,
+        "tokens_out": 2800,
+        "wall_time_s": 0.15600000001722947
+      }
+    ],
+    "rollback_children": [
+      {
+        "accepted": true,
+        "stages": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "licensed_before_play": true,
+        "fresh_verification": true,
+        "full_rollout": true,
+        "held_out_count": 3,
+        "score": 1.0,
+        "actions_used": 35,
+        "tokens_in": 3300,
+        "tokens_out": 3300,
+        "wall_time_s": 0.15600000001722947
+      },
+      {
+        "accepted": true,
+        "stages": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "licensed_before_play": true,
+        "fresh_verification": true,
+        "full_rollout": true,
+        "held_out_count": 3,
+        "score": 1.0,
+        "actions_used": 30,
+        "tokens_in": 2800,
+        "tokens_out": 2800,
+        "wall_time_s": 0.1559999999590218
+      },
+      {
+        "accepted": true,
+        "stages": [
+          0,
+          1,
+          2,
+          4
+        ],
+        "licensed_before_play": true,
+        "fresh_verification": true,
+        "full_rollout": true,
+        "held_out_count": 3,
+        "score": 1.0,
+        "actions_used": 30,
+        "tokens_in": 2800,
+        "tokens_out": 2800,
+        "wall_time_s": 0.14100000000325963
+      }
+    ],
+    "fresh_child_licenses": 6,
+    "verified_child_rollouts": 24,
+    "public_probes": 24,
+    "installed_revision": 1,
+    "replacement_revision": 2,
+    "rollback_revision": 1,
+    "drift_input": "synthetic_metadata",
+    "drift_recompile": true,
+    "equal_candidate_rejected": true,
+    "pricing": "synthetic_fixture_usage",
+    "wall_time_s": 4.297000000020489,
+    "telemetry_rows": 267
+  }
+}

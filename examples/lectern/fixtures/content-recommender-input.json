@@ -1,0 +1,17 @@
+{
+  "synthetic": true,
+  "query": "fractions",
+  "candidates": [
+    {
+      "id": "fractions-practice",
+      "topic": "fractions"
+    },
+    {
+      "id": "reading-0",
+      "topic": "reading"
+    }
+  ],
+  "preferences": {
+    "format": "practice"
+  }
+}

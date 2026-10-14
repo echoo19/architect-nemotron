@@ -1,0 +1,145 @@
+{
+  "note": "ARC-AGI-3 OFFLINE public preview with a LOCAL model (gemma4:26b, Q4_K_M, Ollama 0.34.3, RTX 4070 Ti 12 GB) on 2026-09-26, same seed and game draw each run. model_binding offline: no cloud call at play time, the competition's shape. Not an official submission, benchmark result or compliance claim; 12 actions per game.",
+  "runs": [
+    {
+      "label": "before harness fixes (Stage 0 duplicate-key refusal)",
+      "result": {
+        "seed": 1783005706,
+        "adapter": "ollama",
+        "model_binding": "offline",
+        "per_call_reservation_usd": 0.0,
+        "compliance": "unverified",
+        "arc_result": true,
+        "score_meaning": "offline_public_preview_not_submission",
+        "games": {
+          "parent_tuning": [
+            "ft09-0d8bbf25"
+          ],
+          "parent_held_out": [
+            "ar25-0c556536"
+          ],
+          "support_tuning": [
+            "lp85-305b61c3"
+          ],
+          "support_held_out": [
+            "sc25-635fd71a"
+          ],
+          "delivery": [
+            "sb26-7fbdac44"
+          ]
+        },
+        "fresh_workspace": true,
+        "spec_hash": "fdad945edab668e5ac0a0390139f5547ab8fc57381763dce0813fa472f0b2ec2",
+        "licensed": false,
+        "compile_failures": [
+          "primary_floor_failed",
+          "primary_evaluation_failed",
+          "tuning_failed",
+          "child_game_compile_failed",
+          "child_game_inference_failed"
+        ],
+        "score_source": "unavailable"
+      }
+    },
+    {
+      "label": "after Stage 0 fix, before play-prompt fixes",
+      "result": {
+        "seed": 1783005706,
+        "adapter": "ollama",
+        "model_binding": "offline",
+        "per_call_reservation_usd": 0.0,
+        "compliance": "unverified",
+        "arc_result": true,
+        "score_meaning": "offline_public_preview_not_submission",
+        "games": {
+          "parent_tuning": [
+            "ft09-0d8bbf25"
+          ],
+          "parent_held_out": [
+            "ar25-0c556536"
+          ],
+          "support_tuning": [
+            "lp85-305b61c3"
+          ],
+          "support_held_out": [
+            "sc25-635fd71a"
+          ],
+          "delivery": [
+            "sb26-7fbdac44"
+          ]
+        },
+        "fresh_workspace": true,
+        "spec_hash": "fdad945edab668e5ac0a0390139f5547ab8fc57381763dce0813fa472f0b2ec2",
+        "licensed": false,
+        "compile_failures": [
+          "primary_floor_failed",
+          "primary_evaluation_failed",
+          "tuning_failed",
+          "child_game_compile_failed",
+          "child_primary_floor_failed",
+          "child_primary_evaluation_failed"
+        ],
+        "score_source": "unavailable"
+      },
+      "calls": {
+        "total": 33,
+        "errors": 0,
+        "distinct_actions": 2,
+        "most_repeated_action_count": 24,
+        "max_prompt_chars": 278422
+      }
+    },
+    {
+      "label": "after play-prompt, history and truncate fixes",
+      "result": {
+        "seed": 1783005706,
+        "adapter": "ollama",
+        "model_binding": "offline",
+        "per_call_reservation_usd": 0.0,
+        "compliance": "unverified",
+        "arc_result": true,
+        "score_meaning": "offline_public_preview_not_submission",
+        "games": {
+          "parent_tuning": [
+            "ft09-0d8bbf25"
+          ],
+          "parent_held_out": [
+            "ar25-0c556536"
+          ],
+          "support_tuning": [
+            "lp85-305b61c3"
+          ],
+          "support_held_out": [
+            "sc25-635fd71a"
+          ],
+          "delivery": [
+            "sb26-7fbdac44"
+          ]
+        },
+        "fresh_workspace": true,
+        "spec_hash": "fdad945edab668e5ac0a0390139f5547ab8fc57381763dce0813fa472f0b2ec2",
+        "licensed": true,
+        "compile_failures": [],
+        "score_source": "official_offline_preview",
+        "revision": 1,
+        "accepted": true,
+        "score": 0.0,
+        "metric": "normalized_preview_mean",
+        "children": 1,
+        "cost_usd": 0.0,
+        "tokens_in": 480592,
+        "tokens_out": 1739,
+        "wall_time_s": 57.343,
+        "run_failures": [],
+        "child_failures": []
+      },
+      "calls": {
+        "total": 112,
+        "errors": 0,
+        "distinct_actions": 22,
+        "most_repeated_action_count": 18,
+        "max_prompt_chars": 21161
+      }
+    }
+  ]
+}

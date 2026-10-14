@@ -1,0 +1,9 @@
+[
+  {
+    "text": "{\"diff\": \"--- a/harness.py\\n+++ b/harness.py\\n@@ -4,4 +4,4 @@\\n from architect.runtime import RunContext\\n \\n async def run(context: RunContext, task: JsonValue) -> JsonValue:\\n-    return await execute_preset('explorer', {'context_window': 512, 'verifier_depth': 0, 'retries': 0}, ('interface_analysis', 'probe'), {'task': 'Describe the interface briefly', 'input_schema': {'type': 'object'}, 'output_schema': {'type': 'string'}, 'floor': {'kind': 'held_out_tasks', 'limit': 1.0, 'dataset': 'interface', 'minimum_samples': 30, 'rubric': None, 'judge_model': None, 'calibration_dataset': None}, 'secondary_floor': None, 'budget': {'cost_usd': 0.0105, 'compute_s': 10.0}, 'model_target': 'fake', 'lifecycle': 'expire', 'domain': 'explorer', 'preset_hint': None, 'execution_config': {}, 'tools': [], 'pipeline': [], 'provenance': {}}, context, task)\\n+    return await execute_preset('explorer', {'context_window': 512, 'verifier_depth': 0, 'retries': 0}, ('interface_analysis',), {'task': 'Describe the interface briefly', 'input_schema': {'type': 'object'}, 'output_schema': {'type': 'string'}, 'floor': {'kind': 'held_out_tasks', 'limit': 1.0, 'dataset': 'interface', 'minimum_samples': 30, 'rubric': None, 'judge_model': None, 'calibration_dataset': None}, 'secondary_floor': None, 'budget': {'cost_usd': 0.0105, 'compute_s': 10.0}, 'model_target': 'fake', 'lifecycle': 'expire', 'domain': 'explorer', 'preset_hint': None, 'execution_config': {}, 'tools': [], 'pipeline': [], 'provenance': {}}, context, task)\\n\", \"components\": [\"interface_analysis\"]}",
+    "tokens_in": 100,
+    "tokens_out": 200,
+    "cost_usd": 0.0003,
+    "model": "fake"
+  }
+]

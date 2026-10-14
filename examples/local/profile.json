@@ -1,0 +1,11 @@
+{
+  "workspace": "../../.architect/local",
+  "models": {
+    "gemma4:26b": {"provider": "ollama", "prices": "prices.json", "num_ctx": 65536, "think": false, "timeout_s": 600},
+    "granite4.2:8b": {"provider": "ollama", "prices": "prices.json", "num_ctx": 32768, "think": false, "timeout_s": 600},
+    "muse-glimmer:30b": {"provider": "ollama", "prices": "prices.json", "num_ctx": 32768, "think": false, "timeout_s": 900}
+  },
+  "inference": {"provider": "ollama", "model": "gemma4:26b", "prices": "prices.json", "num_ctx": 65536, "think": false, "timeout_s": 600},
+  "compile": {"model_ladder": ["gemma4:26b"], "max_candidates": 2, "enable_rewriting": false, "max_rewrites": 0,
+              "compile_budget": {"cost_usd": 1, "compute_s": 3600}}
+}

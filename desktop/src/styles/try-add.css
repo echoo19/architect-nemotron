@@ -1,0 +1,117 @@
+/* Steps 5 and 6 of the guided build: Try it and Add to project (clarity spec section 3). */
+
+/* ---- Try it: two panes in one card */
+.try-card { padding: 0; }
+.try-panes { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.try-pane { min-width: 0; padding: 24px; display: flex; flex-direction: column; gap: 12px; }
+.try-pane + .try-pane { border-left: 1px solid hsl(var(--hairline)); }
+@media (max-width: 760px) {
+  .try-panes { grid-template-columns: minmax(0, 1fr); }
+  .try-pane + .try-pane { border-left: 0; border-top: 1px solid hsl(var(--hairline)); }
+}
+.try-pane-title { margin: 0; font-size: var(--fs-small); line-height: var(--lh-small); font-weight: 500; color: hsl(var(--text)); }
+.try-input .schema-form { display: flex; flex-direction: column; align-items: stretch; gap: 16px; }
+.try-input .schema-single { width: 100%; }
+.try-input .schema-single { min-height: calc(9 * 1.5em + 18px); resize: vertical; font-family: var(--font-mono); font-size: var(--fs-small); }
+.try-actions { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.try-run { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; margin-left: auto; }
+.try-hint { font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-mute)); }
+.try-empty { display: flex; align-items: center; justify-content: center; gap: 8px; margin: 0; min-height: 120px; padding: 24px; text-align: center; font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-mute)); }
+.try-empty.is-box { flex: 1; min-height: 228px; border: 1px dashed hsl(var(--border)); border-radius: var(--r-md); }
+.try-result { display: flex; flex-direction: column; gap: 12px; }
+.try-table { width: 100%; border-collapse: collapse; }
+.try-table th, .try-table td { padding: 12px 0; border-bottom: 1px solid hsl(var(--hairline)); text-align: left; vertical-align: baseline; }
+.try-table th { width: 40%; font-weight: 400; font-size: var(--fs-small); color: hsl(var(--text-mute)); }
+.try-table td { font-weight: 500; color: hsl(var(--text)); font-variant-numeric: tabular-nums; }
+.try-table tr:last-child th, .try-table tr:last-child td { border-bottom: 0; }
+.try-note { margin: 0; font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-mute)); }
+.try-facts { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; padding-top: 12px; border-top: 1px solid hsl(var(--hairline)); }
+.try-facts dl { display: flex; gap: 32px; margin: 0; }
+.try-facts dt { font-size: var(--fs-micro); line-height: var(--lh-micro); color: hsl(var(--text-mute)); }
+.try-facts dd { margin: 2px 0 0; font-weight: 500; color: hsl(var(--text)); }
+.try-raw .try-json { max-height: 240px; overflow: auto; }
+
+/* ---- Add to project: the three parts */
+.add-progress { display: flex; align-items: center; gap: 12px; margin: 0; padding: 0; list-style: none; font-size: var(--fs-small); line-height: var(--lh-small); }
+.add-progress-part { display: inline-flex; align-items: center; gap: 6px; color: hsl(var(--text-faint)); }
+.add-progress-part + .add-progress-part::before { content: ""; width: 24px; height: 1px; margin-right: 6px; background: hsl(var(--hairline)); }
+.add-progress-part.is-done { color: hsl(var(--accent-600)); }
+.add-progress-part.is-current, .add-progress-part.is-working { color: hsl(var(--text)); font-weight: 600; }
+.add-progress-part.is-skipped { color: hsl(var(--text-mute)); }
+.add-progress-glyph { display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; }
+.add-progress-part.is-current .add-progress-glyph { border: 1.5px solid hsl(var(--accent-600)); border-radius: var(--r-full); width: 12px; height: 12px; }
+.add-progress-part.is-todo .add-progress-glyph { border: 1px solid hsl(var(--border)); border-radius: var(--r-full); width: 12px; height: 12px; }
+
+.add-status-stack { display: flex; flex-direction: column; gap: 12px; }
+.add-status { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 8px; font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-mute)); }
+.add-status > * + *::before { content: "\00b7"; margin-right: 8px; color: hsl(var(--text-faint)); }
+
+.add-card + .add-card, .add-card-cell + .add-card-cell { margin-top: 16px; }
+.add-line { margin: 0; font-size: var(--fs-body); line-height: var(--lh-body); color: hsl(var(--text)); }
+.add-line + .add-line { margin-top: 8px; }
+.add-line.is-mute { font-size: var(--fs-small); color: hsl(var(--text-mute)); }
+.add-line.is-err { color: hsl(var(--err)); }
+.add-code { font-family: var(--font-mono); font-size: 0.92em; overflow-wrap: anywhere; }
+.wizard-title-code { font-family: var(--font-mono); font-size: 0.92em; font-weight: 600; }
+.add-wait { display: flex; align-items: center; gap: 8px; margin: 0; font-size: var(--fs-body); color: hsl(var(--text-mute)); }
+.add-project { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px; margin: 0; }
+.add-project svg { align-self: center; color: hsl(var(--text-mute)); }
+.add-project-name { font-weight: 600; color: hsl(var(--text)); }
+.add-project-path { font-size: var(--fs-small); color: hsl(var(--text-mute)); overflow-wrap: anywhere; }
+.add-disclose { margin-top: 12px; }
+.add-chevron { transition: transform 150ms var(--ease); }
+.add-chevron.is-open { transform: rotate(180deg); }
+.add-files { margin-top: 8px; }
+.add-why { margin-top: 16px; }
+/* What the coder says it will do, in its own words: its numbered steps as a list. */
+.add-said { padding-top: 0; }
+.add-said-label { margin: 0 0 6px; font-size: var(--fs-small); color: hsl(var(--text-mute)); }
+.add-said-steps { margin: 0; padding-left: 20px; color: hsl(var(--text)); }
+.add-said-steps > li + li { margin-top: 4px; }
+.add-said-steps > li::marker { color: hsl(var(--text-mute)); font-variant-numeric: tabular-nums; }
+
+.add-counts { font-size: var(--fs-small); color: hsl(var(--text-mute)); font-variant-numeric: tabular-nums; }
+.add-counts .is-add { color: hsl(var(--ok)); }
+.add-counts .is-del { color: hsl(var(--err)); }
+.add-diff { overflow: visible; }
+/* The edit scrolls inside its card, so the card's end stays above the action bar. */
+.add-change .add-diff { max-height: max(240px, calc(100vh - 470px)); overflow-y: auto; border-radius: 0 0 var(--r-card) var(--r-card); }
+.add-diff .edit-preview { border: 0; border-radius: 0; }
+/* The edit as changes (wizard/ChangePreview): each a line diff, kept lines as context. */
+.change-preview .edit-preview-head { border-bottom: 1px solid hsl(var(--hairline)); }
+.change-preview .edit-preview-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.change-block + .change-block { border-top: 1px solid hsl(var(--divider)); }
+.change-block-head { margin: 0; padding: 6px var(--card-x, 24px) 2px; font-size: var(--fs-micro); font-weight: 600; color: hsl(var(--text-mute)); }
+.change-preview .change-block-lines { max-height: none; line-height: 1.5; }
+.change-preview .change-block-lines .change-line { padding: 0; }
+.change-preview .change-block-lines .change-line + .change-line { border-top: 0; }
+.change-line.is-unseen { opacity: 0.45; }
+.change-line.is-kept { color: hsl(var(--text-faint)); background: hsl(var(--bg-subtle)); }
+.change-kept { font-family: var(--font-sans); font-size: var(--fs-micro); padding: 1px 0; }
+.change-line.is-unseen .change-code { font-style: italic; }
+.change-cut { margin: 0; padding: 4px var(--card-x, 24px) 8px; font-size: var(--fs-micro); line-height: var(--lh-micro); color: hsl(var(--text-mute)); }
+.add-command { margin: 0; padding: 16px 24px; font-size: var(--fs-small); white-space: pre-wrap; overflow-wrap: anywhere; }
+
+.add-rows { margin: 0; padding: 0; list-style: none; }
+.add-row { display: grid; grid-template-columns: 24px minmax(0, 1fr) auto; gap: 16px; align-items: start; padding: 12px var(--card-x, 24px); }
+.add-row + .add-row { border-top: 1px solid hsl(var(--hairline)); }
+.add-row-text { min-width: 0; display: flex; flex-direction: column; gap: 4px; align-items: flex-start; }
+.add-row-title { margin: 0; font-weight: 500; color: hsl(var(--text)); }
+.add-row-meta { margin: 0; font-size: var(--fs-small); line-height: var(--lh-small); color: hsl(var(--text-mute)); }
+.add-row-trailing { align-self: center; margin-right: -8px; }
+.add-card .ui-card-action { margin-right: -8px; }
+.add-glyph { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: var(--r-full); border: 1px solid hsl(var(--border)); color: hsl(var(--text-mute)); }
+.add-glyph.is-done { border-color: transparent; background: hsl(var(--accent-50)); color: hsl(var(--accent-600)); }
+.add-glyph.is-next, .add-glyph.is-yours { border-color: hsl(var(--accent-600)); color: hsl(var(--accent-600)); }
+.add-glyph.is-todo { border-style: dashed; }
+.add-copy-line { display: inline-flex; align-items: center; gap: 8px; max-width: 100%; }
+.add-copy-line .add-code { padding: 2px 6px; border-radius: var(--r-xs); background: hsl(var(--bg-muted)); }
+.add-tests-row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; margin-top: 4px; }
+.add-terminal { margin-left: -4px; }
+.add-anywhere { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 0; padding: 12px var(--card-x, 24px) 16px; border-top: 1px solid hsl(var(--hairline)); font-size: var(--fs-small); color: hsl(var(--text-mute)); }
+
+.ui-card.add-switch { background: hsl(var(--accent-50)); border-color: hsl(var(--accent-100)); }
+.add-switch .ui-card-header, .add-card:has(.add-rows) .ui-card-header { padding-bottom: 4px; }
+.add-switch .ui-card-body-card { padding-bottom: 20px; }
+.add-flag { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; padding: 6px 6px 6px 16px; border: 1px solid hsl(var(--border)); border-radius: var(--r-md); background: hsl(var(--bg-raised)); }
+.add-flag-line { font-size: var(--fs-small); overflow-wrap: anywhere; }

@@ -1,0 +1,26 @@
+{
+  "models": {
+    "granite4.2:8b": {
+      "input_per_million": 0.0,
+      "output_per_million": 0.0,
+      "input_overhead_tokens": 1024,
+      "allowed_response_models": ["granite4.2:8b"],
+      "output_capacity_tokens": 8192
+    },
+    "gemma4:26b": {
+      "input_per_million": 0.0,
+      "output_per_million": 0.0,
+      "input_overhead_tokens": 1024,
+      "allowed_response_models": ["gemma4:26b"],
+      "output_capacity_tokens": 8192
+    },
+    "muse-glimmer:30b": {
+      "input_per_million": 0.0,
+      "output_per_million": 0.0,
+      "input_overhead_tokens": 1024,
+      "allowed_response_models": ["muse-glimmer:30b"],
+      "output_capacity_tokens": 8192
+    }
+  },
+  "fake_usage": {"tokens_in": 8, "tokens_out": 2}
+}

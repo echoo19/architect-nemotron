@@ -1,0 +1,14 @@
+The license is signed with an Ed25519 key, fingerprint
+`@@KEY@@`.
+Any host whose trust list holds that public key can check it without the Architect
+signing key: run `architect verify <path to this folder>` there, and `architect keys
+list` to see the keys a host trusts. No private key and no HMAC key is shipped.
+Another host can also mint its own license with
+`architect compile --approved-spec @@PACKAGE@@/artifact/spec.json`.
+
+Tests: `pytest tests/` checks the manifest, pins, schemas and the default-off flag
+with no key. The license, wrong-model refusal and fake smoke tests fail where that key
+is not trusted, and skip only where the license carries no signature this host can
+check. In CI, also run `architect verify --require-key @@KEY@@ <path to this folder>`:
+it accepts only this key's signature, so a copy stripped back to the host-only HMAC is
+refused.

@@ -1,0 +1,187 @@
+name: desktop
+# The desktop app on macOS, Windows and Linux: typecheck and tests on every push.
+# On a version tag, or when run by hand (Actions > desktop > Run workflow): Mac builds for
+# Apple silicon and Intel (signed and notarized when the secrets are set) and a Windows
+# installer. Each runner then installs its build and smoke-tests it with no uv, Node or
+# Python on PATH (desktop/scripts/smoke-packaged.mjs): first-start setup with the bundled
+# uv, a $0 build through the app's bridge, and Pi on the app's own Node. A tag also
+# drafts a release with the installers.
+on:
+  # Listing tags alone would stop branch pushes from triggering, so branches are named too.
+  push:
+    branches: ["**"]
+    paths: ["desktop/**", "architect/desktop/**", "tests/test_desktop_bridge*.py", ".github/workflows/desktop.yml"]
+    tags: ["v*"]
+  pull_request:
+    paths: ["desktop/**", "architect/desktop/**"]
+  workflow_dispatch:
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-15, windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: desktop/package-lock.json
+      - run: uv sync --frozen
+      - run: npm ci
+        working-directory: desktop
+      - run: npx tsc --noEmit
+        working-directory: desktop
+      - run: npx vitest run
+        working-directory: desktop
+      - run: uv run pytest tests/test_desktop_bridge.py tests/test_desktop_bridge_forge.py tests/test_desktop_bridge_more.py -p no:cacheprovider
+
+  mac:
+    if: startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch'
+    needs: test
+    strategy:
+      matrix:
+        include:
+          - runner: macos-15        # Apple silicon
+            arch: arm64
+          - runner: macos-15-intel  # Intel
+            arch: x64
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      # The build fetches the pinned uv and stages Pi's dependencies for this platform and
+      # architecture itself (beforePack in desktop/scripts/pack-hooks.mjs).
+      - run: npm ci
+        working-directory: desktop
+      # Without the certificate the build is unsigned (ad hoc); without the App Store
+      # Connect key it is signed but not notarized. Both still produce a test copy.
+      - name: Signing and notarization
+        id: signing
+        env:
+          MAC_CERT_P12_BASE64: ${{ secrets.MAC_CERT_P12_BASE64 }}
+          APPLE_API_KEY_P8: ${{ secrets.APPLE_API_KEY_P8 }}
+        run: |
+          if [ -n "$MAC_CERT_P12_BASE64" ]; then echo "signed=true" >> "$GITHUB_OUTPUT"; else echo "signed=false" >> "$GITHUB_OUTPUT"; fi
+          if [ -n "$MAC_CERT_P12_BASE64" ] && [ -n "$APPLE_API_KEY_P8" ]; then echo "notarize=true" >> "$GITHUB_OUTPUT"; else echo "notarize=false" >> "$GITHUB_OUTPUT"; fi
+      - name: App Store Connect key for notarization
+        if: steps.signing.outputs.notarize == 'true'
+        env:
+          APPLE_API_KEY_P8: ${{ secrets.APPLE_API_KEY_P8 }}
+        run: |
+          printf '%s' "$APPLE_API_KEY_P8" > "$RUNNER_TEMP/AuthKey.p8"
+          echo "APPLE_API_KEY=$RUNNER_TEMP/AuthKey.p8" >> "$GITHUB_ENV"
+      - name: Build unsigned
+        if: steps.signing.outputs.signed != 'true'
+        working-directory: desktop
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: "false"
+        run: npm run dist:mac -- --${{ matrix.arch }} --publish never -c.mac.notarize=false -c.mac.identity=null
+      - name: Build, sign and notarize
+        if: steps.signing.outputs.signed == 'true'
+        working-directory: desktop
+        env:
+          CSC_LINK: ${{ secrets.MAC_CERT_P12_BASE64 }}
+          CSC_KEY_PASSWORD: ${{ secrets.MAC_CERT_PASSWORD }}
+          APPLE_API_KEY_ID: ${{ secrets.APPLE_API_KEY_ID }}
+          APPLE_API_ISSUER: ${{ secrets.APPLE_API_ISSUER }}
+        run: npm run dist:mac -- --${{ matrix.arch }} --publish never -c.mac.notarize=${{ steps.signing.outputs.notarize }}
+      - name: Check the signature and the notarization ticket
+        if: steps.signing.outputs.signed == 'true'
+        working-directory: desktop
+        run: |
+          app=$(ls -d release/mac*/Architect.app | head -1)
+          codesign --verify --deep --strict --verbose=2 "$app"
+          if [ "${{ steps.signing.outputs.notarize }}" != "true" ]; then exit 0; fi
+          xcrun stapler validate "$app"
+          spctl --assess --type execute --verbose "$app"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: architect-mac-${{ matrix.arch }}
+          path: |
+            desktop/release/*.dmg
+            desktop/release/*.zip
+      # The app from the dmg, as a user installs it, then the smoke test on its own binary
+      # as Node with no uv, Node or Python on PATH. It downloads Python once ($0, no keys).
+      - name: Install from the dmg and smoke-test the app
+        working-directory: desktop
+        run: |
+          dmg=$(ls release/*.dmg | head -1)
+          hdiutil attach -nobrowse -readonly -mountpoint "$RUNNER_TEMP/dmg" "$dmg"
+          ditto "$RUNNER_TEMP/dmg/Architect.app" "$RUNNER_TEMP/Applications/Architect.app"
+          hdiutil detach "$RUNNER_TEMP/dmg"
+          exe="$RUNNER_TEMP/Applications/Architect.app/Contents/MacOS/Architect"
+          ELECTRON_RUN_AS_NODE=1 "$exe" scripts/smoke-packaged.mjs --app "$exe" --work "$RUNNER_TEMP/smoke"
+      - name: Keep the first-start log of a failed smoke test
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-log-mac-${{ matrix.arch }}
+          path: ${{ runner.temp }}/smoke/appdata/setup.log
+          if-no-files-found: ignore
+
+  windows:
+    if: startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch'
+    needs: test
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci
+        working-directory: desktop
+      - run: npm run dist:win -- --publish never
+        working-directory: desktop
+      - uses: actions/upload-artifact@v4
+        with:
+          name: architect-windows
+          path: desktop/release/*.exe
+      # A silent per-user install with the installer, then the smoke test on the installed
+      # app's own binary as Node with no uv, Node or Python on PATH ($0, no keys).
+      - name: Install with the installer and smoke-test the app
+        shell: bash
+        working-directory: desktop
+        run: |
+          setup=$(ls release/Architect-Setup-*.exe | head -1)
+          dir=$(cygpath -w "$RUNNER_TEMP/Architect")
+          MSYS_NO_PATHCONV=1 "./$setup" /S "/D=$dir"
+          exe="$dir\\Architect.exe"
+          for i in $(seq 60); do [ -f "$(cygpath -u "$exe")" ] && break; sleep 1; done
+          ELECTRON_RUN_AS_NODE=1 "$(cygpath -u "$exe")" scripts/smoke-packaged.mjs --app "$exe" --work "$(cygpath -w "$RUNNER_TEMP/smoke")"
+      - name: Keep the first-start log of a failed smoke test
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-log-windows
+          path: ${{ runner.temp }}/smoke/appdata/setup.log
+          if-no-files-found: ignore
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [mac, windows]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          merge-multiple: true
+      - name: Draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" artifacts/* --repo "$GITHUB_REPOSITORY" --draft --title "Architect $GITHUB_REF_NAME" --generate-notes

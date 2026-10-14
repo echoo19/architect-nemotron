@@ -1,0 +1,284 @@
+{
+  "task": "I want an AI feature that turns uploaded tests into Bluebook-style online tests with answer keys.",
+  "input_schema": {
+    "type": "object",
+    "required": [
+      "synthetic",
+      "page",
+      "questions"
+    ],
+    "properties": {
+      "synthetic": {
+        "const": true
+      },
+      "page": {
+        "type": "integer"
+      },
+      "questions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "expression",
+            "printed_answer"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "expression": {
+              "type": "string"
+            },
+            "printed_answer": {
+              "type": "integer"
+            }
+          },
+          "additionalProperties": false
+        },
+        "minItems": 1
+      }
+    },
+    "additionalProperties": false
+  },
+  "output_schema": {
+    "type": "object",
+    "required": [
+      "answer_keys",
+      "disagreements",
+      "review_required"
+    ],
+    "properties": {
+      "answer_keys": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "answer"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "answer": {
+              "type": "integer"
+            }
+          },
+          "additionalProperties": false
+        },
+        "minItems": 1
+      },
+      "disagreements": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "review_required": {
+        "const": true
+      }
+    },
+    "additionalProperties": false
+  },
+  "floor": {
+    "kind": "held_out_tasks",
+    "limit": 1,
+    "dataset": "synthetic-answer-keys",
+    "minimum_samples": 30
+  },
+  "budget": {
+    "cost_usd": 0.1,
+    "compute_s": 5
+  },
+  "model_target": "fake",
+  "lifecycle": "install",
+  "domain": "extractor",
+  "pipeline": [
+    {
+      "name": "vision-extract",
+      "preset": "extractor",
+      "model": "gpt-4o-mini",
+      "budget": {
+        "cost_usd": 0.025,
+        "compute_s": 2
+      },
+      "input_schema": {
+        "type": "object",
+        "required": [
+          "synthetic",
+          "page",
+          "questions"
+        ],
+        "properties": {
+          "synthetic": {
+            "const": true
+          },
+          "page": {
+            "type": "integer"
+          },
+          "questions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "expression",
+                "printed_answer"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "expression": {
+                  "type": "string"
+                },
+                "printed_answer": {
+                  "type": "integer"
+                }
+              },
+              "additionalProperties": false
+            },
+            "minItems": 1
+          }
+        },
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object",
+        "required": [
+          "questions",
+          "layout_source"
+        ],
+        "properties": {
+          "questions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "expression",
+                "printed_answer"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "expression": {
+                  "type": "string"
+                },
+                "printed_answer": {
+                  "type": "integer"
+                }
+              },
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "layout_source": {
+            "const": "synthetic-structured-page"
+          }
+        },
+        "additionalProperties": false
+      },
+      "params": {
+        "verifier_depth": 0
+      }
+    },
+    {
+      "name": "solver-rederive",
+      "preset": "extractor",
+      "model": "llama3.2",
+      "budget": {
+        "cost_usd": 0.025,
+        "compute_s": 2
+      },
+      "input_schema": {},
+      "output_schema": {
+        "type": "object",
+        "required": [
+          "answer_keys"
+        ],
+        "properties": {
+          "answer_keys": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "answer"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "answer": {
+                  "type": "integer"
+                }
+              },
+              "additionalProperties": false
+            },
+            "minItems": 1
+          }
+        },
+        "additionalProperties": false
+      },
+      "params": {
+        "verifier_depth": 0
+      }
+    },
+    {
+      "name": "verifier-diff",
+      "preset": "verifier",
+      "model": "claude-sonnet-4-20250514",
+      "budget": {
+        "cost_usd": 0.025,
+        "compute_s": 2
+      },
+      "input_schema": {},
+      "output_schema": {
+        "type": "object",
+        "required": [
+          "answer_keys",
+          "disagreements",
+          "review_required"
+        ],
+        "properties": {
+          "answer_keys": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "answer"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "answer": {
+                  "type": "integer"
+                }
+              },
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "disagreements": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "review_required": {
+            "const": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "params": {
+        "verifier_depth": 0
+      }
+    }
+  ]
+}

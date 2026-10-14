@@ -1,0 +1,45 @@
+{
+  "workspace": "~/.architect",
+  "models": {
+    "nvidia/Nemotron-3_5-Lightning": {"provider": "openai", "api_key_ref": "nebius", "temperature": 0.0, "max_tokens": 512},
+    "nvidia/nemotron-3-super-120b-a12b": {"provider": "openai", "api_key_ref": "nebius", "temperature": 0.0, "max_tokens": 512},
+    "nvidia/Nemotron-3-Ultra-550b-a55b": {"provider": "openai", "api_key_ref": "nebius", "temperature": 0.0, "max_tokens": 512}
+  },
+  "inference": {"provider": "openai", "api_key_ref": "nebius", "model": "nvidia/nemotron-3-super-120b-a12b"},
+  "forge_agent": {"provider": "openai", "api_key_ref": "nebius", "model": "nvidia/nemotron-3-super-120b-a12b", "think": false, "temperature": 0.0, "timeout_s": 300},
+  "floors": {
+    "bench-receipts-v2-evidence": {
+      "kind": "held_out_tasks",
+      "path": "../receipts/floors/evidence.json",
+      "checker": "receipt_v1",
+      "manifest": "../receipts/manifests/evidence.json"
+    },
+    "bench-receipts-demo": {
+      "kind": "held_out_tasks",
+      "path": "../receipts/demo/floor.json",
+      "checker": "receipt_v1",
+      "manifest": "../receipts/demo/floor.manifest.json",
+      "retake_cases": "../receipts/demo/retake.json",
+      "retakes": true
+    }
+  },
+  "compile": {
+    "model_ladder": ["nvidia/Nemotron-3_5-Lightning", "nvidia/nemotron-3-super-120b-a12b", "nvidia/Nemotron-3-Ultra-550b-a55b"],
+    "max_candidates": 4,
+    "rung_candidates": [4, 1, 1],
+    "enable_rewriting": false,
+    "max_rewrites": 0,
+    "compile_budget": {"cost_usd": 0.6, "compute_s": 3600},
+    "forge": {
+      "mode": "agent",
+      "feedback": "per_case",
+      "max_usd": 1.2,
+      "max_s": 1800,
+      "max_measures": 24,
+      "max_submissions": 6,
+      "max_spawns": 0,
+      "pi_max_turns": 400,
+      "max_rungs": 1
+    }
+  }
+}

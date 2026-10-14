@@ -1,0 +1,2259 @@
+{
+ "check": "scripts/nebius_live_check.py",
+ "started_utc": "2026-10-03T16:23:45+00:00",
+ "architect": "50ed944-dirty",
+ "base_url": "https://api.tokenfactory.nebius.com/v1",
+ "prices_usd_per_million": {
+  "nano": [
+   0.06,
+   0.24
+  ],
+  "lightning": [
+   0.06,
+   0.24
+  ],
+  "super": [
+   0.3,
+   0.9
+  ],
+  "ultra": [
+   1.0,
+   3.0
+  ]
+ },
+ "spend_note": "each reply's own usage at these list prices; flex is assumed the same",
+ "cap_usd": 0.05,
+ "spent_usd": 0.004024,
+ "calls": 39,
+ "skipped_at_cap": 0,
+ "rows": [
+  {
+   "step": "matrix",
+   "model": "nano",
+   "think": false,
+   "kind": "plain",
+   "request": {
+    "max_tokens": 512,
+    "temperature": 0.0,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    }
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.94,
+   "usd": 2.88e-06,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+    "finish": "stop",
+    "content": "391",
+    "content_chars": 3,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [],
+    "usage": {
+     "prompt": 32,
+     "completion": 4,
+     "reasoning": null,
+     "cached": null,
+     "cache_hit": null
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "text": "391",
+    "tokens": [
+     32,
+     4
+    ],
+    "usd": 2.88e-06,
+    "schema_ok": null
+   },
+   "headers": {
+    "x-ratelimit-limit-requests": "100",
+    "x-ratelimit-limit-tokens": "800000",
+    "x-ratelimit-remaining-requests": "99",
+    "x-ratelimit-remaining-tokens": "799476",
+    "x-ratelimit-reset-requests": "1s",
+    "x-ratelimit-reset-tokens": "1s",
+    "x-ratelimit-dynamic-scale-requests": "1.00",
+    "x-ratelimit-dynamic-scale-tokens": "1.00",
+    "x-ratelimit-dynamic-period-remaining": "900s",
+    "x-ratelimit-dynamic-period-usage-requests": "0%",
+    "x-ratelimit-dynamic-period-usage-tokens": "0%"
+   }
+  },
+  {
+   "step": "matrix",
+   "model": "nano",
+   "think": false,
+   "kind": "tool",
+   "request": {
+    "max_tokens": 512,
+    "temperature": 0.0,
+    "stream": true,
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    },
+    "tools": [
+     "get_weather"
+    ]
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.48,
+   "usd": 2.412e-05,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+    "finish": "tool_calls",
+    "content": "\n",
+    "content_chars": 1,
+    "leading_whitespace": true,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [
+     {
+      "id": "call_19be31906b4549e6a058d7fa",
+      "name": "get_weather",
+      "arguments": "{\"city\": \"Paris\"}"
+     }
+    ],
+    "usage": {
+     "prompt": 302,
+     "completion": 25,
+     "reasoning": null,
+     "cached": null,
+     "cache_hit": null
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "tokens": [
+     302,
+     25
+    ],
+    "usd": 2.412e-05,
+    "estimated": false,
+    "stop": "tool_use",
+    "text": "",
+    "calls": [
+     {
+      "name": "get_weather",
+      "arguments": {
+       "city": "Paris"
+      },
+      "error": null
+     }
+    ]
+   },
+   "headers": {
+    "x-ratelimit-limit-requests": "100",
+    "x-ratelimit-limit-tokens": "800000",
+    "x-ratelimit-remaining-requests": "98",
+    "x-ratelimit-remaining-tokens": "799405",
+    "x-ratelimit-reset-requests": "1s",
+    "x-ratelimit-reset-tokens": "1s",
+    "x-ratelimit-dynamic-scale-requests": "1.00",
+    "x-ratelimit-dynamic-scale-tokens": "1.00",
+    "x-ratelimit-dynamic-period-remaining": "900s",
+    "x-ratelimit-dynamic-period-usage-requests": "0%",
+    "x-ratelimit-dynamic-period-usage-tokens": "0%"
+   }
+  },
+  {
+   "step": "matrix",
+   "model": "nano",
+   "think": false,
+   "kind": "schema",
+   "request": {
+    "max_tokens": 512,
+    "temperature": 0.0,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    },
+    "response_format": "json_schema (strict)"
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 2.31,
+   "usd": 1.044e-05,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+    "finish": "stop",
+    "content": "{\n  \"city\": \"Tokyo\",\n  \"country\": \"Japan\",\n  \"population_millions\": 14.0,\n  \"continent\": \"Asia\"\n}",
+    "content_chars": 97,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [],
+    "usage": {
+     "prompt": 26,
+     "completion": 37,
+     "reasoning": null,
+     "cached": null,
+     "cache_hit": null
+    },
+    "service_tier": null,
+    "content_matches_schema": true
+   },
+   "architect": {
+    "text": "{\n  \"city\": \"Tokyo\",\n  \"country\": \"Japan\",\n  \"population_millions\": 14.0,\n  \"continent\": \"Asia\"\n}",
+    "tokens": [
+     26,
+     37
+    ],
+    "usd": 1.044e-05,
+    "schema_ok": true
+   },
+   "headers": {
+    "x-ratelimit-limit-requests": "100",
+    "x-ratelimit-limit-tokens": "800000",
+    "x-ratelimit-remaining-requests": "98",
+    "x-ratelimit-remaining-tokens": "799476",
+    "x-ratelimit-reset-requests": "1s",
+    "x-ratelimit-reset-tokens": "1s",
+    "x-ratelimit-dynamic-scale-requests": "1.00",
+    "x-ratelimit-dynamic-scale-tokens": "1.00",
+    "x-ratelimit-dynamic-period-remaining": "900s",
+    "x-ratelimit-dynamic-period-usage-requests": "0%",
+    "x-ratelimit-dynamic-period-usage-tokens": "0%"
+   }
+  },
+  {
+   "step": "matrix",
+   "model": "nano",
+   "think": true,
+   "kind": "plain",
+   "request": {
+    "max_tokens": 2048,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    }
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.66,
+   "usd": 1.56e-05,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+    "finish": "stop",
+    "content": "\n391",
+    "content_chars": 4,
+    "leading_whitespace": true,
+    "think_tag": false,
+    "reasoning_chars": {
+     "reasoning": 142
+    },
+    "calls": [],
+    "usage": {
+     "prompt": 32,
+     "completion": 57,
+     "reasoning": null,
+     "cached": null,
+     "cache_hit": null
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "text": "391",
+    "tokens": [
+     32,
+     57
+    ],
+    "usd": 1.56e-05,
+    "schema_ok": null
+   },
+   "headers": {
+    "x-ratelimit-limit-requests": "100",
+    "x-ratelimit-limit-tokens": "800000",
+    "x-ratelimit-remaining-requests": "99",
+    "x-ratelimit-remaining-tokens": "799476",
+    "x-ratelimit-reset-requests": "1s",
+    "x-ratelimit-reset-tokens": "1s",
+    "x-ratelimit-dynamic-scale-requests": "1.00",
+    "x-ratelimit-dynamic-scale-tokens": "1.00",
+    "x-ratelimit-dynamic-period-remaining": "897s",
+    "x-ratelimit-dynamic-period-usage-requests": "0%",
+    "x-ratelimit-dynamic-period-usage-tokens": "0%"
+   }
+  },
+  {
+   "step": "matrix",
+   "model": "nano",
+   "think": true,
+   "kind": "tool",
+   "request": {
+    "max_tokens": 2048,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "stream": true,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    },
+    "tools": [
+     "get_weather"
+    ]
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 1.09,
+   "usd": 4.884e-05,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+    "finish": "tool_calls",
+    "content": "\n",
+    "content_chars": 1,
+    "leading_whitespace": true,
+    "think_tag": false,
+    "reasoning_chars": {
+     "reasoning": 496
+    },
+    "calls": [
+     {
+      "id": "call_341be5eebecf4032b69c33a1",
+      "name": "get_weather",
+      "arguments": "{\"city\": \"Paris\"}"
+     }
+    ],
+    "usage": {
+     "prompt": 302,
+     "completion": 128,
+     "reasoning": null,
+     "cached": null,
+     "cache_hit": null
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "tokens": [
+     302,
+     128
+    ],
+    "usd": 4.884000000000001e-05,
+    "estimated": false,
+    "stop": "tool_use",
+    "text": "",
+    "calls": [
+     {
+      "name": "get_weather",
+      "arguments": {
+       "city": "Paris"
+      },
+      "error": null
+     }
+    ]
+   },
+   "headers": {
+    "x-ratelimit-limit-requests": "100",
+    "x-ratelimit-limit-tokens": "800000",
+    "x-ratelimit-remaining-requests": "99",
+    "x-ratelimit-remaining-tokens": "799405",
+    "x-ratelimit-reset-requests": "1s",
+    "x-ratelimit-reset-tokens": "1s",
+    "x-ratelimit-dynamic-scale-requests": "1.00",
+    "x-ratelimit-dynamic-scale-tokens": "1.00",
+    "x-ratelimit-dynamic-period-remaining": "897s",
+    "x-ratelimit-dynamic-period-usage-requests": "0%",
+    "x-ratelimit-dynamic-period-usage-tokens": "0%"
+   }
+  },
+  {
+   "step": "matrix",
+   "model": "nano",
+   "think": true,
+   "kind": "schema",
+   "request": {
+    "max_tokens": 2048,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    },
+    "response_format": "json_schema (strict)"
+   },
+   "note": "Architect sends schema calls with thinking off",
+   "http": 200,
+   "seconds": 0.78,
+   "usd": 2.364e-05,
+   "ok": "obs",
+   "reply": {
+    "model_echo": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+    "finish": "stop",
+    "content": "{\n  \"city\": \"Tokyo\",\n  \"country\": \"Japan\",\n  \"population_millions\": 13.96,\n  \"continent\": \"Asia\"\n}",
+    "content_chars": 98,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {
+     "reasoning": 233
+    },
+    "calls": [],
+    "usage": {
+     "prompt": 26,
+     "completion": 92,
+     "reasoning": null,
+     "cached": null,
+     "cache_hit": null
+    },
+    "service_tier": null,
+    "content_matches_schema": true
+   },
+   "architect": {
+    "text": "{\n  \"city\": \"Tokyo\",\n  \"country\": \"Japan\",\n  \"population_millions\": 13.96,\n  \"continent\": \"Asia\"\n}",
+    "tokens": [
+     26,
+     92
+    ],
+    "usd": 2.3639999999999997e-05,
+    "schema_ok": true
+   },
+   "headers": {
+    "x-ratelimit-limit-requests": "100",
+    "x-ratelimit-limit-tokens": "800000",
+    "x-ratelimit-remaining-requests": "99",
+    "x-ratelimit-remaining-tokens": "799476",
+    "x-ratelimit-reset-requests": "1s",
+    "x-ratelimit-reset-tokens": "1s",
+    "x-ratelimit-dynamic-scale-requests": "1.00",
+    "x-ratelimit-dynamic-scale-tokens": "1.00",
+    "x-ratelimit-dynamic-period-remaining": "896s",
+    "x-ratelimit-dynamic-period-usage-requests": "0%",
+    "x-ratelimit-dynamic-period-usage-tokens": "0%"
+   }
+  },
+  {
+   "step": "matrix",
+   "model": "lightning",
+   "think": false,
+   "kind": "plain",
+   "request": {
+    "max_tokens": 512,
+    "temperature": 0.0,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    }
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.24,
+   "usd": 2.88e-06,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3_5-Lightning",
+    "finish": "stop",
+    "content": "391",
+    "content_chars": 3,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [],
+    "usage": {
+     "prompt": 32,
+     "completion": 4,
+     "reasoning": 0,
+     "cached": null,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "text": "391",
+    "tokens": [
+     32,
+     4
+    ],
+    "usd": 2.88e-06,
+    "schema_ok": null
+   },
+   "headers": {
+    "x-ratelimit-limit-requests": "600",
+    "x-ratelimit-limit-tokens": "400000",
+    "x-ratelimit-remaining-requests": "599",
+    "x-ratelimit-remaining-tokens": "399477",
+    "x-ratelimit-reset-requests": "1s",
+    "x-ratelimit-reset-tokens": "1s",
+    "x-ratelimit-dynamic-scale-requests": "1.00",
+    "x-ratelimit-dynamic-scale-tokens": "1.00",
+    "x-ratelimit-dynamic-period-remaining": "900s",
+    "x-ratelimit-dynamic-period-usage-requests": "0%",
+    "x-ratelimit-dynamic-period-usage-tokens": "0%"
+   }
+  },
+  {
+   "step": "matrix",
+   "model": "lightning",
+   "think": false,
+   "kind": "tool",
+   "request": {
+    "max_tokens": 512,
+    "temperature": 0.0,
+    "stream": true,
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    },
+    "tools": [
+     "get_weather"
+    ]
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.55,
+   "usd": 3.186e-05,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3_5-Lightning",
+    "finish": "tool_calls",
+    "content": "",
+    "content_chars": 0,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [
+     {
+      "id": "call_bf796d89a41f493cb8bc8ae0",
+      "name": "get_weather",
+      "arguments": "{\"city\":\"Paris\"}"
+     }
+    ],
+    "usage": {
+     "prompt": 431,
+     "completion": 25,
+     "reasoning": 0,
+     "cached": null,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "tokens": [
+     431,
+     25
+    ],
+    "usd": 3.1859999999999997e-05,
+    "estimated": false,
+    "stop": "tool_use",
+    "text": "",
+    "calls": [
+     {
+      "name": "get_weather",
+      "arguments": {
+       "city": "Paris"
+      },
+      "error": null
+     }
+    ]
+   },
+   "headers": {
+    "x-ratelimit-limit-requests": "600",
+    "x-ratelimit-limit-tokens": "400000",
+    "x-ratelimit-remaining-requests": "599",
+    "x-ratelimit-remaining-tokens": "399405",
+    "x-ratelimit-reset-requests": "1s",
+    "x-ratelimit-reset-tokens": "1s",
+    "x-ratelimit-dynamic-scale-requests": "1.00",
+    "x-ratelimit-dynamic-scale-tokens": "1.00",
+    "x-ratelimit-dynamic-period-remaining": "900s",
+    "x-ratelimit-dynamic-period-usage-requests": "0%",
+    "x-ratelimit-dynamic-period-usage-tokens": "0%"
+   }
+  },
+  {
+   "step": "matrix",
+   "model": "lightning",
+   "think": false,
+   "kind": "schema",
+   "request": {
+    "max_tokens": 512,
+    "temperature": 0.0,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    },
+    "response_format": "json_schema (strict)"
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.47,
+   "usd": 9.96e-06,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3_5-Lightning",
+    "finish": "stop",
+    "content": "{\"city\": \"Tokyo\", \"country\": \"Japan\", \"population_millions\": 37.4, \"continent\": \"Asia\"}",
+    "content_chars": 87,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [],
+    "usage": {
+     "prompt": 26,
+     "completion": 35,
+     "reasoning": 0,
+     "cached": null,
+     "cache_hit": 0
+    },
+    "service_tier": null,
+    "content_matches_schema": true
+   },
+   "architect": {
+    "text": "{\"city\": \"Tokyo\", \"country\": \"Japan\", \"population_millions\": 37.4, \"continent\": \"Asia\"}",
+    "tokens": [
+     26,
+     35
+    ],
+    "usd": 9.960000000000001e-06,
+    "schema_ok": true
+   },
+   "headers": {
+    "x-ratelimit-limit-requests": "600",
+    "x-ratelimit-limit-tokens": "400000",
+    "x-ratelimit-remaining-requests": "599",
+    "x-ratelimit-remaining-tokens": "399477",
+    "x-ratelimit-reset-requests": "1s",
+    "x-ratelimit-reset-tokens": "1s",
+    "x-ratelimit-dynamic-scale-requests": "1.00",
+    "x-ratelimit-dynamic-scale-tokens": "1.00",
+    "x-ratelimit-dynamic-period-remaining": "900s",
+    "x-ratelimit-dynamic-period-usage-requests": "0%",
+    "x-ratelimit-dynamic-period-usage-tokens": "0%"
+   }
+  },
+  {
+   "step": "matrix",
+   "model": "lightning",
+   "think": true,
+   "kind": "plain",
+   "request": {
+    "max_tokens": 2048,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    }
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 1.75,
+   "usd": 7.248e-05,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3_5-Lightning",
+    "finish": "stop",
+    "content": "391",
+    "content_chars": 3,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {
+     "reasoning": 738,
+     "reasoning_content": 738
+    },
+    "calls": [],
+    "usage": {
+     "prompt": 32,
+     "completion": 294,
+     "reasoning": 289,
+     "cached": null,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "text": "391",
+    "tokens": [
+     32,
+     294
+    ],
+    "usd": 7.248e-05,
+    "schema_ok": null
+   },
+   "headers": {
+    "x-ratelimit-limit-requests": "600",
+    "x-ratelimit-limit-tokens": "400000",
+    "x-ratelimit-remaining-requests": "599",
+    "x-ratelimit-remaining-tokens": "399477",
+    "x-ratelimit-reset-requests": "1s",
+    "x-ratelimit-reset-tokens": "1s",
+    "x-ratelimit-dynamic-scale-requests": "1.00",
+    "x-ratelimit-dynamic-scale-tokens": "1.00",
+    "x-ratelimit-dynamic-period-remaining": "899s",
+    "x-ratelimit-dynamic-period-usage-requests": "0%",
+    "x-ratelimit-dynamic-period-usage-tokens": "0%"
+   }
+  },
+  {
+   "step": "matrix",
+   "model": "lightning",
+   "think": true,
+   "kind": "tool",
+   "request": {
+    "max_tokens": 2048,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "stream": true,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    },
+    "tools": [
+     "get_weather"
+    ]
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.59,
+   "usd": 3.978e-05,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3_5-Lightning",
+    "finish": "tool_calls",
+    "content": "",
+    "content_chars": 0,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {
+     "reasoning": 133,
+     "reasoning_content": 133
+    },
+    "calls": [
+     {
+      "id": "call_45d8384f90c543cea52e6bf7",
+      "name": "get_weather",
+      "arguments": "{\"city\":\"Paris\"}"
+     }
+    ],
+    "usage": {
+     "prompt": 431,
+     "completion": 58,
+     "reasoning": 32,
+     "cached": null,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "tokens": [
+     431,
+     58
+    ],
+    "usd": 3.978e-05,
+    "estimated": false,
+    "stop": "tool_use",
+    "text": "",
+    "calls": [
+     {
+      "name": "get_weather",
+      "arguments": {
+       "city": "Paris"
+      },
+      "error": null
+     }
+    ]
+   },
+   "headers": {
+    "x-ratelimit-limit-requests": "600",
+    "x-ratelimit-limit-tokens": "400000",
+    "x-ratelimit-remaining-requests": "599",
+    "x-ratelimit-remaining-tokens": "399405",
+    "x-ratelimit-reset-requests": "1s",
+    "x-ratelimit-reset-tokens": "1s",
+    "x-ratelimit-dynamic-scale-requests": "1.00",
+    "x-ratelimit-dynamic-scale-tokens": "1.00",
+    "x-ratelimit-dynamic-period-remaining": "897s",
+    "x-ratelimit-dynamic-period-usage-requests": "0%",
+    "x-ratelimit-dynamic-period-usage-tokens": "0%"
+   }
+  },
+  {
+   "step": "matrix",
+   "model": "lightning",
+   "think": true,
+   "kind": "schema",
+   "request": {
+    "max_tokens": 2048,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    },
+    "response_format": "json_schema (strict)"
+   },
+   "note": "Architect sends schema calls with thinking off",
+   "http": 200,
+   "seconds": 3.41,
+   "usd": 0.00016788,
+   "ok": "obs",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3_5-Lightning",
+    "finish": "stop",
+    "content": "{\"city\": \"Tokyo\", \"country\": \"Japan\", \"population_millions\": 14, \"continent\": \"Asia\"}",
+    "content_chars": 85,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {
+     "reasoning": 2655,
+     "reasoning_content": 2655
+    },
+    "calls": [],
+    "usage": {
+     "prompt": 26,
+     "completion": 693,
+     "reasoning": 660,
+     "cached": null,
+     "cache_hit": 0
+    },
+    "service_tier": null,
+    "content_matches_schema": true
+   },
+   "architect": {
+    "text": "{\"city\": \"Tokyo\", \"country\": \"Japan\", \"population_millions\": 14, \"continent\": \"Asia\"}",
+    "tokens": [
+     26,
+     693
+    ],
+    "usd": 0.00016788,
+    "schema_ok": true
+   },
+   "headers": {
+    "x-ratelimit-limit-requests": "600",
+    "x-ratelimit-limit-tokens": "400000",
+    "x-ratelimit-remaining-requests": "599",
+    "x-ratelimit-remaining-tokens": "399477",
+    "x-ratelimit-reset-requests": "1s",
+    "x-ratelimit-reset-tokens": "1s",
+    "x-ratelimit-dynamic-scale-requests": "1.00",
+    "x-ratelimit-dynamic-scale-tokens": "1.00",
+    "x-ratelimit-dynamic-period-remaining": "897s",
+    "x-ratelimit-dynamic-period-usage-requests": "0%",
+    "x-ratelimit-dynamic-period-usage-tokens": "0%"
+   }
+  },
+  {
+   "step": "matrix",
+   "model": "super",
+   "think": false,
+   "kind": "plain",
+   "request": {
+    "max_tokens": 512,
+    "temperature": 0.0,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    }
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.5,
+   "usd": 1.32e-05,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/nemotron-3-super-120b-a12b",
+    "finish": "stop",
+    "content": "391",
+    "content_chars": 3,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [],
+    "usage": {
+     "prompt": 32,
+     "completion": 4,
+     "reasoning": 0,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "text": "391",
+    "tokens": [
+     32,
+     4
+    ],
+    "usd": 1.3199999999999999e-05,
+    "schema_ok": null
+   },
+   "headers": {}
+  },
+  {
+   "step": "matrix",
+   "model": "super",
+   "think": false,
+   "kind": "tool",
+   "request": {
+    "max_tokens": 512,
+    "temperature": 0.0,
+    "stream": true,
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    },
+    "tools": [
+     "get_weather"
+    ]
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.53,
+   "usd": 0.0001458,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/nemotron-3-super-120b-a12b",
+    "finish": "tool_calls",
+    "content": "We need get_weather for Paris.\n\n\n",
+    "content_chars": 33,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [
+     {
+      "id": "chatcmpl-tool-801988ee5f1c7259",
+      "name": "get_weather",
+      "arguments": "{\"city\": \"Paris\"}"
+     }
+    ],
+    "usage": {
+     "prompt": 384,
+     "completion": 34,
+     "reasoning": 0,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "tokens": [
+     384,
+     34
+    ],
+    "usd": 0.0001458,
+    "estimated": false,
+    "stop": "tool_use",
+    "text": "We need get_weather for Paris.",
+    "calls": [
+     {
+      "name": "get_weather",
+      "arguments": {
+       "city": "Paris"
+      },
+      "error": null
+     }
+    ]
+   },
+   "headers": {}
+  },
+  {
+   "step": "matrix",
+   "model": "super",
+   "think": false,
+   "kind": "schema",
+   "request": {
+    "max_tokens": 512,
+    "temperature": 0.0,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    },
+    "response_format": "json_schema (strict)"
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.8,
+   "usd": 3.75e-05,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/nemotron-3-super-120b-a12b",
+    "finish": "stop",
+    "content": "{\"city\": \"Tokyo\", \"country\": \"Japan\", \"population_millions\": 13.96, \"continent\": \"Asia\"}",
+    "content_chars": 88,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [],
+    "usage": {
+     "prompt": 26,
+     "completion": 33,
+     "reasoning": 0,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null,
+    "content_matches_schema": true
+   },
+   "architect": {
+    "text": "{\"city\": \"Tokyo\", \"country\": \"Japan\", \"population_millions\": 13.96, \"continent\": \"Asia\"}",
+    "tokens": [
+     26,
+     33
+    ],
+    "usd": 3.75e-05,
+    "schema_ok": true
+   },
+   "headers": {}
+  },
+  {
+   "step": "matrix",
+   "model": "super",
+   "think": true,
+   "kind": "plain",
+   "request": {
+    "max_tokens": 2048,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    }
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.89,
+   "usd": 7.26e-05,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/nemotron-3-super-120b-a12b",
+    "finish": "stop",
+    "content": "\n391",
+    "content_chars": 4,
+    "leading_whitespace": true,
+    "think_tag": false,
+    "reasoning_chars": {
+     "reasoning": 138,
+     "reasoning_content": 138
+    },
+    "calls": [],
+    "usage": {
+     "prompt": 32,
+     "completion": 70,
+     "reasoning": 64,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "text": "391",
+    "tokens": [
+     32,
+     70
+    ],
+    "usd": 7.259999999999999e-05,
+    "schema_ok": null
+   },
+   "headers": {}
+  },
+  {
+   "step": "matrix",
+   "model": "super",
+   "think": true,
+   "kind": "tool",
+   "request": {
+    "max_tokens": 2048,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "stream": true,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    },
+    "tools": [
+     "get_weather"
+    ]
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.55,
+   "usd": 0.0001494,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/nemotron-3-super-120b-a12b",
+    "finish": "tool_calls",
+    "content": "",
+    "content_chars": 0,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {
+     "reasoning": 51,
+     "reasoning_content": 51
+    },
+    "calls": [
+     {
+      "id": "chatcmpl-tool-a47810c1666197b8",
+      "name": "get_weather",
+      "arguments": "{\"city\": \"Paris\"}"
+     }
+    ],
+    "usage": {
+     "prompt": 384,
+     "completion": 38,
+     "reasoning": 12,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "tokens": [
+     384,
+     38
+    ],
+    "usd": 0.00014939999999999997,
+    "estimated": false,
+    "stop": "tool_use",
+    "text": "",
+    "calls": [
+     {
+      "name": "get_weather",
+      "arguments": {
+       "city": "Paris"
+      },
+      "error": null
+     }
+    ]
+   },
+   "headers": {}
+  },
+  {
+   "step": "matrix",
+   "model": "super",
+   "think": true,
+   "kind": "schema",
+   "request": {
+    "max_tokens": 2048,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    },
+    "response_format": "json_schema (strict)"
+   },
+   "note": "Architect sends schema calls with thinking off",
+   "http": 200,
+   "seconds": 2.52,
+   "usd": 0.0003822,
+   "ok": "obs",
+   "reply": {
+    "model_echo": "nvidia/nemotron-3-super-120b-a12b",
+    "finish": "stop",
+    "content": "{\"city\": \"Tokyo\", \"country\": \"Japan\", \"population_millions\": 13.96, \"continent\": \"Asia\"}",
+    "content_chars": 88,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {
+     "reasoning": 1743,
+     "reasoning_content": 1743
+    },
+    "calls": [],
+    "usage": {
+     "prompt": 26,
+     "completion": 416,
+     "reasoning": 380,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null,
+    "content_matches_schema": true
+   },
+   "architect": {
+    "text": "{\"city\": \"Tokyo\", \"country\": \"Japan\", \"population_millions\": 13.96, \"continent\": \"Asia\"}",
+    "tokens": [
+     26,
+     416
+    ],
+    "usd": 0.0003822,
+    "schema_ok": true
+   },
+   "headers": {}
+  },
+  {
+   "step": "matrix",
+   "model": "ultra",
+   "think": false,
+   "kind": "plain",
+   "request": {
+    "max_tokens": 512,
+    "temperature": 0.0,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    }
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.52,
+   "usd": 4.4e-05,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3-Ultra-550b-a55b",
+    "finish": "stop",
+    "content": "391",
+    "content_chars": 3,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [],
+    "usage": {
+     "prompt": 32,
+     "completion": 4,
+     "reasoning": 0,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "text": "391",
+    "tokens": [
+     32,
+     4
+    ],
+    "usd": 4.4e-05,
+    "schema_ok": null
+   },
+   "headers": {}
+  },
+  {
+   "step": "matrix",
+   "model": "ultra",
+   "think": false,
+   "kind": "tool",
+   "request": {
+    "max_tokens": 512,
+    "temperature": 0.0,
+    "stream": true,
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    },
+    "tools": [
+     "get_weather"
+    ]
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.56,
+   "usd": 0.000412,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3-Ultra-550b-a55b",
+    "finish": "tool_calls",
+    "content": "",
+    "content_chars": 0,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [
+     {
+      "id": "chatcmpl-tool-b54ea23d16512413",
+      "name": "get_weather",
+      "arguments": "{\"city\": \"Paris\"}"
+     }
+    ],
+    "usage": {
+     "prompt": 337,
+     "completion": 25,
+     "reasoning": 0,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "tokens": [
+     337,
+     25
+    ],
+    "usd": 0.000412,
+    "estimated": false,
+    "stop": "tool_use",
+    "text": "",
+    "calls": [
+     {
+      "name": "get_weather",
+      "arguments": {
+       "city": "Paris"
+      },
+      "error": null
+     }
+    ]
+   },
+   "headers": {}
+  },
+  {
+   "step": "matrix",
+   "model": "ultra",
+   "think": false,
+   "kind": "schema",
+   "request": {
+    "max_tokens": 512,
+    "temperature": 0.0,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    },
+    "response_format": "json_schema (strict)"
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.49,
+   "usd": 0.000131,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3-Ultra-550b-a55b",
+    "finish": "stop",
+    "content": "{ \"city\": \"Tokyo\", \"country\": \"Japan\", \"population_millions\": 14.0, \"continent\": \"Asia\" }",
+    "content_chars": 89,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [],
+    "usage": {
+     "prompt": 26,
+     "completion": 35,
+     "reasoning": 0,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null,
+    "content_matches_schema": true
+   },
+   "architect": {
+    "text": "{ \"city\": \"Tokyo\", \"country\": \"Japan\", \"population_millions\": 14.0, \"continent\": \"Asia\" }",
+    "tokens": [
+     26,
+     35
+    ],
+    "usd": 0.000131,
+    "schema_ok": true
+   },
+   "headers": {}
+  },
+  {
+   "step": "matrix",
+   "model": "ultra",
+   "think": true,
+   "kind": "plain",
+   "request": {
+    "max_tokens": 2048,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    }
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.38,
+   "usd": 0.000188,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3-Ultra-550b-a55b",
+    "finish": "stop",
+    "content": "391",
+    "content_chars": 3,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {
+     "reasoning_content": 82
+    },
+    "calls": [],
+    "usage": {
+     "prompt": 32,
+     "completion": 52,
+     "reasoning": 47,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "text": "391",
+    "tokens": [
+     32,
+     52
+    ],
+    "usd": 0.000188,
+    "schema_ok": null
+   },
+   "headers": {}
+  },
+  {
+   "step": "matrix",
+   "model": "ultra",
+   "think": true,
+   "kind": "tool",
+   "request": {
+    "max_tokens": 2048,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "stream": true,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    },
+    "tools": [
+     "get_weather"
+    ]
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.47,
+   "usd": 0.000529,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3-Ultra-550b-a55b",
+    "finish": "tool_calls",
+    "content": "",
+    "content_chars": 0,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {
+     "reasoning_content": 174
+    },
+    "calls": [
+     {
+      "id": "chatcmpl-tool-954e967124fe5bda",
+      "name": "get_weather",
+      "arguments": "{\"city\": \"Paris\"}"
+     }
+    ],
+    "usage": {
+     "prompt": 337,
+     "completion": 64,
+     "reasoning": 38,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "tokens": [
+     337,
+     64
+    ],
+    "usd": 0.000529,
+    "estimated": false,
+    "stop": "tool_use",
+    "text": "",
+    "calls": [
+     {
+      "name": "get_weather",
+      "arguments": {
+       "city": "Paris"
+      },
+      "error": null
+     }
+    ]
+   },
+   "headers": {}
+  },
+  {
+   "step": "matrix",
+   "model": "ultra",
+   "think": true,
+   "kind": "schema",
+   "request": {
+    "max_tokens": 2048,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    },
+    "response_format": "json_schema (strict)"
+   },
+   "note": "Architect sends schema calls with thinking off",
+   "http": 200,
+   "seconds": 0.83,
+   "usd": 0.000269,
+   "ok": "obs",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3-Ultra-550b-a55b",
+    "finish": "stop",
+    "content": "{ \"city\": \"Tokyo\", \"country\": \"Japan\", \"population_millions\": 37.8, \"continent\": \"Asia\" }",
+    "content_chars": 89,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {
+     "reasoning_content": 224
+    },
+    "calls": [],
+    "usage": {
+     "prompt": 26,
+     "completion": 81,
+     "reasoning": 43,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null,
+    "content_matches_schema": true
+   },
+   "architect": {
+    "text": "{ \"city\": \"Tokyo\", \"country\": \"Japan\", \"population_millions\": 37.8, \"continent\": \"Asia\" }",
+    "tokens": [
+     26,
+     81
+    ],
+    "usd": 0.000269,
+    "schema_ok": true
+   },
+   "headers": {}
+  },
+  {
+   "step": "cut",
+   "model": "nano",
+   "think": true,
+   "kind": "cut",
+   "request": {
+    "max_tokens": 64,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    },
+    "via": "OpenAICompatibleAdapter"
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 1.0,
+   "usd": 1.758e-05,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+    "finish": "length",
+    "content": null,
+    "content_chars": null,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {
+     "reasoning": 211
+    },
+    "calls": [],
+    "usage": {
+     "prompt": 37,
+     "completion": 64,
+     "reasoning": null,
+     "cached": null,
+     "cache_hit": null
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "error": "provider_reasoning_cut"
+   },
+   "headers": {
+    "x-ratelimit-limit-requests": "100",
+    "x-ratelimit-limit-tokens": "800000",
+    "x-ratelimit-remaining-requests": "99",
+    "x-ratelimit-remaining-tokens": "799919",
+    "x-ratelimit-reset-requests": "1s",
+    "x-ratelimit-reset-tokens": "1s",
+    "x-ratelimit-dynamic-scale-requests": "1.00",
+    "x-ratelimit-dynamic-scale-tokens": "1.00",
+    "x-ratelimit-dynamic-period-remaining": "878s",
+    "x-ratelimit-dynamic-period-usage-requests": "0%",
+    "x-ratelimit-dynamic-period-usage-tokens": "0%"
+   }
+  },
+  {
+   "step": "cut",
+   "model": "nano",
+   "think": true,
+   "kind": "cut_stream",
+   "request": {
+    "max_tokens": 64,
+    "stream": true,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    },
+    "via": "OpenAICompatibleAdapter"
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 1.09,
+   "usd": 1.758e-05,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+    "finish": "length",
+    "content": "",
+    "content_chars": 0,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {
+     "reasoning": 216
+    },
+    "calls": [],
+    "usage": {
+     "prompt": 37,
+     "completion": 64,
+     "reasoning": null,
+     "cached": null,
+     "cache_hit": null
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "error": "provider_reasoning_cut",
+    "text": "",
+    "calls": []
+   },
+   "headers": {
+    "x-ratelimit-limit-requests": "100",
+    "x-ratelimit-limit-tokens": "800000",
+    "x-ratelimit-remaining-requests": "99",
+    "x-ratelimit-remaining-tokens": "799919",
+    "x-ratelimit-reset-requests": "1s",
+    "x-ratelimit-reset-tokens": "1s",
+    "x-ratelimit-dynamic-scale-requests": "1.00",
+    "x-ratelimit-dynamic-scale-tokens": "1.00",
+    "x-ratelimit-dynamic-period-remaining": "877s",
+    "x-ratelimit-dynamic-period-usage-requests": "0%",
+    "x-ratelimit-dynamic-period-usage-tokens": "0%"
+   }
+  },
+  {
+   "step": "cut",
+   "model": "lightning",
+   "think": true,
+   "kind": "cut",
+   "request": {
+    "max_tokens": 64,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    },
+    "via": "OpenAICompatibleAdapter"
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.76,
+   "usd": 1.758e-05,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3_5-Lightning",
+    "finish": "length",
+    "content": "Here's a thinking process:\n\n1.  **Understand the User's Question**: The user wants to know how many prime numbers exist between 100 and 200. They said \"Think it",
+    "content_chars": 241,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [],
+    "usage": {
+     "prompt": 37,
+     "completion": 64,
+     "reasoning": 64,
+     "cached": null,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "error": "provider_reasoning_cut"
+   },
+   "headers": {
+    "x-ratelimit-limit-requests": "600",
+    "x-ratelimit-limit-tokens": "400000",
+    "x-ratelimit-remaining-requests": "599",
+    "x-ratelimit-remaining-tokens": "399919",
+    "x-ratelimit-reset-requests": "1s",
+    "x-ratelimit-reset-tokens": "1s",
+    "x-ratelimit-dynamic-scale-requests": "1.00",
+    "x-ratelimit-dynamic-scale-tokens": "1.00",
+    "x-ratelimit-dynamic-period-remaining": "882s",
+    "x-ratelimit-dynamic-period-usage-requests": "0%",
+    "x-ratelimit-dynamic-period-usage-tokens": "0%"
+   }
+  },
+  {
+   "step": "cut",
+   "model": "lightning",
+   "think": true,
+   "kind": "cut_stream",
+   "request": {
+    "max_tokens": 64,
+    "stream": true,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    },
+    "via": "OpenAICompatibleAdapter"
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 1.19,
+   "usd": 1.758e-05,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3_5-Lightning",
+    "finish": "length",
+    "content": "Here's a thinking process:\n\n1.  **Understand the user's question**: The user wants to know how many prime numbers are between 100 and 200. They said \"Think it t",
+    "content_chars": 250,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {
+     "reasoning": 250,
+     "reasoning_content": 250
+    },
+    "calls": [],
+    "usage": {
+     "prompt": 37,
+     "completion": 64,
+     "reasoning": 64,
+     "cached": null,
+     "cache_hit": 0
+    },
+    "service_tier": null,
+    "reasoning_repeated_as_content": true
+   },
+   "architect": {
+    "error": "provider_reasoning_cut",
+    "text": "",
+    "calls": []
+   },
+   "headers": {
+    "x-ratelimit-limit-requests": "600",
+    "x-ratelimit-limit-tokens": "400000",
+    "x-ratelimit-remaining-requests": "599",
+    "x-ratelimit-remaining-tokens": "399919",
+    "x-ratelimit-reset-requests": "1s",
+    "x-ratelimit-reset-tokens": "1s",
+    "x-ratelimit-dynamic-scale-requests": "1.00",
+    "x-ratelimit-dynamic-scale-tokens": "1.00",
+    "x-ratelimit-dynamic-period-remaining": "881s",
+    "x-ratelimit-dynamic-period-usage-requests": "0%",
+    "x-ratelimit-dynamic-period-usage-tokens": "0%"
+   }
+  },
+  {
+   "step": "cut",
+   "model": "super",
+   "think": true,
+   "kind": "cut",
+   "request": {
+    "max_tokens": 64,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    },
+    "via": "OpenAICompatibleAdapter"
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.75,
+   "usd": 6.87e-05,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/nemotron-3-super-120b-a12b",
+    "finish": "length",
+    "content": null,
+    "content_chars": null,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {
+     "reasoning": 194,
+     "reasoning_content": 194
+    },
+    "calls": [],
+    "usage": {
+     "prompt": 37,
+     "completion": 64,
+     "reasoning": 64,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "error": "provider_reasoning_cut"
+   },
+   "headers": {}
+  },
+  {
+   "step": "cut",
+   "model": "super",
+   "think": true,
+   "kind": "cut_stream",
+   "request": {
+    "max_tokens": 64,
+    "stream": true,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    },
+    "via": "OpenAICompatibleAdapter"
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.92,
+   "usd": 6.87e-05,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/nemotron-3-super-120b-a12b",
+    "finish": "length",
+    "content": "",
+    "content_chars": 0,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {
+     "reasoning": 194,
+     "reasoning_content": 194
+    },
+    "calls": [],
+    "usage": {
+     "prompt": 37,
+     "completion": 64,
+     "reasoning": 64,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "error": "provider_reasoning_cut",
+    "text": "",
+    "calls": []
+   },
+   "headers": {}
+  },
+  {
+   "step": "cut",
+   "model": "ultra",
+   "think": true,
+   "kind": "cut",
+   "request": {
+    "max_tokens": 64,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    },
+    "via": "OpenAICompatibleAdapter"
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 1.28,
+   "usd": 0.000229,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3-Ultra-550b-a55b",
+    "finish": "length",
+    "content": "The user wants to know the count of prime numbers between 100 and 200.\nI need to list the numbers between 100 and 200 and check for primality.\nRange: 101 to 199",
+    "content_chars": 201,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [],
+    "usage": {
+     "prompt": 37,
+     "completion": 64,
+     "reasoning": 64,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "error": "provider_reasoning_cut"
+   },
+   "headers": {}
+  },
+  {
+   "step": "cut",
+   "model": "ultra",
+   "think": true,
+   "kind": "cut_stream",
+   "request": {
+    "max_tokens": 64,
+    "stream": true,
+    "chat_template_kwargs": {
+     "enable_thinking": true
+    },
+    "via": "OpenAICompatibleAdapter"
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.64,
+   "usd": 0.000229,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3-Ultra-550b-a55b",
+    "finish": "length",
+    "content": "The user wants to find the number of prime numbers between 100 and 200.\nI need to list the primes in that range or calculate the count.\nRange: (100, 200) -> int",
+    "content_chars": 203,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {
+     "reasoning_content": 203
+    },
+    "calls": [],
+    "usage": {
+     "prompt": 37,
+     "completion": 64,
+     "reasoning": 64,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null,
+    "reasoning_repeated_as_content": true
+   },
+   "architect": {
+    "error": "provider_reasoning_cut",
+    "text": "",
+    "calls": []
+   },
+   "headers": {}
+  },
+  {
+   "step": "effort_none",
+   "model": "super",
+   "think": null,
+   "kind": "effort",
+   "request": {
+    "max_tokens": 512,
+    "temperature": 0.0,
+    "stream": false,
+    "reasoning_effort": "none"
+   },
+   "note": "reasoning_effort none, no thinking switch",
+   "http": 200,
+   "seconds": 1.09,
+   "usd": 1.32e-05,
+   "ok": "obs",
+   "reply": {
+    "model_echo": "nvidia/nemotron-3-super-120b-a12b",
+    "finish": "stop",
+    "content": "391",
+    "content_chars": 3,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [],
+    "usage": {
+     "prompt": 32,
+     "completion": 4,
+     "reasoning": 0,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "text": "391",
+    "tokens": [
+     32,
+     4
+    ],
+    "usd": 1.3199999999999999e-05,
+    "schema_ok": null
+   },
+   "headers": {}
+  },
+  {
+   "step": "force_nonempty",
+   "model": "ultra",
+   "think": true,
+   "kind": "cut",
+   "request": {
+    "max_tokens": 64,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": true,
+     "force_nonempty_content": false
+    }
+   },
+   "note": "force_nonempty_content false",
+   "http": 200,
+   "seconds": 0.56,
+   "usd": 0.000229,
+   "ok": "obs",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3-Ultra-550b-a55b",
+    "finish": "length",
+    "content": null,
+    "content_chars": null,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {
+     "reasoning_content": 217
+    },
+    "calls": [],
+    "usage": {
+     "prompt": 37,
+     "completion": 64,
+     "reasoning": 64,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "error": "provider_reasoning_cut"
+   },
+   "headers": {}
+  },
+  {
+   "step": "force_nonempty",
+   "model": "ultra",
+   "think": true,
+   "kind": "cut",
+   "request": {
+    "max_tokens": 64,
+    "temperature": 1.0,
+    "top_p": 0.95,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": true,
+     "force_nonempty_content": true
+    }
+   },
+   "note": "force_nonempty_content true",
+   "http": 200,
+   "seconds": 0.66,
+   "usd": 0.000229,
+   "ok": "obs",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3-Ultra-550b-a55b",
+    "finish": "length",
+    "content": "The user wants the count of prime numbers between 100 and 200.\nI need to list the primes in that range and count them.\nRange: 101 to 199 (since 100 and 200 are ",
+    "content_chars": 186,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [],
+    "usage": {
+     "prompt": 37,
+     "completion": 64,
+     "reasoning": 64,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "error": "provider_reasoning_cut"
+   },
+   "headers": {}
+  },
+  {
+   "step": "flex",
+   "model": "nano",
+   "think": false,
+   "kind": "flex",
+   "request": {
+    "max_tokens": 512,
+    "temperature": 0.0,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    },
+    "service_tier": "flex"
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.33,
+   "usd": 2.88e-06,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B",
+    "finish": "stop",
+    "content": "391",
+    "content_chars": 3,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [],
+    "usage": {
+     "prompt": 32,
+     "completion": 4,
+     "reasoning": null,
+     "cached": null,
+     "cache_hit": null
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "text": "391",
+    "tokens": [
+     32,
+     4
+    ],
+    "usd": 2.88e-06,
+    "schema_ok": null
+   },
+   "headers": {
+    "x-ratelimit-limit-requests": "100",
+    "x-ratelimit-limit-tokens": "800000",
+    "x-ratelimit-remaining-requests": "100",
+    "x-ratelimit-remaining-tokens": "800000",
+    "x-ratelimit-dynamic-scale-requests": "1.00",
+    "x-ratelimit-dynamic-scale-tokens": "1.00",
+    "x-ratelimit-dynamic-period-remaining": "869s",
+    "x-ratelimit-dynamic-period-usage-requests": "0%",
+    "x-ratelimit-dynamic-period-usage-tokens": "0%"
+   }
+  },
+  {
+   "step": "flex",
+   "model": "lightning",
+   "think": false,
+   "kind": "flex",
+   "request": {
+    "max_tokens": 512,
+    "temperature": 0.0,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    },
+    "service_tier": "flex"
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.38,
+   "usd": 2.88e-06,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3_5-Lightning",
+    "finish": "stop",
+    "content": "391",
+    "content_chars": 3,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [],
+    "usage": {
+     "prompt": 32,
+     "completion": 4,
+     "reasoning": 0,
+     "cached": null,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "text": "391",
+    "tokens": [
+     32,
+     4
+    ],
+    "usd": 2.88e-06,
+    "schema_ok": null
+   },
+   "headers": {
+    "x-ratelimit-limit-requests": "600",
+    "x-ratelimit-limit-tokens": "400000",
+    "x-ratelimit-remaining-requests": "600",
+    "x-ratelimit-remaining-tokens": "400000",
+    "x-ratelimit-dynamic-scale-requests": "1.00",
+    "x-ratelimit-dynamic-scale-tokens": "1.00",
+    "x-ratelimit-dynamic-period-remaining": "874s",
+    "x-ratelimit-dynamic-period-usage-requests": "0%",
+    "x-ratelimit-dynamic-period-usage-tokens": "0%"
+   }
+  },
+  {
+   "step": "flex",
+   "model": "super",
+   "think": false,
+   "kind": "flex",
+   "request": {
+    "max_tokens": 512,
+    "temperature": 0.0,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    },
+    "service_tier": "flex"
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.38,
+   "usd": 1.32e-05,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/nemotron-3-super-120b-a12b",
+    "finish": "stop",
+    "content": "391",
+    "content_chars": 3,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [],
+    "usage": {
+     "prompt": 32,
+     "completion": 4,
+     "reasoning": 0,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "text": "391",
+    "tokens": [
+     32,
+     4
+    ],
+    "usd": 1.3199999999999999e-05,
+    "schema_ok": null
+   },
+   "headers": {}
+  },
+  {
+   "step": "flex",
+   "model": "ultra",
+   "think": false,
+   "kind": "flex",
+   "request": {
+    "max_tokens": 512,
+    "temperature": 0.0,
+    "stream": false,
+    "chat_template_kwargs": {
+     "enable_thinking": false
+    },
+    "service_tier": "flex"
+   },
+   "note": "",
+   "http": 200,
+   "seconds": 0.3,
+   "usd": 4.4e-05,
+   "ok": "ok",
+   "reply": {
+    "model_echo": "nvidia/Nemotron-3-Ultra-550b-a55b",
+    "finish": "stop",
+    "content": "391",
+    "content_chars": 3,
+    "leading_whitespace": false,
+    "think_tag": false,
+    "reasoning_chars": {},
+    "calls": [],
+    "usage": {
+     "prompt": 32,
+     "completion": 4,
+     "reasoning": 0,
+     "cached": 0,
+     "cache_hit": 0
+    },
+    "service_tier": null
+   },
+   "architect": {
+    "text": "391",
+    "tokens": [
+     32,
+     4
+    ],
+    "usd": 4.4e-05,
+    "schema_ok": null
+   },
+   "headers": {}
+  }
+ ]
+}

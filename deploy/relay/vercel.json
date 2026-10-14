@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "outputDirectory": "public",
+  "fluid": true,
+  "functions": {
+    "api/relay.ts": {
+      "maxDuration": 300,
+      "supportsCancellation": true,
+      "includeFiles": "relay.config.json"
+    }
+  },
+  "rewrites": [
+    { "source": "/v1/:path*", "destination": "/api/relay?route=v1/:path*" },
+    { "source": "/healthz", "destination": "/api/relay?route=healthz" }
+  ]
+}

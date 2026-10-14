@@ -1,0 +1,138 @@
+/* The composer: field, mode switch, pills, usage, attachments, send and stop. */
+
+/* ── Composer ─────────────────────────────────────────────────────── */
+.composer-wrap { flex: none; max-width: calc(var(--measure) + 48px); width: 100%; margin: 0 auto; padding: 0 24px 18px; }
+/* One field frame (.ui-field-frame takes the hover border and the focus halo), its
+   controls in a trailing row. */
+.composer {
+  position: relative; display: flex; flex-direction: column;
+  border-radius: var(--r-lg); background: hsl(var(--bg));
+}
+.composer.is-dragging { border-color: hsl(var(--accent-700)); }
+.composer-input {
+  border: 0; outline: none; resize: none; background: transparent; padding: 12px 14px 4px;
+  font-size: var(--fs-body); line-height: 1.5; color: hsl(var(--text)); min-height: 46px; max-height: 40vh;
+}
+.composer-input:focus-visible { outline: none; }
+.composer-input::placeholder { color: hsl(var(--text-faint)); }
+.composer-bar { display: flex; align-items: center; gap: 4px; padding: 6px 8px 8px 10px; }
+.composer-spacer { flex: 1; }
+
+.meter svg { flex: none; }
+.send-button {
+  display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; margin-left: 4px;
+  border-radius: var(--r-md); border: 0; background: hsl(var(--accent-700)); color: hsl(var(--on-accent));
+}
+html[data-theme="dark"] .send-button { background: hsl(var(--accent-800)); }
+.send-button:disabled, html[data-theme="dark"] .send-button:disabled { background: hsl(var(--bg-muted)); color: hsl(var(--text-ghost)); }
+/* Stop is the same button with another glyph: pine in both themes, as Send. */
+.composer .menu { left: 8px; max-width: calc(100% - 16px); }
+
+.queue { display: flex; flex-direction: column; gap: 4px; margin-bottom: 8px; }
+.queue-row {
+  display: flex; align-items: center; gap: 10px; padding: 6px 12px; font-size: var(--fs-small);
+  background: hsl(var(--bg-subtle)); border: 1px solid hsl(var(--hairline)); border-radius: var(--r-md);
+}
+.queue-label { font-size: var(--fs-micro); color: hsl(var(--text-faint)); flex: none; }
+.queue-text { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.attachments { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; font-size: var(--fs-micro); }
+
+/* ── Composer ───────────────────────────────────────────────────────── */
+.composer { border-radius: var(--r-lg); }
+.composer-input { padding: 14px 16px 6px; font-size: var(--fs-body); }
+.composer-bar { gap: 6px; padding: 6px 8px 8px 8px; }
+
+.seg-icons { gap: 2px; padding: 3px; border-radius: var(--r-md); }
+.seg-icons .seg-item {
+  display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 8px; border-radius: var(--r-md);
+  transition: background 140ms, color 140ms, padding 160ms;
+}
+.seg-icons .seg-on { padding: 0 8px; }
+.seg-label { font-size: var(--fs-small); }
+
+.pill {
+  display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 8px 0 9px;
+  border: 0; border-radius: var(--r-md); background: transparent; color: hsl(var(--text-mute));
+  font-size: var(--fs-small); font-weight: 500; white-space: nowrap; transition: background 120ms, color 120ms;
+}
+.pill:hover:not(:disabled) { background: hsl(var(--bg-muted)); color: hsl(var(--text)); }
+.pill:disabled { opacity: 0.5; }
+.pill-warn { color: hsl(var(--warn)); }
+.pill-chevron { opacity: 0.6; margin-left: -1px; }
+.pill-model { max-width: 170px; overflow: hidden; text-overflow: ellipsis; }
+
+.usage {
+  display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 9px; border: 0;
+  border-radius: var(--r-md); background: transparent; color: hsl(var(--accent-700)); font-size: var(--fs-micro);
+}
+html[data-theme="dark"] .usage { color: hsl(var(--accent-700)); }
+.usage .num { color: hsl(var(--text-faint)); }
+.usage:hover { background: hsl(var(--bg-muted)); }
+.usage.tone-warn { color: hsl(var(--warn)); }
+.usage.tone-err { color: hsl(var(--err)); }
+.usage-track { stroke: hsl(var(--border)); }
+.usage-pop { width: 260px; gap: 6px; }
+.usage-row { display: flex; justify-content: space-between; font-size: var(--fs-small); color: hsl(var(--text-mute)); }
+.usage-row .num { color: hsl(var(--text)); }
+.usage-bar { height: 4px; border-radius: var(--r-full); background: hsl(var(--bg-muted)); overflow: hidden; margin-bottom: 6px; }
+.usage-bar span { display: block; height: 100%; background: hsl(var(--accent-700)); border-radius: var(--r-full); }
+
+.send-button { width: 32px; height: 32px; border-radius: var(--r-md); transition: background 150ms var(--ease), transform 150ms var(--ease); }
+.send-button:not(:disabled):hover { background: hsl(var(--accent-800)); }
+.send-button:not(:disabled):active { transform: scale(0.97); }
+.composer .icon-button { width: 30px; height: 30px; border-radius: var(--r-md); }
+
+.attachments { gap: 6px; }
+.attachment {
+  display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 4px 0 9px; border-radius: var(--r-md);
+  background: hsl(var(--card)); border: 1px solid hsl(var(--card-line)); font-size: var(--fs-micro); color: hsl(var(--text-mute));
+}
+.attachment-name { max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.attachment-x { display: inline-flex; border: 0; background: none; padding: 3px; border-radius: var(--r-sm); color: hsl(var(--text-faint)); }
+.attachment-x:hover { background: hsl(var(--bg-muted)); color: hsl(var(--text)); }
+.plan-hint {
+  display: inline-flex; align-items: center; gap: 5px; height: 24px; padding: 0 9px; border-radius: var(--r-full); border: 1px dashed hsl(var(--accent-700) / 0.5);
+  background: none; color: hsl(var(--accent-700)); font-size: var(--fs-micro); font-weight: 580; animation: swap-in 160ms var(--ease-enter) both;
+}
+html[data-theme="dark"] .plan-hint { color: hsl(var(--accent-700)); border-color: hsl(var(--accent-700) / 0.45); }
+.plan-hint:hover { background: hsl(var(--accent-700) / 0.1); }
+
+.composer-bar { min-width: 0; }
+.pill-model-short { display: none; }
+@container (max-width: 700px) {
+  .seg-label, .usage .num, .pill-chevron { display: none; }
+  .pill-model { max-width: 90px; }
+  .pill-model-full { display: none; }
+  .pill-model-short { display: inline; }
+}
+@container (max-width: 470px) {
+  .pill span { display: none; }
+}
+/* The narrowest column (a build with the dock open): the mode switch shows the mode it is
+   in (Shift+Tab cycles), the view toggle and context ring step aside so Send stays, and the
+   title may shrink so the header's menu stays. */
+@container (max-width: 360px) {
+  .composer-bar .seg-icons .seg-item:not(.seg-on), .composer-bar .view-toggle, .composer-bar .usage { display: none; }
+}
+.plan-hint { height: auto; padding: 0; border: 0; border-radius: 0; background: none; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: hsl(var(--accent-700) / 0.4); font-weight: 500; font-size: var(--fs-micro); animation: none; }
+.plan-hint svg { display: none; }
+.plan-hint:hover { background: none; }
+.composer-loading { display: inline-flex; align-items: center; padding: 0 4px; }
+
+/* The ask box in a build step's action bar: one line, a chat glyph, Send (clarity spec §2.1). */
+.bar-composer {
+  flex-direction: row; align-items: center; gap: 8px; width: clamp(280px, 28vw, 360px); min-width: 0; height: 40px;
+  padding: 0 4px 0 12px; border-radius: var(--r-md);
+}
+.bar-composer-glyph { flex: none; color: hsl(var(--text-faint)); }
+.bar-composer .composer-input { flex: 1; min-width: 0; min-height: 0; height: 38px; padding: 0; max-height: none; font-size: var(--fs-body); }
+.bar-composer-send {
+  flex: none; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px;
+  border: 0; border-radius: var(--r-sm); background: hsl(var(--bg-muted)); color: hsl(var(--text-mute));
+  transition: background 150ms var(--ease), color 150ms var(--ease);
+}
+.bar-composer-send:not(:disabled) { background: hsl(var(--accent-700)); color: hsl(var(--on-accent)); }
+.bar-composer-send:not(:disabled):hover { background: hsl(var(--accent-800)); }
+.bar-composer-send:disabled { color: hsl(var(--text-ghost)); }
+.bar-composer.is-disabled { background: hsl(var(--bg-subtle)); }
+.bar-composer .menu { left: 0; max-width: min(560px, 80vw); }

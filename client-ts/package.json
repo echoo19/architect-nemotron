@@ -1,0 +1,28 @@
+{
+  "name": "@architect/client",
+  "version": "0.1.0",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "description": "Thin typed client for the trusted local Architect control plane",
+  "engines": {
+    "node": ">=22"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && tsc -p tsconfig.types.json && node --test test/*.test.mjs",
+    "e2e": "npm run build && node scripts/e2e.mjs"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  }
+}

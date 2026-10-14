@@ -1,0 +1,9 @@
+[
+  {
+    "text": "{\"task\": \"Convert uploaded tests to online tests with answer keys\", \"input_schema\": {\"type\": \"object\", \"properties\": {\"image\": {\"type\": \"string\"}}, \"required\": [\"image\"]}, \"output_schema\": {\"type\": \"object\", \"properties\": {\"questions\": {\"type\": \"array\", \"items\": {\"type\": \"object\", \"properties\": {\"question\": {\"type\": \"string\"}, \"answer\": {\"type\": \"string\"}}, \"required\": [\"question\", \"answer\"], \"additionalProperties\": false}}}, \"required\": [\"questions\"], \"additionalProperties\": false}, \"floor\": {\"kind\": \"held_out_tasks\", \"limit\": 0.99, \"dataset\": \"known-answer-keys\"}, \"budget\": {\"cost_usd\": 0.1, \"compute_s\": 60}, \"model_target\": \"fake\", \"lifecycle\": \"install\", \"domain\": \"extractor\", \"tools\": [], \"pipeline\": [{\"name\": \"vision-extract\", \"preset\": \"extractor\", \"model\": \"vision-model\", \"budget\": {\"cost_usd\": 0.1, \"compute_s\": 60}}, {\"name\": \"independently-solve\", \"preset\": \"planner\", \"model\": \"solver-model\", \"budget\": {\"cost_usd\": 0.1, \"compute_s\": 60}}, {\"name\": \"verifier-diff\", \"preset\": \"verifier\", \"model\": \"verifier-model\", \"budget\": {\"cost_usd\": 0.1, \"compute_s\": 60}}]}",
+    "tokens_in": 150,
+    "tokens_out": 450,
+    "cost_usd": 0.002,
+    "model": "fake"
+  }
+]

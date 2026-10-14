@@ -1,0 +1,93 @@
+[
+  {
+    "text": "",
+    "tokens_in": 150,
+    "tokens_out": 450,
+    "cost_usd": 0.002,
+    "model": "fake"
+  },
+  {
+    "text": "not json",
+    "tokens_in": 150,
+    "tokens_out": 450,
+    "cost_usd": 0.002,
+    "model": "fake"
+  },
+  {
+    "text": "null",
+    "tokens_in": 150,
+    "tokens_out": 450,
+    "cost_usd": 0.002,
+    "model": "fake"
+  },
+  {
+    "text": "[]",
+    "tokens_in": 150,
+    "tokens_out": 450,
+    "cost_usd": 0.002,
+    "model": "fake"
+  },
+  {
+    "text": "{}",
+    "tokens_in": 150,
+    "tokens_out": 450,
+    "cost_usd": 0.002,
+    "model": "fake"
+  },
+  {
+    "text": "```json\n{\"task\": \"Summarize a table of numbers into two paragraphs for a parent\", \"input_schema\": {\"type\": \"object\", \"properties\": {\"numbers\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}}}, \"required\": [\"numbers\"]}, \"output_schema\": {\"type\": \"string\"}, \"floor\": {\"kind\": \"human_edit_rate\", \"limit\": 0.1, \"dataset\": \"summary-edits\", \"minimum_samples\": 30}, \"budget\": {\"tokens\": 4096, \"cost_usd\": 0.1, \"compute_s\": 60}, \"model_target\": \"fake\", \"lifecycle\": \"expire\", \"domain\": \"synthesizer\", \"tools\": [], \"pipeline\": []}\n```",
+    "tokens_in": 150,
+    "tokens_out": 450,
+    "cost_usd": 0.002,
+    "model": "fake"
+  },
+  {
+    "text": "{\"task\": \"Summarize a table of numbers into two paragraphs for a parent\", \"input_schema\": {\"type\": \"object\", \"properties\": {\"numbers\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}}}, \"required\": [\"numbers\"]}, \"output_schema\": {\"type\": \"string\"}, \"floor\": {\"kind\": \"human_edit_rate\", \"limit\": 0.1, \"dataset\": \"summary-edits\", \"minimum_samples\": 30}, \"budget\": {\"tokens\": 4096, \"cost_usd\": 0.1, \"compute_s\": 60}, \"model_target\": \"fake\", \"lifecycle\": \"expire\", \"domain\": \"synthesizer\", \"tools\": [], \"pipeline\": [], \"licensed\": true}",
+    "tokens_in": 150,
+    "tokens_out": 450,
+    "cost_usd": 0.002,
+    "model": "fake"
+  },
+  {
+    "text": "{\"task\": \"Summarize a table of numbers into two paragraphs for a parent\", \"input_schema\": {\"type\": \"object\", \"properties\": {\"numbers\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}}}, \"required\": [\"numbers\"]}, \"output_schema\": {\"type\": \"string\"}, \"floor\": {\"kind\": \"human_edit_rate\", \"limit\": 0.1, \"dataset\": \"summary-edits\", \"minimum_samples\": 30}, \"budget\": {\"tokens\": 4096, \"cost_usd\": 0.1, \"compute_s\": 60}, \"model_target\": \"fake\", \"lifecycle\": \"expire\", \"domain\": \"synthesizer\", \"tools\": [], \"pipeline\": [], \"report\": {\"passed\": true}}",
+    "tokens_in": 150,
+    "tokens_out": 450,
+    "cost_usd": 0.002,
+    "model": "fake"
+  },
+  {
+    "text": "{\"task\": \"Summarize a table of numbers into two paragraphs for a parent\", \"input_schema\": {\"type\": \"object\", \"properties\": {\"numbers\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}}}, \"required\": [\"numbers\"]}, \"output_schema\": {\"type\": \"string\"}, \"floor\": {\"kind\": \"human_edit_rate\", \"limit\": 0.1, \"dataset\": \"summary-edits\", \"minimum_samples\": 30}, \"budget\": {\"tokens\": 4096, \"cost_usd\": 0.1, \"compute_s\": 60}, \"model_target\": \"fake\", \"lifecycle\": \"expire\", \"domain\": \"synthesizer\", \"tools\": [], \"pipeline\": [], \"approval_required\": false}",
+    "tokens_in": 150,
+    "tokens_out": 450,
+    "cost_usd": 0.002,
+    "model": "fake"
+  },
+  {
+    "text": "{\"task\": 17, \"input_schema\": {\"type\": \"object\", \"properties\": {\"numbers\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}}}, \"required\": [\"numbers\"]}, \"output_schema\": {\"type\": \"string\"}, \"floor\": {\"kind\": \"human_edit_rate\", \"limit\": 0.1, \"dataset\": \"summary-edits\", \"minimum_samples\": 30}, \"budget\": {\"tokens\": 4096, \"cost_usd\": 0.1, \"compute_s\": 60}, \"model_target\": \"fake\", \"lifecycle\": \"expire\", \"domain\": \"synthesizer\", \"tools\": [], \"pipeline\": []}",
+    "tokens_in": 150,
+    "tokens_out": 450,
+    "cost_usd": 0.002,
+    "model": "fake"
+  },
+  {
+    "text": "{\"task\": \"Summarize a table of numbers into two paragraphs for a parent\", \"input_schema\": {\"type\": \"object\", \"properties\": {\"numbers\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}}}, \"required\": [\"numbers\"]}, \"output_schema\": {\"type\": \"string\"}, \"floor\": {\"kind\": \"human_edit_rate\", \"limit\": 0.1, \"dataset\": \"summary-edits\", \"minimum_samples\": 30}, \"budget\": {\"cost_usd\": \"0.1\", \"compute_s\": 60}, \"model_target\": \"fake\", \"lifecycle\": \"expire\", \"domain\": \"synthesizer\", \"tools\": [], \"pipeline\": []}",
+    "tokens_in": 150,
+    "tokens_out": 450,
+    "cost_usd": 0.002,
+    "model": "fake"
+  },
+  {
+    "text": "{\"task\": \"Summarize a table of numbers into two paragraphs for a parent\", \"input_schema\": {\"type\": \"object\", \"properties\": {\"numbers\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}}}, \"required\": [\"numbers\"]}, \"output_schema\": {\"type\": \"string\"}, \"floor\": {\"kind\": \"human_edit_rate\", \"limit\": NaN, \"dataset\": \"summary-edits\", \"minimum_samples\": 30}, \"budget\": {\"tokens\": 4096, \"cost_usd\": 0.1, \"compute_s\": 60}, \"model_target\": \"fake\", \"lifecycle\": \"expire\", \"domain\": \"synthesizer\", \"tools\": [], \"pipeline\": []}",
+    "tokens_in": 150,
+    "tokens_out": 450,
+    "cost_usd": 0.002,
+    "model": "fake"
+  },
+  {
+    "text": "{\"task\": \"Summarize a table of numbers into two paragraphs for a parent\", \"input_schema\": {\"type\": \"object\", \"properties\": {\"numbers\": {\"type\": \"array\", \"items\": {\"type\": \"number\"}}}, \"required\": [\"numbers\"]}, \"output_schema\": {\"type\": \"string\"}, \"floor\": {\"kind\": \"human_edit_rate\", \"limit\": 0.1, \"dataset\": \"summary-edits\", \"minimum_samples\": 30}, \"budget\": {\"tokens\": 4096, \"cost_usd\": 0.1, \"compute_s\": 60}, \"model_target\": \"fake\", \"lifecycle\": \"expire\", \"domain\": \"synthesizer\", \"tools\": [], \"pipeline\": [],\"task\":\"duplicate\"}",
+    "tokens_in": 150,
+    "tokens_out": 450,
+    "cost_usd": 0.002,
+    "model": "fake"
+  }
+]

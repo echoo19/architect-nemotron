@@ -1,0 +1,13 @@
+{
+  "workspace": "../../.architect/local-forge",
+  "models": {
+    "granite4.2:8b": {"provider": "ollama", "prices": "prices.json", "num_ctx": 16384, "think": false, "timeout_s": 600},
+    "claude-sonnet-5": {"provider": "claude-code"}
+  },
+  "inference": {"provider": "ollama", "model": "granite4.2:8b", "prices": "prices.json", "num_ctx": 16384, "think": false, "timeout_s": 600},
+  "forge_agent": {"provider": "claude-code", "model": "claude-sonnet-5"},
+  "compile": {"model_ladder": ["granite4.2:8b"], "max_candidates": 2, "enable_rewriting": false, "max_rewrites": 0,
+              "compile_budget": {"cost_usd": 1, "compute_s": 3600},
+              "forge": {"enabled": true, "trigger": "always", "mode": "agent", "agent_model": "claude-sonnet-5",
+                        "max_usd": 5, "max_s": 3600}}
+}

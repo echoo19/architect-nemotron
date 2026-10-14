@@ -1,0 +1,74 @@
+{
+  "task": "Return one JSON object with exactly these four keys: total, subtotal, tax, item_count.\n- total: the total amount printed on the receipt, including any tax and service, on a line such as TOTAL, GRAND TOTAL, TL or PAID. A line that names a tender (cash, card, e-wallet, voucher), a payment discount or change is never the total. If no total is printed and nothing after the subtotal changes the amount (only tender and change lines, or a 0% discount), the subtotal is the total and subtotal is null.\n- subtotal: the first amount printed after the items that sums them, apart from the total, whatever the receipt calls it: SUBTOTAL, ITEMS TOTAL, HARGA JUAL, DPP, NET TOTAL, the amount on an ITEMS line, a TOTAL line that a later GRAND TOTAL follows, or a bare amount under the items. A sum for one group of items (FOOD, BEVERAGE) is not the subtotal.\n- tax: the tax amount printed on the receipt (TAX, VAT, PPN, PB1, PAJAK), not its rate, its base (DPP) or a service charge.\n- item_count: the number of items listed on the receipt. Count each listed item once, whatever its quantity; the same item on two separate item lines counts twice. Bags and charges listed as items (plastic bag, take-away charge) count, even at price 0. Lines that belong to an item (options, toppings, extras, notes, package contents) are part of that item, even with their own quantity and price. Discount lines are not items. A void line that cancels an item is not an item; the cancelled item still counts.\n- Amounts are integers: take the amount itself, without its label or rate, and delete every character that is not a digit 0-9. For example \"75,000\" is 75000, \"Rp 12.500\" is 12500, \"-2.727\" is 2727, \"226,500.00\" is 22650000 and \"PB1 10% 4,818\" is 4818.\n- An amount the receipt does not print is null; never compute it from other amounts. A printed value without any digit, such as \"-\", is null.\n- If the receipt prints the same field more than once, use the first (topmost) one.",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "receipt": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "receipt"
+    ],
+    "additionalProperties": false
+  },
+  "output_schema": {
+    "type": "object",
+    "properties": {
+      "total": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "subtotal": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "tax": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "item_count": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "total",
+      "subtotal",
+      "tax",
+      "item_count"
+    ],
+    "additionalProperties": false
+  },
+  "floor": {
+    "kind": "held_out_tasks",
+    "limit": 0.4,
+    "dataset": "bench-receipts-v2-evidence",
+    "minimum_samples": 100,
+    "rubric": null,
+    "judge_model": null,
+    "calibration_dataset": null
+  },
+  "secondary_floor": null,
+  "budget": {
+    "cost_usd": 0.02,
+    "compute_s": 60.0
+  },
+  "model_target": "cheapest that passes",
+  "lifecycle": "install",
+  "domain": "general",
+  "preset_hint": "extractor",
+  "execution_config": {},
+  "tools": [],
+  "pipeline": [],
+  "provenance": {},
+  "invalid_policy": "count_as_miss",
+  "max_invalid_fraction": 0.02,
+  "input_limit_chars": 8192,
+  "reply_json": "first"
+}

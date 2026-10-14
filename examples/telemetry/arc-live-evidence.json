@@ -1,0 +1,88 @@
+{
+  "note": "Live ARC-AGI-3 OFFLINE public preview through the logged-in claude CLI (claude-haiku-4-5-20251001), 2026-09-25, Windows host, after the Stage 4 diagnosability fixes. Not an official submission or benchmark result; compliance unverified.",
+  "runs": [
+    {
+      "label": "cap too small for the per-call reservation",
+      "cost_usd_cap": 1.5,
+      "compute_s_cap": 2100,
+      "result": {
+        "licensed": false,
+        "compile_failures": [
+          "primary_floor_failed",
+          "primary_budget_failed",
+          "primary_evaluation_failed",
+          "tuning_failed",
+          "child_game_budget_exceeded"
+        ],
+        "score_source": "unavailable",
+        "budget_note": "stopped by budget: each model call reserves $0.3405 before it is sent; raise --cost-usd/--compute-s or lower --games/--max-actions",
+        "per_call_reservation_usd": 0.34048,
+        "seed": 789372946,
+        "games": {
+          "parent_tuning": [
+            "dc22-fdcac232"
+          ],
+          "parent_held_out": [
+            "tu93-0768757b"
+          ],
+          "support_tuning": [
+            "m0r0-492f87ba"
+          ],
+          "support_held_out": [
+            "bp35-0a0ad940"
+          ],
+          "delivery": [
+            "su15-1944f8ab"
+          ]
+        }
+      }
+    },
+    {
+      "label": "cap raised",
+      "cost_usd_cap": 8,
+      "compute_s_cap": 3000,
+      "result": {
+        "seed": 2358922439,
+        "adapter": "claude-code",
+        "model_binding": "online_preview",
+        "per_call_reservation_usd": 0.34048,
+        "compliance": "unverified",
+        "arc_result": true,
+        "score_meaning": "offline_public_preview_not_submission",
+        "games": {
+          "parent_tuning": [
+            "tn36-ef4dde99"
+          ],
+          "parent_held_out": [
+            "lf52-271a04aa"
+          ],
+          "support_tuning": [
+            "cd82-fb555c5d"
+          ],
+          "support_held_out": [
+            "lp85-305b61c3"
+          ],
+          "delivery": [
+            "vc33-5430563c"
+          ]
+        },
+        "fresh_workspace": true,
+        "spec_hash": "9e9dd4d8ab55f57d0f347d12d1b548ae866412d81458cca37d96269db5274ff3",
+        "licensed": true,
+        "compile_failures": [],
+        "score_source": "official_offline_preview",
+        "revision": 1,
+        "accepted": true,
+        "score": 0.0,
+        "metric": "normalized_preview_mean",
+        "children": 1,
+        "cost_usd": 1.4999709999999995,
+        "tokens_in": 538143,
+        "tokens_out": 84787,
+        "wall_time_s": 719.125,
+        "run_failures": [],
+        "child_failures": []
+      }
+    }
+  ]
+}

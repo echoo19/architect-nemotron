@@ -1,0 +1,20 @@
+{
+  "kind": "synthetic_boundary_cases_not_official_runs",
+  "cases": [
+    {
+      "label": "zero",
+      "score": 0,
+      "normalized": 0.0
+    },
+    {
+      "label": "partial",
+      "score": 37.5,
+      "normalized": 0.375
+    },
+    {
+      "label": "maximum",
+      "score": 100,
+      "normalized": 1.0
+    }
+  ]
+}

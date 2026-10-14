@@ -1,0 +1,21 @@
+{
+  "task": "Describe the interface briefly",
+  "input_schema": {
+    "type": "object"
+  },
+  "output_schema": {
+    "type": "string"
+  },
+  "domain": "explorer",
+  "model_target": "fake",
+  "floor": {
+    "kind": "held_out_tasks",
+    "limit": 1,
+    "dataset": "interface"
+  },
+  "budget": {
+    "tokens": 6,
+    "cost_usd": 0.0105,
+    "compute_s": 10
+  }
+}

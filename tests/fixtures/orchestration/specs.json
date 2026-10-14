@@ -1,0 +1,38 @@
+{
+  "ok": {
+    "task": "Summarize numbers",
+    "input_schema": {},
+    "output_schema": {"type": "string"},
+    "floor": {"kind": "held_out_tasks", "limit": 1.0, "dataset": "ok-cases"},
+    "budget": {"cost_usd": 0.1, "compute_s": 60},
+    "model_target": "fake",
+    "lifecycle": "expire",
+    "domain": "synthesizer",
+    "tools": [],
+    "pipeline": []
+  },
+  "unreachable": {
+    "task": "Solve numbers",
+    "input_schema": {},
+    "output_schema": {"type": "string"},
+    "floor": {"kind": "held_out_tasks", "limit": 1.0, "dataset": "unreachable-cases"},
+    "budget": {"cost_usd": 0.1, "compute_s": 60},
+    "model_target": "fake",
+    "lifecycle": "expire",
+    "domain": "synthesizer",
+    "tools": [],
+    "pipeline": []
+  },
+  "install": {
+    "task": "Summarize numbers forever",
+    "input_schema": {},
+    "output_schema": {"type": "string"},
+    "floor": {"kind": "held_out_tasks", "limit": 1.0, "dataset": "ok-cases"},
+    "budget": {"cost_usd": 0.1, "compute_s": 60},
+    "model_target": "fake",
+    "lifecycle": "install",
+    "domain": "synthesizer",
+    "tools": [],
+    "pipeline": []
+  }
+}

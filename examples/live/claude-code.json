@@ -1,0 +1,27 @@
+{
+  "workspace": "../../.architect/live-sentiment",
+  "models": {
+    "claude-haiku-4-5-20251001": {
+      "provider": "claude-code"
+    }
+  },
+  "inference": {
+    "provider": "claude-code",
+    "model": "claude-haiku-4-5-20251001"
+  },
+  "floors": {
+    "sentiment-v1": {
+      "kind": "held_out_tasks",
+      "path": "sentiment-cases.json"
+    }
+  },
+  "compile": {
+    "max_candidates": 1,
+    "enable_rewriting": false,
+    "max_rewrites": 0,
+    "compile_budget": {
+      "cost_usd": 2,
+      "compute_s": 900
+    }
+  }
+}
