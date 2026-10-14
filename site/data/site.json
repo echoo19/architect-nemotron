@@ -1,6 +1,6 @@
 {
   "schema": "architect-site/2",
-  "placeholder": true,
+  "placeholder": false,
   "repo": "https://github.com/echoo19/architect-nemotron",
   "video": {
     "youtube_id": "KejCLxp8NTA",
